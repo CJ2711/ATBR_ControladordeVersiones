@@ -6,7 +6,7 @@
 *           Alejandro Castro Romero        1958283-2711
 *           Keren Rodas Ortíz              1957601-2711
 *           Leandro Rodriguez Vidal        1958205-2711
-
+*
 */
 
 package ventanas;
