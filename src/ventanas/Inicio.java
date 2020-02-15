@@ -11,10 +11,6 @@
 
 package ventanas;
 
-/**
- *
- * @author cricr
- */
 public class Inicio extends javax.swing.JFrame {
 
     /**
