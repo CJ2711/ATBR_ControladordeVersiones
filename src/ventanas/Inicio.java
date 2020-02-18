@@ -67,7 +67,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel2.setText("Usuario :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
-        Button_Ingresar.setBackground(new java.awt.Color(0, 0, 0));
+        Button_Ingresar.setBackground(new java.awt.Color(204, 204, 204));
         Button_Ingresar.setFont(new java.awt.Font("Arial", 3, 11)); // NOI18N
         Button_Ingresar.setText("Ingresar");
         getContentPane().add(Button_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, 30));
