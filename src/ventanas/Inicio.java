@@ -19,6 +19,9 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        setTitle("Alertas Tempranas de Rendimiento Login");
+        this.setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -70,6 +73,11 @@ public class Inicio extends javax.swing.JFrame {
         Button_Ingresar.setBackground(new java.awt.Color(204, 204, 204));
         Button_Ingresar.setFont(new java.awt.Font("Arial", 3, 11)); // NOI18N
         Button_Ingresar.setText("Ingresar");
+        Button_Ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_IngresarActionPerformed(evt);
+            }
+        });
         getContentPane().add(Button_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, 30));
 
         jCheckBox1.setBackground(new java.awt.Color(0, 0, 0));
@@ -91,6 +99,10 @@ public class Inicio extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void Button_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IngresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_IngresarActionPerformed
 
     /**
      * @param args the command line arguments
