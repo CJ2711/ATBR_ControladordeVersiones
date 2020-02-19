@@ -101,7 +101,8 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void Button_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IngresarActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new InicioEstudiantes().setVisible(true);
     }//GEN-LAST:event_Button_IngresarActionPerformed
 
     /**
