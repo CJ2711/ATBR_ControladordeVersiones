@@ -7,10 +7,10 @@
 *           Keren Rodas Ortíz              1957601-2711
 *           Leandro Rodriguez Vidal        1958205-2711
 *
-*/
-
+ */
 package ventanas;
 
+import javax.swing.JOptionPane;
 
 public class Inicio extends javax.swing.JFrame {
 
@@ -106,11 +106,26 @@ public class Inicio extends javax.swing.JFrame {
     private void Button_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IngresarActionPerformed
         username = in_Usuario.getText().trim();
         password = jPasswordField1.getText().trim();
-        
-        if (!((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
-        dispose();
-        new Profesores_Area_Edicion_Notas().setVisible(true);
+
+        if (((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
+            JOptionPane.showMessageDialog(null, "'Usuario' y 'Contraseña' deben tener información");
         }
+        
+        if (!("01234567P".equals(username) || "01234567p".equals(username) || "1950000E".equals(username) || "1950000e".equals(username))) {
+            JOptionPane.showMessageDialog(null, "Datos invalidos");
+        }
+        
+        if("01234567P".equals(username) || "01234567p".equals(username)){
+            dispose();
+            new Profesores_Area_Edicion_Notas().setVisible(true);
+        }
+
+        if ("1950000E".equals(username) || "1950000e".equals(username)) {
+            dispose();
+            new Estudiantes_Area().setVisible(true);
+        }
+
+
     }//GEN-LAST:event_Button_IngresarActionPerformed
 
     /**
