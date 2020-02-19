@@ -109,7 +109,7 @@ public class Inicio extends javax.swing.JFrame {
         
         if (!((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
         dispose();
-        new InicioEstudiantes().setVisible(true);
+        //new InicioEstudiantes().setVisible(true);
         }
     }//GEN-LAST:event_Button_IngresarActionPerformed
 
