@@ -14,6 +14,9 @@ package ventanas;
 
 public class Inicio extends javax.swing.JFrame {
 
+    public static String username = "";
+    public static String password = "";
+
     /**
      * Creates new form Inicio
      */
@@ -101,8 +104,13 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void Button_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IngresarActionPerformed
+        username = in_Usuario.getText().trim();
+        password = jPasswordField1.getText().trim();
+        
+        if (!((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
         dispose();
         new InicioEstudiantes().setVisible(true);
+        }
     }//GEN-LAST:event_Button_IngresarActionPerformed
 
     /**
