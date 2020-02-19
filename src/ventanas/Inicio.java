@@ -76,6 +76,7 @@ public class Inicio extends javax.swing.JFrame {
         Button_Ingresar.setBackground(new java.awt.Color(204, 204, 204));
         Button_Ingresar.setFont(new java.awt.Font("Arial", 3, 11)); // NOI18N
         Button_Ingresar.setText("Ingresar");
+        Button_Ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_IngresarActionPerformed(evt);
