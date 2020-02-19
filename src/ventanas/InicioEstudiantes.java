@@ -40,7 +40,7 @@ public class InicioEstudiantes extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 220, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 220, 40));
 
         jLabel_FondoEstudianteInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioE.png"))); // NOI18N
         getContentPane().add(jLabel_FondoEstudianteInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
