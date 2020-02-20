@@ -7,15 +7,18 @@ package ventanas;
 
 /**
  *
- * @author Francisco
+ * @author cricr
  */
-public class Estudiantes_Inicio extends javax.swing.JFrame {
+public class Estudiantes_Area extends javax.swing.JFrame {
 
     /**
-     * Creates new form Estudiantes_Inicio
+     * Creates new form Estudiantes_Area
      */
-    public Estudiantes_Inicio() {
+    public Estudiantes_Area() {
         initComponents();
+        setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante]");
+        this.setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -27,25 +30,17 @@ public class Estudiantes_Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Fondo_EstudiantesInicio = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Fondo_EstudiantesInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Fondo_EstudiantesInicio)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Fondo_EstudiantesInicio)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         pack();
@@ -68,25 +63,24 @@ public class Estudiantes_Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Estudiantes_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Estudiantes_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Estudiantes_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Estudiantes_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Estudiantes_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Estudiantes_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Estudiantes_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Estudiantes_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Estudiantes_Inicio().setVisible(true);
+                new Estudiantes_Area().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Fondo_EstudiantesInicio;
     // End of variables declaration//GEN-END:variables
 }

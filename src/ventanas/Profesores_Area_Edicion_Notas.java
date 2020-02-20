@@ -10,6 +10,9 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
      */
     public Profesores_Area_Edicion_Notas() {
         initComponents();
+        setTitle("Alertas Tempranas de Rendimiento [ Area Profesor ]");
+        this.setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
