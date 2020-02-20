@@ -1,14 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*   PROYECTO : ALERTAS TEMPRANAS DE BAJO RENDIMIENTO
+*   Institucion: Universidad del Valle Sede Palmira
+*   Autores:
+*           Christian Joel Barbosa Bolaños 1958266-2711
+*           Alejandro Castro Romero        1958283-2711
+*           Keren Rodas Ortíz              1957601-2711
+*           Leandro Rodriguez Vidal        1958205-2711
+*
  */
 package ventanas;
 
-/**
- *
- * @author cricr
- */
+import javax.swing.JButton;
+
 public class Estudiantes_Area extends javax.swing.JFrame {
 
     /**
@@ -30,10 +33,42 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Label_Titulo_Prueba = new javax.swing.JLabel();
+        Label_Titulo_Materias = new javax.swing.JLabel();
+        Label_Titulo_Notificaciones = new javax.swing.JLabel();
+        Button_Icfes = new javax.swing.JButton();
+        Button_Diagnostica = new javax.swing.JButton();
         jLabel_FondoEstudiantes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Label_Titulo_Prueba.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
+        Label_Titulo_Prueba.setText("PRUEBAS");
+        getContentPane().add(Label_Titulo_Prueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 120, 30));
+
+        Label_Titulo_Materias.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
+        Label_Titulo_Materias.setText("MATERIAS");
+        getContentPane().add(Label_Titulo_Materias, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, 30));
+
+        Label_Titulo_Notificaciones.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
+        Label_Titulo_Notificaciones.setText("NOTIFICACIONES");
+        getContentPane().add(Label_Titulo_Notificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, -1, 30));
+
+        Button_Icfes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        Button_Icfes.setText("ICFES");
+        Button_Icfes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Icfes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_IcfesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Button_Icfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 180, 50));
+
+        Button_Diagnostica.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        Button_Diagnostica.setText("DIAGNOSTICA");
+        Button_Diagnostica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(Button_Diagnostica, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 180, 50));
 
         jLabel_FondoEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
         getContentPane().add(jLabel_FondoEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -41,6 +76,11 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Button_IcfesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IcfesActionPerformed
+        dispose();
+        new Icfes().setVisible(true);
+    }//GEN-LAST:event_Button_IcfesActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -77,6 +117,11 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Button_Diagnostica;
+    private javax.swing.JButton Button_Icfes;
+    private javax.swing.JLabel Label_Titulo_Materias;
+    private javax.swing.JLabel Label_Titulo_Notificaciones;
+    private javax.swing.JLabel Label_Titulo_Prueba;
     private javax.swing.JLabel jLabel_FondoEstudiantes;
     // End of variables declaration//GEN-END:variables
 }
