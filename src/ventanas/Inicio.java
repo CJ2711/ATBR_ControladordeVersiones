@@ -110,23 +110,23 @@ public class Inicio extends javax.swing.JFrame {
 
         if (((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
             JOptionPane.showMessageDialog(null, "'Usuario' y 'Contraseña' deben tener información");
-        }
+        } else{
         
-        if (!("01234567P".equals(username) || "01234567p".equals(username) || "1950000E".equals(username) || "1950000e".equals(username))) {
-            JOptionPane.showMessageDialog(null, "Datos invalidos");
-        }
-        
-        if("01234567P".equals(username) || "01234567p".equals(username)){
+        if(("01234567".equals(username) || "1950000".equals(username))&& ("0000".equals(password))) {
+                   
+        if ("01234567".equals(username)) {
             dispose();
             new Profesores_Area_Edicion_Notas().setVisible(true);
         }
 
-        if ("1950000E".equals(username) || "1950000e".equals(username)) {
+        if ("1950000".equals(username)){
             dispose();
             new Estudiantes_Area().setVisible(true);
         }
-
-
+        }else{
+            JOptionPane.showMessageDialog(null, "Datos invalidos");
+        }
+        }
     }//GEN-LAST:event_Button_IngresarActionPerformed
 
     /**
