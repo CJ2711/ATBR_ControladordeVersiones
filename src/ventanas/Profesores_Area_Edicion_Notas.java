@@ -16,6 +16,9 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
      */
     public Profesores_Area_Edicion_Notas() {
         initComponents();
+        setTitle("Alertas Tempranas de Rendimiento [ Area Profesor ]");
+        this.setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -37,13 +40,13 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel_FondoProfesoresAreaEdicion)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 1000, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel_FondoProfesoresAreaEdicion)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 600, Short.MAX_VALUE))
         );
 
         pack();
