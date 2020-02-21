@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ventanas;
 
 /**
- *
  * @author cricr
  */
 public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
@@ -33,21 +27,10 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         jLabel_FondoProfesoresAreaEdicion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel_FondoProfesoresAreaEdicion)
-                .addGap(0, 1000, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel_FondoProfesoresAreaEdicion)
-                .addGap(0, 600, Short.MAX_VALUE))
-        );
+        jLabel_FondoProfesoresAreaEdicion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
+        getContentPane().add(jLabel_FondoProfesoresAreaEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
