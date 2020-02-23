@@ -11,7 +11,7 @@ package ventanas;
  */
 public class Icfes extends javax.swing.JFrame {
 
-    /**
+    /** 
      * Creates new form Icfes
      */
     public Icfes() {
