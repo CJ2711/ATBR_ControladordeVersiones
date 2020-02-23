@@ -1,7 +1,7 @@
 package ventanas;
 
 /**
- * @author cricr
+ * @author Christian Barbosa (CJ1)
  */
 public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
 
@@ -10,11 +10,17 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
      */
     public Profesores_Area_Edicion_Notas() {
         initComponents();
-        setTitle("Alertas Tempranas de Rendimiento [ Area Profesor ]");
+        setTitle("Alertas Tempranas de Rendimiento [Area Profesor]");
         this.setLocationRelativeTo(null);
         setResizable(false);
     }
 
+    
+    public String jLabel_Nombre(){
+        return "Hola";
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -24,13 +30,23 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel_FondoProfesoresAreaEdicion = new javax.swing.JLabel();
+        jLabel_Nombre_Apellido = new javax.swing.JLabel();
+        jLabel_SaludoProfesor = new javax.swing.JLabel();
+        jLabel_FondoProfesores = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_FondoProfesoresAreaEdicion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
-        getContentPane().add(jLabel_FondoProfesoresAreaEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel_Nombre_Apellido.setFont(new java.awt.Font("Segoe Print", 1, 22)); // NOI18N
+        getContentPane().add(jLabel_Nombre_Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 350, 40));
+
+        jLabel_SaludoProfesor.setFont(new java.awt.Font("Segoe Print", 1, 22)); // NOI18N
+        jLabel_SaludoProfesor.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_SaludoProfesor.setText("Bienvenido(a) Profesor(a)");
+        getContentPane().add(jLabel_SaludoProfesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 40));
+
+        jLabel_FondoProfesores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
+        getContentPane().add(jLabel_FondoProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -72,6 +88,8 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel_FondoProfesoresAreaEdicion;
+    private javax.swing.JLabel jLabel_FondoProfesores;
+    private javax.swing.JLabel jLabel_Nombre_Apellido;
+    private javax.swing.JLabel jLabel_SaludoProfesor;
     // End of variables declaration//GEN-END:variables
 }
