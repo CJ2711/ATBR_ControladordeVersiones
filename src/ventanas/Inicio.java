@@ -10,6 +10,10 @@
  */
 package ventanas;
 
+import Clases.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 public class Inicio extends javax.swing.JFrame {
@@ -108,24 +112,45 @@ public class Inicio extends javax.swing.JFrame {
         username = in_Usuario.getText().trim();
         password = jPasswordField1.getText().trim();
 
-        if (((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
-            JOptionPane.showMessageDialog(null, "'Usuario' y 'Contraseña' deben tener información");
-        } else{
-        
-        if(("01234567".equals(username) || "1950000".equals(username))&& ("0000".equals(password))) {
-                   
-        if ("01234567".equals(username)) {
-            dispose();
-            new Profesores_Area_Edicion_Notas().setVisible(true);
-        }
+        if (!((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
+            try {
+                //Conexion BD
+                Connection cn = Conexion.conectar();
+                /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que 
+                * tiene el usuario y su contraseña.
+                 */
+                PreparedStatement pst = cn.prepareStatement(
+                        "SELECT rol FROM `Usuario` WHERE idUsuario ='" + username
+                        + "' and password ='" + password + "'");
 
-        if ("1950000".equals(username)){
-            dispose();
-            new Estudiantes_Area().setVisible(true);
-        }
-        }else{
-            JOptionPane.showMessageDialog(null, "Datos invalidos");
-        }
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rs = pst.executeQuery();
+
+                //Datos validos:
+                if (rs.next()) {
+
+                    String rol = rs.getNString("rol"); //Guarda resultado del rol.
+
+                    if (rol.equals("P")) { //Si el rol es 'P' Profesor
+                        dispose();
+                        new Profesores_Area_Edicion_Notas().setVisible(true);
+                    } else if (rol.equals("E")) {         //Si el rol es 'E' Estudiante
+                        dispose();
+                        new Estudiantes_Area().setVisible(true);
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Datos de Acceso incorrectos", "Validacion", 1);
+                    in_Usuario.setText("");
+                    jPasswordField1.setText("");
+                }
+
+            } catch (Exception e) {
+                System.err.println("Error en el boton Ingresar" + e);
+                JOptionPane.showMessageDialog(null, "...Inicio de sesión erroneo... Contacte al Administrador", "ERROR", 2);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos", "Datos Invalidos", 1);
         }
     }//GEN-LAST:event_Button_IngresarActionPerformed
 
