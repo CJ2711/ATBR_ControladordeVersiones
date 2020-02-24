@@ -10,7 +10,7 @@
  */
 package ventanas;
 
-import Clases.Conexion;
+import BD.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,4 +1,4 @@
-package Clases;
+package BD;
 
 /***
  * @author Christian Barbosa (CJ1)
