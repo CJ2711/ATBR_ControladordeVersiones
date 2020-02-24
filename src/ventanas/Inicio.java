@@ -145,7 +145,7 @@ public class Inicio extends javax.swing.JFrame {
                     jPasswordField1.setText("");
                 }
 
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 System.err.println("Error en el boton Ingresar" + e);
                 JOptionPane.showMessageDialog(null, "...Inicio de sesión erroneo... Contacte al Administrador", "ERROR", 2);
             }
