@@ -11,6 +11,7 @@
 package ventanas;
 
 import BD.Conexion;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,6 +66,11 @@ public class Inicio extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
+            }
+        });
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 140, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -105,9 +111,10 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_in_UsuarioActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+    //Acciones del botón Ingresar (SQL)
     private void Button_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IngresarActionPerformed
         username = in_Usuario.getText().trim();
         password = jPasswordField1.getText().trim();
@@ -153,6 +160,55 @@ public class Inicio extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos", "Datos Invalidos", 1);
         }
     }//GEN-LAST:event_Button_IngresarActionPerformed
+
+    //Para la acción la tecla enter. Mismo Filtro que arriba. (SQL)
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+             username = in_Usuario.getText().trim();
+        password = jPasswordField1.getText().trim();
+
+        if (!((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
+            try {
+                //Conexion BD
+                Connection cn = Conexion.conectar();
+                /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que 
+                * tiene el usuario y su contraseña.
+                 */
+                PreparedStatement pst = cn.prepareStatement(
+                        "SELECT rol FROM `Usuario` WHERE idUsuario ='" + username
+                        + "' and password ='" + password + "'");
+
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rs = pst.executeQuery();
+
+                //Datos validos:
+                if (rs.next()) {
+
+                    String rol = rs.getNString("rol"); //Guarda resultado del rol.
+
+                    if (rol.equals("P")) { //Si el rol es 'P' Profesor
+                        dispose();
+                        new Profesores_Area_Edicion_Notas().setVisible(true);
+                    } else if (rol.equals("E")) {         //Si el rol es 'E' Estudiante
+                        dispose();
+                        new Estudiantes_Area().setVisible(true);
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Datos de Acceso incorrectos", "Validacion", 1);
+                    in_Usuario.setText("");
+                    jPasswordField1.setText("");
+                }
+
+            } catch (Exception e) {
+                System.err.println("Error en el boton Ingresar" + e);
+                JOptionPane.showMessageDialog(null, "...Inicio de sesión erroneo... Contacte al Administrador", "ERROR", 2);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos", "Datos Invalidos", 1);
+        }
+        }
+    }//GEN-LAST:event_jPasswordField1KeyPressed
 
     /**
      * @param args the command line arguments
