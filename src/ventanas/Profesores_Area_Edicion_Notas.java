@@ -15,10 +15,10 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         setResizable(false);
     }
 
+    //Traer nombre y apellido de la BD relacionados al usuario que ingresa:
     
-    public String jLabel_Nombre(){
-        return "Hola";
-    }
+    
+    
     
     
     /**
@@ -30,20 +30,27 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel_Nombre_Apellido = new javax.swing.JLabel();
         jLabel_SaludoProfesor = new javax.swing.JLabel();
+        jTextField1_nombre_apellido = new javax.swing.JTextField();
         jLabel_FondoProfesores = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_Nombre_Apellido.setFont(new java.awt.Font("Segoe Print", 1, 22)); // NOI18N
-        getContentPane().add(jLabel_Nombre_Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 350, 40));
-
         jLabel_SaludoProfesor.setFont(new java.awt.Font("Segoe Print", 1, 22)); // NOI18N
         jLabel_SaludoProfesor.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_SaludoProfesor.setText("Bienvenido(a) Profesor(a)");
         getContentPane().add(jLabel_SaludoProfesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 40));
+
+        jTextField1_nombre_apellido.setEditable(false);
+        jTextField1_nombre_apellido.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1_nombre_apellido.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        jTextField1_nombre_apellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_nombre_apellidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1_nombre_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 480, -1));
 
         jLabel_FondoProfesores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel_FondoProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -51,10 +58,14 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1_nombre_apellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_nombre_apellidoActionPerformed
+
+    }//GEN-LAST:event_jTextField1_nombre_apellidoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel_FondoProfesores;
-    private javax.swing.JLabel jLabel_Nombre_Apellido;
     private javax.swing.JLabel jLabel_SaludoProfesor;
+    public static javax.swing.JTextField jTextField1_nombre_apellido;
     // End of variables declaration//GEN-END:variables
 }
