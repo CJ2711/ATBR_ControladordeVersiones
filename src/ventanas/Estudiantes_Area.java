@@ -38,6 +38,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Titulo_Notificaciones = new javax.swing.JLabel();
         Button_Icfes = new javax.swing.JButton();
         Button_Diagnostica = new javax.swing.JButton();
+        jTextField_Nombre_Apellido_E = new javax.swing.JTextField();
         jLabel_FondoEstudiantes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,6 +71,14 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_Diagnostica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(Button_Diagnostica, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 180, 50));
 
+        jTextField_Nombre_Apellido_E.setEditable(false);
+        jTextField_Nombre_Apellido_E.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_Nombre_Apellido_EActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField_Nombre_Apellido_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 200, 30));
+
         jLabel_FondoEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
         getContentPane().add(jLabel_FondoEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -80,6 +89,10 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         dispose();
         new Icfes().setVisible(true);
     }//GEN-LAST:event_Button_IcfesActionPerformed
+
+    private void jTextField_Nombre_Apellido_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Nombre_Apellido_EActionPerformed
+
+    }//GEN-LAST:event_jTextField_Nombre_Apellido_EActionPerformed
     
     /**
      * @param args the command line arguments
@@ -123,5 +136,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Titulo_Notificaciones;
     private javax.swing.JLabel Label_Titulo_Prueba;
     private javax.swing.JLabel jLabel_FondoEstudiantes;
+    public static javax.swing.JTextField jTextField_Nombre_Apellido_E;
     // End of variables declaration//GEN-END:variables
 }
