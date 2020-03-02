@@ -11,6 +11,7 @@
 package ventanas;
 
 import BD.Conexion;
+import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -209,98 +210,87 @@ public class Inicio extends javax.swing.JFrame {
 
     //Para la acción la tecla enter. Mismo Filtro que arriba. (SQL)
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
-
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            username = in_Usuario.getText().trim();
-            password = jPasswordField1.getText().trim();
-            if (!((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
-                try {
-                    //Conexion BD
-                    Connection cn = Conexion.conectar();
-                    /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que 
+                    username = in_Usuario.getText().trim();
+        password = jPasswordField1.getText().trim();
+        if (!((username == null) || (username.trim().equals("")) || (password == null) || (password.trim().equals("")))) {
+            try {
+                //Conexion BD
+                Connection cn = Conexion.conectar();
+                /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que 
                 * tiene el usuario y su contraseña.
-                     */
-                    PreparedStatement pst = cn.prepareStatement(
-                            "SELECT rol FROM `Usuario` WHERE idUsuario ='" + username
-                            + "' and password ='" + password + "'");
+                 */
+                PreparedStatement pst = cn.prepareStatement(
+                        "SELECT rol FROM `Usuario` WHERE idUsuario ='" + username
+                        + "' and password ='" + password + "'");
 
-                    //Ejecutar la Sentencia SQL con el Objeto ResultSet:
-                    ResultSet rs = pst.executeQuery();
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rs = pst.executeQuery();
 
-                    //Datos validos:
-                    if (rs.next()) {
-                        String rol = rs.getNString("rol"); //Guarda resultado del rol.
-
-                        if (rol.equals("P")) { //Si el rol es 'P' Profesor
-                            dispose();
-                            new Profesores_Area_Edicion_Notas().setVisible(true);
-                            try {
-                                //Conexion BD
-                                Connection cnn = Conexion.conectar();
-                                /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
-                                 */
-                                PreparedStatement ps = cnn.prepareStatement(
-                                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
-                                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
-                                ResultSet rss = ps.executeQuery();
-                                if (rss.next()) {
-                                    String nombre = rss.getNString("nombre");
-                                    String apellido = rss.getNString("apellido");
-                                    String nombreApeP = nombre + apellido;
-                                    Profesores_Area_Edicion_Notas.jTextField1_nombre_apellido.setText(nombreApeP);
-                                } else {
-                                    JOptionPane.showMessageDialog(null, "Datos de Acceso incorrectos", "Validacion", 1);
-                                    in_Usuario.setText("");
-                                    jPasswordField1.setText("");
-                                }
-
-                            } catch (SQLException ex) {
-                                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+                //Datos validos:
+                if (rs.next()) {
+                    String rol = rs.getNString("rol"); //Guarda resultado del rol.
+                    if (rol.equals("P")) { //Si el rol es 'P' Profesor
+                        dispose();
+                        new Profesores_Area_Edicion_Notas().setVisible(true);
+                        try {
+                            //Conexion BD
+                            Connection cnn = Conexion.conectar();
+                            /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
+                             */
+                            PreparedStatement ps = cnn.prepareStatement(
+                                    "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                            //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                            ResultSet rss = ps.executeQuery();
+                            if (rss.next()) {
+                                String nombre = rss.getNString("nombre");
+                                String apellido = rss.getNString("apellido");
+                                String nombreApeP = nombre + apellido;
+                                Profesores_Area_Edicion_Notas.jTextField1_nombre_apellido.setText(nombreApeP);
                             }
-                        } else {
-
-                            if (rol.equals("E")) {         //Si el rol es 'E' Estudiante
-                                dispose();
-                                new Estudiantes_Area().setVisible(true);
-                                try {
-                                    //Conexion BD
-                                    Connection cnnn = Conexion.conectar();
-                                    /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
-                                     */
-                                    PreparedStatement pss = cnnn.prepareStatement(
-                                            "SELECT nombre, apellido FROM `m_estudiante` WHERE idEstudiante='" + username + "'");
-                                    //Ejecutar la Sentencia SQL con el Objeto ResultSet:
-                                    ResultSet rsss = pss.executeQuery();
-                                    if (rsss.next()) {
-                                        String nombre = rsss.getNString("nombre");
-                                        String apellido = rsss.getNString("apellido");
-                                        String nombreApeE = nombre + " " + apellido;
-                                        Estudiantes_Area.jTextField_Nombre_Apellido_E.setText(nombreApeE);
-                                    } else {
-                                        JOptionPane.showMessageDialog(null, "Datos de Acceso incorrectos", "Validacion", 1);
-                                        in_Usuario.setText("");
-                                        jPasswordField1.setText("");
-                                    }
-
-                                } catch (SQLException ex) {
-                                    Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-                                }
-
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Datos de Acceso incorrectos", "Validacion", 1);
-                                in_Usuario.setText("");
-                                jPasswordField1.setText("");
-                            }
-
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
-                } catch (Exception e) {
-                    System.err.println("Error en el Campo Password" + e);
-                    JOptionPane.showMessageDialog(null, "...Inicio de sesión erroneo... Contacte al Administrador", "ERROR", 2);
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos", "Datos Invalidos", 1);
+
+
+                    if (rol.equals("E")) {         //Si el rol es 'E' Estudiante
+                        dispose();
+                        new Estudiantes_Area().setVisible(true);
+                        try {
+                            //Conexion BD
+                            Connection cnnn = Conexion.conectar();
+                            /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
+                             */
+                            PreparedStatement pss = cnnn.prepareStatement(
+                                    "SELECT nombre, apellido FROM `m_estudiante` WHERE idEstudiante='" + username + "'");
+                            //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                            ResultSet rsss = pss.executeQuery();
+                            if (rsss.next()) {
+                                String nombre = rsss.getNString("nombre");
+                                String apellido = rsss.getNString("apellido");
+                                String nombreApeE = nombre + " " + apellido;
+                                Estudiantes_Area.jTextField_Nombre_Apellido_E.setText(nombreApeE);
+                            }
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                    }
+
+                } else {
+                        JOptionPane.showMessageDialog(null, "Datos de Acceso incorrectos", "Validacion", 1);
+                        System.out.println("error");
+                        in_Usuario.setText("");
+                        jPasswordField1.setText("");
+                    }
+            } catch (HeadlessException | SQLException e) {
+                System.err.println("Error de BD, (boton)" + e);
+                JOptionPane.showMessageDialog(null, "...Inicio de sesión erroneo... Contacte al Administrador", "ERROR", 2);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos", "Datos Invalidos", 1);
+        }
         }
     }//GEN-LAST:event_jPasswordField1KeyPressed
 
