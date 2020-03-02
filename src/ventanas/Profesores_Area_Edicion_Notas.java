@@ -132,6 +132,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel_FondoProfesores = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -490,6 +491,17 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 540, 290));
 
+        jButton3.setBackground(new java.awt.Color(0, 153, 51));
+        jButton3.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Editar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, 100, 40));
+
         jLabel_FondoProfesores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel_FondoProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -618,6 +630,10 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         dispose();
         new Inicio().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 //fin no tocar----------------------------------------------------------------------------------------------
 
 
@@ -625,6 +641,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
