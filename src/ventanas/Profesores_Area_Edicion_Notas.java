@@ -1,6 +1,14 @@
 package ventanas;
 
+import BD.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.DropMode;
+import javax.swing.JOptionPane;
+import static ventanas.Inicio.username;
+import ventanas.newpackagePROFESORES.Edicion;
 
 /**
  * @author Christian Barbosa (CJ1)
@@ -633,9 +641,311 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
+        //Calculo I
+        if (jList1.getSelectedIndex() == 0 && (!username.equals("35791357"))) {
+            JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
+        }
+
+        if (jList1.getSelectedIndex() == 0 && username.equals("35791357")) {
+            dispose();
+            new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
+//======================================================================================================================
+//Para sacar el nombre y apellido del profesor actual
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String apellido = rss.getNString("apellido");
+                    String nombreApeP = nombre + apellido;
+                    ventanas.newpackagePROFESORES.Edicion.jTextField1_nombre_apellido.setText(nombreApeP);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+//Para sacar el nombre de la materia seleccionada
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre FROM `m_materia` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String nombreMateria = nombre;
+                    ventanas.newpackagePROFESORES.Edicion.nombreMateria.setText(nombreMateria);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+        }
+
+        //Ingles I
+        if (jList1.getSelectedIndex() == 1 && (!username.equals("32842001"))) {
+            JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
+        }
+        if (jList1.getSelectedIndex() == 1 && username.equals("32842001")) {
+            dispose();
+            new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
+
+//======================================================================================================================
+//Para sacar el nombre y apellido del profesor actual
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String apellido = rss.getNString("apellido");
+                    String nombreApeP = nombre + apellido;
+                    ventanas.newpackagePROFESORES.Edicion.jTextField1_nombre_apellido.setText(nombreApeP);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+//Para sacar el nombre de la materia seleccionada
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre FROM `m_materia` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String nombreMateria = nombre;
+                    ventanas.newpackagePROFESORES.Edicion.nombreMateria.setText(nombreMateria);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================            
+        }
+
+        //Español I
+        if (jList1.getSelectedIndex() == 2 && (!username.equals("44467912"))) {
+            JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
+        }
+        if (jList1.getSelectedIndex() == 2 && username.equals("44467912")) {
+            dispose();
+            new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
+//======================================================================================================================
+//Para sacar el nombre y apellido del profesor actual
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String apellido = rss.getNString("apellido");
+                    String nombreApeP = nombre + apellido;
+                    ventanas.newpackagePROFESORES.Edicion.jTextField1_nombre_apellido.setText(nombreApeP);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+//Para sacar el nombre de la materia seleccionada
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre FROM `m_materia` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String nombreMateria = nombre;
+                    ventanas.newpackagePROFESORES.Edicion.nombreMateria.setText(nombreMateria);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================            
+        }
+
+        //Deporte Formativo
+        if (jList1.getSelectedIndex() == 3 && (!username.equals("46813579"))) {
+            JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
+        }
+        if (jList1.getSelectedIndex() == 3 && username.equals("46813579")) {
+            dispose();
+            new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
+//======================================================================================================================
+//Para sacar el nombre y apellido del profesor actual
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String apellido = rss.getNString("apellido");
+                    String nombreApeP = nombre + apellido;
+                    ventanas.newpackagePROFESORES.Edicion.jTextField1_nombre_apellido.setText(nombreApeP);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+//Para sacar el nombre de la materia seleccionada
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre FROM `m_materia` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String nombreMateria = nombre;
+                    ventanas.newpackagePROFESORES.Edicion.nombreMateria.setText(nombreMateria);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================            
+        }
+
+        //Fundamentos de Programación
+        if (jList1.getSelectedIndex() == 4 && (!username.equals("26280496"))) {
+            JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
+        }
+        if (jList1.getSelectedIndex() == 4 && username.equals("26280496")) {
+            dispose();
+            new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
+//======================================================================================================================
+//Para sacar el nombre y apellido del profesor actual
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String apellido = rss.getNString("apellido");
+                    String nombreApeP = nombre + apellido;
+                    ventanas.newpackagePROFESORES.Edicion.jTextField1_nombre_apellido.setText(nombreApeP);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+//Para sacar el nombre de la materia seleccionada
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre FROM `m_materia` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String nombreMateria = nombre;
+                    ventanas.newpackagePROFESORES.Edicion.nombreMateria.setText(nombreMateria);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================            
+        }
+        //Introduccion a la Tecnología de información
+        if (jList1.getSelectedIndex() == 5 && (!username.equals("26280496"))) {
+            JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
+        }        
+        if (jList1.getSelectedIndex() == 5 && username.equals("26280496")) {
+            dispose();
+            new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
+//======================================================================================================================
+//Para sacar el nombre y apellido del profesor actual
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String apellido = rss.getNString("apellido");
+                    String nombreApeP = nombre + apellido;
+                    ventanas.newpackagePROFESORES.Edicion.jTextField1_nombre_apellido.setText(nombreApeP);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+//Para sacar el nombre de la materia seleccionada
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre FROM `m_materia` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String nombreMateria = nombre;
+                    ventanas.newpackagePROFESORES.Edicion.nombreMateria.setText(nombreMateria);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================            
+        }
+
+        //Teoría General de Sistemas
+        if (jList1.getSelectedIndex() == 6 && (!username.equals("22639751"))) {
+            JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
+        }  
+        if (jList1.getSelectedIndex() == 6 && username.equals("22639751")) {
+            dispose();
+            new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
+//======================================================================================================================
+//Para sacar el nombre y apellido del profesor actual
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre, apellido FROM `m_profesor` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String apellido = rss.getNString("apellido");
+                    String nombreApeP = nombre + apellido;
+                    ventanas.newpackagePROFESORES.Edicion.jTextField1_nombre_apellido.setText(nombreApeP);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================
+//Para sacar el nombre de la materia seleccionada
+            try {
+                Connection cn = Conexion.conectar();
+                PreparedStatement ps = cn.prepareStatement(
+                        "SELECT nombre FROM `m_materia` WHERE idProfesor='" + username + "'");
+                //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+                ResultSet rss = ps.executeQuery();
+                if (rss.next()) {
+                    String nombre = rss.getNString("nombre");
+                    String nombreMateria = nombre;
+                    ventanas.newpackagePROFESORES.Edicion.nombreMateria.setText(nombreMateria);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error de BD" + e);
+            }
+//======================================================================================================================            
+        }
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
 //fin no tocar----------------------------------------------------------------------------------------------
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.persistence.EntityManager entityManager;
