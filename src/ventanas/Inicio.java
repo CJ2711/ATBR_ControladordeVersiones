@@ -277,7 +277,7 @@ public class Inicio extends javax.swing.JFrame {
                         jPasswordField1.setText("");
                     }
                 } catch (HeadlessException | SQLException e) {
-                    System.err.println("Error de BD, (boton)" + e);
+                    System.err.println("Error de BD, (password)" + e);
                     JOptionPane.showMessageDialog(null, "...Inicio de sesión erroneo... Contacte al Administrador", "ERROR", 2);
                 }
             } else {

@@ -3,6 +3,7 @@
   <persistence-unit name="atbr_proyecto?zeroDateTimeBehavior=convertToNullPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>BD.MMateria</class>
+    <class>BD.MEstudiante</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/atbr_proyecto?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

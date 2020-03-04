@@ -29,8 +29,13 @@ public class Edicion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("atbr_proyecto?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        mEstudianteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
+        mEstudianteList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : mEstudianteQuery.getResultList();
         nombreMateria = new javax.swing.JTextField();
         jTextField1_nombre_apellido = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable_Info_Estudiante = new javax.swing.JTable();
         jLabel1_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +61,21 @@ public class Edicion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1_nombre_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 250, 30));
+
+        jTable_Info_Estudiante.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID Estudiante", "Nombre", "Apellido"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable_Info_Estudiante);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 110));
 
         jLabel1_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel1_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -107,8 +127,13 @@ public class Edicion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.persistence.EntityManager entityManager;
     private javax.swing.JLabel jLabel1_Fondo;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable_Info_Estudiante;
     public static javax.swing.JTextField jTextField1_nombre_apellido;
+    private java.util.List<BD.MEstudiante> mEstudianteList;
+    private javax.persistence.Query mEstudianteQuery;
     public static javax.swing.JTextField nombreMateria;
     // End of variables declaration//GEN-END:variables
 }
