@@ -140,7 +140,7 @@ public class MEstudiante implements Serializable {
 
     @Override
     public String toString() {
-        return "ventanas.newpackagePROFESORES.MEstudiante[ idEstudiante=" + idEstudiante + " ]";
+        return "[" + idEstudiante + " ] - " + nombre+" "+apellido;
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

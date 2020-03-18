@@ -29,14 +29,22 @@ public class Edicion extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("atbr_proyecto?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         mEstudianteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
         mEstudianteList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : mEstudianteQuery.getResultList();
+        mEstudianteQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
+        mEstudianteQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
+        mEstudianteList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : mEstudianteQuery2.getResultList();
         nombreMateria = new javax.swing.JTextField();
         jTextField1_nombre_apellido = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable_Info_Estudiante = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         jLabel1_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,23 +71,50 @@ public class Edicion extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1_nombre_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 250, 30));
 
-        jTable_Info_Estudiante.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel5.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Estudiantes Matriculados:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 330, 30));
+
+        org.jdesktop.swingbinding.JListBinding jListBinding = org.jdesktop.swingbinding.SwingBindings.createJListBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mEstudianteList1, jList1, "Lista_Estudiantes");
+        jListBinding.setSourceNullValue(mEstudianteList);
+        bindingGroup.addBinding(jListBinding);
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mEstudianteList, org.jdesktop.beansbinding.ObjectProperty.create(), jList1, org.jdesktop.beansbinding.BeanProperty.create("selectedElement"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mEstudianteList1, org.jdesktop.beansbinding.ObjectProperty.create(), jList1, org.jdesktop.beansbinding.BeanProperty.create("selectedElements"));
+        bindingGroup.addBinding(binding);
+
+        jScrollPane1.setViewportView(jList1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 100));
+
+        jButton1.setText("Ver/ Editar notas del estudiante");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID Estudiante", "Nombre", "Apellido"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable_Info_Estudiante);
+        jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 110));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 110));
 
         jLabel1_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel1_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -92,15 +127,29 @@ public class Edicion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1_nombre_apellidoActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (jList1.getSelectedIndex() == 0) {
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.persistence.EntityManager entityManager;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1_Fondo;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable_Info_Estudiante;
+    private javax.swing.JTable jTable1;
     public static javax.swing.JTextField jTextField1_nombre_apellido;
     private java.util.List<BD.MEstudiante> mEstudianteList;
+    private java.util.List<BD.MEstudiante> mEstudianteList1;
     private javax.persistence.Query mEstudianteQuery;
+    private javax.persistence.Query mEstudianteQuery1;
+    private javax.persistence.Query mEstudianteQuery2;
     public static javax.swing.JTextField nombreMateria;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
