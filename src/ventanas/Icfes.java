@@ -19,6 +19,7 @@ public class Icfes extends javax.swing.JFrame {
         setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante]");
         this.setLocationRelativeTo(null);
         setResizable(false);
+        Panel_Options.setVisible(false); //El panel de las opciones no está visible
     }
 
     /**
@@ -37,6 +38,10 @@ public class Icfes extends javax.swing.JFrame {
         Label_Icfes_CN = new javax.swing.JLabel();
         Label_Icfes_SC = new javax.swing.JLabel();
         Label_Icfes_Ingles = new javax.swing.JLabel();
+        Button_Menu_Opc = new javax.swing.JButton();
+        Panel_Options = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel_FondoIcfes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,6 +98,32 @@ public class Icfes extends javax.swing.JFrame {
         Label_Icfes_Ingles.setOpaque(true);
         getContentPane().add(Label_Icfes_Ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 100, 50));
 
+        Button_Menu_Opc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/DesplegableOpt.png"))); // NOI18N
+        Button_Menu_Opc.setContentAreaFilled(false);
+        Button_Menu_Opc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_Menu_OpcMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Button_Menu_Opc, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 40, 30, -1));
+
+        jButton2.setFont(new java.awt.Font("Segoe Print", 3, 10)); // NOI18N
+        jButton2.setText("OPCIONES");
+        jButton2.setOpaque(false);
+        Panel_Options.add(jButton2);
+
+        jButton1.setFont(new java.awt.Font("Segoe Print", 3, 10)); // NOI18N
+        jButton1.setText("CERRAR SESIÓN");
+        jButton1.setOpaque(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Panel_Options.add(jButton1);
+
+        getContentPane().add(Panel_Options, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 130, 80));
+
         jLabel_FondoIcfes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
         getContentPane().add(jLabel_FondoIcfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -100,12 +131,22 @@ public class Icfes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button_Return_InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Return_InicioActionPerformed
-        dispose();
-        new Estudiantes_Area().setVisible(true);
+        dispose(); //Desaparecer ventana 'Icfes'
+        new Estudiantes_Area().setVisible(true); //Mostrar en pantalla ventana 'Inicio'
     }//GEN-LAST:event_Button_Return_InicioActionPerformed
+
+    private void Button_Menu_OpcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Menu_OpcMouseClicked
+        Panel_Options.setVisible(true); //Mostrar en pantalla el panel de las opciones
+    }//GEN-LAST:event_Button_Menu_OpcMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose(); //Desaparecer ventana 'Icfes'
+        new Inicio().setVisible(true); //Mostrar en pantalla ventana 'Inicio'
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Button_Menu_Opc;
     private javax.swing.JButton Button_Return_Inicio;
     private javax.swing.JLabel Label_Icfes_CN;
     private javax.swing.JLabel Label_Icfes_Ingles;
@@ -113,6 +154,9 @@ public class Icfes extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Icfes_Math;
     private javax.swing.JLabel Label_Icfes_SC;
     private javax.swing.JLabel Label_Titulo_Icfes;
+    private javax.swing.JPanel Panel_Options;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel_FondoIcfes;
     // End of variables declaration//GEN-END:variables
 }

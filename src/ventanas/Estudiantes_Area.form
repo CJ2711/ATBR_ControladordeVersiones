@@ -117,15 +117,18 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="Button_Menu_Opc">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagenes/DesplegableOpt.png"/>
         </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_Menu_OpcMouseClicked"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -146,12 +149,14 @@
       </Constraints>
     </Component>
     <Container class="javax.swing.JPanel" name="Panel_Options">
-      <Events>
-        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Panel_OptionsMouseExited"/>
-      </Events>
+      <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="860" y="70" width="130" height="70"/>
+          <AbsoluteConstraints x="860" y="70" width="130" height="80"/>
         </Constraint>
       </Constraints>
 
@@ -163,6 +168,9 @@
               <Font name="Segoe Print" size="10" style="3"/>
             </Property>
             <Property name="text" type="java.lang.String" value="OPCIONES"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor de Mano"/>
+            </Property>
             <Property name="opaque" type="boolean" value="false"/>
           </Properties>
         </Component>
@@ -172,8 +180,14 @@
               <Font name="Segoe Print" size="10" style="3"/>
             </Property>
             <Property name="text" type="java.lang.String" value="CERRAR SESI&#xd3;N"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor de Mano"/>
+            </Property>
             <Property name="opaque" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_Cerrar_SesionActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -183,6 +197,9 @@
           <Font name="Arial" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="T.G.S"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Constraints>
@@ -197,6 +214,9 @@
           <Font name="Arial" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="F.D.P"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Constraints>
@@ -211,6 +231,9 @@
           <Font name="Arial" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="INGL&#xc9;S I"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Constraints>
@@ -225,6 +248,9 @@
           <Font name="Arial" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="I.T.I"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Constraints>
@@ -239,6 +265,9 @@
           <Font name="Arial" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="C&#xc1;LCULO I"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -256,6 +285,9 @@
           <Font name="Arial" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="DEP. FORMA"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Constraints>
@@ -270,6 +302,9 @@
           <Font name="Arial" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ESPA&#xd1;OL"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Constraints>
