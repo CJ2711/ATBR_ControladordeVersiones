@@ -20,7 +20,9 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante]");
         this.setLocationRelativeTo(null);
         setResizable(false);
-        Panel_Options.setVisible(false); //El panel de las opciones no está visible
+
+        jScrollPane1.setVisible(false);
+        jList1.setVisible(false);
     }
 
     /**
@@ -40,9 +42,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         jTextField_Nombre_Apellido_E = new javax.swing.JTextField();
         Button_Menu_Opc = new javax.swing.JButton();
         Label_Foto_Perfil = new javax.swing.JLabel();
-        Panel_Options = new javax.swing.JPanel();
-        Button_Opciones = new javax.swing.JButton();
-        Button_Cerrar_Sesion = new javax.swing.JButton();
         Button_TGS = new javax.swing.JButton();
         Button_FDP = new javax.swing.JButton();
         Button_Ingles = new javax.swing.JButton();
@@ -50,6 +49,8 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_Calculo = new javax.swing.JButton();
         Button_DeporteFormativo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jLabel_FondoEstudiantes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -105,27 +106,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Foto_Perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoPerfil.png"))); // NOI18N
         getContentPane().add(Label_Foto_Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
 
-        Panel_Options.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        Button_Opciones.setFont(new java.awt.Font("Segoe Print", 3, 10)); // NOI18N
-        Button_Opciones.setText("OPCIONES");
-        Button_Opciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Button_Opciones.setOpaque(false);
-        Panel_Options.add(Button_Opciones);
-
-        Button_Cerrar_Sesion.setFont(new java.awt.Font("Segoe Print", 3, 10)); // NOI18N
-        Button_Cerrar_Sesion.setText("CERRAR SESIÓN");
-        Button_Cerrar_Sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Button_Cerrar_Sesion.setOpaque(false);
-        Button_Cerrar_Sesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_Cerrar_SesionActionPerformed(evt);
-            }
-        });
-        Panel_Options.add(Button_Cerrar_Sesion);
-
-        getContentPane().add(Panel_Options, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 130, 80));
-
         Button_TGS.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_TGS.setText("T.G.S");
         Button_TGS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -173,11 +153,35 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         jButton2.setOpaque(false);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 160, -1));
 
+        jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jList1.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Opciones", "Cerrar Sesión" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList1.setAutoscrolls(false);
+        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jList1.setValueIsAdjusting(true);
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jList1MouseExited(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
+
         jLabel_FondoEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
         getContentPane().add(jLabel_FondoEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     private void Button_IcfesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IcfesActionPerformed
         dispose(); //Desaparecer ventana 'Estudiantes_Area'
@@ -189,8 +193,8 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_Nombre_Apellido_EActionPerformed
 
     private void Button_Menu_OpcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Menu_OpcMouseClicked
-        Panel_Options.setVisible(true); //Mostrar en pantalla el panel de las opciones
-
+        jScrollPane1.setVisible(true);
+        jList1.setVisible(true);
     }//GEN-LAST:event_Button_Menu_OpcMouseClicked
 
     private void Button_CalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_CalculoActionPerformed
@@ -198,15 +202,21 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         new Calculo().setVisible(true); //Mostrar en pantalla ventana 'Calculo'
     }//GEN-LAST:event_Button_CalculoActionPerformed
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        if (jList1.getSelectedIndex() == 1) {
+            dispose();
+            new ventanas.Inicio().setVisible(true);
+        }
+    }//GEN-LAST:event_jList1MouseClicked
 
-    private void Button_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Cerrar_SesionActionPerformed
-        dispose(); //Desaparecer ventana 'Estudiantes_Area'
-        new Inicio().setVisible(true); //Mostrar en pantalla ventana 'Inicio'
-    }//GEN-LAST:event_Button_Cerrar_SesionActionPerformed
+    private void jList1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseExited
+        jScrollPane1.setVisible(false);
+        jList1.setVisible(false);
+    }//GEN-LAST:event_jList1MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Calculo;
-    private javax.swing.JButton Button_Cerrar_Sesion;
     private javax.swing.JButton Button_DeporteFormativo;
     private javax.swing.JButton Button_Diagnostica;
     private javax.swing.JButton Button_FDP;
@@ -214,15 +224,15 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private javax.swing.JButton Button_Icfes;
     private javax.swing.JButton Button_Ingles;
     private javax.swing.JButton Button_Menu_Opc;
-    private javax.swing.JButton Button_Opciones;
     private javax.swing.JButton Button_TGS;
     private javax.swing.JLabel Label_Foto_Perfil;
     private javax.swing.JLabel Label_Titulo_Materias;
     private javax.swing.JLabel Label_Titulo_Notificaciones;
     private javax.swing.JLabel Label_Titulo_Prueba;
-    private javax.swing.JPanel Panel_Options;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel_FondoEstudiantes;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTextField jTextField_Nombre_Apellido_E;
     // End of variables declaration//GEN-END:variables
 }
