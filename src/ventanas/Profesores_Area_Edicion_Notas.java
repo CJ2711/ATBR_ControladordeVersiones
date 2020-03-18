@@ -37,7 +37,9 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         jPanel5.setVisible(false);
         jPanel6.setVisible(false);
         jPanel7.setVisible(false);
-        Panel_Options.setVisible(false); //El panel de las opciones no está visible
+
+        jScrollPane2.setVisible(false);
+        jList2.setVisible(false);
     }
 
     //Traer nombre y apellido de la BD relacionados al usuario que ingresa:
@@ -147,9 +149,8 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         jLabel79 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         Button_Menu_Opc = new javax.swing.JButton();
-        Panel_Options = new javax.swing.JPanel();
-        Button_Opciones = new javax.swing.JButton();
-        Button_Cerrar_Sesión = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
         jLabel_FondoProfesores = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -511,8 +512,9 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, 100, 40));
 
-        Button_Menu_Opc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/DesplegableOpt.png"))); // NOI18N
+        Button_Menu_Opc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/DesplegableBlanco.png"))); // NOI18N
         Button_Menu_Opc.setContentAreaFilled(false);
+        Button_Menu_Opc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Menu_Opc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_Menu_OpcMouseClicked(evt);
@@ -520,22 +522,25 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         });
         getContentPane().add(Button_Menu_Opc, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 40, 30, -1));
 
-        Button_Opciones.setFont(new java.awt.Font("Segoe Print", 3, 10)); // NOI18N
-        Button_Opciones.setText("OPCIONES");
-        Button_Opciones.setOpaque(false);
-        Panel_Options.add(Button_Opciones);
-
-        Button_Cerrar_Sesión.setFont(new java.awt.Font("Segoe Print", 3, 10)); // NOI18N
-        Button_Cerrar_Sesión.setText("CERRAR SESIÓN");
-        Button_Cerrar_Sesión.setOpaque(false);
-        Button_Cerrar_Sesión.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_Cerrar_SesiónActionPerformed(evt);
+        jList2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jList2.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Opciones", "Cerrar Sesión" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList2.setAutoscrolls(false);
+        jList2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jList2.setValueIsAdjusting(true);
+        jList2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList2MouseClicked(evt);
             }
         });
-        Panel_Options.add(Button_Cerrar_Sesión);
+        jScrollPane2.setViewportView(jList2);
 
-        getContentPane().add(Panel_Options, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 130, 80));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
 
         jLabel_FondoProfesores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel_FondoProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -574,7 +579,6 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
 
-        
         //Calculo I
         if (jList1.getSelectedIndex() == 0) {
             jPanel1.setVisible(true);
@@ -661,11 +665,6 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jList1MouseClicked
-
-    private void Button_Cerrar_SesiónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Cerrar_SesiónActionPerformed
-        dispose();
-        new Inicio().setVisible(true);
-    }//GEN-LAST:event_Button_Cerrar_SesiónActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
@@ -975,15 +974,20 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void Button_Menu_OpcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Menu_OpcMouseClicked
-        Panel_Options.setVisible(true); //Mostrar en pantalla el panel de las opciones
+        jScrollPane2.setVisible(true);
+        jList2.setVisible(true);
     }//GEN-LAST:event_Button_Menu_OpcMouseClicked
+
+    private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
+        if (jList2.getSelectedIndex() == 1) {
+            dispose();
+            new ventanas.Inicio().setVisible(true);
+        }
+    }//GEN-LAST:event_jList2MouseClicked
 //fin no tocar----------------------------------------------------------------------------------------------
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_Cerrar_Sesión;
     private javax.swing.JButton Button_Menu_Opc;
-    private javax.swing.JButton Button_Opciones;
-    private javax.swing.JPanel Panel_Options;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
@@ -1069,6 +1073,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_FondoProfesores;
     private javax.swing.JLabel jLabel_SaludoProfesor;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1077,6 +1082,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JTextField jTextField1_nombre_apellido;
     private java.util.List<BD.MMateria> mMateriaList;
     private javax.persistence.Query mMateriaQuery;
