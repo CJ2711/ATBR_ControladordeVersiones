@@ -8,7 +8,6 @@
 *           Leandro Rodriguez Vidal        1958205-2711
 *
  */
-
 package ventanas;
 
 public class Calculo extends javax.swing.JFrame {

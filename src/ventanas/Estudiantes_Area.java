@@ -10,10 +10,6 @@
  */
 package ventanas;
 
-import java.awt.FlowLayout;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-
 public class Estudiantes_Area extends javax.swing.JFrame {
 
     /**
@@ -194,7 +190,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
     private void Button_Menu_OpcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Menu_OpcMouseClicked
         Panel_Options.setVisible(true); //Mostrar en pantalla el panel de las opciones
-        
+
     }//GEN-LAST:event_Button_Menu_OpcMouseClicked
 
     private void Button_CalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_CalculoActionPerformed
@@ -203,12 +199,11 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_CalculoActionPerformed
 
 
-
     private void Button_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Cerrar_SesionActionPerformed
         dispose(); //Desaparecer ventana 'Estudiantes_Area'
         new Inicio().setVisible(true); //Mostrar en pantalla ventana 'Inicio'
     }//GEN-LAST:event_Button_Cerrar_SesionActionPerformed
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Calculo;
     private javax.swing.JButton Button_Cerrar_Sesion;

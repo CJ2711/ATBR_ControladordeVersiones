@@ -1,14 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*   PROYECTO : ALERTAS TEMPRANAS DE BAJO RENDIMIENTO
+*   Institucion: Universidad del Valle Sede Palmira
+*   Autores:
+*           Christian Joel Barbosa Bolaños 1958266-2711
+*           Alejandro Castro Romero        1958283-2711
+*           Keren Rodas Ortíz              1957601-2711
+*           Leandro Rodriguez Vidal        1958205-2711
+*
  */
 package ventanas.newpackagePROFESORES;
 
-/**
- *
- * @author cricr
- */
 public class Edicion extends javax.swing.JFrame {
 
     /**

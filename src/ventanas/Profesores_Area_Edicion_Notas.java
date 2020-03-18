@@ -1,3 +1,13 @@
+/*
+*   PROYECTO : ALERTAS TEMPRANAS DE BAJO RENDIMIENTO
+*   Institucion: Universidad del Valle Sede Palmira
+*   Autores:
+*           Christian Joel Barbosa Bolaños 1958266-2711
+*           Alejandro Castro Romero        1958283-2711
+*           Keren Rodas Ortíz              1957601-2711
+*           Leandro Rodriguez Vidal        1958205-2711
+*
+ */
 package ventanas;
 
 import BD.Conexion;
@@ -5,14 +15,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.DropMode;
 import javax.swing.JOptionPane;
 import static ventanas.Inicio.username;
-import ventanas.newpackagePROFESORES.Edicion;
-
-/**
- * @author Christian Barbosa (CJ1)
- */
 
 public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
 
@@ -883,7 +887,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         //Introduccion a la Tecnología de información
         if (jList1.getSelectedIndex() == 5 && (!username.equals("26280496"))) {
             JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
-        }        
+        }
         if (jList1.getSelectedIndex() == 5 && username.equals("26280496")) {
             dispose();
             new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
@@ -926,7 +930,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         //Teoría General de Sistemas
         if (jList1.getSelectedIndex() == 6 && (!username.equals("22639751"))) {
             JOptionPane.showMessageDialog(null, "Usted no es el profe de esta materia");
-        }  
+        }
         if (jList1.getSelectedIndex() == 6 && username.equals("22639751")) {
             dispose();
             new ventanas.newpackagePROFESORES.Edicion().setVisible(true);
