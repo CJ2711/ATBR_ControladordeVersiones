@@ -574,6 +574,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
 
+        
         //Calculo I
         if (jList1.getSelectedIndex() == 0) {
             jPanel1.setVisible(true);
