@@ -20,6 +20,7 @@ public class Calculo extends javax.swing.JFrame {
         setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante]");
         this.setLocationRelativeTo(null);
         setResizable(false);
+        
     }
 
     /**
