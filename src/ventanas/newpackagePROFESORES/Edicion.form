@@ -66,7 +66,25 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;BD.Notase&gt;"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;ventanas.newpackagePROFESORES.Notase&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.persistence.Query" name="notaseQuery">
+      <Properties>
+        <Property name="query" type="java.lang.String" value="SELECT n FROM Notase n"/>
+        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
+          <ComponentRef name="entityManager"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="java.util.List" name="notaseList">
+      <Properties>
+        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
+          <ComponentRef name="notaseQuery"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;ventanas.newpackagePROFESORES.Notase&gt;"/>
       </AuxValues>
     </Component>
   </NonVisualComponents>
@@ -282,7 +300,7 @@
             <Property name="name" type="java.lang.String" value="Editor" noResource="true"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="elements" source="notaseList3" target="jTable1" targetPath="elements" updateStrategy="0" immediately="true">
+            <BindingProperty name="elements" source="notaseList" target="jTable1" targetPath="elements" updateStrategy="0" immediately="true">
               <Subbinding sourcePath="${idEstudiante}">
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
               </Subbinding>

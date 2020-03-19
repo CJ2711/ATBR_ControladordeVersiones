@@ -38,6 +38,9 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         jPanel6.setVisible(false);
         jPanel7.setVisible(false);
 
+        jLabel74_EstMat.setVisible(false);
+        jLabel75_NUM.setVisible(false);
+
         jScrollPane2.setVisible(false);
         jList2.setVisible(false);
     }
@@ -151,6 +154,8 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         Button_Menu_Opc = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
+        jLabel74_EstMat = new javax.swing.JLabel();
+        jLabel75_NUM = new javax.swing.JLabel();
         jLabel_FondoProfesores = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -542,6 +547,16 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
 
+        jLabel74_EstMat.setFont(new java.awt.Font("Segoe Print", 3, 18)); // NOI18N
+        jLabel74_EstMat.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74_EstMat.setText("Número de Estudiantes Matriculados : ");
+        getContentPane().add(jLabel74_EstMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
+
+        jLabel75_NUM.setFont(new java.awt.Font("Segoe Print", 3, 18)); // NOI18N
+        jLabel75_NUM.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75_NUM.setText("4 ");
+        getContentPane().add(jLabel75_NUM, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 460, -1, -1));
+
         jLabel_FondoProfesores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel_FondoProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -578,7 +593,8 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     }//GEN-LAST:event_jList1ValueChanged
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-
+            jLabel74_EstMat.setVisible(true);
+            jLabel75_NUM.setVisible(true);
         //Calculo I
         if (jList1.getSelectedIndex() == 0) {
             jPanel1.setVisible(true);
@@ -1063,7 +1079,9 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74_EstMat;
     private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel75_NUM;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;

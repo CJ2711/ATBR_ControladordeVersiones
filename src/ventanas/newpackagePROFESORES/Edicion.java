@@ -10,7 +10,12 @@
  */
 package ventanas.newpackagePROFESORES;
 
+import BD.Conexion;
 import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Edicion extends javax.swing.JFrame {
@@ -79,7 +84,7 @@ public class Edicion extends javax.swing.JFrame {
             float vx3y3 = Float.parseFloat(valorX2Y3.toString());
 
             float defX2Y2 = (vx3y1 + vx3y2 + vx3y3) / 3;
-            String salidaxy = String.format("%.2f",defX2Y2);
+            String salidaxy = String.format("%.2f", defX2Y2);
             jTextField3.setText(salidaxy);
         }
 
@@ -93,7 +98,7 @@ public class Edicion extends javax.swing.JFrame {
             float vx4y3 = Float.parseFloat(valorX3Y3.toString());
 
             float defX3Y3 = (vx4y1 + vx4y2 + vx4y3) / 3;
-            String salidaxy = String.format("%.2f",defX3Y3);
+            String salidaxy = String.format("%.2f", defX3Y3);
             jTextField4.setText(salidaxy);
         }
 
@@ -136,6 +141,8 @@ public class Edicion extends javax.swing.JFrame {
         mEstudianteList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : mEstudianteQuery2.getResultList();
         notaseQuery3 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
         notaseList3 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery3.getResultList();
+        notaseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
+        notaseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery.getResultList();
         nombreMateria = new javax.swing.JTextField();
         jTextField1_nombre_apellido = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -237,7 +244,7 @@ public class Edicion extends javax.swing.JFrame {
         jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTable1.setName("Editor"); // NOI18N
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList3, jTable1);
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idEstudiante}"));
         columnBinding.setColumnName("Id Estudiante");
         columnBinding.setColumnClass(Integer.class);
@@ -378,6 +385,57 @@ public class Edicion extends javax.swing.JFrame {
             promedioFila(3);
         }
         mensajeDatoInvalido();
+        try {
+            //Conexion BD
+            Connection cn = Conexion.conectar();
+
+            Object v01 = jTable1.getValueAt(0, 1);
+            Object v02 = jTable1.getValueAt(0, 2);
+            Object v03 = jTable1.getValueAt(0, 3);
+            float fv01 = Float.parseFloat(v01.toString());
+            float fv02 = Float.parseFloat(v02.toString());
+            float fv03 = Float.parseFloat(v03.toString());
+
+            Object v11 = jTable1.getValueAt(1, 1);
+            Object v12 = jTable1.getValueAt(1, 2);
+            Object v13 = jTable1.getValueAt(1, 3);
+            float fv11 = Float.parseFloat(v11.toString());
+            float fv12 = Float.parseFloat(v12.toString());
+            float fv13 = Float.parseFloat(v13.toString());
+
+            Object v21 = jTable1.getValueAt(2, 1);
+            Object v22 = jTable1.getValueAt(2, 2);
+            Object v23 = jTable1.getValueAt(2, 3);
+            float fv21 = Float.parseFloat(v21.toString());
+            float fv22 = Float.parseFloat(v22.toString());
+            float fv23 = Float.parseFloat(v23.toString());
+
+            Object v31 = jTable1.getValueAt(3, 1);
+            Object v32 = jTable1.getValueAt(3, 2);
+            Object v33 = jTable1.getValueAt(3, 3);
+            float fv31 = Float.parseFloat(v31.toString());
+            float fv32 = Float.parseFloat(v32.toString());
+            float fv33 = Float.parseFloat(v33.toString());
+
+            PreparedStatement pst = cn.prepareStatement(""
+                    + " UPDATE notasE SET nota1 = '" + fv01 + "', nota2 = '" + fv02 + "', nota3 = '" + fv03 + "' WHERE notase.idEstudiante = 1957601;");
+            PreparedStatement pst1 = cn.prepareStatement(""
+                    + " UPDATE notasE SET nota1 = '" + fv11 + "', nota2 = '" + fv12 + "', nota3 = '" + fv13 + "' WHERE notase.idEstudiante = 1958205;");
+            PreparedStatement pst2 = cn.prepareStatement(""
+                    + " UPDATE notasE SET nota1 = '" + fv21 + "', nota2 = '" + fv22 + "', nota3 = '" + fv23 + "' WHERE notase.idEstudiante = 1958266;");
+            PreparedStatement pst3 = cn.prepareStatement(""
+                    + " UPDATE notasE SET nota1 = '" + fv31 + "', nota2 = '" + fv32 + "', nota3 = '" + fv33 + "' WHERE notase.idEstudiante = 1958283;");
+            int rs = pst.executeUpdate();
+            rs = 0;
+            rs = pst1.executeUpdate();
+            rs = 0;
+            rs = pst2.executeUpdate();
+            rs = 0;
+            rs = pst3.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("ERROR SQL : " + e);
+        }
+        
     }//GEN-LAST:event_jTable1KeyReleased
 
 
@@ -404,7 +462,9 @@ public class Edicion extends javax.swing.JFrame {
     private javax.persistence.Query mEstudianteQuery1;
     private javax.persistence.Query mEstudianteQuery2;
     public static javax.swing.JTextField nombreMateria;
-    private java.util.List<BD.Notase> notaseList3;
+    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList;
+    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList3;
+    private javax.persistence.Query notaseQuery;
     private javax.persistence.Query notaseQuery3;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
