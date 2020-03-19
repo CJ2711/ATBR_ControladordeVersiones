@@ -377,6 +377,7 @@ public class Edicion extends javax.swing.JFrame {
             promedioFila(2);
             promedioFila(3);
         }
+        
         mensajeDatoInvalido();
     }//GEN-LAST:event_jTable1KeyReleased
 
