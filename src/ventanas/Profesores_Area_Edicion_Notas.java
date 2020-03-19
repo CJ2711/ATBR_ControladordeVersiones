@@ -542,6 +542,9 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList2MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jList2MouseExited(evt);
+            }
         });
         jScrollPane2.setViewportView(jList2);
 
@@ -1000,6 +1003,11 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
             new ventanas.Inicio().setVisible(true);
         }
     }//GEN-LAST:event_jList2MouseClicked
+
+    private void jList2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseExited
+        jScrollPane2.setVisible(false);
+        jList2.setVisible(false);
+    }//GEN-LAST:event_jList2MouseExited
 //fin no tocar----------------------------------------------------------------------------------------------
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
