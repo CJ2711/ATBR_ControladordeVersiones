@@ -10,6 +10,9 @@
  */
 package ventanas.newpackagePROFESORES;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 public class Edicion extends javax.swing.JFrame {
 
     /**
@@ -19,6 +22,100 @@ public class Edicion extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Area Edicion de Materia");
+
+        jScrollPane3.setVisible(false);
+        jList2.setVisible(false);
+
+        jScrollPane2.setVisible(false);
+        jTable1.setVisible(false);
+        jTextField1.setVisible(false);
+        jTextField2.setVisible(false);
+        jTextField3.setVisible(false);
+        jTextField4.setVisible(false);
+    }
+
+    /**
+     * Metodo : promedioFila (ejecuta una acción en un jTextField) Proposito :
+     * Brinda el promedio de la fila en vivo. (al dar enter)
+     *
+     * @param numero de fila.
+     */
+    public void promedioFila(int numero) {
+        if (numero == 0) {
+            Object valorX0Y1 = jTable1.getValueAt(0, 1);
+            Object valorX0Y2 = jTable1.getValueAt(0, 2);
+            Object valorX0Y3 = jTable1.getValueAt(0, 3);
+
+            float vx0y1 = Float.parseFloat(valorX0Y1.toString());
+            float vx0y2 = Float.parseFloat(valorX0Y2.toString());
+            float vx0y3 = Float.parseFloat(valorX0Y3.toString());
+
+            float defX0Y0 = (vx0y1 + vx0y2 + vx0y3) / 3;
+            String salidaxy = String.format("%.2f", defX0Y0);
+            jTextField1.setText(salidaxy);
+        }
+
+        if (numero == 1) {
+            Object valorX1Y1 = jTable1.getValueAt(1, 1);
+            Object valorX1Y2 = jTable1.getValueAt(1, 2);
+            Object valorX1Y3 = jTable1.getValueAt(1, 3);
+
+            float vx2y1 = Float.parseFloat(valorX1Y1.toString());
+            float vx2y2 = Float.parseFloat(valorX1Y2.toString());
+            float vx2y3 = Float.parseFloat(valorX1Y3.toString());
+
+            float defX1Y1 = (vx2y1 + vx2y2 + vx2y3) / 3;
+            String salidaxy = String.format("%.2f", defX1Y1);
+            jTextField2.setText(salidaxy);
+        }
+
+        if (numero == 2) {
+            Object valorX2Y1 = jTable1.getValueAt(2, 1);
+            Object valorX2Y2 = jTable1.getValueAt(2, 2);
+            Object valorX2Y3 = jTable1.getValueAt(2, 3);
+
+            float vx3y1 = Float.parseFloat(valorX2Y1.toString());
+            float vx3y2 = Float.parseFloat(valorX2Y2.toString());
+            float vx3y3 = Float.parseFloat(valorX2Y3.toString());
+
+            float defX2Y2 = (vx3y1 + vx3y2 + vx3y3) / 3;
+            String salidaxy = String.format("%.2f",defX2Y2);
+            jTextField3.setText(salidaxy);
+        }
+
+        if (numero == 3) {
+            Object valorX3Y1 = jTable1.getValueAt(3, 1);
+            Object valorX3Y2 = jTable1.getValueAt(3, 2);
+            Object valorX3Y3 = jTable1.getValueAt(3, 3);
+
+            float vx4y1 = Float.parseFloat(valorX3Y1.toString());
+            float vx4y2 = Float.parseFloat(valorX3Y2.toString());
+            float vx4y3 = Float.parseFloat(valorX3Y3.toString());
+
+            float defX3Y3 = (vx4y1 + vx4y2 + vx4y3) / 3;
+            String salidaxy = String.format("%.2f",defX3Y3);
+            jTextField4.setText(salidaxy);
+        }
+
+    }
+
+    /**
+     * Metodo para verificar los valores de las entradas en las celdas Que no
+     * sean <0 o >5
+     */
+    public void mensajeDatoInvalido() {
+        for (int x = 0; x <= 3; x++) {
+            for (int y = 1; y <= 3; y++) {
+                Object valor = jTable1.getValueAt(x, y);
+                float valorP = Float.parseFloat(valor.toString());
+                if (!(valorP >= 0.0 && valorP <= 5)) {
+                    JOptionPane.showMessageDialog(null, "El valor no puede ser Menor a 0 ni Mayor a 5 ", "Error", JOptionPane.ERROR_MESSAGE);
+                    System.err.println("Valor erroneo");
+                    jTable1.setValueAt((float) 0, x, y);
+                }
+            }
+        }
+
     }
 
     /**
@@ -37,17 +134,27 @@ public class Edicion extends javax.swing.JFrame {
         mEstudianteQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
         mEstudianteQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
         mEstudianteList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : mEstudianteQuery2.getResultList();
+        notaseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
+        notaseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery.getResultList();
+        notaseQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
+        notaseList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery1.getResultList();
+        notaseQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
+        notaseList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery2.getResultList();
         nombreMateria = new javax.swing.JTextField();
         jTextField1_nombre_apellido = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
         jLabel1_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,25 +204,15 @@ public class Edicion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, -1, -1));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 110));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/DesplegableBlanco.png"))); // NOI18N
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, -1, -1));
 
         jList2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -128,9 +225,90 @@ public class Edicion extends javax.swing.JFrame {
         jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jList2.setAutoscrolls(false);
         jList2.setValueIsAdjusting(true);
+        jList2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jList2MouseExited(evt);
+            }
+        });
         jScrollPane3.setViewportView(jList2);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
+
+        jTable1.setAutoscrolls(false);
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTable1.setName("Editor"); // NOI18N
+
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList2, jTable1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idEstudiante}"));
+        columnBinding.setColumnName("Id Estudiante");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nota1}"));
+        columnBinding.setColumnName("Nota1");
+        columnBinding.setColumnClass(Float.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nota2}"));
+        columnBinding.setColumnName("Nota2");
+        columnBinding.setColumnClass(Float.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nota3}"));
+        columnBinding.setColumnName("Nota3");
+        columnBinding.setColumnClass(Float.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTable1KeyReleased(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 240));
+
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 305, 120, -1));
+
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 120, -1));
+
+        jTextField3.setEditable(false);
+        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 335, 120, -1));
+
+        jTextField4.setEditable(false);
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 120, -1));
 
         jLabel1_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel1_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -149,10 +327,62 @@ public class Edicion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1_nombre_apellidoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jList1.getSelectedIndex() == 0) {
-            
-        }
+        jScrollPane2.setVisible(true);
+        jTable1.setVisible(true);
+        jTextField1.setVisible(true);
+        jTextField2.setVisible(true);
+        jTextField3.setVisible(true);
+        jTextField4.setVisible(true);
+
+        promedioFila(0);
+        promedioFila(1);
+        promedioFila(2);
+        promedioFila(3);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
+        if (jList2.getSelectedIndex() == 1) {
+            dispose();
+            new ventanas.Inicio().setVisible(true);
+        }
+    }//GEN-LAST:event_jList2MouseClicked
+
+    private void jList2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseExited
+        jScrollPane3.setVisible(false);
+        jList2.setVisible(false);
+    }//GEN-LAST:event_jList2MouseExited
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        jScrollPane3.setVisible(true);
+        jList2.setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int seleccionado = jTable1.getSelectedRow();
+
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTable1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            promedioFila(0);
+            promedioFila(1);
+            promedioFila(2);
+            promedioFila(3);
+        }
+        mensajeDatoInvalido();
+    }//GEN-LAST:event_jTable1KeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -167,13 +397,23 @@ public class Edicion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     public static javax.swing.JTextField jTextField1_nombre_apellido;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private java.util.List<BD.MEstudiante> mEstudianteList;
     private java.util.List<BD.MEstudiante> mEstudianteList1;
     private javax.persistence.Query mEstudianteQuery;
     private javax.persistence.Query mEstudianteQuery1;
     private javax.persistence.Query mEstudianteQuery2;
     public static javax.swing.JTextField nombreMateria;
+    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList;
+    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList1;
+    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList2;
+    private javax.persistence.Query notaseQuery;
+    private javax.persistence.Query notaseQuery1;
+    private javax.persistence.Query notaseQuery2;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
