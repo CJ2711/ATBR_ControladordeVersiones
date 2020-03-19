@@ -10,6 +10,15 @@
  */
 package ventanas;
 
+import BD.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static ventanas.Inicio.username;
+
 public class Icfes extends javax.swing.JFrame {
 
     /**
@@ -43,6 +52,7 @@ public class Icfes extends javax.swing.JFrame {
         Panel_Options = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jTextField_Nombre_Apellido_E = new javax.swing.JTextField();
         jLabel_FondoIcfes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -125,6 +135,15 @@ public class Icfes extends javax.swing.JFrame {
 
         getContentPane().add(Panel_Options, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 130, 80));
 
+        jTextField_Nombre_Apellido_E.setEditable(false);
+        jTextField_Nombre_Apellido_E.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
+        jTextField_Nombre_Apellido_E.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_Nombre_Apellido_EActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField_Nombre_Apellido_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 190, 30));
+
         jLabel_FondoIcfes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
         getContentPane().add(jLabel_FondoIcfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -134,6 +153,26 @@ public class Icfes extends javax.swing.JFrame {
     private void Button_Return_InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Return_InicioActionPerformed
         dispose(); //Desaparecer ventana 'Icfes'
         new Estudiantes_Area().setVisible(true); //Mostrar en pantalla ventana 'Inicio'
+
+        try {
+            //Conexion BD
+            Connection cnnn = Conexion.conectar();
+            /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
+             */
+            PreparedStatement pss = cnnn.prepareStatement(
+                    "SELECT nombre, apellido FROM `m_estudiante` WHERE idEstudiante='" + username + "'");
+            //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+            ResultSet rsss = pss.executeQuery();
+            if (rsss.next()) {
+                String nombre = rsss.getNString("nombre");
+                String apellido = rsss.getNString("apellido");
+                String nombreApeE = nombre + " " + apellido;
+                Estudiantes_Area.jTextField_Nombre_Apellido_E.setText(nombreApeE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_Button_Return_InicioActionPerformed
 
     private void Button_Menu_OpcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Menu_OpcMouseClicked
@@ -144,6 +183,10 @@ public class Icfes extends javax.swing.JFrame {
         dispose(); //Desaparecer ventana 'Icfes'
         new Inicio().setVisible(true); //Mostrar en pantalla ventana 'Inicio'
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField_Nombre_Apellido_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Nombre_Apellido_EActionPerformed
+
+    }//GEN-LAST:event_jTextField_Nombre_Apellido_EActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -159,5 +202,6 @@ public class Icfes extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel_FondoIcfes;
+    public static javax.swing.JTextField jTextField_Nombre_Apellido_E;
     // End of variables declaration//GEN-END:variables
 }

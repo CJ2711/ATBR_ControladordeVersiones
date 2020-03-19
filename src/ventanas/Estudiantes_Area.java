@@ -10,6 +10,15 @@
  */
 package ventanas;
 
+import BD.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static ventanas.Inicio.username;
+
 public class Estudiantes_Area extends javax.swing.JFrame {
 
     /**
@@ -186,6 +195,25 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private void Button_IcfesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_IcfesActionPerformed
         dispose(); //Desaparecer ventana 'Estudiantes_Area'
         new Icfes().setVisible(true); //Mostrar en pantalla ventana 'Icfes'
+        try {
+            //Conexion BD
+            Connection cnnn = Conexion.conectar();
+            /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
+             */
+            PreparedStatement pss = cnnn.prepareStatement(
+                    "SELECT nombre, apellido FROM `m_estudiante` WHERE idEstudiante='" + username + "'");
+            //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+            ResultSet rsss = pss.executeQuery();
+            if (rsss.next()) {
+                String nombre = rsss.getNString("nombre");
+                String apellido = rsss.getNString("apellido");
+                String nombreApeE = nombre + " " + apellido;
+                Icfes.jTextField_Nombre_Apellido_E.setText(nombreApeE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_Button_IcfesActionPerformed
 
     private void jTextField_Nombre_Apellido_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Nombre_Apellido_EActionPerformed
