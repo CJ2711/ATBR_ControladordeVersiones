@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ventanas.newpackagePROFESORES;
+package BD;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -28,8 +28,7 @@ import javax.persistence.Transient;
     , @NamedQuery(name = "Notase.findByIdEstudiante", query = "SELECT n FROM Notase n WHERE n.idEstudiante = :idEstudiante")
     , @NamedQuery(name = "Notase.findByNota1", query = "SELECT n FROM Notase n WHERE n.nota1 = :nota1")
     , @NamedQuery(name = "Notase.findByNota2", query = "SELECT n FROM Notase n WHERE n.nota2 = :nota2")
-    , @NamedQuery(name = "Notase.findByNota3", query = "SELECT n FROM Notase n WHERE n.nota3 = :nota3")
-    , @NamedQuery(name = "Notase.findByDef", query = "SELECT n FROM Notase n WHERE n.def = :def")})
+    , @NamedQuery(name = "Notase.findByNota3", query = "SELECT n FROM Notase n WHERE n.nota3 = :nota3")})
 public class Notase implements Serializable {
 
     @Transient
@@ -49,9 +48,6 @@ public class Notase implements Serializable {
     @Basic(optional = false)
     @Column(name = "nota3")
     private float nota3;
-    @Basic(optional = false)
-    @Column(name = "def")
-    private float def;
 
     public Notase() {
     }
@@ -60,12 +56,11 @@ public class Notase implements Serializable {
         this.idEstudiante = idEstudiante;
     }
 
-    public Notase(Integer idEstudiante, float nota1, float nota2, float nota3, float def) {
+    public Notase(Integer idEstudiante, float nota1, float nota2, float nota3) {
         this.idEstudiante = idEstudiante;
         this.nota1 = nota1;
         this.nota2 = nota2;
         this.nota3 = nota3;
-        this.def = def;
     }
 
     public Integer getIdEstudiante() {
@@ -106,16 +101,6 @@ public class Notase implements Serializable {
         float oldNota3 = this.nota3;
         this.nota3 = nota3;
         changeSupport.firePropertyChange("nota3", oldNota3, nota3);
-    }
-
-    public float getDef() {
-        return def;
-    }
-
-    public void setDef(float def) {
-        float oldDef = this.def;
-        this.def = def;
-        changeSupport.firePropertyChange("def", oldDef, def);
     }
 
     @Override

@@ -134,12 +134,8 @@ public class Edicion extends javax.swing.JFrame {
         mEstudianteQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
         mEstudianteQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT m FROM MEstudiante m");
         mEstudianteList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : mEstudianteQuery2.getResultList();
-        notaseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
-        notaseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery.getResultList();
-        notaseQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
-        notaseList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery1.getResultList();
-        notaseQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
-        notaseList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery2.getResultList();
+        notaseQuery3 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
+        notaseList3 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery3.getResultList();
         nombreMateria = new javax.swing.JTextField();
         jTextField1_nombre_apellido = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -241,7 +237,7 @@ public class Edicion extends javax.swing.JFrame {
         jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTable1.setName("Editor"); // NOI18N
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList2, jTable1);
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList3, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idEstudiante}"));
         columnBinding.setColumnName("Id Estudiante");
         columnBinding.setColumnClass(Integer.class);
@@ -408,12 +404,8 @@ public class Edicion extends javax.swing.JFrame {
     private javax.persistence.Query mEstudianteQuery1;
     private javax.persistence.Query mEstudianteQuery2;
     public static javax.swing.JTextField nombreMateria;
-    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList;
-    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList1;
-    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList2;
-    private javax.persistence.Query notaseQuery;
-    private javax.persistence.Query notaseQuery1;
-    private javax.persistence.Query notaseQuery2;
+    private java.util.List<BD.Notase> notaseList3;
+    private javax.persistence.Query notaseQuery3;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

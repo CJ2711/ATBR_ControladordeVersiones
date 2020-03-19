@@ -51,7 +51,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;BD.MEstudiante&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.persistence.Query" name="notaseQuery">
+    <Component class="javax.persistence.Query" name="notaseQuery3">
       <Properties>
         <Property name="query" type="java.lang.String" value="SELECT n FROM Notase n"/>
         <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
@@ -59,50 +59,14 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="java.util.List" name="notaseList">
+    <Component class="java.util.List" name="notaseList3">
       <Properties>
         <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="notaseQuery"/>
+          <ComponentRef name="notaseQuery3"/>
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;ventanas.newpackagePROFESORES.Notase&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="notaseQuery1">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT n FROM Notase n"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="entityManager"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="java.util.List" name="notaseList1">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="notaseQuery1"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;ventanas.newpackagePROFESORES.Notase&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="notaseQuery2">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT n FROM Notase n"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="entityManager"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="java.util.List" name="notaseList2">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="notaseQuery2"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;ventanas.newpackagePROFESORES.Notase&gt;"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;BD.Notase&gt;"/>
       </AuxValues>
     </Component>
   </NonVisualComponents>
@@ -318,7 +282,7 @@
             <Property name="name" type="java.lang.String" value="Editor" noResource="true"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="elements" source="notaseList2" target="jTable1" targetPath="elements" updateStrategy="0" immediately="true">
+            <BindingProperty name="elements" source="notaseList3" target="jTable1" targetPath="elements" updateStrategy="0" immediately="true">
               <Subbinding sourcePath="${idEstudiante}">
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
               </Subbinding>
