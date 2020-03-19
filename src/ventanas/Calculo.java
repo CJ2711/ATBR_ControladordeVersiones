@@ -21,6 +21,7 @@ public class Calculo extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setResizable(false);
         
+        
     }
 
     /**
