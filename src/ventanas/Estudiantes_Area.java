@@ -71,7 +71,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
         Label_Titulo_Materias.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
         Label_Titulo_Materias.setText("MATERIAS");
-        getContentPane().add(Label_Titulo_Materias, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, 30));
+        getContentPane().add(Label_Titulo_Materias, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 160, -1, 30));
 
         Label_Titulo_Notificaciones.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
         Label_Titulo_Notificaciones.setText("NOTIFICACIONES");
@@ -92,7 +92,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_Diagnostica.setText("DIAGNOSTICA");
         Button_Diagnostica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Diagnostica.setOpaque(false);
-        getContentPane().add(Button_Diagnostica, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 180, 50));
+        getContentPane().add(Button_Diagnostica, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 375, 180, 50));
 
         jTextField_Nombre_Apellido_E.setEditable(false);
         jTextField_Nombre_Apellido_E.addActionListener(new java.awt.event.ActionListener() {
@@ -119,25 +119,30 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_TGS.setText("T.G.S");
         Button_TGS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_TGS.setOpaque(false);
-        getContentPane().add(Button_TGS, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 160, -1));
+        Button_TGS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_TGSActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Button_TGS, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 160, -1));
 
         Button_FDP.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_FDP.setText("F.D.P");
         Button_FDP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_FDP.setOpaque(false);
-        getContentPane().add(Button_FDP, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 160, -1));
+        getContentPane().add(Button_FDP, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 160, -1));
 
         Button_Ingles.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_Ingles.setText("INGLÉS I");
         Button_Ingles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Ingles.setOpaque(false);
-        getContentPane().add(Button_Ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 160, -1));
+        getContentPane().add(Button_Ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, 160, -1));
 
         Button_ITI.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_ITI.setText("I.T.I");
         Button_ITI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_ITI.setOpaque(false);
-        getContentPane().add(Button_ITI, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 160, -1));
+        getContentPane().add(Button_ITI, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 160, -1));
 
         Button_Calculo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_Calculo.setText("CÁLCULO I");
@@ -148,19 +153,24 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Button_CalculoActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 160, -1));
+        Button_Calculo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                Button_CalculoPropertyChange(evt);
+            }
+        });
+        getContentPane().add(Button_Calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 160, -1));
 
         Button_DeporteFormativo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_DeporteFormativo.setText("DEP. FORMA");
         Button_DeporteFormativo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_DeporteFormativo.setOpaque(false);
-        getContentPane().add(Button_DeporteFormativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 540, 160, -1));
+        getContentPane().add(Button_DeporteFormativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 160, -1));
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton2.setText("ESPAÑOL");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setOpaque(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 160, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 160, -1));
 
         jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jList1.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
@@ -241,6 +251,14 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         jScrollPane1.setVisible(false);
         jList1.setVisible(false);
     }//GEN-LAST:event_jList1MouseExited
+
+    private void Button_CalculoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_Button_CalculoPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_CalculoPropertyChange
+
+    private void Button_TGSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_TGSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_TGSActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
