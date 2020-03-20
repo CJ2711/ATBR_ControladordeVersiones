@@ -142,6 +142,7 @@ public class Inicio extends javax.swing.JFrame {
                     if (rol.equals("P")) { //Si el rol es 'P' Profesor
                         dispose();
                         new Profesores_Area_Edicion_Notas().setVisible(true);
+                        String user = username;
                         try {
                             //Conexion BD
                             Connection cnn = Conexion.conectar();
