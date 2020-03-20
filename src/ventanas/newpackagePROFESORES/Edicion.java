@@ -27,19 +27,30 @@ public class Edicion extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Area Edicion de Materia");
-
+        
         jScrollPane3.setVisible(false);
         jList2.setVisible(false);
-
+        
         jButton2.setVisible(false);
         jLabel2.setVisible(false);
-
+        jLabel7.setVisible(false);
+        jLabel8.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel6.setVisible(false);
+        
         jScrollPane2.setVisible(false);
         jTable1.setVisible(false);
         jTextField1.setVisible(false);
         jTextField2.setVisible(false);
         jTextField3.setVisible(false);
         jTextField4.setVisible(false);
+
+        //los paneles independientes para cada uno
+        jPanel1KEREN.setVisible(false);
+        jPanel1LEANDRO.setVisible(false);
+        jPanel1CHRISTIAN.setVisible(false);
+        jPanel1ALEJANDRO.setVisible(false);
     }
 
     /**
@@ -53,58 +64,58 @@ public class Edicion extends javax.swing.JFrame {
             Object valorX0Y1 = jTable1.getValueAt(0, 1);
             Object valorX0Y2 = jTable1.getValueAt(0, 2);
             Object valorX0Y3 = jTable1.getValueAt(0, 3);
-
+            
             float vx0y1 = Float.parseFloat(valorX0Y1.toString());
             float vx0y2 = Float.parseFloat(valorX0Y2.toString());
             float vx0y3 = Float.parseFloat(valorX0Y3.toString());
-
+            
             float defX0Y0 = (vx0y1 + vx0y2 + vx0y3) / 3;
             String salidaxy = String.format("%.2f", defX0Y0);
             jTextField1.setText(salidaxy);
         }
-
+        
         if (numero == 1) {
             Object valorX1Y1 = jTable1.getValueAt(1, 1);
             Object valorX1Y2 = jTable1.getValueAt(1, 2);
             Object valorX1Y3 = jTable1.getValueAt(1, 3);
-
+            
             float vx2y1 = Float.parseFloat(valorX1Y1.toString());
             float vx2y2 = Float.parseFloat(valorX1Y2.toString());
             float vx2y3 = Float.parseFloat(valorX1Y3.toString());
-
+            
             float defX1Y1 = (vx2y1 + vx2y2 + vx2y3) / 3;
             String salidaxy = String.format("%.2f", defX1Y1);
             jTextField2.setText(salidaxy);
         }
-
+        
         if (numero == 2) {
             Object valorX2Y1 = jTable1.getValueAt(2, 1);
             Object valorX2Y2 = jTable1.getValueAt(2, 2);
             Object valorX2Y3 = jTable1.getValueAt(2, 3);
-
+            
             float vx3y1 = Float.parseFloat(valorX2Y1.toString());
             float vx3y2 = Float.parseFloat(valorX2Y2.toString());
             float vx3y3 = Float.parseFloat(valorX2Y3.toString());
-
+            
             float defX2Y2 = (vx3y1 + vx3y2 + vx3y3) / 3;
             String salidaxy = String.format("%.2f", defX2Y2);
             jTextField3.setText(salidaxy);
         }
-
+        
         if (numero == 3) {
             Object valorX3Y1 = jTable1.getValueAt(3, 1);
             Object valorX3Y2 = jTable1.getValueAt(3, 2);
             Object valorX3Y3 = jTable1.getValueAt(3, 3);
-
+            
             float vx4y1 = Float.parseFloat(valorX3Y1.toString());
             float vx4y2 = Float.parseFloat(valorX3Y2.toString());
             float vx4y3 = Float.parseFloat(valorX3Y3.toString());
-
+            
             float defX3Y3 = (vx4y1 + vx4y2 + vx4y3) / 3;
             String salidaxy = String.format("%.2f", defX3Y3);
             jTextField4.setText(salidaxy);
         }
-
+        
     }
 
     /**
@@ -123,7 +134,7 @@ public class Edicion extends javax.swing.JFrame {
                 }
             }
         }
-
+        
     }
 
     /**
@@ -163,11 +174,78 @@ public class Edicion extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1KEREN = new javax.swing.JPanel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        SalirK = new javax.swing.JLabel();
+        jPanel1LEANDRO = new javax.swing.JPanel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        SalirL = new javax.swing.JLabel();
+        jPanel1CHRISTIAN = new javax.swing.JPanel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jPanel1KEREN3 = new javax.swing.JPanel();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jText_EV1Keren3 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jText_EV2Keren3 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jText_EV3Keren3 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTextArea8 = new javax.swing.JTextArea();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextArea9 = new javax.swing.JTextArea();
+        SalirC = new javax.swing.JLabel();
+        jPanel1ALEJANDRO = new javax.swing.JPanel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTextArea10 = new javax.swing.JTextArea();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jTextArea11 = new javax.swing.JTextArea();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jTextArea12 = new javax.swing.JTextArea();
+        SalirA = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel1_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -207,6 +285,11 @@ public class Edicion extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mEstudianteList1, org.jdesktop.beansbinding.ObjectProperty.create(), jList1, org.jdesktop.beansbinding.BeanProperty.create("selectedElements"));
         bindingGroup.addBinding(binding);
 
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 100));
@@ -217,7 +300,7 @@ public class Edicion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -227,7 +310,7 @@ public class Edicion extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 305, 120, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 355, 120, -1));
 
         jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -237,7 +320,7 @@ public class Edicion extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 120, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 373, 120, -1));
 
         jTextField3.setEditable(false);
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -247,7 +330,7 @@ public class Edicion extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 335, 120, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 391, 120, -1));
 
         jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -257,7 +340,7 @@ public class Edicion extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 120, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 409, 120, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/DesplegableBlanco.png"))); // NOI18N
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -322,7 +405,7 @@ public class Edicion extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 110));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 110));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Definitiva");
@@ -332,12 +415,311 @@ public class Edicion extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 120, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe Print", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Presiona Enter para actualizar la información");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, -1, -1));
+
+        jPanel1KEREN.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField5.setEditable(false);
+        jTextField5.setFocusable(false);
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        jPanel1KEREN.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 310, -1));
+
+        jLabel9.setText("Evaluación 1:");
+        jPanel1KEREN.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        jLabel10.setText("DETALLES");
+        jPanel1KEREN.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, -1));
+
+        jLabel11.setText("Evaluación 2:");
+        jPanel1KEREN.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel12.setText("Evaluación 3:");
+        jPanel1KEREN.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        jButton4.setText("Guardar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1KEREN.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane5.setViewportView(jTextArea2);
+
+        jPanel1KEREN.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 320, -1));
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane6.setViewportView(jTextArea3);
+
+        jPanel1KEREN.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 320, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane4.setViewportView(jTextArea1);
+
+        jPanel1KEREN.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 320, -1));
+
+        SalirK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar.png"))); // NOI18N
+        SalirK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalirK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirKMouseClicked(evt);
+            }
+        });
+        jPanel1KEREN.add(SalirK, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+
+        getContentPane().add(jPanel1KEREN, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 340, 530));
+
+        jPanel1LEANDRO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField6.setEditable(false);
+        jTextField6.setFocusable(false);
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        jPanel1LEANDRO.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 310, -1));
+
+        jLabel13.setText("Evaluación 1:");
+        jPanel1LEANDRO.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        jLabel14.setText("DETALLES");
+        jPanel1LEANDRO.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, -1));
+
+        jLabel15.setText("Evaluación 2:");
+        jPanel1LEANDRO.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel16.setText("Evaluación 3:");
+        jPanel1LEANDRO.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        jButton5.setText("Guardar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1LEANDRO.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane7.setViewportView(jTextArea4);
+
+        jPanel1LEANDRO.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 320, -1));
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jScrollPane8.setViewportView(jTextArea5);
+
+        jPanel1LEANDRO.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 320, -1));
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jScrollPane9.setViewportView(jTextArea6);
+
+        jPanel1LEANDRO.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 320, -1));
+
+        SalirL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar.png"))); // NOI18N
+        SalirL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalirL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirLMouseClicked(evt);
+            }
+        });
+        jPanel1LEANDRO.add(SalirL, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+
+        getContentPane().add(jPanel1LEANDRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 340, 530));
+
+        jPanel1CHRISTIAN.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField7.setEditable(false);
+        jTextField7.setFocusable(false);
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        jPanel1CHRISTIAN.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 310, -1));
+
+        jLabel17.setText("Evaluación 1:");
+        jPanel1CHRISTIAN.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        jLabel18.setText("DETALLES");
+        jPanel1CHRISTIAN.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, -1));
+
+        jLabel19.setText("Evaluación 2:");
+        jPanel1CHRISTIAN.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel20.setText("Evaluación 3:");
+        jPanel1CHRISTIAN.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        jButton6.setText("Guardar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1CHRISTIAN.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        jPanel1KEREN3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField8.setEditable(false);
+        jTextField8.setFocusable(false);
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        jPanel1KEREN3.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 310, -1));
+
+        jLabel21.setText("Evaluación 1:");
+        jPanel1KEREN3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        jLabel22.setText("DETALLES");
+        jPanel1KEREN3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, -1));
+
+        jText_EV1Keren3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jText_EV1Keren3ActionPerformed(evt);
+            }
+        });
+        jPanel1KEREN3.add(jText_EV1Keren3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 310, 100));
+
+        jLabel23.setText("Evaluación 2:");
+        jPanel1KEREN3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jText_EV2Keren3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jText_EV2Keren3ActionPerformed(evt);
+            }
+        });
+        jPanel1KEREN3.add(jText_EV2Keren3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 310, 100));
+
+        jLabel24.setText("Evaluación 3:");
+        jPanel1KEREN3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        jText_EV3Keren3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jText_EV3Keren3ActionPerformed(evt);
+            }
+        });
+        jPanel1KEREN3.add(jText_EV3Keren3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 310, 100));
+
+        jButton7.setText("Guardar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1KEREN3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, -1, -1));
+
+        jPanel1CHRISTIAN.add(jPanel1KEREN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 340, 530));
+
+        jTextArea7.setColumns(20);
+        jTextArea7.setRows(5);
+        jScrollPane10.setViewportView(jTextArea7);
+
+        jPanel1CHRISTIAN.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 320, -1));
+
+        jTextArea8.setColumns(20);
+        jTextArea8.setRows(5);
+        jScrollPane11.setViewportView(jTextArea8);
+
+        jPanel1CHRISTIAN.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 320, -1));
+
+        jTextArea9.setColumns(20);
+        jTextArea9.setRows(5);
+        jScrollPane12.setViewportView(jTextArea9);
+
+        jPanel1CHRISTIAN.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 320, -1));
+
+        SalirC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar.png"))); // NOI18N
+        SalirC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalirC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirCMouseClicked(evt);
+            }
+        });
+        jPanel1CHRISTIAN.add(SalirC, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+
+        getContentPane().add(jPanel1CHRISTIAN, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 340, 530));
+
+        jPanel1ALEJANDRO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField9.setEditable(false);
+        jTextField9.setFocusable(false);
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+        jPanel1ALEJANDRO.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 310, -1));
+
+        jLabel25.setText("Evaluación 1:");
+        jPanel1ALEJANDRO.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        jLabel26.setText("DETALLES");
+        jPanel1ALEJANDRO.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, -1));
+
+        jLabel27.setText("Evaluación 2:");
+        jPanel1ALEJANDRO.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel28.setText("Evaluación 3:");
+        jPanel1ALEJANDRO.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        jButton8.setText("Guardar");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1ALEJANDRO.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        jTextArea10.setColumns(20);
+        jTextArea10.setRows(5);
+        jScrollPane13.setViewportView(jTextArea10);
+
+        jPanel1ALEJANDRO.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 320, -1));
+
+        jTextArea11.setColumns(20);
+        jTextArea11.setRows(5);
+        jScrollPane14.setViewportView(jTextArea11);
+
+        jPanel1ALEJANDRO.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 320, -1));
+
+        jTextArea12.setColumns(20);
+        jTextArea12.setRows(5);
+        jScrollPane15.setViewportView(jTextArea12);
+
+        jPanel1ALEJANDRO.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 320, -1));
+
+        SalirA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar.png"))); // NOI18N
+        SalirA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalirA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirAMouseClicked(evt);
+            }
+        });
+        jPanel1ALEJANDRO.add(SalirA, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+
+        getContentPane().add(jPanel1ALEJANDRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 340, 530));
 
         jLabel3.setFont(new java.awt.Font("Segoe Script", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -355,10 +737,18 @@ public class Edicion extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 160, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/info.png"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/info.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 270, -1, -1));
+
+        jButton3.setText("Detalles de Evaluaciones");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
 
         jLabel1_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel1_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -385,7 +775,12 @@ public class Edicion extends javax.swing.JFrame {
         jTextField4.setVisible(true);
         jButton2.setVisible(true);
         jLabel2.setVisible(true);
-
+        jLabel7.setVisible(true);
+        jLabel8.setVisible(true);
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel6.setVisible(true);
+        
         promedioFila(0);
         promedioFila(1);
         promedioFila(2);
@@ -436,35 +831,35 @@ public class Edicion extends javax.swing.JFrame {
         try {
             //Conexion BD
             Connection cn = Conexion.conectar();
-
+            
             Object v01 = jTable1.getValueAt(0, 1);
             Object v02 = jTable1.getValueAt(0, 2);
             Object v03 = jTable1.getValueAt(0, 3);
             float fv01 = Float.parseFloat(v01.toString());
             float fv02 = Float.parseFloat(v02.toString());
             float fv03 = Float.parseFloat(v03.toString());
-
+            
             Object v11 = jTable1.getValueAt(1, 1);
             Object v12 = jTable1.getValueAt(1, 2);
             Object v13 = jTable1.getValueAt(1, 3);
             float fv11 = Float.parseFloat(v11.toString());
             float fv12 = Float.parseFloat(v12.toString());
             float fv13 = Float.parseFloat(v13.toString());
-
+            
             Object v21 = jTable1.getValueAt(2, 1);
             Object v22 = jTable1.getValueAt(2, 2);
             Object v23 = jTable1.getValueAt(2, 3);
             float fv21 = Float.parseFloat(v21.toString());
             float fv22 = Float.parseFloat(v22.toString());
             float fv23 = Float.parseFloat(v23.toString());
-
+            
             Object v31 = jTable1.getValueAt(3, 1);
             Object v32 = jTable1.getValueAt(3, 2);
             Object v33 = jTable1.getValueAt(3, 3);
             float fv31 = Float.parseFloat(v31.toString());
             float fv32 = Float.parseFloat(v32.toString());
             float fv33 = Float.parseFloat(v33.toString());
-
+            
             PreparedStatement pst = cn.prepareStatement(""
                     + " UPDATE notasE SET nota1 = '" + fv01 + "', nota2 = '" + fv02 + "', nota3 = '" + fv03 + "' WHERE notase.idEstudiante = 1957601;");
             PreparedStatement pst1 = cn.prepareStatement(""
@@ -490,31 +885,209 @@ public class Edicion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+
+    }//GEN-LAST:event_jList1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (jList1.getSelectedIndex() == 0) {
+            //ABRE
+            jPanel1KEREN.setVisible(true);
+            jTextField5.setText("Keren Rodas");
+            //CIERRA
+            jPanel1LEANDRO.setVisible(false);
+            jPanel1CHRISTIAN.setVisible(false);
+            jPanel1ALEJANDRO.setVisible(false);
+        }
+        if (jList1.getSelectedIndex() == 1) {
+            //ABRE
+            jPanel1LEANDRO.setVisible(true);
+            jTextField6.setText("Leandro Rodriguez");
+            //CIERRA
+            jPanel1KEREN.setVisible(false);
+            jPanel1CHRISTIAN.setVisible(false);
+            jPanel1ALEJANDRO.setVisible(false);
+        }
+        if (jList1.getSelectedIndex() == 2) {
+            //ABRE
+            jPanel1CHRISTIAN.setVisible(true);
+            jTextField7.setText("Christian Barbosa");
+            //CIERRA
+            jPanel1KEREN.setVisible(false);
+            jPanel1LEANDRO.setVisible(false);
+            jPanel1ALEJANDRO.setVisible(false);
+        }
+        if (jList1.getSelectedIndex() == 3) {
+            //ABRE
+            jPanel1ALEJANDRO.setVisible(true);
+            jTextField9.setText("Alejandro Castro");
+            //CIERRA
+            jPanel1KEREN.setVisible(false);
+            jPanel1LEANDRO.setVisible(false);
+            jPanel1CHRISTIAN.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jText_EV1Keren3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_EV1Keren3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText_EV1Keren3ActionPerformed
+
+    private void jText_EV2Keren3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_EV2Keren3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText_EV2Keren3ActionPerformed
+
+    private void jText_EV3Keren3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_EV3Keren3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText_EV3Keren3ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void SalirKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirKMouseClicked
+        jPanel1KEREN.setVisible(false);
+    }//GEN-LAST:event_SalirKMouseClicked
+
+    private void SalirLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirLMouseClicked
+        jPanel1LEANDRO.setVisible(false);
+    }//GEN-LAST:event_SalirLMouseClicked
+
+    private void SalirCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirCMouseClicked
+        jPanel1CHRISTIAN.setVisible(false);
+    }//GEN-LAST:event_SalirCMouseClicked
+
+    private void SalirAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirAMouseClicked
+        jPanel1ALEJANDRO.setVisible(false);
+    }//GEN-LAST:event_SalirAMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel SalirA;
+    private javax.swing.JLabel SalirC;
+    private javax.swing.JLabel SalirK;
+    private javax.swing.JLabel SalirL;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel1_Fondo;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
+    private javax.swing.JPanel jPanel1ALEJANDRO;
+    private javax.swing.JPanel jPanel1CHRISTIAN;
+    private javax.swing.JPanel jPanel1KEREN;
+    private javax.swing.JPanel jPanel1KEREN3;
+    private javax.swing.JPanel jPanel1LEANDRO;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea10;
+    private javax.swing.JTextArea jTextArea11;
+    private javax.swing.JTextArea jTextArea12;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea7;
+    private javax.swing.JTextArea jTextArea8;
+    private javax.swing.JTextArea jTextArea9;
     private javax.swing.JTextField jTextField1;
     public static javax.swing.JTextField jTextField1_nombre_apellido;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    public static javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    public static javax.swing.JTextField jTextField7;
+    public static javax.swing.JTextField jTextField8;
+    public static javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jText_EV1Keren3;
+    private javax.swing.JTextField jText_EV2Keren3;
+    private javax.swing.JTextField jText_EV3Keren3;
     private java.util.List<BD.MEstudiante> mEstudianteList;
     private java.util.List<BD.MEstudiante> mEstudianteList1;
     private javax.persistence.Query mEstudianteQuery;
