@@ -525,7 +525,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
                 Button_Menu_OpcMouseClicked(evt);
             }
         });
-        getContentPane().add(Button_Menu_Opc, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 40, 30, -1));
+        getContentPane().add(Button_Menu_Opc, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 30, 40, 20));
 
         jList2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jList2.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
