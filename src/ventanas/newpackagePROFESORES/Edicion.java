@@ -277,6 +277,7 @@ public class Edicion extends javax.swing.JFrame {
         });
         jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jList2.setAutoscrolls(false);
+        jList2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jList2.setValueIsAdjusting(true);
         jList2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
