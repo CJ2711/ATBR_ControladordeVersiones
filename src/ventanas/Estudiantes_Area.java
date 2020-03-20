@@ -52,6 +52,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         }
 
     }
+    //Trabaja así a ver, haz un cambio a ver como se represnta en la rama creada This
 
     public void promedioFila(int numero) {
         if (numero == 0) {
