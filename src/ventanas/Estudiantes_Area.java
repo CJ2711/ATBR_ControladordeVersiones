@@ -10,6 +10,8 @@
  */
 package ventanas;
 
+import ventanas.Estudiante.Icfes;
+import ventanas.Estudiante.Calculo;
 import BD.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +34,142 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
         jScrollPane1.setVisible(false);
         jList1.setVisible(false);
+        Label_Semaforo_Calculo_Rojo.setVisible(false);
+        Label_Semaforo_Calculo_Amarillo.setVisible(false);
+        Label_Semaforo_Calculo_Verde.setVisible(false);
+
+        if (username.equals("1957601")) {
+            promedioFila(0);
+        }
+        if (username.equals("1958205")) {
+            promedioFila(1);
+        }
+        if (username.equals("1958266")) {
+            promedioFila(2);
+        }
+        if (username.equals("1958283")) {
+            promedioFila(3);
+        }
+
+    }
+
+    public void promedioFila(int numero) {
+        if (numero == 0) {
+            Object valorX0Y1 = jTable1.getValueAt(0, 1);
+            Object valorX0Y2 = jTable1.getValueAt(0, 2);
+            Object valorX0Y3 = jTable1.getValueAt(0, 3);
+
+            float vx0y1 = Float.parseFloat(valorX0Y1.toString());
+            float vx0y2 = Float.parseFloat(valorX0Y2.toString());
+            float vx0y3 = Float.parseFloat(valorX0Y3.toString());
+
+            float defX0Y0 = (vx0y1 + vx0y2 + vx0y3) / 3;
+
+            if ((defX0Y0 >= (float) 0.00) && (defX0Y0 <= (float) 2.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(true);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX0Y0 >= (float) 3.00) && (defX0Y0 <= (float) 3.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(true);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX0Y0 >= (float) 4.00) && (defX0Y0 <= (float) 5.00)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(true);
+            }
+
+        }
+
+        if (numero == 1) {
+            Object valorX1Y1 = jTable1.getValueAt(1, 1);
+            Object valorX1Y2 = jTable1.getValueAt(1, 2);
+            Object valorX1Y3 = jTable1.getValueAt(1, 3);
+
+            float vx2y1 = Float.parseFloat(valorX1Y1.toString());
+            float vx2y2 = Float.parseFloat(valorX1Y2.toString());
+            float vx2y3 = Float.parseFloat(valorX1Y3.toString());
+
+            float defX1Y1 = (vx2y1 + vx2y2 + vx2y3) / 3;
+            
+            if ((defX1Y1 >= (float) 0.00) && (defX1Y1 <= (float) 2.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(true);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX1Y1 >= (float) 3.00) && (defX1Y1 <= (float) 3.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(true);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX1Y1 >= (float) 4.00) && (defX1Y1 <= (float) 5.00)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(true);
+            }
+
+        }
+
+        if (numero == 2) {
+            Object valorX2Y1 = jTable1.getValueAt(2, 1);
+            Object valorX2Y2 = jTable1.getValueAt(2, 2);
+            Object valorX2Y3 = jTable1.getValueAt(2, 3);
+
+            float vx3y1 = Float.parseFloat(valorX2Y1.toString());
+            float vx3y2 = Float.parseFloat(valorX2Y2.toString());
+            float vx3y3 = Float.parseFloat(valorX2Y3.toString());
+
+            float defX2Y2 = (vx3y1 + vx3y2 + vx3y3) / 3;
+            
+            if ((defX2Y2 >= (float) 0.00) && (defX2Y2 <= (float) 2.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(true);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX2Y2 >= (float) 3.00) && (defX2Y2 <= (float) 3.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(true);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX2Y2 >= (float) 4.00) && (defX2Y2 <= (float) 5.00)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(true);
+            }
+
+        }
+
+        if (numero == 3) {
+            Object valorX3Y1 = jTable1.getValueAt(3, 1);
+            Object valorX3Y2 = jTable1.getValueAt(3, 2);
+            Object valorX3Y3 = jTable1.getValueAt(3, 3);
+
+            float vx4y1 = Float.parseFloat(valorX3Y1.toString());
+            float vx4y2 = Float.parseFloat(valorX3Y2.toString());
+            float vx4y3 = Float.parseFloat(valorX3Y3.toString());
+
+            float defX3Y3 = (vx4y1 + vx4y2 + vx4y3) / 3;
+            
+            if ((defX3Y3 >= (float) 0.00) && (defX3Y3 <= (float) 2.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(true);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX3Y3 >= (float) 3.00) && (defX3Y3 <= (float) 3.99)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(true);
+                Label_Semaforo_Calculo_Verde.setVisible(false);
+            }
+            if ((defX3Y3 >= (float) 4.00) && (defX3Y3 <= (float) 5.00)) {
+                Label_Semaforo_Calculo_Rojo.setVisible(false);
+                Label_Semaforo_Calculo_Amarillo.setVisible(false);
+                Label_Semaforo_Calculo_Verde.setVisible(true);
+            }
+
+        }
+
     }
 
     /**
@@ -42,7 +180,11 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("atbr_proyecto?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        notaseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
+        notaseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery.getResultList();
         Label_Titulo_Prueba = new javax.swing.JLabel();
         Label_Titulo_Materias = new javax.swing.JLabel();
         Label_Titulo_Notificaciones = new javax.swing.JLabel();
@@ -60,6 +202,11 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        Label_Semaforo_Calculo_Rojo = new javax.swing.JLabel();
+        Label_Semaforo_Calculo_Amarillo = new javax.swing.JLabel();
+        Label_Semaforo_Calculo_Verde = new javax.swing.JLabel();
         jLabel_FondoEstudiantes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -124,25 +271,25 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Button_TGSActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_TGS, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 160, -1));
+        getContentPane().add(Button_TGS, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 160, -1));
 
         Button_FDP.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_FDP.setText("F.D.P");
         Button_FDP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_FDP.setOpaque(false);
-        getContentPane().add(Button_FDP, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 160, -1));
+        getContentPane().add(Button_FDP, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 160, -1));
 
         Button_Ingles.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_Ingles.setText("INGLÉS I");
         Button_Ingles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Ingles.setOpaque(false);
-        getContentPane().add(Button_Ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, 160, -1));
+        getContentPane().add(Button_Ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 160, -1));
 
         Button_ITI.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_ITI.setText("I.T.I");
         Button_ITI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_ITI.setOpaque(false);
-        getContentPane().add(Button_ITI, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 160, -1));
+        getContentPane().add(Button_ITI, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 160, -1));
 
         Button_Calculo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_Calculo.setText("CÁLCULO I");
@@ -158,19 +305,19 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Button_CalculoPropertyChange(evt);
             }
         });
-        getContentPane().add(Button_Calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 160, -1));
+        getContentPane().add(Button_Calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 160, -1));
 
         Button_DeporteFormativo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_DeporteFormativo.setText("DEP. FORMA");
         Button_DeporteFormativo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_DeporteFormativo.setOpaque(false);
-        getContentPane().add(Button_DeporteFormativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 160, -1));
+        getContentPane().add(Button_DeporteFormativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 470, 160, -1));
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton2.setText("ESPAÑOL");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setOpaque(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 160, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 160, -1));
 
         jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jList1.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
@@ -195,8 +342,39 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
 
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList, jTable1);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idEstudiante}"));
+        columnBinding.setColumnName("Id Estudiante");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nota1}"));
+        columnBinding.setColumnName("Nota1");
+        columnBinding.setColumnClass(Float.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nota2}"));
+        columnBinding.setColumnName("Nota2");
+        columnBinding.setColumnClass(Float.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nota3}"));
+        columnBinding.setColumnName("Nota3");
+        columnBinding.setColumnClass(Float.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, -1, 120));
+
+        Label_Semaforo_Calculo_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_Calculo_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
+
+        Label_Semaforo_Calculo_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_Calculo_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
+
+        Label_Semaforo_Calculo_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_Calculo_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
+
         jLabel_FondoEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
         getContentPane().add(jLabel_FondoEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,13 +450,22 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private javax.swing.JButton Button_Menu_Opc;
     private javax.swing.JButton Button_TGS;
     private javax.swing.JLabel Label_Foto_Perfil;
+    private javax.swing.JLabel Label_Semaforo_Calculo_Amarillo;
+    private javax.swing.JLabel Label_Semaforo_Calculo_Rojo;
+    private javax.swing.JLabel Label_Semaforo_Calculo_Verde;
     private javax.swing.JLabel Label_Titulo_Materias;
     private javax.swing.JLabel Label_Titulo_Notificaciones;
     private javax.swing.JLabel Label_Titulo_Prueba;
+    private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel_FondoEstudiantes;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     public static javax.swing.JTextField jTextField_Nombre_Apellido_E;
+    private java.util.List<ventanas.newpackagePROFESORES.Notase> notaseList;
+    private javax.persistence.Query notaseQuery;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

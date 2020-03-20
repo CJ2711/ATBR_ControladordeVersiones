@@ -8,7 +8,7 @@
 *           Leandro Rodriguez Vidal        1958205-2711
 *
  */
-package ventanas;
+package ventanas.Estudiante;
 
 import BD.Conexion;
 import java.sql.Connection;
@@ -17,6 +17,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import ventanas.Estudiantes_Area;
+import ventanas.Inicio;
 import static ventanas.Inicio.username;
 
 public class Icfes extends javax.swing.JFrame {
