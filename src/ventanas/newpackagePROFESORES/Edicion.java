@@ -206,6 +206,7 @@ public class Edicion extends javax.swing.JFrame {
         nombreMateria.setEditable(false);
         nombreMateria.setBackground(new java.awt.Color(255, 255, 255));
         nombreMateria.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
+        nombreMateria.setFocusable(false);
         nombreMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombreMateriaActionPerformed(evt);
@@ -216,6 +217,7 @@ public class Edicion extends javax.swing.JFrame {
         jTextField1_nombre_apellido.setEditable(false);
         jTextField1_nombre_apellido.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1_nombre_apellido.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
+        jTextField1_nombre_apellido.setFocusable(false);
         jTextField1_nombre_apellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1_nombre_apellidoActionPerformed(evt);
@@ -246,6 +248,7 @@ public class Edicion extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 100));
 
         jButton1.setText("Ver/ Editar notas de los estudiantes");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -398,6 +401,7 @@ public class Edicion extends javax.swing.JFrame {
         jPanel_DETALLES.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         BotonGuardar.setText("Guardar");
+        BotonGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonGuardarActionPerformed(evt);
@@ -456,6 +460,7 @@ public class Edicion extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 270, -1, -1));
 
         jButton3.setText("Detalles de Evaluaciones");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -619,6 +624,28 @@ public class Edicion extends javax.swing.JFrame {
                     String salida = nom + " " + ape;
                     jTextField5.setText(salida);
                 }
+
+                PreparedStatement datosTextArea_1 = cnn.prepareStatement(""
+                        + "SELECT detalle1 FROM tabladetalle WHERE idEstudiante ='1957601'");
+                PreparedStatement datosTextArea_2 = cnn.prepareStatement(""
+                        + "SELECT detalle2 FROM tabladetalle WHERE idEstudiante ='1957601'");
+                PreparedStatement datosTextArea_3 = cnn.prepareStatement(""
+                        + "SELECT detalle3 FROM tabladetalle WHERE idEstudiante ='1957601'");
+
+                ResultSet rDat1 = datosTextArea_1.executeQuery();
+                ResultSet rDat2 = datosTextArea_2.executeQuery();
+                ResultSet rDat3 = datosTextArea_3.executeQuery();
+
+                if (rDat1.next()) {
+                    jTextArea1.setText(rDat1.getNString("detalle1"));
+                }
+                if (rDat2.next()) {
+                    jTextArea2.setText(rDat2.getNString("detalle2"));
+                }
+                if (rDat3.next()) {
+                    jTextArea3.setText(rDat3.getNString("detalle3"));
+                }
+
             } catch (SQLException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -640,6 +667,30 @@ public class Edicion extends javax.swing.JFrame {
                     String salida = nom + " " + ape;
                     jTextField5.setText(salida);
                 }
+                
+                
+                PreparedStatement datosTextArea_1 = cnn.prepareStatement(""
+                        + "SELECT detalle1 FROM tabladetalle WHERE idEstudiante ='1958205'");
+                PreparedStatement datosTextArea_2 = cnn.prepareStatement(""
+                        + "SELECT detalle2 FROM tabladetalle WHERE idEstudiante ='1958205'");
+                PreparedStatement datosTextArea_3 = cnn.prepareStatement(""
+                        + "SELECT detalle3 FROM tabladetalle WHERE idEstudiante ='1958205'");
+
+                ResultSet rDat1 = datosTextArea_1.executeQuery();
+                ResultSet rDat2 = datosTextArea_2.executeQuery();
+                ResultSet rDat3 = datosTextArea_3.executeQuery();
+
+                if (rDat1.next()) {
+                    jTextArea1.setText(rDat1.getNString("detalle1"));
+                }
+                if (rDat2.next()) {
+                    jTextArea2.setText(rDat2.getNString("detalle2"));
+                }
+                if (rDat3.next()) {
+                    jTextArea3.setText(rDat3.getNString("detalle3"));
+                }
+
+
 
             } catch (SQLException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
@@ -662,6 +713,28 @@ public class Edicion extends javax.swing.JFrame {
                     String ape = rsN.getNString("apellido");
                     String salida = nom + " " + ape;
                     jTextField5.setText(salida);
+                }
+                
+                                
+                PreparedStatement datosTextArea_1 = cnn.prepareStatement(""
+                        + "SELECT detalle1 FROM tabladetalle WHERE idEstudiante ='1958266'");
+                PreparedStatement datosTextArea_2 = cnn.prepareStatement(""
+                        + "SELECT detalle2 FROM tabladetalle WHERE idEstudiante ='1958266'");
+                PreparedStatement datosTextArea_3 = cnn.prepareStatement(""
+                        + "SELECT detalle3 FROM tabladetalle WHERE idEstudiante ='1958266'");
+
+                ResultSet rDat1 = datosTextArea_1.executeQuery();
+                ResultSet rDat2 = datosTextArea_2.executeQuery();
+                ResultSet rDat3 = datosTextArea_3.executeQuery();
+
+                if (rDat1.next()) {
+                    jTextArea1.setText(rDat1.getNString("detalle1"));
+                }
+                if (rDat2.next()) {
+                    jTextArea2.setText(rDat2.getNString("detalle2"));
+                }
+                if (rDat3.next()) {
+                    jTextArea3.setText(rDat3.getNString("detalle3"));
                 }
 
             } catch (SQLException ex) {
@@ -686,6 +759,28 @@ public class Edicion extends javax.swing.JFrame {
                     String salida = nom + " " + ape;
                     jTextField5.setText(salida);
                 }
+                        
+                PreparedStatement datosTextArea_1 = cnn.prepareStatement(""
+                        + "SELECT detalle1 FROM tabladetalle WHERE idEstudiante ='1958283'");
+                PreparedStatement datosTextArea_2 = cnn.prepareStatement(""
+                        + "SELECT detalle2 FROM tabladetalle WHERE idEstudiante ='1958283'");
+                PreparedStatement datosTextArea_3 = cnn.prepareStatement(""
+                        + "SELECT detalle3 FROM tabladetalle WHERE idEstudiante ='1958283'");
+
+                ResultSet rDat1 = datosTextArea_1.executeQuery();
+                ResultSet rDat2 = datosTextArea_2.executeQuery();
+                ResultSet rDat3 = datosTextArea_3.executeQuery();
+
+                if (rDat1.next()) {
+                    jTextArea1.setText(rDat1.getNString("detalle1"));
+                }
+                if (rDat2.next()) {
+                    jTextArea2.setText(rDat2.getNString("detalle2"));
+                }
+                if (rDat3.next()) {
+                    jTextArea3.setText(rDat3.getNString("detalle3"));
+                }
+
 
             } catch (SQLException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
@@ -699,139 +794,152 @@ public class Edicion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
-        if(jTextField5.getText().equals("Keren Rodas")){
-        
-        try {
-            try {            
-            Connection cn = Conexion.conectar();
-            Document doc1 = jTextArea1.getDocument();
-            Document doc2 = jTextArea2.getDocument();
-            Document doc3 = jTextArea3.getDocument();
-            
-            
-            String posF1 = doc1.getEndPosition().toString();
-            String posF2 = doc2.getEndPosition().toString();
-            String posF3 = doc3.getEndPosition().toString();
-            int pFin1 = Integer.parseInt(posF1);
-            int pFin2 = Integer.parseInt(posF2);
-            int pFin3 = Integer.parseInt(posF3);
-            
-            
-            String doc1S = doc1.getText(0, pFin1);
-            String doc2S = doc2.getText(0, pFin2);
-            String doc3S = doc3.getText(0, pFin3);
+        if (jTextField5.getText().equals("Keren Rodas")) {
 
-            PreparedStatement detalleN1 = cn.prepareStatement(""
-                        + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1957601'");
-                            int rss = detalleN1.executeUpdate();
-            } catch (SQLException ex) {
+            try {
+                try {
+                    Connection cn = Conexion.conectar();
+                    Document doc1 = jTextArea1.getDocument();
+                    Document doc2 = jTextArea2.getDocument();
+                    Document doc3 = jTextArea3.getDocument();
+
+                    String posF1 = doc1.getEndPosition().toString();
+                    String posF2 = doc2.getEndPosition().toString();
+                    String posF3 = doc3.getEndPosition().toString();
+                    int pFin1 = Integer.parseInt(posF1);
+                    int pFin2 = Integer.parseInt(posF2);
+                    int pFin3 = Integer.parseInt(posF3);
+
+                    String doc1S = doc1.getText(0, pFin1);
+                    String doc2S = doc2.getText(0, pFin2);
+                    String doc3S = doc3.getText(0, pFin3);
+
+                    PreparedStatement detalleN1 = cn.prepareStatement(""
+                            + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1957601'");
+                    int rss = detalleN1.executeUpdate();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (BadLocationException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (BadLocationException ex) {
-            Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            jTextArea1.setText("");
+            jTextArea2.setText("");
+            jTextArea3.setText("");
+            jPanel_DETALLES.setVisible(false);
         }
-        }
+
 //********************************************************************************************************************************************************************************        
-        if(jTextField5.getText().equals("Leandro Rodriguez")){
-        try {
-            try {            
-            Connection cn = Conexion.conectar();
-            Document doc1 = jTextArea1.getDocument();
-            Document doc2 = jTextArea2.getDocument();
-            Document doc3 = jTextArea3.getDocument();
-            
-            
-            String posF1 = doc1.getEndPosition().toString();
-            String posF2 = doc2.getEndPosition().toString();
-            String posF3 = doc3.getEndPosition().toString();
-            int pFin1 = Integer.parseInt(posF1);
-            int pFin2 = Integer.parseInt(posF2);
-            int pFin3 = Integer.parseInt(posF3);
-            
-            
-            String doc1S = doc1.getText(0, pFin1);
-            String doc2S = doc2.getText(0, pFin2);
-            String doc3S = doc3.getText(0, pFin3);
+        if (jTextField5.getText().equals("Leandro Rodriguez")) {
+            try {
+                try {
+                    Connection cn = Conexion.conectar();
+                    Document doc1 = jTextArea1.getDocument();
+                    Document doc2 = jTextArea2.getDocument();
+                    Document doc3 = jTextArea3.getDocument();
 
-            PreparedStatement detalleN1 = cn.prepareStatement(""
-                        + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1958205'");
-                            int rss = detalleN1.executeUpdate();
-            } catch (SQLException ex) {
+                    String posF1 = doc1.getEndPosition().toString();
+                    String posF2 = doc2.getEndPosition().toString();
+                    String posF3 = doc3.getEndPosition().toString();
+                    int pFin1 = Integer.parseInt(posF1);
+                    int pFin2 = Integer.parseInt(posF2);
+                    int pFin3 = Integer.parseInt(posF3);
+
+                    String doc1S = doc1.getText(0, pFin1);
+                    String doc2S = doc2.getText(0, pFin2);
+                    String doc3S = doc3.getText(0, pFin3);
+
+                    PreparedStatement detalleN1 = cn.prepareStatement(""
+                            + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1958205'");
+                    int rss = detalleN1.executeUpdate();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (BadLocationException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (BadLocationException ex) {
-            Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            jTextArea1.setText("");
+            jTextArea2.setText("");
+            jTextArea3.setText("");
+            jPanel_DETALLES.setVisible(false);
         }
+
+//******************************************************************************************************************************************************************
+        if (jTextField5.getText().equals("Christian Barbosa")) {
+
+            try {
+                try {
+                    Connection cn = Conexion.conectar();
+                    Document doc1 = jTextArea1.getDocument();
+                    Document doc2 = jTextArea2.getDocument();
+                    Document doc3 = jTextArea3.getDocument();
+
+                    String posF1 = doc1.getEndPosition().toString();
+                    String posF2 = doc2.getEndPosition().toString();
+                    String posF3 = doc3.getEndPosition().toString();
+                    int pFin1 = Integer.parseInt(posF1);
+                    int pFin2 = Integer.parseInt(posF2);
+                    int pFin3 = Integer.parseInt(posF3);
+
+                    String doc1S = doc1.getText(0, pFin1);
+                    String doc2S = doc2.getText(0, pFin2);
+                    String doc3S = doc3.getText(0, pFin3);
+
+                    PreparedStatement detalleN1 = cn.prepareStatement(""
+                            + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1958266'");
+                    int rss = detalleN1.executeUpdate();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (BadLocationException ex) {
+                Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            jTextArea1.setText("");
+            jTextArea2.setText("");
+            jTextArea3.setText("");
+            jPanel_DETALLES.setVisible(false);
         }
 //******************************************************************************************************************************************************************
-        if(jTextField5.getText().equals("Christian Barbosa")){
-        
-        try {
-            try {            
-            Connection cn = Conexion.conectar();
-            Document doc1 = jTextArea1.getDocument();
-            Document doc2 = jTextArea2.getDocument();
-            Document doc3 = jTextArea3.getDocument();
-            
-            
-            String posF1 = doc1.getEndPosition().toString();
-            String posF2 = doc2.getEndPosition().toString();
-            String posF3 = doc3.getEndPosition().toString();
-            int pFin1 = Integer.parseInt(posF1);
-            int pFin2 = Integer.parseInt(posF2);
-            int pFin3 = Integer.parseInt(posF3);
-            
-            
-            String doc1S = doc1.getText(0, pFin1);
-            String doc2S = doc2.getText(0, pFin2);
-            String doc3S = doc3.getText(0, pFin3);
+        if (jTextField5.getText().equals("Alejandro Castro")) {
 
-            PreparedStatement detalleN1 = cn.prepareStatement(""
-                        + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1958266'");
-                            int rss = detalleN1.executeUpdate();
-            } catch (SQLException ex) {
+            try {
+                try {
+                    Connection cn = Conexion.conectar();
+                    Document doc1 = jTextArea1.getDocument();
+                    Document doc2 = jTextArea2.getDocument();
+                    Document doc3 = jTextArea3.getDocument();
+
+                    String posF1 = doc1.getEndPosition().toString();
+                    String posF2 = doc2.getEndPosition().toString();
+                    String posF3 = doc3.getEndPosition().toString();
+                    int pFin1 = Integer.parseInt(posF1);
+                    int pFin2 = Integer.parseInt(posF2);
+                    int pFin3 = Integer.parseInt(posF3);
+
+                    String doc1S = doc1.getText(0, pFin1);
+                    String doc2S = doc2.getText(0, pFin2);
+                    String doc3S = doc3.getText(0, pFin3);
+
+                    PreparedStatement detalleN1 = cn.prepareStatement(""
+                            + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1958283'");
+                    int rss = detalleN1.executeUpdate();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (BadLocationException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (BadLocationException ex) {
-            Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            jTextArea1.setText("");
+            jTextArea2.setText("");
+            jTextArea3.setText("");
+            jPanel_DETALLES.setVisible(false);
         }
-        }
-//******************************************************************************************************************************************************************
-        if(jTextField5.getText().equals("Alejandro Castro")){
-        
-        try {
-            try {            
-            Connection cn = Conexion.conectar();
-            Document doc1 = jTextArea1.getDocument();
-            Document doc2 = jTextArea2.getDocument();
-            Document doc3 = jTextArea3.getDocument();
-            
-            
-            String posF1 = doc1.getEndPosition().toString();
-            String posF2 = doc2.getEndPosition().toString();
-            String posF3 = doc3.getEndPosition().toString();
-            int pFin1 = Integer.parseInt(posF1);
-            int pFin2 = Integer.parseInt(posF2);
-            int pFin3 = Integer.parseInt(posF3);
-            
-            
-            String doc1S = doc1.getText(0, pFin1);
-            String doc2S = doc2.getText(0, pFin2);
-            String doc3S = doc3.getText(0, pFin3);
 
-            PreparedStatement detalleN1 = cn.prepareStatement(""
-                        + "UPDATE tabladetalle  SET detalle1 ='" + doc1S + "', detalle2 ='" + doc2S + "', detalle3='" + doc3S + "' where idEstudiante = '1958283'");
-                            int rss = detalleN1.executeUpdate();
-            } catch (SQLException ex) {
-                Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (BadLocationException ex) {
-            Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        }
-        
-        
-        
+
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
     private void SalirKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirKMouseClicked

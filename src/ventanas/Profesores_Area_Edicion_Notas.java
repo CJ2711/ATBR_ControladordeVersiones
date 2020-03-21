@@ -174,6 +174,7 @@ public class Profesores_Area_Edicion_Notas extends javax.swing.JFrame {
         jTextField1_nombre_apellido.setEditable(false);
         jTextField1_nombre_apellido.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1_nombre_apellido.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        jTextField1_nombre_apellido.setFocusable(false);
         jTextField1_nombre_apellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1_nombre_apellidoActionPerformed(evt);

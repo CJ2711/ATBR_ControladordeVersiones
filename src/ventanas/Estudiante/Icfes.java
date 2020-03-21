@@ -139,6 +139,7 @@ public class Icfes extends javax.swing.JFrame {
 
         jTextField_Nombre_Apellido_E.setEditable(false);
         jTextField_Nombre_Apellido_E.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
+        jTextField_Nombre_Apellido_E.setFocusable(false);
         jTextField_Nombre_Apellido_E.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_Nombre_Apellido_EActionPerformed(evt);
