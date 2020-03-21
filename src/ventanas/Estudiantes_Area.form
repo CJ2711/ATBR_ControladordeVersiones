@@ -129,6 +129,7 @@
     <Component class="javax.swing.JTextField" name="jTextField_Nombre_Apellido_E">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_Nombre_Apellido_EActionPerformed"/>
