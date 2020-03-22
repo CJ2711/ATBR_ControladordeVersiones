@@ -11,6 +11,8 @@
 package ventanas.Estudiante;
 
 import BD.Conexion;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,6 +58,12 @@ public class Icfes extends javax.swing.JFrame {
         resultadosIcfesText(2);
         resultadosIcfesText(3);
 
+        setIconImage(getIconImage());
+    }
+
+    public Image getIconImage() {
+        Image retvalue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoProgramaGrande.png"));
+        return retvalue;
     }
 
     public void resultadosIcfesText(int numero) {
@@ -72,15 +80,14 @@ public class Icfes extends javax.swing.JFrame {
             int cn = Integer.parseInt(valorX0Y3.toString());
             int cs = Integer.parseInt(valorX0Y4.toString());
             int ingles = Integer.parseInt(valorX0Y6.toString());
-            
+
             String mathS = valorX0Y1.toString();
             String lcS = valorX0Y2.toString();
             String cnS = valorX0Y3.toString();
             String csS = valorX0Y4.toString();
             String inglesS = valorX0Y5.toString();
             String ptTotalS = valorX0Y6.toString();
-            
-            
+
             jTextField_Puntaje_Math.setText(mathS);
             jTextField_Puntaje_LC.setText(lcS);
             jTextField_Puntaje_CN.setText(cnS);
@@ -142,7 +149,7 @@ public class Icfes extends javax.swing.JFrame {
             if ((ingles >= 60) && (ingles <= 100)) {
                 Label_Semaforo_Ingles_Verde.setVisible(true);
             }
-            
+
         }
 
         if (username.equals("1958205")) {
@@ -237,7 +244,7 @@ public class Icfes extends javax.swing.JFrame {
             Object valorX2Y4 = jTable1.getValueAt(2, 4);
             Object valorX2Y5 = jTable1.getValueAt(2, 5);
             Object valorX2Y6 = jTable1.getValueAt(2, 6);
-            
+
             int math = Integer.parseInt(valorX2Y1.toString());
             int lc = Integer.parseInt(valorX2Y2.toString());
             int cn = Integer.parseInt(valorX2Y3.toString());
@@ -257,7 +264,7 @@ public class Icfes extends javax.swing.JFrame {
             jTextField_Puntaje_SC.setText(csS);
             jTextField_Puntaje_Ingles.setText(inglesS);
             jTextField_Puntaje_Total.setText(ptTotalS);
-            
+
             //SEMAFORO MATEMÁTICAS
             if ((math >= 0) && (math <= 30)) {
                 Label_Semaforo_Math_Rojo.setVisible(true);
@@ -312,7 +319,7 @@ public class Icfes extends javax.swing.JFrame {
             if ((ingles >= 60) && (ingles <= 100)) {
                 Label_Semaforo_Ingles_Verde.setVisible(true);
             }
-            
+
         }
 
         if (username.equals("1958283")) {
@@ -342,7 +349,7 @@ public class Icfes extends javax.swing.JFrame {
             jTextField_Puntaje_SC.setText(csS);
             jTextField_Puntaje_Ingles.setText(inglesS);
             jTextField_Puntaje_Total.setText(ptTotalS);
-            
+
             //SEMAFORO MATEMÁTICAS
             if ((math >= 0) && (math <= 30)) {
                 Label_Semaforo_Math_Rojo.setVisible(true);
@@ -414,6 +421,7 @@ public class Icfes extends javax.swing.JFrame {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("atbr_proyecto?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         resultadosicfesQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT r FROM Resultadosicfes r");
         resultadosicfesList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : resultadosicfesQuery.getResultList();
+        jLabel1 = new javax.swing.JLabel();
         Button_Return_Inicio = new javax.swing.JButton();
         Label_Titulo_Icfes = new javax.swing.JLabel();
         Label_Icfes_Math = new javax.swing.JLabel();
@@ -463,6 +471,9 @@ public class Icfes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoProgramaPeq.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         Button_Return_Inicio.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
         Button_Return_Inicio.setText("INICIO");
@@ -691,7 +702,6 @@ public class Icfes extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
 
         jLabel_FondoIcfes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
-        jLabel_FondoIcfes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jLabel_FondoIcfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel_FondoIcfes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
@@ -812,6 +822,7 @@ public class Icfes extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Semaforo_Math_Verde1;
     private javax.swing.JLabel Label_Titulo_Icfes;
     private javax.persistence.EntityManager entityManager;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_FondoIcfes;
     private javax.swing.JLabel jLabel_FondoIcfes1;
     private javax.swing.JList<String> jList1;

@@ -13,6 +13,8 @@ package ventanas;
 import ventanas.Estudiante.Icfes;
 import ventanas.Estudiante.Calculo;
 import BD.Conexion;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,17 +39,23 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Semaforo_Calculo_Rojo.setVisible(false);
         Label_Semaforo_Calculo_Amarillo.setVisible(false);
         Label_Semaforo_Calculo_Verde.setVisible(false);
-        
+
         promedioFila(0);
         promedioFila(1);
         promedioFila(2);
         promedioFila(3);
 
+        setIconImage(getIconImage());
+    }
+
+    public Image getIconImage() {
+        Image retvalue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoProgramaGrande.png"));
+        return retvalue;
     }
 
     public void promedioFila(int numero) {
-        
-        if(username.equals("1957601")){
+
+        if (username.equals("1957601")) {
             Object valorX0Y1 = jTable1.getValueAt(0, 1);
             Object valorX0Y2 = jTable1.getValueAt(0, 2);
             Object valorX0Y3 = jTable1.getValueAt(0, 3);
@@ -73,10 +81,10 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Label_Semaforo_Calculo_Amarillo.setVisible(false);
                 Label_Semaforo_Calculo_Verde.setVisible(true);
             }
-            
+
         }
-        
-        if(username.equals("1958205")){
+
+        if (username.equals("1958205")) {
             Object valorX1Y1 = jTable1.getValueAt(1, 1);
             Object valorX1Y2 = jTable1.getValueAt(1, 2);
             Object valorX1Y3 = jTable1.getValueAt(1, 3);
@@ -86,7 +94,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
             float vx2y3 = Float.parseFloat(valorX1Y3.toString());
 
             float defX1Y1 = (vx2y1 + vx2y2 + vx2y3) / 3;
-            
+
             if ((defX1Y1 >= (float) 0.00) && (defX1Y1 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
                 Label_Semaforo_Calculo_Amarillo.setVisible(false);
@@ -102,10 +110,10 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Label_Semaforo_Calculo_Amarillo.setVisible(false);
                 Label_Semaforo_Calculo_Verde.setVisible(true);
             }
-            
+
         }
-        
-        if(username.equals("1958266")){
+
+        if (username.equals("1958266")) {
             Object valorX2Y1 = jTable1.getValueAt(2, 1);
             Object valorX2Y2 = jTable1.getValueAt(2, 2);
             Object valorX2Y3 = jTable1.getValueAt(2, 3);
@@ -115,7 +123,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
             float vx3y3 = Float.parseFloat(valorX2Y3.toString());
 
             float defX2Y2 = (vx3y1 + vx3y2 + vx3y3) / 3;
-            
+
             if ((defX2Y2 >= (float) 0.00) && (defX2Y2 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
                 Label_Semaforo_Calculo_Amarillo.setVisible(false);
@@ -131,10 +139,10 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Label_Semaforo_Calculo_Amarillo.setVisible(false);
                 Label_Semaforo_Calculo_Verde.setVisible(true);
             }
-            
+
         }
-        
-        if(username.equals("1958283")){
+
+        if (username.equals("1958283")) {
             Object valorX3Y1 = jTable1.getValueAt(3, 1);
             Object valorX3Y2 = jTable1.getValueAt(3, 2);
             Object valorX3Y3 = jTable1.getValueAt(3, 3);
@@ -144,7 +152,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
             float vx4y3 = Float.parseFloat(valorX3Y3.toString());
 
             float defX3Y3 = (vx4y1 + vx4y2 + vx4y3) / 3;
-            
+
             if ((defX3Y3 >= (float) 0.00) && (defX3Y3 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
                 Label_Semaforo_Calculo_Amarillo.setVisible(false);
@@ -160,9 +168,9 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Label_Semaforo_Calculo_Amarillo.setVisible(false);
                 Label_Semaforo_Calculo_Verde.setVisible(true);
             }
-            
+
         }
-        
+
     }
 
     /**
@@ -205,6 +213,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Semaforo_Ingles_Amarillo = new javax.swing.JLabel();
         Label_Semaforo_Espanol_Amarillo = new javax.swing.JLabel();
         Label_Semaforo_DeporteFormativo_Verde = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel_FondoEstudiantes = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -383,6 +392,9 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Semaforo_DeporteFormativo_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_DeporteFormativo_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoProgramaPeq.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
         jLabel_FondoEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
         getContentPane().add(jLabel_FondoEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -497,6 +509,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Titulo_Notificaciones;
     private javax.swing.JLabel Label_Titulo_Prueba;
     private javax.persistence.EntityManager entityManager;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_FondoEstudiantes;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
