@@ -178,6 +178,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("atbr_proyecto?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         notaseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
         notaseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery.getResultList();
+        Label_Semestre = new javax.swing.JLabel();
         Label_Titulo_Prueba = new javax.swing.JLabel();
         Label_Titulo_Materias = new javax.swing.JLabel();
         Label_Titulo_Notificaciones = new javax.swing.JLabel();
@@ -210,6 +211,10 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Label_Semestre.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
+        Label_Semestre.setText("PERIODO 2019 - 2");
+        getContentPane().add(Label_Semestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 240, -1));
 
         Label_Titulo_Prueba.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
         Label_Titulo_Prueba.setText("PRUEBAS");
@@ -487,6 +492,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Semaforo_ITI_Verde;
     private javax.swing.JLabel Label_Semaforo_Ingles_Amarillo;
     private javax.swing.JLabel Label_Semaforo_TGS_Verde;
+    private javax.swing.JLabel Label_Semestre;
     private javax.swing.JLabel Label_Titulo_Materias;
     private javax.swing.JLabel Label_Titulo_Notificaciones;
     private javax.swing.JLabel Label_Titulo_Prueba;
