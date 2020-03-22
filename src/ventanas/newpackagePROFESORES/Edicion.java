@@ -11,6 +11,8 @@
 package ventanas.newpackagePROFESORES;
 
 import BD.Conexion;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,6 +56,12 @@ public class Edicion extends javax.swing.JFrame {
 
         //los paneles independientes para cada uno
         jPanel_DETALLES.setVisible(false);
+        setIconImage(getIconImage());
+    }
+
+    public Image getIconImage() {
+        Image retvalue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoProgramaGrande.png"));
+        return retvalue;
     }
 
     /**
@@ -176,14 +184,13 @@ public class Edicion extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jPanel_DETALLES = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -191,12 +198,14 @@ public class Edicion extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         SalirK = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
         jLabel1_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -371,11 +380,6 @@ public class Edicion extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 120, 30));
 
-        jLabel2.setFont(new java.awt.Font("Segoe Print", 3, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Presiona Enter para actualizar la información");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, -1, -1));
-
         jPanel_DETALLES.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField5.setEditable(false);
@@ -397,9 +401,6 @@ public class Edicion extends javax.swing.JFrame {
         jLabel11.setText("Evaluación 2:");
         jPanel_DETALLES.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        jLabel12.setText("Evaluación 3:");
-        jPanel_DETALLES.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
-
         BotonGuardar.setText("Guardar");
         BotonGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -408,6 +409,9 @@ public class Edicion extends javax.swing.JFrame {
             }
         });
         jPanel_DETALLES.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        jLabel12.setText("Evaluación 3:");
+        jPanel_DETALLES.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -438,6 +442,11 @@ public class Edicion extends javax.swing.JFrame {
 
         getContentPane().add(jPanel_DETALLES, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 340, 530));
 
+        jLabel2.setFont(new java.awt.Font("Segoe Print", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Presiona Enter para actualizar la información");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, -1, -1));
+
         jLabel3.setFont(new java.awt.Font("Segoe Script", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("AVISO ");
@@ -467,6 +476,10 @@ public class Edicion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoProgramaPeq.png"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 380, 100));
 
         jLabel1_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoProfesores.png"))); // NOI18N
         getContentPane().add(jLabel1_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -667,8 +680,7 @@ public class Edicion extends javax.swing.JFrame {
                     String salida = nom + " " + ape;
                     jTextField5.setText(salida);
                 }
-                
-                
+
                 PreparedStatement datosTextArea_1 = cnn.prepareStatement(""
                         + "SELECT detalle1 FROM tabladetalle WHERE idEstudiante ='1958205'");
                 PreparedStatement datosTextArea_2 = cnn.prepareStatement(""
@@ -689,8 +701,6 @@ public class Edicion extends javax.swing.JFrame {
                 if (rDat3.next()) {
                     jTextArea3.setText(rDat3.getNString("detalle3"));
                 }
-
-
 
             } catch (SQLException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
@@ -714,8 +724,7 @@ public class Edicion extends javax.swing.JFrame {
                     String salida = nom + " " + ape;
                     jTextField5.setText(salida);
                 }
-                
-                                
+
                 PreparedStatement datosTextArea_1 = cnn.prepareStatement(""
                         + "SELECT detalle1 FROM tabladetalle WHERE idEstudiante ='1958266'");
                 PreparedStatement datosTextArea_2 = cnn.prepareStatement(""
@@ -759,7 +768,7 @@ public class Edicion extends javax.swing.JFrame {
                     String salida = nom + " " + ape;
                     jTextField5.setText(salida);
                 }
-                        
+
                 PreparedStatement datosTextArea_1 = cnn.prepareStatement(""
                         + "SELECT detalle1 FROM tabladetalle WHERE idEstudiante ='1958283'");
                 PreparedStatement datosTextArea_2 = cnn.prepareStatement(""
@@ -780,7 +789,6 @@ public class Edicion extends javax.swing.JFrame {
                 if (rDat3.next()) {
                     jTextArea3.setText(rDat3.getNString("detalle3"));
                 }
-
 
             } catch (SQLException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
@@ -823,7 +831,7 @@ public class Edicion extends javax.swing.JFrame {
             } catch (BadLocationException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado", JOptionPane.INFORMATION_MESSAGE);
             jTextArea1.setText("");
             jTextArea2.setText("");
             jTextArea3.setText("");
@@ -859,7 +867,7 @@ public class Edicion extends javax.swing.JFrame {
             } catch (BadLocationException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado", JOptionPane.INFORMATION_MESSAGE);
             jTextArea1.setText("");
             jTextArea2.setText("");
             jTextArea3.setText("");
@@ -896,7 +904,7 @@ public class Edicion extends javax.swing.JFrame {
             } catch (BadLocationException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado", JOptionPane.INFORMATION_MESSAGE);
             jTextArea1.setText("");
             jTextArea2.setText("");
             jTextArea3.setText("");
@@ -932,7 +940,7 @@ public class Edicion extends javax.swing.JFrame {
             } catch (BadLocationException ex) {
                 Logger.getLogger(Edicion.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cambios Realizados con exito", "Aprobado", JOptionPane.INFORMATION_MESSAGE);
             jTextArea1.setText("");
             jTextArea2.setText("");
             jTextArea3.setText("");
@@ -958,6 +966,7 @@ public class Edicion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel1_Fondo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

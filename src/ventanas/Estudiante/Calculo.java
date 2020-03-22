@@ -10,6 +10,9 @@
  */
 package ventanas.Estudiante;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 public class Calculo extends javax.swing.JFrame {
 
     /**
@@ -20,8 +23,13 @@ public class Calculo extends javax.swing.JFrame {
         setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante]");
         this.setLocationRelativeTo(null);
         setResizable(false);
-        
-        
+
+        setIconImage(getIconImage());
+    }
+
+    public Image getIconImage() {
+        Image retvalue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoProgramaGrande.png"));
+        return retvalue;
     }
 
     /**
