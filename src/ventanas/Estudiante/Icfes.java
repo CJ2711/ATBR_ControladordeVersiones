@@ -31,10 +31,10 @@ public class Icfes extends javax.swing.JFrame {
         setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante]");
         this.setLocationRelativeTo(null);
         setResizable(false);
-        
+
         jScrollPane2.setVisible(false);
         jList1.setVisible(false);
-        
+
         Label_Semaforo_Math_Rojo.setVisible(false);
         Label_Semaforo_Math_Amarillo.setVisible(false);
         Label_Semaforo_Math_Verde.setVisible(false);
@@ -51,23 +51,15 @@ public class Icfes extends javax.swing.JFrame {
         Label_Semaforo_Ingles_Amarillo.setVisible(false);
         Label_Semaforo_Ingles_Verde.setVisible(false);
 
-        if (username.equals(1957601)) {
-            resultadosIcfesText(0);
-        }
-        if (username.equals(1958205)) {
-            resultadosIcfesText(1);
-        }
-        if (username.equals(1958266)) {
-            resultadosIcfesText(2);
-        }
-        if (username.equals(1958283)) {
-            resultadosIcfesText(3);
-        }
+        resultadosIcfesText(0);
+        resultadosIcfesText(1);
+        resultadosIcfesText(2);
+        resultadosIcfesText(3);
 
     }
 
     public void resultadosIcfesText(int numero) {
-        if (numero == 0) {
+        if (username.equals("1957601")) {
             Object valorX0Y1 = jTable1.getValueAt(0, 1);
             Object valorX0Y2 = jTable1.getValueAt(0, 2);
             Object valorX0Y3 = jTable1.getValueAt(0, 3);
@@ -75,17 +67,85 @@ public class Icfes extends javax.swing.JFrame {
             Object valorX0Y5 = jTable1.getValueAt(0, 5);
             Object valorX0Y6 = jTable1.getValueAt(0, 6);
 
-            jTextField_Puntaje_Math.setText((String) valorX0Y1);
-            jTextField_Puntaje_LC.setText((String) valorX0Y2);
-            jTextField_Puntaje_CN.setText((String) valorX0Y3);
-            jTextField_Puntaje_SC.setText((String) valorX0Y4);
-            jTextField_Puntaje_Ingles.setText((String) valorX0Y5);
-            jTextField_Puntaje_Total.setText((String) valorX0Y6);
+            int math = Integer.parseInt(valorX0Y1.toString());
+            int lc = Integer.parseInt(valorX0Y2.toString());
+            int cn = Integer.parseInt(valorX0Y3.toString());
+            int cs = Integer.parseInt(valorX0Y4.toString());
+            int ingles = Integer.parseInt(valorX0Y6.toString());
+            
+            String mathS = valorX0Y1.toString();
+            String lcS = valorX0Y2.toString();
+            String cnS = valorX0Y3.toString();
+            String csS = valorX0Y4.toString();
+            String inglesS = valorX0Y5.toString();
+            String ptTotalS = valorX0Y6.toString();
+            
+            
+            jTextField_Puntaje_Math.setText(mathS);
+            jTextField_Puntaje_LC.setText(lcS);
+            jTextField_Puntaje_CN.setText(cnS);
+            jTextField_Puntaje_SC.setText(csS);
+            jTextField_Puntaje_Ingles.setText(inglesS);
+            jTextField_Puntaje_Total.setText(ptTotalS);
 
-            //if((valor))
+            //SEMAFORO MATEMÁTICAS
+            if ((math >= 0) && (math <= 30)) {
+                Label_Semaforo_Math_Rojo.setVisible(true);
+            }
+            if ((math >= 31) && (math <= 59)) {
+                Label_Semaforo_Math_Amarillo.setVisible(true);
+            }
+            if ((math >= 60) && (math <= 100)) {
+                Label_Semaforo_Math_Verde.setVisible(true);
+            }
+
+            //SEMAFORO LECTURA CRÍTICA
+            if ((lc >= 0) && (lc <= 30)) {
+                Label_Semaforo_LC_Rojo.setVisible(true);
+            }
+            if ((lc >= 31) && (lc <= 59)) {
+                Label_Semaforo_LC_Amarillo.setVisible(true);
+            }
+            if ((lc >= 60) && (lc <= 100)) {;
+                Label_Semaforo_LC_Verde.setVisible(true);
+            }
+
+            //SEMAFORO CIENCIAS NATURALES
+            if ((cn >= 0) && (cn <= 30)) {
+                Label_Semaforo_CN_Rojo.setVisible(true);
+            }
+            if ((cn >= 31) && (cn <= 59)) {
+                Label_Semaforo_CN_Amarillo.setVisible(true);
+            }
+            if ((cn >= 60) && (cn <= 100)) {
+                Label_Semaforo_CN_Verde.setVisible(true);
+            }
+
+            //SEMAFORO CIENCIAS SOCIALES
+            if ((cs >= 0) && (cs <= 30)) {
+                Label_Semaforo_CS_Rojo.setVisible(true);
+            }
+            if ((cs >= 31) && (cs <= 59)) {
+                Label_Semaforo_CS_Amarillo.setVisible(true);
+            }
+            if ((cs >= 60) && (cs <= 100)) {
+                Label_Semaforo_CS_Verde.setVisible(true);
+            }
+
+            //SEMAFORO INGLÉS
+            if ((ingles >= 0) && (ingles <= 30)) {
+                Label_Semaforo_Ingles_Rojo.setVisible(true);
+            }
+            if ((ingles >= 31) && (ingles <= 59)) {
+                Label_Semaforo_Ingles_Amarillo.setVisible(true);
+            }
+            if ((ingles >= 60) && (ingles <= 100)) {
+                Label_Semaforo_Ingles_Verde.setVisible(true);
+            }
+            
         }
 
-        if (numero == 1) {
+        if (username.equals("1958205")) {
             Object valorX1Y1 = jTable1.getValueAt(1, 1);
             Object valorX1Y2 = jTable1.getValueAt(1, 2);
             Object valorX1Y3 = jTable1.getValueAt(1, 3);
@@ -99,117 +159,163 @@ public class Icfes extends javax.swing.JFrame {
             int cs = Integer.parseInt(valorX1Y4.toString());
             int ingles = Integer.parseInt(valorX1Y6.toString());
 
-            jTextField_Puntaje_Math.setText((String) valorX1Y1);
-            jTextField_Puntaje_LC.setText((String) valorX1Y2);
-            jTextField_Puntaje_CN.setText((String) valorX1Y3);
-            jTextField_Puntaje_SC.setText((String) valorX1Y4);
-            jTextField_Puntaje_Ingles.setText((String) valorX1Y5);
-            jTextField_Puntaje_Total.setText((String) valorX1Y6);
+            String mathS = valorX1Y1.toString();
+            String lcS = valorX1Y2.toString();
+            String cnS = valorX1Y3.toString();
+            String csS = valorX1Y4.toString();
+            String inglesS = valorX1Y5.toString();
+            String ptTotalS = valorX1Y6.toString();
+
+            jTextField_Puntaje_Math.setText(mathS);
+            jTextField_Puntaje_LC.setText(lcS);
+            jTextField_Puntaje_CN.setText(cnS);
+            jTextField_Puntaje_SC.setText(csS);
+            jTextField_Puntaje_Ingles.setText(inglesS);
+            jTextField_Puntaje_Total.setText(ptTotalS);
 
             //SEMAFORO MATEMÁTICAS
             if ((math >= 0) && (math <= 30)) {
                 Label_Semaforo_Math_Rojo.setVisible(true);
-                Label_Semaforo_Math_Amarillo.setVisible(false);
-                Label_Semaforo_Math_Verde.setVisible(false);
             }
             if ((math >= 31) && (math <= 59)) {
-                Label_Semaforo_Math_Rojo.setVisible(false);
                 Label_Semaforo_Math_Amarillo.setVisible(true);
-                Label_Semaforo_Math_Verde.setVisible(false);
             }
             if ((math >= 60) && (math <= 100)) {
-                Label_Semaforo_Math_Rojo.setVisible(false);
-                Label_Semaforo_Math_Amarillo.setVisible(false);
                 Label_Semaforo_Math_Verde.setVisible(true);
             }
-            
+
             //SEMAFORO LECTURA CRÍTICA
             if ((lc >= 0) && (lc <= 30)) {
                 Label_Semaforo_LC_Rojo.setVisible(true);
-                Label_Semaforo_LC_Amarillo.setVisible(false);
-                Label_Semaforo_LC_Verde.setVisible(false);
             }
             if ((lc >= 31) && (lc <= 59)) {
-                Label_Semaforo_LC_Rojo.setVisible(false);
                 Label_Semaforo_LC_Amarillo.setVisible(true);
-                Label_Semaforo_LC_Verde.setVisible(false);
             }
-            if ((lc >= 60) && (lc <= 100)) {
-                Label_Semaforo_LC_Rojo.setVisible(false);
-                Label_Semaforo_LC_Amarillo.setVisible(false);
+            if ((lc >= 60) && (lc <= 100)) {;
                 Label_Semaforo_LC_Verde.setVisible(true);
             }
-            
+
             //SEMAFORO CIENCIAS NATURALES
             if ((cn >= 0) && (cn <= 30)) {
                 Label_Semaforo_CN_Rojo.setVisible(true);
-                Label_Semaforo_CN_Amarillo.setVisible(false);
-                Label_Semaforo_CN_Verde.setVisible(false);
             }
             if ((cn >= 31) && (cn <= 59)) {
-                Label_Semaforo_CN_Rojo.setVisible(false);
                 Label_Semaforo_CN_Amarillo.setVisible(true);
-                Label_Semaforo_CN_Verde.setVisible(false);
             }
             if ((cn >= 60) && (cn <= 100)) {
-                Label_Semaforo_CN_Rojo.setVisible(false);
-                Label_Semaforo_CN_Amarillo.setVisible(false);
                 Label_Semaforo_CN_Verde.setVisible(true);
             }
-            
+
             //SEMAFORO CIENCIAS SOCIALES
             if ((cs >= 0) && (cs <= 30)) {
                 Label_Semaforo_CS_Rojo.setVisible(true);
-                Label_Semaforo_CS_Amarillo.setVisible(false);
-                Label_Semaforo_CS_Verde.setVisible(false);
             }
             if ((cs >= 31) && (cs <= 59)) {
-                Label_Semaforo_CS_Rojo.setVisible(false);
                 Label_Semaforo_CS_Amarillo.setVisible(true);
-                Label_Semaforo_CS_Verde.setVisible(false);
             }
             if ((cs >= 60) && (cs <= 100)) {
-                Label_Semaforo_CS_Rojo.setVisible(false);
-                Label_Semaforo_CS_Amarillo.setVisible(false);
                 Label_Semaforo_CS_Verde.setVisible(true);
             }
-            
+
             //SEMAFORO INGLÉS
             if ((ingles >= 0) && (ingles <= 30)) {
                 Label_Semaforo_Ingles_Rojo.setVisible(true);
-                Label_Semaforo_Ingles_Amarillo.setVisible(false);
-                Label_Semaforo_Ingles_Verde.setVisible(false);
             }
             if ((ingles >= 31) && (ingles <= 59)) {
-                Label_Semaforo_Ingles_Rojo.setVisible(false);
                 Label_Semaforo_Ingles_Amarillo.setVisible(true);
-                Label_Semaforo_Ingles_Verde.setVisible(false);
             }
             if ((ingles >= 60) && (ingles <= 100)) {
-                Label_Semaforo_Ingles_Rojo.setVisible(false);
-                Label_Semaforo_Ingles_Amarillo.setVisible(false);
                 Label_Semaforo_Ingles_Verde.setVisible(true);
             }
 
         }
 
-        if (numero == 2) {
+        if (username.equals("1958266")) {
             Object valorX2Y1 = jTable1.getValueAt(2, 1);
             Object valorX2Y2 = jTable1.getValueAt(2, 2);
             Object valorX2Y3 = jTable1.getValueAt(2, 3);
             Object valorX2Y4 = jTable1.getValueAt(2, 4);
             Object valorX2Y5 = jTable1.getValueAt(2, 5);
             Object valorX2Y6 = jTable1.getValueAt(2, 6);
+            
+            int math = Integer.parseInt(valorX2Y1.toString());
+            int lc = Integer.parseInt(valorX2Y2.toString());
+            int cn = Integer.parseInt(valorX2Y3.toString());
+            int cs = Integer.parseInt(valorX2Y4.toString());
+            int ingles = Integer.parseInt(valorX2Y6.toString());
 
-            jTextField_Puntaje_Math.setText((String) valorX2Y1);
-            jTextField_Puntaje_LC.setText((String) valorX2Y2);
-            jTextField_Puntaje_CN.setText((String) valorX2Y3);
-            jTextField_Puntaje_SC.setText((String) valorX2Y4);
-            jTextField_Puntaje_Ingles.setText((String) valorX2Y5);
-            jTextField_Puntaje_Total.setText((String) valorX2Y6);
+            String mathS = valorX2Y1.toString();
+            String lcS = valorX2Y2.toString();
+            String cnS = valorX2Y3.toString();
+            String csS = valorX2Y4.toString();
+            String inglesS = valorX2Y5.toString();
+            String ptTotalS = valorX2Y6.toString();
+
+            jTextField_Puntaje_Math.setText(mathS);
+            jTextField_Puntaje_LC.setText(lcS);
+            jTextField_Puntaje_CN.setText(cnS);
+            jTextField_Puntaje_SC.setText(csS);
+            jTextField_Puntaje_Ingles.setText(inglesS);
+            jTextField_Puntaje_Total.setText(ptTotalS);
+            
+            //SEMAFORO MATEMÁTICAS
+            if ((math >= 0) && (math <= 30)) {
+                Label_Semaforo_Math_Rojo.setVisible(true);
+            }
+            if ((math >= 31) && (math <= 59)) {
+                Label_Semaforo_Math_Amarillo.setVisible(true);
+            }
+            if ((math >= 60) && (math <= 100)) {
+                Label_Semaforo_Math_Verde.setVisible(true);
+            }
+
+            //SEMAFORO LECTURA CRÍTICA
+            if ((lc >= 0) && (lc <= 30)) {
+                Label_Semaforo_LC_Rojo.setVisible(true);
+            }
+            if ((lc >= 31) && (lc <= 59)) {
+                Label_Semaforo_LC_Amarillo.setVisible(true);
+            }
+            if ((lc >= 60) && (lc <= 100)) {;
+                Label_Semaforo_LC_Verde.setVisible(true);
+            }
+
+            //SEMAFORO CIENCIAS NATURALES
+            if ((cn >= 0) && (cn <= 30)) {
+                Label_Semaforo_CN_Rojo.setVisible(true);
+            }
+            if ((cn >= 31) && (cn <= 59)) {
+                Label_Semaforo_CN_Amarillo.setVisible(true);
+            }
+            if ((cn >= 60) && (cn <= 100)) {
+                Label_Semaforo_CN_Verde.setVisible(true);
+            }
+
+            //SEMAFORO CIENCIAS SOCIALES
+            if ((cs >= 0) && (cs <= 30)) {
+                Label_Semaforo_CS_Rojo.setVisible(true);
+            }
+            if ((cs >= 31) && (cs <= 59)) {
+                Label_Semaforo_CS_Amarillo.setVisible(true);
+            }
+            if ((cs >= 60) && (cs <= 100)) {
+                Label_Semaforo_CS_Verde.setVisible(true);
+            }
+
+            //SEMAFORO INGLÉS
+            if ((ingles >= 0) && (ingles <= 30)) {
+                Label_Semaforo_Ingles_Rojo.setVisible(true);
+            }
+            if ((ingles >= 31) && (ingles <= 59)) {
+                Label_Semaforo_Ingles_Amarillo.setVisible(true);
+            }
+            if ((ingles >= 60) && (ingles <= 100)) {
+                Label_Semaforo_Ingles_Verde.setVisible(true);
+            }
+            
         }
 
-        if (numero == 3) {
+        if (username.equals("1958283")) {
             Object valorX3Y1 = jTable1.getValueAt(3, 1);
             Object valorX3Y2 = jTable1.getValueAt(3, 2);
             Object valorX3Y3 = jTable1.getValueAt(3, 3);
@@ -217,12 +323,80 @@ public class Icfes extends javax.swing.JFrame {
             Object valorX3Y5 = jTable1.getValueAt(3, 5);
             Object valorX3Y6 = jTable1.getValueAt(3, 6);
 
-            jTextField_Puntaje_Math.setText((String) valorX3Y1);
-            jTextField_Puntaje_LC.setText((String) valorX3Y2);
-            jTextField_Puntaje_CN.setText((String) valorX3Y3);
-            jTextField_Puntaje_SC.setText((String) valorX3Y4);
-            jTextField_Puntaje_Ingles.setText((String) valorX3Y5);
-            jTextField_Puntaje_Total.setText((String) valorX3Y6);
+            int math = Integer.parseInt(valorX3Y1.toString());
+            int lc = Integer.parseInt(valorX3Y2.toString());
+            int cn = Integer.parseInt(valorX3Y3.toString());
+            int cs = Integer.parseInt(valorX3Y4.toString());
+            int ingles = Integer.parseInt(valorX3Y6.toString());
+
+            String mathS = valorX3Y1.toString();
+            String lcS = valorX3Y2.toString();
+            String cnS = valorX3Y3.toString();
+            String csS = valorX3Y4.toString();
+            String inglesS = valorX3Y5.toString();
+            String ptTotalS = valorX3Y6.toString();
+
+            jTextField_Puntaje_Math.setText(mathS);
+            jTextField_Puntaje_LC.setText(lcS);
+            jTextField_Puntaje_CN.setText(cnS);
+            jTextField_Puntaje_SC.setText(csS);
+            jTextField_Puntaje_Ingles.setText(inglesS);
+            jTextField_Puntaje_Total.setText(ptTotalS);
+            
+            //SEMAFORO MATEMÁTICAS
+            if ((math >= 0) && (math <= 30)) {
+                Label_Semaforo_Math_Rojo.setVisible(true);
+            }
+            if ((math >= 31) && (math <= 59)) {
+                Label_Semaforo_Math_Amarillo.setVisible(true);
+            }
+            if ((math >= 60) && (math <= 100)) {
+                Label_Semaforo_Math_Verde.setVisible(true);
+            }
+
+            //SEMAFORO LECTURA CRÍTICA
+            if ((lc >= 0) && (lc <= 30)) {
+                Label_Semaforo_LC_Rojo.setVisible(true);
+            }
+            if ((lc >= 31) && (lc <= 59)) {
+                Label_Semaforo_LC_Amarillo.setVisible(true);
+            }
+            if ((lc >= 60) && (lc <= 100)) {;
+                Label_Semaforo_LC_Verde.setVisible(true);
+            }
+
+            //SEMAFORO CIENCIAS NATURALES
+            if ((cn >= 0) && (cn <= 30)) {
+                Label_Semaforo_CN_Rojo.setVisible(true);
+            }
+            if ((cn >= 31) && (cn <= 59)) {
+                Label_Semaforo_CN_Amarillo.setVisible(true);
+            }
+            if ((cn >= 60) && (cn <= 100)) {
+                Label_Semaforo_CN_Verde.setVisible(true);
+            }
+
+            //SEMAFORO CIENCIAS SOCIALES
+            if ((cs >= 0) && (cs <= 30)) {
+                Label_Semaforo_CS_Rojo.setVisible(true);
+            }
+            if ((cs >= 31) && (cs <= 59)) {
+                Label_Semaforo_CS_Amarillo.setVisible(true);
+            }
+            if ((cs >= 60) && (cs <= 100)) {
+                Label_Semaforo_CS_Verde.setVisible(true);
+            }
+
+            //SEMAFORO INGLÉS
+            if ((ingles >= 0) && (ingles <= 30)) {
+                Label_Semaforo_Ingles_Rojo.setVisible(true);
+            }
+            if ((ingles >= 31) && (ingles <= 59)) {
+                Label_Semaforo_Ingles_Amarillo.setVisible(true);
+            }
+            if ((ingles >= 60) && (ingles <= 100)) {
+                Label_Semaforo_Ingles_Verde.setVisible(true);
+            }
         }
 
     }
@@ -277,6 +451,15 @@ public class Icfes extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel_FondoIcfes = new javax.swing.JLabel();
+        jLabel_FondoIcfes1 = new javax.swing.JLabel();
+        Label_Semaforo_Math_Rojo1 = new javax.swing.JLabel();
+        Label_Semaforo_Math_Amarillo1 = new javax.swing.JLabel();
+        Label_Semaforo_Math_Verde1 = new javax.swing.JLabel();
+        Label_Semaforo_LC_Rojo1 = new javax.swing.JLabel();
+        Label_Semaforo_LC_Amarillo1 = new javax.swing.JLabel();
+        Label_Semaforo_LC_Verde1 = new javax.swing.JLabel();
+        Label_Semaforo_CN_Rojo1 = new javax.swing.JLabel();
+        Label_Semaforo_CN_Amarillo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -343,7 +526,6 @@ public class Icfes extends javax.swing.JFrame {
         getContentPane().add(Button_Menu_Opc, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 40, 30, -1));
 
         jTextField_Nombre_Apellido_E.setEditable(false);
-        jTextField_Nombre_Apellido_E.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
         jTextField_Nombre_Apellido_E.setFocusable(false);
         jTextField_Nombre_Apellido_E.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,68 +538,93 @@ public class Icfes extends javax.swing.JFrame {
         getContentPane().add(Label_Foto_Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
 
         jTextField_Puntaje_Math.setEditable(false);
+        jTextField_Puntaje_Math.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_Math.setFocusable(false);
+        jTextField_Puntaje_Math.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_Puntaje_MathActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField_Puntaje_Math, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 50, 50));
 
         jTextField_Puntaje_LC.setEditable(false);
+        jTextField_Puntaje_LC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_LC.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_LC, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 50, 50));
 
         jTextField_Puntaje_CN.setEditable(false);
+        jTextField_Puntaje_CN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_CN.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_CN, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, 50, 50));
 
         jTextField_Puntaje_SC.setEditable(false);
+        jTextField_Puntaje_SC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_SC.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_SC, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 350, 50, 50));
 
         jTextField_Puntaje_Ingles.setEditable(false);
+        jTextField_Puntaje_Ingles.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_Ingles.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_Ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 450, 50, 50));
 
         Label_Semaforo_Math_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        Label_Semaforo_Math_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Math_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
 
         Label_Semaforo_Math_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        Label_Semaforo_Math_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Math_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
 
         Label_Semaforo_Math_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        Label_Semaforo_Math_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Math_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
 
         Label_Semaforo_LC_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        Label_Semaforo_LC_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_LC_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
 
         Label_Semaforo_LC_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        Label_Semaforo_LC_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_LC_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
 
         Label_Semaforo_LC_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        Label_Semaforo_LC_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_LC_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
 
         Label_Semaforo_CN_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        Label_Semaforo_CN_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_CN_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
 
         Label_Semaforo_CN_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        Label_Semaforo_CN_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_CN_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
 
         Label_Semaforo_CN_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        Label_Semaforo_CN_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_CN_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
 
         Label_Semaforo_CS_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        Label_Semaforo_CS_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_CS_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 360, -1, -1));
 
         Label_Semaforo_CS_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        Label_Semaforo_CS_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_CS_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 360, -1, -1));
 
         Label_Semaforo_CS_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        Label_Semaforo_CS_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_CS_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 360, -1, -1));
 
         Label_Semaforo_Ingles_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        Label_Semaforo_Ingles_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Ingles_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 460, -1, -1));
 
         Label_Semaforo_Ingles_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        Label_Semaforo_Ingles_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Ingles_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 460, -1, -1));
 
         Label_Semaforo_Ingles_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        Label_Semaforo_Ingles_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Ingles_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 460, -1, -1));
 
         Label_Puntaje_Total.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -425,6 +632,7 @@ public class Icfes extends javax.swing.JFrame {
         getContentPane().add(Label_Puntaje_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, -1));
 
         jTextField_Puntaje_Total.setEditable(false);
+        jTextField_Puntaje_Total.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_Total.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 70, 30));
 
@@ -483,7 +691,35 @@ public class Icfes extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
 
         jLabel_FondoIcfes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
+        jLabel_FondoIcfes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jLabel_FondoIcfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel_FondoIcfes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
+        getContentPane().add(jLabel_FondoIcfes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Label_Semaforo_Math_Rojo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_Math_Rojo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+
+        Label_Semaforo_Math_Amarillo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_Math_Amarillo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+
+        Label_Semaforo_Math_Verde1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_Math_Verde1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+
+        Label_Semaforo_LC_Rojo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_LC_Rojo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
+
+        Label_Semaforo_LC_Amarillo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_LC_Amarillo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
+
+        Label_Semaforo_LC_Verde1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_LC_Verde1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
+
+        Label_Semaforo_CN_Rojo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_CN_Rojo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
+
+        Label_Semaforo_CN_Amarillo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
+        getContentPane().add(Label_Semaforo_CN_Amarillo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
 
         bindingGroup.bind();
 
@@ -525,7 +761,7 @@ public class Icfes extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_Nombre_Apellido_EActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        if(jList1.getSelectedIndex() == 1){
+        if (jList1.getSelectedIndex() == 1) {
             dispose();
             new ventanas.Inicio().setVisible(true);
         }
@@ -535,6 +771,10 @@ public class Icfes extends javax.swing.JFrame {
         jList1.setVisible(false);
         jScrollPane2.setVisible(false);
     }//GEN-LAST:event_jList1MouseExited
+
+    private void jTextField_Puntaje_MathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Puntaje_MathActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_Puntaje_MathActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -548,7 +788,9 @@ public class Icfes extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Icfes_SC;
     private javax.swing.JLabel Label_Puntaje_Total;
     private javax.swing.JLabel Label_Semaforo_CN_Amarillo;
+    private javax.swing.JLabel Label_Semaforo_CN_Amarillo1;
     private javax.swing.JLabel Label_Semaforo_CN_Rojo;
+    private javax.swing.JLabel Label_Semaforo_CN_Rojo1;
     private javax.swing.JLabel Label_Semaforo_CN_Verde;
     private javax.swing.JLabel Label_Semaforo_CS_Amarillo;
     private javax.swing.JLabel Label_Semaforo_CS_Rojo;
@@ -557,14 +799,21 @@ public class Icfes extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Semaforo_Ingles_Rojo;
     private javax.swing.JLabel Label_Semaforo_Ingles_Verde;
     private javax.swing.JLabel Label_Semaforo_LC_Amarillo;
+    private javax.swing.JLabel Label_Semaforo_LC_Amarillo1;
     private javax.swing.JLabel Label_Semaforo_LC_Rojo;
+    private javax.swing.JLabel Label_Semaforo_LC_Rojo1;
     private javax.swing.JLabel Label_Semaforo_LC_Verde;
+    private javax.swing.JLabel Label_Semaforo_LC_Verde1;
     private javax.swing.JLabel Label_Semaforo_Math_Amarillo;
+    private javax.swing.JLabel Label_Semaforo_Math_Amarillo1;
     private javax.swing.JLabel Label_Semaforo_Math_Rojo;
+    private javax.swing.JLabel Label_Semaforo_Math_Rojo1;
     private javax.swing.JLabel Label_Semaforo_Math_Verde;
+    private javax.swing.JLabel Label_Semaforo_Math_Verde1;
     private javax.swing.JLabel Label_Titulo_Icfes;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JLabel jLabel_FondoIcfes;
+    private javax.swing.JLabel jLabel_FondoIcfes1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
