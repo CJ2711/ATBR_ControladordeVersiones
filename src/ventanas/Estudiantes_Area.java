@@ -75,7 +75,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                         "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
                         + " cancelación en lo posible.",
                         DesktopNotify.ERROR);//Tipo ERROR.
-
+            }
                 //Podemos utilizar un formulario Frame o cualquier otro; mostrar un JFrame o JDialog         
                 if ((defX0Y0 >= (float) 3.00) && (defX0Y0 <= (float) 3.99)) {
                     Label_Semaforo_Calculo_Amarillo.setVisible(true);
@@ -91,7 +91,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 }
 
             }
-        }
         if (username.equals("1958205")) {
             Object valorX1Y1 = jTable1.getValueAt(1, 1);
             Object valorX1Y2 = jTable1.getValueAt(1, 2);
