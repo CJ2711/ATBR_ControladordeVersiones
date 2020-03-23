@@ -6,6 +6,7 @@
     <class>BD.MEstudiante</class>
     <class>ventanas.newpackagePROFESORES.Notase</class>
     <class>ventanas.Estudiante.Resultadosicfes</class>
+    <class>ventanas.Estudiante.Tabladetalle</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/atbr_proyecto?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

@@ -421,7 +421,7 @@ public class Icfes extends javax.swing.JFrame {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("atbr_proyecto?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         resultadosicfesQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT r FROM Resultadosicfes r");
         resultadosicfesList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : resultadosicfesQuery.getResultList();
-        jLabel1 = new javax.swing.JLabel();
+        Label_Logo = new javax.swing.JLabel();
         Button_Return_Inicio = new javax.swing.JButton();
         Label_Titulo_Icfes = new javax.swing.JLabel();
         Label_Icfes_Math = new javax.swing.JLabel();
@@ -459,21 +459,12 @@ public class Icfes extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel_FondoIcfes = new javax.swing.JLabel();
-        jLabel_FondoIcfes1 = new javax.swing.JLabel();
-        Label_Semaforo_Math_Rojo1 = new javax.swing.JLabel();
-        Label_Semaforo_Math_Amarillo1 = new javax.swing.JLabel();
-        Label_Semaforo_Math_Verde1 = new javax.swing.JLabel();
-        Label_Semaforo_LC_Rojo1 = new javax.swing.JLabel();
-        Label_Semaforo_LC_Amarillo1 = new javax.swing.JLabel();
-        Label_Semaforo_LC_Verde1 = new javax.swing.JLabel();
-        Label_Semaforo_CN_Rojo1 = new javax.swing.JLabel();
-        Label_Semaforo_CN_Amarillo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoProgramaPeq.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        Label_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoProgramaPeq.png"))); // NOI18N
+        getContentPane().add(Label_Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         Button_Return_Inicio.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
         Button_Return_Inicio.setText("INICIO");
@@ -549,6 +540,7 @@ public class Icfes extends javax.swing.JFrame {
         getContentPane().add(Label_Foto_Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
 
         jTextField_Puntaje_Math.setEditable(false);
+        jTextField_Puntaje_Math.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_Puntaje_Math.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_Math.setFocusable(false);
         jTextField_Puntaje_Math.addActionListener(new java.awt.event.ActionListener() {
@@ -559,21 +551,25 @@ public class Icfes extends javax.swing.JFrame {
         getContentPane().add(jTextField_Puntaje_Math, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 50, 50));
 
         jTextField_Puntaje_LC.setEditable(false);
+        jTextField_Puntaje_LC.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_Puntaje_LC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_LC.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_LC, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 50, 50));
 
         jTextField_Puntaje_CN.setEditable(false);
+        jTextField_Puntaje_CN.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_Puntaje_CN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_CN.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_CN, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, 50, 50));
 
         jTextField_Puntaje_SC.setEditable(false);
+        jTextField_Puntaje_SC.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_Puntaje_SC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_SC.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_SC, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 350, 50, 50));
 
         jTextField_Puntaje_Ingles.setEditable(false);
+        jTextField_Puntaje_Ingles.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_Puntaje_Ingles.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Puntaje_Ingles.setFocusable(false);
         getContentPane().add(jTextField_Puntaje_Ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 450, 50, 50));
@@ -704,33 +700,6 @@ public class Icfes extends javax.swing.JFrame {
         jLabel_FondoIcfes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
         getContentPane().add(jLabel_FondoIcfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel_FondoIcfes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icfes.png"))); // NOI18N
-        getContentPane().add(jLabel_FondoIcfes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        Label_Semaforo_Math_Rojo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_Math_Rojo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
-
-        Label_Semaforo_Math_Amarillo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_Math_Amarillo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
-
-        Label_Semaforo_Math_Verde1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_Math_Verde1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
-
-        Label_Semaforo_LC_Rojo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_LC_Rojo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
-
-        Label_Semaforo_LC_Amarillo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_LC_Amarillo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
-
-        Label_Semaforo_LC_Verde1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_LC_Verde1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
-
-        Label_Semaforo_CN_Rojo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_CN_Rojo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
-
-        Label_Semaforo_CN_Amarillo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
-        getContentPane().add(Label_Semaforo_CN_Amarillo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
-
         bindingGroup.bind();
 
         pack();
@@ -796,11 +765,10 @@ public class Icfes extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Icfes_LC;
     private javax.swing.JLabel Label_Icfes_Math;
     private javax.swing.JLabel Label_Icfes_SC;
+    private javax.swing.JLabel Label_Logo;
     private javax.swing.JLabel Label_Puntaje_Total;
     private javax.swing.JLabel Label_Semaforo_CN_Amarillo;
-    private javax.swing.JLabel Label_Semaforo_CN_Amarillo1;
     private javax.swing.JLabel Label_Semaforo_CN_Rojo;
-    private javax.swing.JLabel Label_Semaforo_CN_Rojo1;
     private javax.swing.JLabel Label_Semaforo_CN_Verde;
     private javax.swing.JLabel Label_Semaforo_CS_Amarillo;
     private javax.swing.JLabel Label_Semaforo_CS_Rojo;
@@ -809,22 +777,14 @@ public class Icfes extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Semaforo_Ingles_Rojo;
     private javax.swing.JLabel Label_Semaforo_Ingles_Verde;
     private javax.swing.JLabel Label_Semaforo_LC_Amarillo;
-    private javax.swing.JLabel Label_Semaforo_LC_Amarillo1;
     private javax.swing.JLabel Label_Semaforo_LC_Rojo;
-    private javax.swing.JLabel Label_Semaforo_LC_Rojo1;
     private javax.swing.JLabel Label_Semaforo_LC_Verde;
-    private javax.swing.JLabel Label_Semaforo_LC_Verde1;
     private javax.swing.JLabel Label_Semaforo_Math_Amarillo;
-    private javax.swing.JLabel Label_Semaforo_Math_Amarillo1;
     private javax.swing.JLabel Label_Semaforo_Math_Rojo;
-    private javax.swing.JLabel Label_Semaforo_Math_Rojo1;
     private javax.swing.JLabel Label_Semaforo_Math_Verde;
-    private javax.swing.JLabel Label_Semaforo_Math_Verde1;
     private javax.swing.JLabel Label_Titulo_Icfes;
     private javax.persistence.EntityManager entityManager;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_FondoIcfes;
-    private javax.swing.JLabel jLabel_FondoIcfes1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
