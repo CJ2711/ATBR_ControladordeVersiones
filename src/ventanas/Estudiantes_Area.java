@@ -284,6 +284,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
         Button_Icfes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_Icfes.setText("ICFES");
+        Button_Icfes.setToolTipText("Prueba ICFES");
         Button_Icfes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Icfes.setOpaque(false);
         Button_Icfes.addActionListener(new java.awt.event.ActionListener() {
@@ -295,6 +296,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
         Button_Diagnostica.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Button_Diagnostica.setText("DIAGNOSTICA");
+        Button_Diagnostica.setToolTipText("Prueba Diagnostica");
         Button_Diagnostica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Diagnostica.setOpaque(false);
         getContentPane().add(Button_Diagnostica, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 375, 180, 50));
@@ -487,6 +489,24 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private void Button_CalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_CalculoActionPerformed
         dispose(); //Desaparecer ventana 'Estudiantes_Area'
         new Calculo().setVisible(true); //Mostrar en pantalla ventana 'Calculo'
+        try {
+            //Conexion BD
+            Connection cnnn = Conexion.conectar();
+            /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
+             */
+            PreparedStatement pss = cnnn.prepareStatement(
+                    "SELECT nombre, apellido FROM `m_estudiante` WHERE idEstudiante='" + username + "'");
+            //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+            ResultSet rsss = pss.executeQuery();
+            if (rsss.next()) {
+                String nombre = rsss.getNString("nombre");
+                String apellido = rsss.getNString("apellido");
+                String nombreApeE = nombre + " " + apellido;
+                Calculo.jTextField_Nombre_Apellido_E.setText(nombreApeE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Button_CalculoActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
