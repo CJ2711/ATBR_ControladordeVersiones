@@ -13,8 +13,12 @@ package ventanas;
 import ventanas.Estudiante.Icfes;
 import ventanas.Estudiante.Calculo;
 import BD.Conexion;
+import ds.desktop.notify.DesktopNotify;
+import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -40,11 +44,9 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Semaforo_Calculo_Amarillo.setVisible(false);
         Label_Semaforo_Calculo_Verde.setVisible(false);
 
-        promedioFila(0);
-        promedioFila(1);
-        promedioFila(2);
-        promedioFila(3);
+        jScrollPane2.setVisible(false);
 
+        promedioFila();
         setIconImage(getIconImage());
     }
 
@@ -53,7 +55,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         return retvalue;
     }
 
-    public void promedioFila(int numero) {
+    public void promedioFila() {
 
         if (username.equals("1957601")) {
             Object valorX0Y1 = jTable1.getValueAt(0, 1);
@@ -68,22 +70,28 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
             if ((defX0Y0 >= (float) 0.00) && (defX0Y0 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
-            }
-            if ((defX0Y0 >= (float) 3.00) && (defX0Y0 <= (float) 3.99)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
-                Label_Semaforo_Calculo_Amarillo.setVisible(true);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
-            }
-            if ((defX0Y0 >= (float) 4.00) && (defX0Y0 <= (float) 5.00)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
-                Label_Semaforo_Calculo_Verde.setVisible(true);
-            }
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
+                DesktopNotify.showDesktopMessage("Advertencia:",
+                        "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
+                        + " cancelación en lo posible.",
+                        DesktopNotify.ERROR);//Tipo ERROR.
 
+                //Podemos utilizar un formulario Frame o cualquier otro; mostrar un JFrame o JDialog         
+                if ((defX0Y0 >= (float) 3.00) && (defX0Y0 <= (float) 3.99)) {
+                    Label_Semaforo_Calculo_Amarillo.setVisible(true);
+                    // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
+                    // pero inferior a 4.
+                    DesktopNotify.showDesktopMessage("Aviso:",
+                            "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
+                            + " descuidos en la materia podrían llevarlo a ello.",
+                            DesktopNotify.WARNING);//Tipo WARNING
+                }
+                if ((defX0Y0 >= (float) 4.00) && (defX0Y0 <= (float) 5.00)) {
+                    Label_Semaforo_Calculo_Verde.setVisible(true);
+                }
+
+            }
         }
-
         if (username.equals("1958205")) {
             Object valorX1Y1 = jTable1.getValueAt(1, 1);
             Object valorX1Y2 = jTable1.getValueAt(1, 2);
@@ -97,17 +105,22 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
             if ((defX1Y1 >= (float) 0.00) && (defX1Y1 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
+                DesktopNotify.showDesktopMessage("Advertencia:",
+                        "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
+                        + " cancelación en lo posible.",
+                        DesktopNotify.ERROR);//Tipo ERROR.
             }
             if ((defX1Y1 >= (float) 3.00) && (defX1Y1 <= (float) 3.99)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
                 Label_Semaforo_Calculo_Amarillo.setVisible(true);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
+                // pero inferior a 4.
+                DesktopNotify.showDesktopMessage("Aviso:",
+                        "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
+                        + " descuidos en la materia podrían llevarlo a ello.",
+                        DesktopNotify.WARNING);//Tipo WARNING
             }
             if ((defX1Y1 >= (float) 4.00) && (defX1Y1 <= (float) 5.00)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
                 Label_Semaforo_Calculo_Verde.setVisible(true);
             }
 
@@ -126,17 +139,22 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
             if ((defX2Y2 >= (float) 0.00) && (defX2Y2 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
+                DesktopNotify.showDesktopMessage("Advertencia:",
+                        "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
+                        + " cancelación en lo posible.",
+                        DesktopNotify.ERROR);//Tipo ERROR.
             }
             if ((defX2Y2 >= (float) 3.00) && (defX2Y2 <= (float) 3.99)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
                 Label_Semaforo_Calculo_Amarillo.setVisible(true);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
+                // pero inferior a 4.
+                DesktopNotify.showDesktopMessage("Aviso:",
+                        "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
+                        + " descuidos en la materia podrían llevarlo a ello.",
+                        DesktopNotify.WARNING);//Tipo WARNING
             }
             if ((defX2Y2 >= (float) 4.00) && (defX2Y2 <= (float) 5.00)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
                 Label_Semaforo_Calculo_Verde.setVisible(true);
             }
 
@@ -155,17 +173,22 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
             if ((defX3Y3 >= (float) 0.00) && (defX3Y3 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
+                DesktopNotify.showDesktopMessage("Advertencia:",
+                        "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
+                        + " cancelación en lo posible.",
+                        DesktopNotify.ERROR);//Tipo ERROR.
             }
             if ((defX3Y3 >= (float) 3.00) && (defX3Y3 <= (float) 3.99)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
                 Label_Semaforo_Calculo_Amarillo.setVisible(true);
-                Label_Semaforo_Calculo_Verde.setVisible(false);
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
+                // pero inferior a 4.
+                DesktopNotify.showDesktopMessage("Aviso:",
+                        "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
+                        + " descuidos en la materia podrían llevarlo a ello.",
+                        DesktopNotify.WARNING);//Tipo WARNING
             }
             if ((defX3Y3 >= (float) 4.00) && (defX3Y3 <= (float) 5.00)) {
-                Label_Semaforo_Calculo_Rojo.setVisible(false);
-                Label_Semaforo_Calculo_Amarillo.setVisible(false);
                 Label_Semaforo_Calculo_Verde.setVisible(true);
             }
 
@@ -186,6 +209,8 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("atbr_proyecto?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         notaseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT n FROM Notase n");
         notaseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : notaseQuery.getResultList();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         Label_Semestre = new javax.swing.JLabel();
         Label_Titulo_Prueba = new javax.swing.JLabel();
         Label_Titulo_Materias = new javax.swing.JLabel();
@@ -202,8 +227,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_Calculo = new javax.swing.JButton();
         Button_DeporteFormativo = new javax.swing.JButton();
         Button_Espanol = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         Label_Semaforo_Calculo_Rojo = new javax.swing.JLabel();
         Label_Semaforo_Calculo_Amarillo = new javax.swing.JLabel();
         Label_Semaforo_Calculo_Verde = new javax.swing.JLabel();
@@ -214,12 +237,35 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Semaforo_Espanol_Amarillo = new javax.swing.JLabel();
         Label_Semaforo_DeporteFormativo_Verde = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel_FondoEstudiantes = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel_FondoEstudiantes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jList1.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Opciones", "Cerrar Sesión" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList1.setAutoscrolls(false);
+        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jList1.setValueIsAdjusting(true);
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jList1MouseExited(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
 
         Label_Semestre.setFont(new java.awt.Font("Segoe Print", 3, 22)); // NOI18N
         Label_Semestre.setText("PERIODO 2019 - 2");
@@ -333,31 +379,13 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_Espanol.setOpaque(false);
         getContentPane().add(Button_Espanol, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 160, -1));
 
-        jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jList1.setFont(new java.awt.Font("Segoe Print", 2, 14)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Opciones", "Cerrar Sesión" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jList1.setAutoscrolls(false);
-        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jList1.setValueIsAdjusting(true);
-        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jList1MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jList1MouseExited(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jList1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 150, 80));
-
         Label_Semaforo_Calculo_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
         Label_Semaforo_Calculo_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Label_Semaforo_Calculo_Rojo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                Label_Semaforo_Calculo_RojoPropertyChange(evt);
+            }
+        });
         getContentPane().add(Label_Semaforo_Calculo_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
 
         Label_Semaforo_Calculo_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
@@ -395,9 +423,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoProgramaPeq.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel_FondoEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
-        getContentPane().add(jLabel_FondoEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idEstudiante}"));
         columnBinding.setColumnName("Id Estudiante");
@@ -417,6 +442,9 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, -1, 120));
+
+        jLabel_FondoEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/InicioEstudiante.png"))); // NOI18N
+        getContentPane().add(jLabel_FondoEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         bindingGroup.bind();
 
@@ -481,6 +509,10 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private void Button_TGSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_TGSActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_TGSActionPerformed
+
+    private void Label_Semaforo_Calculo_RojoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_Label_Semaforo_Calculo_RojoPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_Semaforo_Calculo_RojoPropertyChange
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
