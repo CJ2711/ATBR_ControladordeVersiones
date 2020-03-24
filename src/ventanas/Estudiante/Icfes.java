@@ -40,18 +40,24 @@ public class Icfes extends javax.swing.JFrame {
         Label_Semaforo_Math_Rojo.setVisible(false);
         Label_Semaforo_Math_Amarillo.setVisible(false);
         Label_Semaforo_Math_Verde.setVisible(false);
+        
         Label_Semaforo_LC_Rojo.setVisible(false);
         Label_Semaforo_LC_Amarillo.setVisible(false);
         Label_Semaforo_LC_Verde.setVisible(false);
+        
         Label_Semaforo_CN_Rojo.setVisible(false);
         Label_Semaforo_CN_Amarillo.setVisible(false);
         Label_Semaforo_CN_Verde.setVisible(false);
+        
         Label_Semaforo_CS_Rojo.setVisible(false);
         Label_Semaforo_CS_Amarillo.setVisible(false);
         Label_Semaforo_CS_Verde.setVisible(false);
+        
         Label_Semaforo_Ingles_Rojo.setVisible(false);
         Label_Semaforo_Ingles_Amarillo.setVisible(false);
         Label_Semaforo_Ingles_Verde.setVisible(false);
+        
+        jScrollPane1.setVisible(false);
 
         resultadosIcfesText(0);
         resultadosIcfesText(1);

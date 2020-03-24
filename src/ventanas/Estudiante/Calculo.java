@@ -56,7 +56,9 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Nota_Tres.setVisible(false);
         jTextField_Nota_Opcional_Dos.setVisible(false);
 
-        Button_Observaciones_Uno.setVisible(false);
+        Button_Observaciones_Taller_Uno.setVisible(false);
+        Button_Observaciones_Quiz_Uno.setVisible(false);
+        Button_Observaciones_Parcial_Uno.setVisible(false);
         Button_Observaciones_Dos.setVisible(false);
         Button_Observaciones_Tres.setVisible(false);
         Button_Observaciones_Cuatro.setVisible(false);
@@ -64,6 +66,9 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Observaciones_Taller.setVisible(false);
         jTextField_Observaciones_Quiz.setVisible(false);
         jTextField_Observaciones_Parcial.setVisible(false);
+        
+        jScrollPane1.setVisible(false);
+//        jScrollPane3.setVisible(false);
         
         textosPantalla();
 
@@ -238,7 +243,9 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Nota_Dos = new javax.swing.JTextField();
         jTextField_Nota_Tres = new javax.swing.JTextField();
         jTextField_Nota_Opcional_Dos = new javax.swing.JTextField();
-        Button_Observaciones_Uno = new javax.swing.JButton();
+        Button_Observaciones_Taller_Uno = new javax.swing.JButton();
+        Button_Observaciones_Quiz_Uno = new javax.swing.JButton();
+        Button_Observaciones_Parcial_Uno = new javax.swing.JButton();
         Button_Observaciones_Dos = new javax.swing.JButton();
         Button_Observaciones_Tres = new javax.swing.JButton();
         Button_Observaciones_Cuatro = new javax.swing.JButton();
@@ -417,12 +424,17 @@ public class Calculo extends javax.swing.JFrame {
 
         jTextField_Nota_Taller_Uno.setEditable(false);
         jTextField_Nota_Taller_Uno.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jTextField_Nota_Taller_Uno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(jTextField_Nota_Taller_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 60, 30));
 
         jTextField_Nota_Quiz_Uno.setEditable(false);
+        jTextField_Nota_Quiz_Uno.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jTextField_Nota_Quiz_Uno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(jTextField_Nota_Quiz_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 60, 30));
 
         jTextField_Nota_Parcial_Uno.setEditable(false);
+        jTextField_Nota_Parcial_Uno.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jTextField_Nota_Parcial_Uno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(jTextField_Nota_Parcial_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 60, 30));
 
         jTextField_Nota_Dos.setEditable(false);
@@ -437,10 +449,35 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Nota_Opcional_Dos.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         getContentPane().add(jTextField_Nota_Opcional_Dos, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, 60, 30));
 
-        Button_Observaciones_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
-        Button_Observaciones_Uno.setContentAreaFilled(false);
-        Button_Observaciones_Uno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(Button_Observaciones_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
+        Button_Observaciones_Taller_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
+        Button_Observaciones_Taller_Uno.setContentAreaFilled(false);
+        Button_Observaciones_Taller_Uno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Observaciones_Taller_Uno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_Observaciones_Taller_UnoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Button_Observaciones_Taller_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
+
+        Button_Observaciones_Quiz_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
+        Button_Observaciones_Quiz_Uno.setContentAreaFilled(false);
+        Button_Observaciones_Quiz_Uno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Observaciones_Quiz_Uno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_Observaciones_Quiz_UnoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Button_Observaciones_Quiz_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
+
+        Button_Observaciones_Parcial_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
+        Button_Observaciones_Parcial_Uno.setContentAreaFilled(false);
+        Button_Observaciones_Parcial_Uno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Observaciones_Parcial_Uno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_Observaciones_Parcial_UnoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Button_Observaciones_Parcial_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
 
         Button_Observaciones_Dos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
         Button_Observaciones_Dos.setContentAreaFilled(false);
@@ -457,14 +494,19 @@ public class Calculo extends javax.swing.JFrame {
         getContentPane().add(Button_Observaciones_Cuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 20, 30));
 
         jTextField_Observaciones_Taller.setEditable(false);
-        jTextField_Observaciones_Taller.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jTextField_Observaciones_Taller.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jTextField_Observaciones_Taller.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Observaciones_Taller.setFocusable(false);
         getContentPane().add(jTextField_Observaciones_Taller, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 300, 320));
 
         jTextField_Observaciones_Quiz.setEditable(false);
+        jTextField_Observaciones_Quiz.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jTextField_Observaciones_Quiz.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(jTextField_Observaciones_Quiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 300, 320));
 
         jTextField_Observaciones_Parcial.setEditable(false);
+        jTextField_Observaciones_Parcial.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jTextField_Observaciones_Parcial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(jTextField_Observaciones_Parcial, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 300, 320));
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, notaseList, jTable1);
@@ -575,7 +617,7 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Nota_Dos.setVisible(true);
         jTextField_Nota_Tres.setVisible(true);
 
-        Button_Observaciones_Uno.setVisible(true);
+        Button_Observaciones_Taller_Uno.setVisible(true);
         Button_Observaciones_Dos.setVisible(true);
         Button_Observaciones_Tres.setVisible(true);
         
@@ -614,7 +656,7 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Nota_Dos.setVisible(true);
         jTextField_Nota_Tres.setVisible(true);
 
-        Button_Observaciones_Uno.setVisible(true);
+        Button_Observaciones_Taller_Uno.setVisible(true);
         Button_Observaciones_Dos.setVisible(true);
         Button_Observaciones_Tres.setVisible(true);
         
@@ -655,7 +697,7 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Nota_Tres.setVisible(true);
         jTextField_Nota_Opcional_Dos.setVisible(true);
 
-        Button_Observaciones_Uno.setVisible(true);
+        Button_Observaciones_Taller_Uno.setVisible(true);
         Button_Observaciones_Dos.setVisible(true);
         Button_Observaciones_Tres.setVisible(true);
         Button_Observaciones_Cuatro.setVisible(true);
@@ -676,12 +718,32 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Observaciones_Parcial.setVisible(false);
     }//GEN-LAST:event_Button_ParcialesActionPerformed
 
+    private void Button_Observaciones_Taller_UnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Observaciones_Taller_UnoActionPerformed
+        jTextField_Observaciones_Taller.setVisible(true);
+        jTextField_Observaciones_Quiz.setVisible(false);
+        jTextField_Observaciones_Parcial.setVisible(false);
+    }//GEN-LAST:event_Button_Observaciones_Taller_UnoActionPerformed
+
+    private void Button_Observaciones_Quiz_UnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Observaciones_Quiz_UnoActionPerformed
+        jTextField_Observaciones_Taller.setVisible(false);
+        jTextField_Observaciones_Quiz.setVisible(true);
+        jTextField_Observaciones_Parcial.setVisible(false);
+    }//GEN-LAST:event_Button_Observaciones_Quiz_UnoActionPerformed
+
+    private void Button_Observaciones_Parcial_UnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_Observaciones_Parcial_UnoActionPerformed
+        jTextField_Observaciones_Taller.setVisible(false);
+        jTextField_Observaciones_Quiz.setVisible(false);
+        jTextField_Observaciones_Parcial.setVisible(true);
+    }//GEN-LAST:event_Button_Observaciones_Parcial_UnoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Menu_Opc;
     private javax.swing.JButton Button_Observaciones_Cuatro;
     private javax.swing.JButton Button_Observaciones_Dos;
+    private javax.swing.JButton Button_Observaciones_Parcial_Uno;
+    private javax.swing.JButton Button_Observaciones_Quiz_Uno;
+    private javax.swing.JButton Button_Observaciones_Taller_Uno;
     private javax.swing.JButton Button_Observaciones_Tres;
-    private javax.swing.JButton Button_Observaciones_Uno;
     private javax.swing.JButton Button_Parciales;
     private javax.swing.JButton Button_Quizes;
     private javax.swing.JButton Button_Return_Inicio;

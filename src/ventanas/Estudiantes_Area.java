@@ -71,7 +71,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
             if ((defX0Y0 >= (float) 0.00) && (defX0Y0 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
                 // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
-                DesktopNotify.showDesktopMessage("Advertencia:",
+                DesktopNotify.showDesktopMessage("Advertencia Cálculo I:",
                         "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
                         + " cancelación en lo posible.",
                         DesktopNotify.ERROR);//Tipo ERROR.
@@ -81,7 +81,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                     Label_Semaforo_Calculo_Amarillo.setVisible(true);
                     // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
                     // pero inferior a 4.
-                    DesktopNotify.showDesktopMessage("Aviso:",
+                    DesktopNotify.showDesktopMessage("Aviso Cálculo I:",
                             "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
                             + " descuidos en la materia podrían llevarlo a ello.",
                             DesktopNotify.WARNING);//Tipo WARNING
@@ -105,7 +105,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
             if ((defX1Y1 >= (float) 0.00) && (defX1Y1 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
                 // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
-                DesktopNotify.showDesktopMessage("Advertencia:",
+                DesktopNotify.showDesktopMessage("Advertencia Cálculo I:",
                         "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
                         + " cancelación en lo posible.",
                         DesktopNotify.ERROR);//Tipo ERROR.
@@ -114,7 +114,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Label_Semaforo_Calculo_Amarillo.setVisible(true);
                 // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
                 // pero inferior a 4.
-                DesktopNotify.showDesktopMessage("Aviso:",
+                DesktopNotify.showDesktopMessage("Aviso Cálculo I:",
                         "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
                         + " descuidos en la materia podrían llevarlo a ello.",
                         DesktopNotify.WARNING);//Tipo WARNING
@@ -139,7 +139,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
             if ((defX2Y2 >= (float) 0.00) && (defX2Y2 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
                 // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
-                DesktopNotify.showDesktopMessage("Advertencia:",
+                DesktopNotify.showDesktopMessage("Advertencia Cálculo I:",
                         "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
                         + " cancelación en lo posible.",
                         DesktopNotify.ERROR);//Tipo ERROR.
@@ -148,7 +148,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Label_Semaforo_Calculo_Amarillo.setVisible(true);
                 // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
                 // pero inferior a 4.
-                DesktopNotify.showDesktopMessage("Aviso:",
+                DesktopNotify.showDesktopMessage("Aviso Cálculo I:",
                         "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
                         + " descuidos en la materia podrían llevarlo a ello.",
                         DesktopNotify.WARNING);//Tipo WARNING
@@ -173,7 +173,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
             if ((defX3Y3 >= (float) 0.00) && (defX3Y3 <= (float) 2.99)) {
                 Label_Semaforo_Calculo_Rojo.setVisible(true);
                 // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es inferior a 3.
-                DesktopNotify.showDesktopMessage("Advertencia:",
+                DesktopNotify.showDesktopMessage("Advertencia Cálculo I:",
                         "Usted podría incurrir en situación de bajo rendimiento, por favor considere la opcion de"
                         + " cancelación en lo posible.",
                         DesktopNotify.ERROR);//Tipo ERROR.
@@ -182,7 +182,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 Label_Semaforo_Calculo_Amarillo.setVisible(true);
                 // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
                 // pero inferior a 4.
-                DesktopNotify.showDesktopMessage("Aviso:",
+                DesktopNotify.showDesktopMessage("Aviso Cálculo I:",
                         "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
                         + " descuidos en la materia podrían llevarlo a ello.",
                         DesktopNotify.WARNING);//Tipo WARNING
