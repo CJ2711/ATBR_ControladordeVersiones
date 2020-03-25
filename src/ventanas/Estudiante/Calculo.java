@@ -68,7 +68,7 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Observaciones_Parcial.setVisible(false);
 
         jScrollPane1.setVisible(false);
-//        jScrollPane3.setVisible(false);
+        jScrollPane3.setVisible(false);
 
         textosPantalla();
 
