@@ -457,7 +457,7 @@ public class Calculo extends javax.swing.JFrame {
                 Button_Observaciones_Taller_UnoActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Observaciones_Taller_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, 20, 30));
+        getContentPane().add(Button_Observaciones_Taller_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
 
         Button_Observaciones_Quiz_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
         Button_Observaciones_Quiz_Uno.setContentAreaFilled(false);
@@ -467,7 +467,7 @@ public class Calculo extends javax.swing.JFrame {
                 Button_Observaciones_Quiz_UnoActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Observaciones_Quiz_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 20, 30));
+        getContentPane().add(Button_Observaciones_Quiz_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
 
         Button_Observaciones_Parcial_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
         Button_Observaciones_Parcial_Uno.setContentAreaFilled(false);
