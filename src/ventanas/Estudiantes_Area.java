@@ -226,9 +226,9 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_Calculo = new javax.swing.JButton();
         Button_DeporteFormativo = new javax.swing.JButton();
         Button_Espanol = new javax.swing.JButton();
+        Label_Semaforo_Calculo_Verde = new javax.swing.JLabel();
         Label_Semaforo_Calculo_Rojo = new javax.swing.JLabel();
         Label_Semaforo_Calculo_Amarillo = new javax.swing.JLabel();
-        Label_Semaforo_Calculo_Verde = new javax.swing.JLabel();
         Label_Semaforo_FdP_Verde = new javax.swing.JLabel();
         Label_Semaforo_TGS_Verde = new javax.swing.JLabel();
         Label_Semaforo_ITI_Verde = new javax.swing.JLabel();
@@ -380,6 +380,10 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Button_Espanol.setOpaque(false);
         getContentPane().add(Button_Espanol, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 160, -1));
 
+        Label_Semaforo_Calculo_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        Label_Semaforo_Calculo_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(Label_Semaforo_Calculo_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
+
         Label_Semaforo_Calculo_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
         Label_Semaforo_Calculo_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Label_Semaforo_Calculo_Rojo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -392,10 +396,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         Label_Semaforo_Calculo_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
         Label_Semaforo_Calculo_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Calculo_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
-
-        Label_Semaforo_Calculo_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
-        Label_Semaforo_Calculo_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(Label_Semaforo_Calculo_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
 
         Label_Semaforo_FdP_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
         Label_Semaforo_FdP_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));

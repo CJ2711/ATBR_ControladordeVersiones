@@ -39,11 +39,11 @@ public class Calculo extends javax.swing.JFrame {
         Label_Taller_Uno.setVisible(false);
         Label_Taller_Dos.setVisible(false);
         Label_Taller_Tres.setVisible(false);
-        
+
         Label_Quiz_Uno.setVisible(false);
         Label_Quiz_Dos.setVisible(false);
         Label_Quiz_Tres.setVisible(false);
-        
+
         Label_Parcial_Uno.setVisible(false);
         Label_Opcional_Uno.setVisible(false);
         Label_Parcial_Dos.setVisible(false);
@@ -59,17 +59,17 @@ public class Calculo extends javax.swing.JFrame {
         Button_Observaciones_Taller_Uno.setVisible(false);
         Button_Observaciones_Quiz_Uno.setVisible(false);
         Button_Observaciones_Parcial_Uno.setVisible(false);
-        Button_Observaciones_Dos.setVisible(false);
-        Button_Observaciones_Tres.setVisible(false);
-        Button_Observaciones_Cuatro.setVisible(false);
+        Button_Observaciones_Dos_NOUSE.setVisible(false);
+        Button_Observaciones_Tres_NOUSE.setVisible(false);
+        Button_Observaciones_Cuatro_NOUSE.setVisible(false);
 
         jTextField_Observaciones_Taller.setVisible(false);
         jTextField_Observaciones_Quiz.setVisible(false);
         jTextField_Observaciones_Parcial.setVisible(false);
-        
+
         jScrollPane1.setVisible(false);
 //        jScrollPane3.setVisible(false);
-        
+
         textosPantalla();
 
         setIconImage(getIconImage());
@@ -80,121 +80,121 @@ public class Calculo extends javax.swing.JFrame {
         return retvalue;
     }
 
-    public void textosPantalla(){
-        if(username.equals("1957601")){
+    public void textosPantalla() {
+        if (username.equals("1957601")) {
             //Notas
             Object valorX0Y1N = jTable1.getValueAt(0, 1);
             Object valorX0Y2N = jTable1.getValueAt(0, 2);
             Object valorX0Y3N = jTable1.getValueAt(0, 3);
-            
+
             String tallerUnoSN = valorX0Y1N.toString();
             String quizUnoSN = valorX0Y2N.toString();
             String parcialUnoSN = valorX0Y3N.toString();
-            
+
             jTextField_Nota_Taller_Uno.setText(tallerUnoSN);
             jTextField_Nota_Quiz_Uno.setText(quizUnoSN);
             jTextField_Nota_Parcial_Uno.setText(parcialUnoSN);
-            
+
             //Observaciones
             Object valorX0Y1O = jTable2.getValueAt(0, 1);
             Object valorX0Y2O = jTable2.getValueAt(0, 2);
             Object valorX0Y3O = jTable2.getValueAt(0, 3);
-            
+
             String tallerUnoSO = valorX0Y1O.toString();
             String quizUnoSO = valorX0Y2O.toString();
             String parcialUnoSO = valorX0Y3O.toString();
-            
+
             jTextField_Observaciones_Taller.setText(tallerUnoSO);
             jTextField_Observaciones_Quiz.setText(quizUnoSO);
             jTextField_Observaciones_Parcial.setText(parcialUnoSO);
         }
-        
-        if(username.equals("1958205")){
+
+        if (username.equals("1958205")) {
             //Notas
             Object valorX1Y1N = jTable1.getValueAt(1, 1);
             Object valorX1Y2N = jTable1.getValueAt(1, 2);
             Object valorX1Y3N = jTable1.getValueAt(1, 3);
-            
+
             String tallerUnoSN = valorX1Y1N.toString();
             String quizUnoSN = valorX1Y2N.toString();
             String parcialUnoSN = valorX1Y3N.toString();
-            
+
             jTextField_Nota_Taller_Uno.setText(tallerUnoSN);
             jTextField_Nota_Quiz_Uno.setText(quizUnoSN);
             jTextField_Nota_Parcial_Uno.setText(parcialUnoSN);
-            
+
             //Observaciones
             Object valorX1Y1O = jTable2.getValueAt(1, 1);
             Object valorX1Y2O = jTable2.getValueAt(1, 2);
             Object valorX1Y3O = jTable2.getValueAt(1, 3);
-            
+
             String tallerUnoSO = valorX1Y1O.toString();
             String quizUnoSO = valorX1Y2O.toString();
             String parcialUnoSO = valorX1Y3O.toString();
-            
+
             jTextField_Observaciones_Taller.setText(tallerUnoSO);
             jTextField_Observaciones_Quiz.setText(quizUnoSO);
             jTextField_Observaciones_Parcial.setText(parcialUnoSO);
         }
-        
-        if(username.equals("1958266")){
+
+        if (username.equals("1958266")) {
             //Notas
             Object valorX2Y1N = jTable1.getValueAt(2, 1);
             Object valorX2Y2N = jTable1.getValueAt(2, 2);
             Object valorX2Y3N = jTable1.getValueAt(2, 3);
-            
+
             String tallerUnoSN = valorX2Y1N.toString();
             String quizUnoSN = valorX2Y2N.toString();
             String parcialUnoSN = valorX2Y3N.toString();
-            
+
             jTextField_Nota_Taller_Uno.setText(tallerUnoSN);
             jTextField_Nota_Quiz_Uno.setText(quizUnoSN);
             jTextField_Nota_Parcial_Uno.setText(parcialUnoSN);
-            
+
             //Observaciones
             Object valorX2Y1O = jTable2.getValueAt(2, 1);
             Object valorX2Y2O = jTable2.getValueAt(2, 2);
             Object valorX2Y3O = jTable2.getValueAt(2, 3);
-            
+
             String tallerUnoSO = valorX2Y1O.toString();
             String quizUnoSO = valorX2Y2O.toString();
             String parcialUnoSO = valorX2Y3O.toString();
-            
+
             jTextField_Observaciones_Taller.setText(tallerUnoSO);
             jTextField_Observaciones_Quiz.setText(quizUnoSO);
             jTextField_Observaciones_Parcial.setText(parcialUnoSO);
         }
-        
-        if(username.equals("1958283")){
+
+        if (username.equals("1958283")) {
             //Notas
             Object valorX3Y1N = jTable1.getValueAt(3, 1);
             Object valorX3Y2N = jTable1.getValueAt(3, 2);
             Object valorX3Y3N = jTable1.getValueAt(3, 3);
-            
+
             String tallerUnoSN = valorX3Y1N.toString();
             String quizUnoSN = valorX3Y2N.toString();
             String parcialUnoSN = valorX3Y3N.toString();
-            
+
             jTextField_Nota_Taller_Uno.setText(tallerUnoSN);
             jTextField_Nota_Quiz_Uno.setText(quizUnoSN);
             jTextField_Nota_Parcial_Uno.setText(parcialUnoSN);
-            
+
             //Observaciones
             Object valorX3Y1O = jTable2.getValueAt(3, 1);
             Object valorX3Y2O = jTable2.getValueAt(3, 2);
             Object valorX3Y3O = jTable2.getValueAt(3, 3);
-            
+
             String tallerUnoSO = valorX3Y1O.toString();
             String quizUnoSO = valorX3Y2O.toString();
             String parcialUnoSO = valorX3Y3O.toString();
-            
+
             jTextField_Observaciones_Taller.setText(tallerUnoSO);
             jTextField_Observaciones_Quiz.setText(quizUnoSO);
             jTextField_Observaciones_Parcial.setText(parcialUnoSO);
         }
-        
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -246,9 +246,9 @@ public class Calculo extends javax.swing.JFrame {
         Button_Observaciones_Taller_Uno = new javax.swing.JButton();
         Button_Observaciones_Quiz_Uno = new javax.swing.JButton();
         Button_Observaciones_Parcial_Uno = new javax.swing.JButton();
-        Button_Observaciones_Dos = new javax.swing.JButton();
-        Button_Observaciones_Tres = new javax.swing.JButton();
-        Button_Observaciones_Cuatro = new javax.swing.JButton();
+        Button_Observaciones_Dos_NOUSE = new javax.swing.JButton();
+        Button_Observaciones_Tres_NOUSE = new javax.swing.JButton();
+        Button_Observaciones_Cuatro_NOUSE = new javax.swing.JButton();
         jTextField_Observaciones_Taller = new javax.swing.JTextField();
         jTextField_Observaciones_Quiz = new javax.swing.JTextField();
         jTextField_Observaciones_Parcial = new javax.swing.JTextField();
@@ -457,7 +457,7 @@ public class Calculo extends javax.swing.JFrame {
                 Button_Observaciones_Taller_UnoActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Observaciones_Taller_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
+        getContentPane().add(Button_Observaciones_Taller_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, 20, 30));
 
         Button_Observaciones_Quiz_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
         Button_Observaciones_Quiz_Uno.setContentAreaFilled(false);
@@ -467,7 +467,7 @@ public class Calculo extends javax.swing.JFrame {
                 Button_Observaciones_Quiz_UnoActionPerformed(evt);
             }
         });
-        getContentPane().add(Button_Observaciones_Quiz_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
+        getContentPane().add(Button_Observaciones_Quiz_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 20, 30));
 
         Button_Observaciones_Parcial_Uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
         Button_Observaciones_Parcial_Uno.setContentAreaFilled(false);
@@ -479,24 +479,29 @@ public class Calculo extends javax.swing.JFrame {
         });
         getContentPane().add(Button_Observaciones_Parcial_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 20, 30));
 
-        Button_Observaciones_Dos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
-        Button_Observaciones_Dos.setContentAreaFilled(false);
-        Button_Observaciones_Dos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(Button_Observaciones_Dos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 20, 30));
+        Button_Observaciones_Dos_NOUSE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
+        Button_Observaciones_Dos_NOUSE.setContentAreaFilled(false);
+        Button_Observaciones_Dos_NOUSE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(Button_Observaciones_Dos_NOUSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 20, 30));
 
-        Button_Observaciones_Tres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
-        Button_Observaciones_Tres.setContentAreaFilled(false);
-        Button_Observaciones_Tres.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(Button_Observaciones_Tres, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 20, 30));
+        Button_Observaciones_Tres_NOUSE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
+        Button_Observaciones_Tres_NOUSE.setContentAreaFilled(false);
+        Button_Observaciones_Tres_NOUSE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(Button_Observaciones_Tres_NOUSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 20, 30));
 
-        Button_Observaciones_Cuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
-        Button_Observaciones_Cuatro.setContentAreaFilled(false);
-        getContentPane().add(Button_Observaciones_Cuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 20, 30));
+        Button_Observaciones_Cuatro_NOUSE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Observaciones.png"))); // NOI18N
+        Button_Observaciones_Cuatro_NOUSE.setContentAreaFilled(false);
+        getContentPane().add(Button_Observaciones_Cuatro_NOUSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 20, 30));
 
         jTextField_Observaciones_Taller.setEditable(false);
         jTextField_Observaciones_Taller.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_Observaciones_Taller.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField_Observaciones_Taller.setFocusable(false);
+        jTextField_Observaciones_Taller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_Observaciones_TallerActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField_Observaciones_Taller, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 300, 320));
 
         jTextField_Observaciones_Quiz.setEditable(false);
@@ -606,36 +611,39 @@ public class Calculo extends javax.swing.JFrame {
         Label_Separador_Y_Uno.setVisible(false);
         Label_Separador_Y_Dos.setVisible(true);
         Label_Separador_Y_Tres.setVisible(true);
-        
+//****************************************************************************************
         Label_Nota.setVisible(true);
-        
+//****************************************************************************************
         Label_Taller_Uno.setVisible(true);
         Label_Taller_Dos.setVisible(true);
         Label_Taller_Tres.setVisible(true);
-
+//****************************************************************************************
         jTextField_Nota_Taller_Uno.setVisible(true);
         jTextField_Nota_Dos.setVisible(true);
         jTextField_Nota_Tres.setVisible(true);
-
+//****************************************************************************************
         Button_Observaciones_Taller_Uno.setVisible(true);
-        Button_Observaciones_Dos.setVisible(true);
-        Button_Observaciones_Tres.setVisible(true);
-        
+        Button_Observaciones_Quiz_Uno.setVisible(false);
+        Button_Observaciones_Parcial_Uno.setVisible(false);
+//****************************************************************************************
+        Button_Observaciones_Dos_NOUSE.setVisible(true);
+        Button_Observaciones_Tres_NOUSE.setVisible(true);
+//****************************************************************************************
         Label_Quiz_Uno.setVisible(false);
         Label_Quiz_Dos.setVisible(false);
         Label_Quiz_Tres.setVisible(false);
-        
+//****************************************************************************************
         Label_Parcial_Uno.setVisible(false);
         Label_Opcional_Uno.setVisible(false);
         Label_Parcial_Dos.setVisible(false);
         Label_Opcional_Dos.setVisible(false);
-
+//****************************************************************************************
         jTextField_Nota_Quiz_Uno.setVisible(false);
         jTextField_Nota_Parcial_Uno.setVisible(false);
         jTextField_Nota_Opcional_Dos.setVisible(false);
-
-        Button_Observaciones_Cuatro.setVisible(false);
-
+//****************************************************************************************
+        Button_Observaciones_Cuatro_NOUSE.setVisible(false);
+//****************************************************************************************
         jTextField_Observaciones_Taller.setVisible(false);
         jTextField_Observaciones_Quiz.setVisible(false);
         jTextField_Observaciones_Parcial.setVisible(false);
@@ -645,36 +653,39 @@ public class Calculo extends javax.swing.JFrame {
         Label_Separador_Y_Uno.setVisible(true);
         Label_Separador_Y_Dos.setVisible(false);
         Label_Separador_Y_Tres.setVisible(true);
-        
+//****************************************************************************************
         Label_Nota.setVisible(true);
-        
+//****************************************************************************************
         Label_Quiz_Uno.setVisible(true);
         Label_Quiz_Dos.setVisible(true);
         Label_Quiz_Tres.setVisible(true);
-
+//****************************************************************************************
         jTextField_Nota_Quiz_Uno.setVisible(true);
         jTextField_Nota_Dos.setVisible(true);
         jTextField_Nota_Tres.setVisible(true);
-
-        Button_Observaciones_Taller_Uno.setVisible(true);
-        Button_Observaciones_Dos.setVisible(true);
-        Button_Observaciones_Tres.setVisible(true);
-        
+//****************************************************************************************
+        Button_Observaciones_Taller_Uno.setVisible(false);
+        Button_Observaciones_Quiz_Uno.setVisible(true);
+        Button_Observaciones_Parcial_Uno.setVisible(false);
+//****************************************************************************************
+        Button_Observaciones_Dos_NOUSE.setVisible(true);
+        Button_Observaciones_Tres_NOUSE.setVisible(true);
+//****************************************************************************************
         Label_Taller_Uno.setVisible(false);
         Label_Taller_Dos.setVisible(false);
         Label_Taller_Tres.setVisible(false);
-        
+//****************************************************************************************
         Label_Parcial_Uno.setVisible(false);
         Label_Opcional_Uno.setVisible(false);
         Label_Parcial_Dos.setVisible(false);
         Label_Opcional_Dos.setVisible(false);
-
+//****************************************************************************************
         jTextField_Nota_Taller_Uno.setVisible(false);
         jTextField_Nota_Parcial_Uno.setVisible(false);
         jTextField_Nota_Opcional_Dos.setVisible(false);
-        
-        Button_Observaciones_Cuatro.setVisible(false);
-
+//****************************************************************************************
+        Button_Observaciones_Cuatro_NOUSE.setVisible(false);
+//****************************************************************************************
         jTextField_Observaciones_Taller.setVisible(false);
         jTextField_Observaciones_Quiz.setVisible(false);
         jTextField_Observaciones_Parcial.setVisible(false);
@@ -684,35 +695,38 @@ public class Calculo extends javax.swing.JFrame {
         Label_Separador_Y_Uno.setVisible(true);
         Label_Separador_Y_Dos.setVisible(true);
         Label_Separador_Y_Tres.setVisible(false);
-        
+//****************************************************************************************
         Label_Nota.setVisible(true);
-        
+//****************************************************************************************
         Label_Parcial_Uno.setVisible(true);
         Label_Parcial_Dos.setVisible(true);
         Label_Opcional_Uno.setVisible(true);
         Label_Opcional_Dos.setVisible(true);
-
+//****************************************************************************************
         jTextField_Nota_Parcial_Uno.setVisible(true);
         jTextField_Nota_Dos.setVisible(true);
         jTextField_Nota_Tres.setVisible(true);
         jTextField_Nota_Opcional_Dos.setVisible(true);
-
-        Button_Observaciones_Taller_Uno.setVisible(true);
-        Button_Observaciones_Dos.setVisible(true);
-        Button_Observaciones_Tres.setVisible(true);
-        Button_Observaciones_Cuatro.setVisible(true);
-        
+//****************************************************************************************
+        Button_Observaciones_Taller_Uno.setVisible(false);
+        Button_Observaciones_Quiz_Uno.setVisible(false);
+        Button_Observaciones_Parcial_Uno.setVisible(true);
+//****************************************************************************************
+        Button_Observaciones_Dos_NOUSE.setVisible(true);
+        Button_Observaciones_Tres_NOUSE.setVisible(true);
+        Button_Observaciones_Cuatro_NOUSE.setVisible(true);
+//****************************************************************************************        
         Label_Taller_Uno.setVisible(false);
         Label_Taller_Dos.setVisible(false);
         Label_Taller_Tres.setVisible(false);
-        
+//****************************************************************************************
         Label_Quiz_Uno.setVisible(false);
         Label_Quiz_Dos.setVisible(false);
         Label_Quiz_Tres.setVisible(false);
-
+//****************************************************************************************
         jTextField_Nota_Taller_Uno.setVisible(false);
         jTextField_Nota_Quiz_Uno.setVisible(false);
-
+//****************************************************************************************
         jTextField_Observaciones_Taller.setVisible(false);
         jTextField_Observaciones_Quiz.setVisible(false);
         jTextField_Observaciones_Parcial.setVisible(false);
@@ -736,14 +750,18 @@ public class Calculo extends javax.swing.JFrame {
         jTextField_Observaciones_Parcial.setVisible(true);
     }//GEN-LAST:event_Button_Observaciones_Parcial_UnoActionPerformed
 
+    private void jTextField_Observaciones_TallerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Observaciones_TallerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_Observaciones_TallerActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Menu_Opc;
-    private javax.swing.JButton Button_Observaciones_Cuatro;
-    private javax.swing.JButton Button_Observaciones_Dos;
+    private javax.swing.JButton Button_Observaciones_Cuatro_NOUSE;
+    private javax.swing.JButton Button_Observaciones_Dos_NOUSE;
     private javax.swing.JButton Button_Observaciones_Parcial_Uno;
     private javax.swing.JButton Button_Observaciones_Quiz_Uno;
     private javax.swing.JButton Button_Observaciones_Taller_Uno;
-    private javax.swing.JButton Button_Observaciones_Tres;
+    private javax.swing.JButton Button_Observaciones_Tres_NOUSE;
     private javax.swing.JButton Button_Parciales;
     private javax.swing.JButton Button_Quizes;
     private javax.swing.JButton Button_Return_Inicio;
