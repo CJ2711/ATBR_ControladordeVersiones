@@ -414,19 +414,25 @@ public class Edicion extends javax.swing.JFrame {
         jPanel_DETALLES.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
         jScrollPane4.setViewportView(jTextArea1);
 
         jPanel_DETALLES.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 320, -1));
 
         jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
+        jTextArea2.setWrapStyleWord(true);
         jScrollPane5.setViewportView(jTextArea2);
 
         jPanel_DETALLES.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 320, -1));
 
         jTextArea3.setColumns(20);
+        jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
+        jTextArea3.setWrapStyleWord(true);
         jScrollPane6.setViewportView(jTextArea3);
 
         jPanel_DETALLES.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 320, -1));

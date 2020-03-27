@@ -540,6 +540,7 @@ public class Calculo extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 120));
 
+        jTextArea_Observaciones_Taller.setEditable(false);
         jTextArea_Observaciones_Taller.setColumns(20);
         jTextArea_Observaciones_Taller.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextArea_Observaciones_Taller.setLineWrap(true);
@@ -549,6 +550,7 @@ public class Calculo extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 300, 320));
 
+        jTextArea_Observaciones_Quiz.setEditable(false);
         jTextArea_Observaciones_Quiz.setColumns(20);
         jTextArea_Observaciones_Quiz.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextArea_Observaciones_Quiz.setLineWrap(true);
@@ -558,6 +560,7 @@ public class Calculo extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 300, 320));
 
+        jTextArea_Observaciones_Parcial.setEditable(false);
         jTextArea_Observaciones_Parcial.setColumns(20);
         jTextArea_Observaciones_Parcial.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextArea_Observaciones_Parcial.setLineWrap(true);
