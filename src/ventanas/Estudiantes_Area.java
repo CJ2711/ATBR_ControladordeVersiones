@@ -48,6 +48,16 @@ public class Estudiantes_Area extends javax.swing.JFrame {
 
         promedioFila();
         setIconImage(getIconImage());
+
+        DesktopNotify.showDesktopMessage("Aviso Español:",
+                "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
+                + " descuidos en la materia podrían llevarlo a ello.",
+                DesktopNotify.WARNING);//Tipo WARNING
+
+        DesktopNotify.showDesktopMessage("Aviso Inglés:",
+                "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
+                + " descuidos en la materia podrían llevarlo a ello.",
+                DesktopNotify.WARNING);//Tipo WARNING
     }
 
     public Image getIconImage() {
@@ -76,21 +86,21 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                         + " cancelación en lo posible.",
                         DesktopNotify.ERROR);//Tipo ERROR.
             }
-                //Podemos utilizar un formulario Frame o cualquier otro; mostrar un JFrame o JDialog         
-                if ((defX0Y0 >= (float) 3.00) && (defX0Y0 <= (float) 3.99)) {
-                    Label_Semaforo_Calculo_Amarillo.setVisible(true);
-                    // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
-                    // pero inferior a 4.
-                    DesktopNotify.showDesktopMessage("Aviso Cálculo I:",
-                            "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
-                            + " descuidos en la materia podrían llevarlo a ello.",
-                            DesktopNotify.WARNING);//Tipo WARNING
-                }
-                if ((defX0Y0 >= (float) 4.00) && (defX0Y0 <= (float) 5.00)) {
-                    Label_Semaforo_Calculo_Verde.setVisible(true);
-                }
-
+            //Podemos utilizar un formulario Frame o cualquier otro; mostrar un JFrame o JDialog         
+            if ((defX0Y0 >= (float) 3.00) && (defX0Y0 <= (float) 3.99)) {
+                Label_Semaforo_Calculo_Amarillo.setVisible(true);
+                // Notificación de Escritorio: Muestra la advertencia con base a si la nota del estudiante es superior a 3,
+                // pero inferior a 4.
+                DesktopNotify.showDesktopMessage("Aviso Cálculo I:",
+                        "Usted por el momento no podría incurrir en situación de bajo rendimiento, no obstante,"
+                        + " descuidos en la materia podrían llevarlo a ello.",
+                        DesktopNotify.WARNING);//Tipo WARNING
             }
+            if ((defX0Y0 >= (float) 4.00) && (defX0Y0 <= (float) 5.00)) {
+                Label_Semaforo_Calculo_Verde.setVisible(true);
+            }
+
+        }
         if (username.equals("1958205")) {
             Object valorX1Y1 = jTable1.getValueAt(1, 1);
             Object valorX1Y2 = jTable1.getValueAt(1, 2);
