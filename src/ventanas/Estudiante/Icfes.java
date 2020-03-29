@@ -30,7 +30,7 @@ public class Icfes extends javax.swing.JFrame {
      */
     public Icfes() {
         initComponents();
-        setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante]");
+        setTitle("Alertas Tempranas de Rendimiento - [Area Estudiante - Resultados Icfes]");
         this.setLocationRelativeTo(null);
         setResizable(false);
 
@@ -85,7 +85,7 @@ public class Icfes extends javax.swing.JFrame {
             int lc = Integer.parseInt(valorX0Y2.toString());
             int cn = Integer.parseInt(valorX0Y3.toString());
             int cs = Integer.parseInt(valorX0Y4.toString());
-            int ingles = Integer.parseInt(valorX0Y6.toString());
+            int ingles = Integer.parseInt(valorX0Y5.toString());
 
             String mathS = valorX0Y1.toString();
             String lcS = valorX0Y2.toString();
@@ -119,7 +119,7 @@ public class Icfes extends javax.swing.JFrame {
             if ((lc >= 31) && (lc <= 59)) {
                 Label_Semaforo_LC_Amarillo.setVisible(true);
             }
-            if ((lc >= 60) && (lc <= 100)) {;
+            if ((lc >= 60) && (lc <= 100)) {
                 Label_Semaforo_LC_Verde.setVisible(true);
             }
 
@@ -170,7 +170,7 @@ public class Icfes extends javax.swing.JFrame {
             int lc = Integer.parseInt(valorX1Y2.toString());
             int cn = Integer.parseInt(valorX1Y3.toString());
             int cs = Integer.parseInt(valorX1Y4.toString());
-            int ingles = Integer.parseInt(valorX1Y6.toString());
+            int ingles = Integer.parseInt(valorX1Y5.toString());
 
             String mathS = valorX1Y1.toString();
             String lcS = valorX1Y2.toString();
@@ -204,7 +204,7 @@ public class Icfes extends javax.swing.JFrame {
             if ((lc >= 31) && (lc <= 59)) {
                 Label_Semaforo_LC_Amarillo.setVisible(true);
             }
-            if ((lc >= 60) && (lc <= 100)) {;
+            if ((lc >= 60) && (lc <= 100)) {
                 Label_Semaforo_LC_Verde.setVisible(true);
             }
 
@@ -255,7 +255,7 @@ public class Icfes extends javax.swing.JFrame {
             int lc = Integer.parseInt(valorX2Y2.toString());
             int cn = Integer.parseInt(valorX2Y3.toString());
             int cs = Integer.parseInt(valorX2Y4.toString());
-            int ingles = Integer.parseInt(valorX2Y6.toString());
+            int ingles = Integer.parseInt(valorX2Y5.toString());
 
             String mathS = valorX2Y1.toString();
             String lcS = valorX2Y2.toString();
@@ -289,7 +289,7 @@ public class Icfes extends javax.swing.JFrame {
             if ((lc >= 31) && (lc <= 59)) {
                 Label_Semaforo_LC_Amarillo.setVisible(true);
             }
-            if ((lc >= 60) && (lc <= 100)) {;
+            if ((lc >= 60) && (lc <= 100)) {
                 Label_Semaforo_LC_Verde.setVisible(true);
             }
 
@@ -340,7 +340,7 @@ public class Icfes extends javax.swing.JFrame {
             int lc = Integer.parseInt(valorX3Y2.toString());
             int cn = Integer.parseInt(valorX3Y3.toString());
             int cs = Integer.parseInt(valorX3Y4.toString());
-            int ingles = Integer.parseInt(valorX3Y6.toString());
+            int ingles = Integer.parseInt(valorX3Y5.toString());
 
             String mathS = valorX3Y1.toString();
             String lcS = valorX3Y2.toString();
@@ -374,7 +374,7 @@ public class Icfes extends javax.swing.JFrame {
             if ((lc >= 31) && (lc <= 59)) {
                 Label_Semaforo_LC_Amarillo.setVisible(true);
             }
-            if ((lc >= 60) && (lc <= 100)) {;
+            if ((lc >= 60) && (lc <= 100)) {
                 Label_Semaforo_LC_Verde.setVisible(true);
             }
 

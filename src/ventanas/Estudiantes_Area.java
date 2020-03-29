@@ -14,17 +14,15 @@ import ventanas.Estudiante.Icfes;
 import ventanas.Estudiante.Calculo;
 import BD.Conexion;
 import ds.desktop.notify.DesktopNotify;
-import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import ventanas.Estudiante.Diagnostica;
 import static ventanas.Inicio.username;
 
 public class Estudiantes_Area extends javax.swing.JFrame {
@@ -300,10 +298,15 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         getContentPane().add(Button_Icfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 180, 50));
 
         Button_Diagnostica.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        Button_Diagnostica.setText("DIAGNOSTICA");
+        Button_Diagnostica.setText("DIAGNÓSTICA");
         Button_Diagnostica.setToolTipText("Prueba Diagnostica");
         Button_Diagnostica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Diagnostica.setOpaque(false);
+        Button_Diagnostica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_DiagnosticaActionPerformed(evt);
+            }
+        });
         getContentPane().add(Button_Diagnostica, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 375, 180, 50));
 
         jTextField_Nombre_Apellido_E.setEditable(false);
@@ -444,7 +447,6 @@ public class Estudiantes_Area extends javax.swing.JFrame {
         columnBinding.setColumnClass(Float.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
-
         jScrollPane2.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, -1, 120));
@@ -537,6 +539,30 @@ public class Estudiantes_Area extends javax.swing.JFrame {
     private void Label_Semaforo_Calculo_RojoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_Label_Semaforo_Calculo_RojoPropertyChange
         // TODO add your handling code here:
     }//GEN-LAST:event_Label_Semaforo_Calculo_RojoPropertyChange
+
+    private void Button_DiagnosticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DiagnosticaActionPerformed
+        dispose(); //Desaparecer ventana 'Estudiantes_Area'
+        new Diagnostica().setVisible(true); //Mostrar en pantalla ventana 'Icfes'
+        try {
+            //Conexion BD
+            Connection cnnn = Conexion.conectar();
+            /*sentencia SQL para buscar en la tabla 'Usuario' el 'rol' que * tiene el usuario y su contraseña.
+             */
+            PreparedStatement pss = cnnn.prepareStatement(
+                    "SELECT nombre, apellido FROM `m_estudiante` WHERE idEstudiante='" + username + "'");
+            //Ejecutar la Sentencia SQL con el Objeto ResultSet:
+            ResultSet rsss = pss.executeQuery();
+            if (rsss.next()) {
+                String nombre = rsss.getNString("nombre");
+                String apellido = rsss.getNString("apellido");
+                String nombreApeE = nombre + " " + apellido;
+                Icfes.jTextField_Nombre_Apellido_E.setText(nombreApeE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_Button_DiagnosticaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

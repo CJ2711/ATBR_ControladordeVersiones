@@ -7,8 +7,19 @@
     <class>ventanas.newpackagePROFESORES.Notase</class>
     <class>ventanas.Estudiante.Resultadosicfes</class>
     <class>ventanas.Estudiante.Tabladetalle</class>
+    <class>ventanas.Estudiante.Notasdiag</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/atbr_proyecto?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="mysql?zeroDateTimeBehavior=convertToNullPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>ventanas.Estudiante.ColumnStats</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value=""/>
