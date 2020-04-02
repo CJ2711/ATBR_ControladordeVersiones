@@ -556,7 +556,7 @@ public class Estudiantes_Area extends javax.swing.JFrame {
                 String nombre = rsss.getNString("nombre");
                 String apellido = rsss.getNString("apellido");
                 String nombreApeE = nombre + " " + apellido;
-                Icfes.jTextField_Nombre_Apellido_E.setText(nombreApeE);
+                Diagnostica.jTextField_Nombre_Apellido_E.setText(nombreApeE);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);

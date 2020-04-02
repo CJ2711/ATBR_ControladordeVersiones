@@ -80,36 +80,54 @@ public class Diagnostica extends javax.swing.JFrame {
                 jTextField_Resultado_InglesD.setText(inglesD);
 
                 //Semáforo Diagnóstica Matemáticas.
-                if ((mathDiag >= 0.0 && mathDiag <= 2.99)) {
+                if ((mathDiag >= (float) 0.0 && mathDiag <= (float) 2.99)) {
                     Label_Semaforo_Math_Rojo.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 3.0 && mathDiag <= 3.99)) {
+                if ((mathDiag >= (float) 3.0 && mathDiag <= (float) 3.99)) {
                     Label_Semaforo_Math_Amarillo.setVisible(true);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 4.0 && mathDiag <= 5.0)) {
+                if (mathDiag >= (float) 4.0) {
                     Label_Semaforo_Math_Verde.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Lectura Crítica
-                if ((lectCritDiag >= 0.0 && lectCritDiag <= 2.99)) {
+                if ((lectCritDiag >= (float) 0.0 && lectCritDiag <= (float) 2.99)) {
                     Label_Semaforo_LC_Rojo.setVisible(true);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
+                    Label_Semaforo_LC_Verde.setVisible(false);
                 }
-                if ((lectCritDiag >= 3.0 && lectCritDiag <= 3.99)) {
+                if ((lectCritDiag >= (float) 3.0 && lectCritDiag <= (float) 3.99)) {
                     Label_Semaforo_LC_Amarillo.setVisible(true);
+                    Label_Semaforo_LC_Verde.setVisible(false);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
                 }
-                if ((lectCritDiag >= 4.0 && lectCritDiag <= 5.0)) {
+                if (lectCritDiag >= (float) 4.0) {
                     Label_Semaforo_LC_Verde.setVisible(true);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Inglés
-                if ((inglesDiag >= 0.0 && inglesDiag <= 2.99)) {
+                if ((inglesDiag >= (float) 0.0 && inglesDiag <= (float) 2.99)) {
                     Label_Semaforo_Ingles_Rojo.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
                 }
-                if ((inglesDiag >= 3.0 && inglesDiag <= 3.99)) {
+                if ((inglesDiag >= (float) 3.0 && inglesDiag <= (float) 3.99)) {
                     Label_Semaforo_Ingles_Amarillo.setVisible(true);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
-                if ((inglesDiag >= 4.0 && inglesDiag <= 5.0)) {
+                if (inglesDiag >= (float) 4.0) {
                     Label_Semaforo_Ingles_Verde.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
             }
 
@@ -131,36 +149,54 @@ public class Diagnostica extends javax.swing.JFrame {
                 jTextField_Resultado_InglesD.setText(inglesD);
 
                 //Semáforo Diagnóstica Matemáticas.
-                if ((mathDiag >= 0.0 && mathDiag <= 2.99)) {
+                if ((mathDiag >= (float) 0.0 && mathDiag <= (float) 2.99)) {
                     Label_Semaforo_Math_Rojo.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 3.0 && mathDiag <= 3.99)) {
+                if ((mathDiag >= (float) 3.0 && mathDiag <= (float) 3.99)) {
                     Label_Semaforo_Math_Amarillo.setVisible(true);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 4.0 && mathDiag <= 5.0)) {
+                if (mathDiag >= (float) 4.0) {
                     Label_Semaforo_Math_Verde.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Lectura Crítica
-                if ((lectCritDiag >= 0.0 && lectCritDiag <= 2.99)) {
+                if ((lectCritDiag >= (float) 0.0 && lectCritDiag <= (float) 2.99)) {
                     Label_Semaforo_LC_Rojo.setVisible(true);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
+                    Label_Semaforo_LC_Verde.setVisible(false);
                 }
-                if ((lectCritDiag >= 3.0 && lectCritDiag <= 3.99)) {
+                if ((lectCritDiag >= (float) 3.0 && lectCritDiag <= (float) 3.99)) {
                     Label_Semaforo_LC_Amarillo.setVisible(true);
+                    Label_Semaforo_LC_Verde.setVisible(false);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
                 }
-                if ((lectCritDiag >= 4.0 && lectCritDiag <= 5.0)) {
+                if (lectCritDiag >= (float) 4.0) {
                     Label_Semaforo_LC_Verde.setVisible(true);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Inglés
-                if ((inglesDiag >= 0.0 && inglesDiag <= 2.99)) {
+                if ((inglesDiag >= (float) 0.0 && inglesDiag <= (float) 2.99)) {
                     Label_Semaforo_Ingles_Rojo.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
                 }
-                if ((inglesDiag >= 3.0 && inglesDiag <= 3.99)) {
+                if ((inglesDiag >= (float) 3.0 && inglesDiag <= (float) 3.99)) {
                     Label_Semaforo_Ingles_Amarillo.setVisible(true);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
-                if ((inglesDiag >= 4.0 && inglesDiag <= 5.0)) {
+                if (inglesDiag >= (float) 4.0) {
                     Label_Semaforo_Ingles_Verde.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
             }
 
@@ -180,38 +216,55 @@ public class Diagnostica extends javax.swing.JFrame {
                 jTextField_Resultado_MathD.setText(mathD);
                 jTextField_Resultado_LectCritD.setText(lectcritD);
                 jTextField_Resultado_InglesD.setText(inglesD);
-
                 //Semáforo Diagnóstica Matemáticas.
-                if ((mathDiag >= 0.0 && mathDiag <= 2.99)) {
+                if ((mathDiag >= (float) 0.0 && mathDiag <= (float) 2.99)) {
                     Label_Semaforo_Math_Rojo.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 3.0 && mathDiag <= 3.99)) {
+                if ((mathDiag >= (float) 3.0 && mathDiag <= (float) 3.99)) {
                     Label_Semaforo_Math_Amarillo.setVisible(true);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 4.0 && mathDiag <= 5.0)) {
+                if (mathDiag >= (float) 4.0) {
                     Label_Semaforo_Math_Verde.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Lectura Crítica
-                if ((lectCritDiag >= 0.0 && lectCritDiag <= 2.99)) {
+                if ((lectCritDiag >= (float) 0.0 && lectCritDiag <= (float) 2.99)) {
                     Label_Semaforo_LC_Rojo.setVisible(true);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
+                    Label_Semaforo_LC_Verde.setVisible(false);
                 }
-                if ((lectCritDiag >= 3.0 && lectCritDiag <= 3.99)) {
+                if ((lectCritDiag >= (float) 3.0 && lectCritDiag <= (float) 3.99)) {
                     Label_Semaforo_LC_Amarillo.setVisible(true);
+                    Label_Semaforo_LC_Verde.setVisible(false);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
                 }
-                if ((lectCritDiag >= 4.0 && lectCritDiag <= 5.0)) {
+                if (lectCritDiag >= (float) 4.0) {
                     Label_Semaforo_LC_Verde.setVisible(true);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Inglés
-                if ((inglesDiag >= 0.0 && inglesDiag <= 2.99)) {
+                if ((inglesDiag >= (float) 0.0 && inglesDiag <= (float) 2.99)) {
                     Label_Semaforo_Ingles_Rojo.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
                 }
-                if ((inglesDiag >= 3.0 && inglesDiag <= 3.99)) {
+                if ((inglesDiag >= (float) 3.0 && inglesDiag <= (float) 3.99)) {
                     Label_Semaforo_Ingles_Amarillo.setVisible(true);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
-                if ((inglesDiag >= 4.0 && inglesDiag <= 5.0)) {
+                if (inglesDiag >= (float) 4.0) {
                     Label_Semaforo_Ingles_Verde.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
             }
 
@@ -233,36 +286,54 @@ public class Diagnostica extends javax.swing.JFrame {
                 jTextField_Resultado_InglesD.setText(inglesD);
 
                 //Semáforo Diagnóstica Matemáticas.
-                if ((mathDiag >= 0.0 && mathDiag <= 2.99)) {
+                if ((mathDiag >= (float) 0.0 && mathDiag <= (float) 2.99)) {
                     Label_Semaforo_Math_Rojo.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 3.0 && mathDiag <= 3.99)) {
+                if ((mathDiag >= (float) 3.0 && mathDiag <= (float) 3.99)) {
                     Label_Semaforo_Math_Amarillo.setVisible(true);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
+                    Label_Semaforo_Math_Verde.setVisible(false);
                 }
-                if ((mathDiag >= 4.0 && mathDiag <= 5.0)) {
+                if (mathDiag >= (float) 4.0) {
                     Label_Semaforo_Math_Verde.setVisible(true);
+                    Label_Semaforo_Math_Amarillo.setVisible(false);
+                    Label_Semaforo_Math_Rojo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Lectura Crítica
-                if ((lectCritDiag >= 0.0 && lectCritDiag <= 2.99)) {
+                if ((lectCritDiag >= (float) 0.0 && lectCritDiag <= (float) 2.99)) {
                     Label_Semaforo_LC_Rojo.setVisible(true);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
+                    Label_Semaforo_LC_Verde.setVisible(false);
                 }
-                if ((lectCritDiag >= 3.0 && lectCritDiag <= 3.99)) {
+                if ((lectCritDiag >= (float) 3.0 && lectCritDiag <= (float) 3.99)) {
                     Label_Semaforo_LC_Amarillo.setVisible(true);
+                    Label_Semaforo_LC_Verde.setVisible(false);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
                 }
-                if ((lectCritDiag >= 4.0 && lectCritDiag <= 5.0)) {
+                if (lectCritDiag >= (float) 4.0) {
                     Label_Semaforo_LC_Verde.setVisible(true);
+                    Label_Semaforo_LC_Rojo.setVisible(false);
+                    Label_Semaforo_LC_Amarillo.setVisible(false);
                 }
 
                 //Semáforo Diagnóstica Inglés
-                if ((inglesDiag >= 0.0 && inglesDiag <= 2.99)) {
+                if ((inglesDiag >= (float) 0.0 && inglesDiag <= (float) 2.99)) {
                     Label_Semaforo_Ingles_Rojo.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
                 }
-                if ((inglesDiag >= 3.0 && inglesDiag <= 3.99)) {
+                if ((inglesDiag >= (float) 3.0 && inglesDiag <= (float) 3.99)) {
                     Label_Semaforo_Ingles_Amarillo.setVisible(true);
+                    Label_Semaforo_Ingles_Verde.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
-                if ((inglesDiag >= 4.0 && inglesDiag <= 5.0)) {
+                if (inglesDiag >= (float) 4.0) {
                     Label_Semaforo_Ingles_Verde.setVisible(true);
+                    Label_Semaforo_Ingles_Amarillo.setVisible(false);
+                    Label_Semaforo_Ingles_Rojo.setVisible(false);
                 }
             }
 
@@ -298,12 +369,12 @@ public class Diagnostica extends javax.swing.JFrame {
         Label_Semaforo_Math_Rojo = new javax.swing.JLabel();
         Label_Semaforo_Math_Amarillo = new javax.swing.JLabel();
         Label_Semaforo_Math_Verde = new javax.swing.JLabel();
-        Label_Semaforo_LC_Rojo = new javax.swing.JLabel();
         Label_Semaforo_LC_Amarillo = new javax.swing.JLabel();
         Label_Semaforo_LC_Verde = new javax.swing.JLabel();
-        Label_Semaforo_Ingles_Rojo = new javax.swing.JLabel();
-        Label_Semaforo_Ingles_Amarillo = new javax.swing.JLabel();
+        Label_Semaforo_LC_Rojo = new javax.swing.JLabel();
         Label_Semaforo_Ingles_Verde = new javax.swing.JLabel();
+        Label_Semaforo_Ingles_Amarillo = new javax.swing.JLabel();
+        Label_Semaforo_Ingles_Rojo = new javax.swing.JLabel();
         Label_Puntaje_Total = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -423,10 +494,6 @@ public class Diagnostica extends javax.swing.JFrame {
         Label_Semaforo_Math_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Math_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
 
-        Label_Semaforo_LC_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
-        Label_Semaforo_LC_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(Label_Semaforo_LC_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, -1, -1));
-
         Label_Semaforo_LC_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
         Label_Semaforo_LC_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_LC_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, -1, -1));
@@ -435,17 +502,21 @@ public class Diagnostica extends javax.swing.JFrame {
         Label_Semaforo_LC_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_LC_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, -1, -1));
 
-        Label_Semaforo_Ingles_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
-        Label_Semaforo_Ingles_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(Label_Semaforo_Ingles_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, -1, -1));
+        Label_Semaforo_LC_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        Label_Semaforo_LC_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(Label_Semaforo_LC_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, -1, -1));
+
+        Label_Semaforo_Ingles_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
+        Label_Semaforo_Ingles_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(Label_Semaforo_Ingles_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, -1, -1));
 
         Label_Semaforo_Ingles_Amarillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoAmarillo.png"))); // NOI18N
         Label_Semaforo_Ingles_Amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Label_Semaforo_Ingles_Amarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, -1, -1));
 
-        Label_Semaforo_Ingles_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoVerde.png"))); // NOI18N
-        Label_Semaforo_Ingles_Verde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(Label_Semaforo_Ingles_Verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, -1, -1));
+        Label_Semaforo_Ingles_Rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SemaforoRojo.png"))); // NOI18N
+        Label_Semaforo_Ingles_Rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(Label_Semaforo_Ingles_Rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, -1, -1));
 
         Label_Puntaje_Total.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Label_Puntaje_Total.setText("Resultados de la prueba diagnóstica realizada  el 26/04/2019");
@@ -561,7 +632,6 @@ public class Diagnostica extends javax.swing.JFrame {
     private void jTextField_Resultado_InglesDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Resultado_InglesDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_Resultado_InglesDActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Menu_Opc;
