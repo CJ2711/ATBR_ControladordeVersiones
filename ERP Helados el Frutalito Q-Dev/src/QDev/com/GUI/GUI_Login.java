@@ -31,9 +31,9 @@ public class GUI_Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         tf_User = new javax.swing.JTextField();
         tf_Password = new javax.swing.JTextField();
-        btn_Entrar1 = new javax.swing.JButton();
+        btn_Ayuda = new javax.swing.JButton();
         btn_Entrar = new javax.swing.JButton();
-        btn_Entrar2 = new javax.swing.JButton();
+        btn_Contacto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,14 +55,14 @@ public class GUI_Login extends javax.swing.JFrame {
         tf_Password.setToolTipText("Contraseña");
         getContentPane().add(tf_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 210, 30));
 
-        btn_Entrar1.setText("CONTACTO");
-        getContentPane().add(btn_Entrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, -1, -1));
+        btn_Ayuda.setText("AYUDA");
+        getContentPane().add(btn_Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 90, -1));
 
         btn_Entrar.setText("Entrar");
         getContentPane().add(btn_Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
-        btn_Entrar2.setText("AYUDA");
-        getContentPane().add(btn_Entrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 90, -1));
+        btn_Contacto.setText("CONTACTO");
+        getContentPane().add(btn_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 90, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Fondo_Login.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -106,9 +106,9 @@ public class GUI_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Ayuda;
+    private javax.swing.JButton btn_Contacto;
     private javax.swing.JButton btn_Entrar;
-    private javax.swing.JButton btn_Entrar1;
-    private javax.swing.JButton btn_Entrar2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
