@@ -75,7 +75,7 @@ public class RegistryRM {
      * Propósito: Agregar la información de la materia prima que se va a adquirir
      */
     public void addRegistryRMDetail(RegistryRMDetail registryRMDetail){
-        this.registryRMDetails.add(registryRMDetail);
+        this.registryRMDetails.add(registryRMDetail); 
     }
     
     /**
