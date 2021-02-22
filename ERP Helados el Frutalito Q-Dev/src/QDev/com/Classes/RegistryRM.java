@@ -12,6 +12,8 @@ public class RegistryRM {
     
     //Atributos propios
     private LocalDateTime dateHour;
+    //Atributos calculados
+    private int finalPrice;
     
     //Relación 1..1
     private Provider provider;
@@ -34,12 +36,13 @@ public class RegistryRM {
             throw new Exception("Debe existir una fecha de ingreso de la materia prima");
         }
         
-//        //Verificar
-//        if(!(provider != null)){
-//            throw new Exception("Debe ");
-//        }
+        //Verificar
+        if(!(provider != null)){
+            throw new Exception("Debe existir un proveedor.");
+        }
         
         this.dateHour = dateHour;
+        this.finalPrice = 0;
         this.provider = provider;
         this.registryRMDetails = new LinkedList<>();
     }
@@ -47,6 +50,10 @@ public class RegistryRM {
     //Métodos Get
     public LocalDateTime getDateHour() {
         return dateHour;
+    }
+
+    public int getFinalPrice() {
+        return finalPrice;
     }
 
     public Provider getProvider() {
@@ -75,6 +82,7 @@ public class RegistryRM {
      * Propósito: Agregar la información de la materia prima que se va a adquirir
      */
     public void addRegistryRMDetail(RegistryRMDetail registryRMDetail){
+        this.finalPrice += registryRMDetail.getTotalPrice();
         this.registryRMDetails.add(registryRMDetail); 
     }
     
@@ -83,6 +91,7 @@ public class RegistryRM {
      * Propósito: Eliminar la información de la materia prima que se va a adquirir
      */
     public void removeRegistryRMDetail(RegistryRMDetail registryRMDetail){
+        this.finalPrice -= registryRMDetail.getTotalPrice();
         this.registryRMDetails.remove(registryRMDetail);
     }
     
