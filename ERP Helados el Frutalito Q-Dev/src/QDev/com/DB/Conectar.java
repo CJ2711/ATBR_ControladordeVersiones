@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package QDev.com.Classes;
+package QDev.com.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,8 +21,9 @@ public class Conectar {
     public Connection conexion() {
         try {
             //Cargar el Driver de MySQL
-            Class.forName("org.gtj.mm.mysql.Driver");
-            conect = DriverManager.getConnection("jdbc:mysql://localhost/bdfrutalito", "root", "");
+            //Class.forName("org.gtj.mm.mysql.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
+            conect = DriverManager.getConnection("jdbc:mysql:3306//localhost/frutalitodb", "root", "");
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error: " + e);
         }
