@@ -5,6 +5,11 @@
  */
 package QDev.com.GUI;
 
+import QDev.com.Classes.Person;
+import QDev.com.Classes.Role;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+
 /**
  *
  * @author cricr
@@ -30,7 +35,7 @@ public class GUI_Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         tf_User = new javax.swing.JTextField();
-        tf_Password = new javax.swing.JTextField();
+        psswrdField = new javax.swing.JPasswordField();
         btn_Ayuda = new javax.swing.JButton();
         btn_Entrar = new javax.swing.JButton();
         btn_Contacto = new javax.swing.JButton();
@@ -52,9 +57,7 @@ public class GUI_Login extends javax.swing.JFrame {
 
         tf_User.setToolTipText("Usuario");
         getContentPane().add(tf_User, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 210, 30));
-
-        tf_Password.setToolTipText("Contraseña");
-        getContentPane().add(tf_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 210, 30));
+        getContentPane().add(psswrdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 210, 30));
 
         btn_Ayuda.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         btn_Ayuda.setText("AYUDA");
@@ -62,6 +65,11 @@ public class GUI_Login extends javax.swing.JFrame {
 
         btn_Entrar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_Entrar.setText("Entrar");
+        btn_Entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EntrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 90, 30));
 
         btn_Contacto.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
@@ -74,6 +82,33 @@ public class GUI_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntrarActionPerformed
+        try {
+            String user = tf_User.getText();
+            String password = new String(psswrdField.getPassword());
+
+            Person persona = ConsultaBD.buscarUsuario(user);
+            
+
+            if (!(empleado.getPassword().equals(strPassword))) {
+                JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña icorrecta", "Autenticando...", ERROR_MESSAGE);
+//Lo que hay debajo de este condicional no se ejecutará por el ---return---
+                return;
+            }
+            if (this.ui == null) {
+                ui = new GUI_Compra(almacenPro, empleado);
+                jDesktopPane1.add(ui);
+            }
+            ui.setVisible(true);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(rootPane, "El ID debe ser un valor numerico");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        }
+
+
+    }//GEN-LAST:event_btn_EntrarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Ayuda;
     private javax.swing.JButton btn_Contacto;
@@ -81,7 +116,7 @@ public class GUI_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField tf_Password;
+    private javax.swing.JPasswordField psswrdField;
     private javax.swing.JTextField tf_User;
     // End of variables declaration//GEN-END:variables
 }
