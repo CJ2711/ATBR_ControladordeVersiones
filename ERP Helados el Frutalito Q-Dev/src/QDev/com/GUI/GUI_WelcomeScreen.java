@@ -57,9 +57,6 @@ public class GUI_WelcomeScreen extends javax.swing.JInternalFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3_LogoFrutalito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Logo_Frutalito01.png"))); // NOI18N
-        jLabel3_LogoFrutalito.setMaximumSize(new java.awt.Dimension(98, 99));
-        jLabel3_LogoFrutalito.setMinimumSize(new java.awt.Dimension(98, 99));
-        jLabel3_LogoFrutalito.setPreferredSize(new java.awt.Dimension(98, 99));
         getContentPane().add(jLabel3_LogoFrutalito, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4_Titulo.setFont(new java.awt.Font("Kristen ITC", 0, 72)); // NOI18N
@@ -71,11 +68,7 @@ public class GUI_WelcomeScreen extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel4_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
         jLabel5_Ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Ventas.png"))); // NOI18N
-        jLabel5_Ventas.setMaximumSize(new java.awt.Dimension(161, 138));
-        jLabel5_Ventas.setMinimumSize(new java.awt.Dimension(161, 138));
-        jLabel5_Ventas.setPreferredSize(new java.awt.Dimension(161, 138));
         getContentPane().add(jLabel5_Ventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 160, 150));
-        jLabel5_Ventas.getAccessibleContext().setAccessibleName("");
 
         jLabel1_Produccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Produccion.png"))); // NOI18N
         jLabel1_Produccion.setMaximumSize(new java.awt.Dimension(161, 138));
@@ -104,15 +97,9 @@ public class GUI_WelcomeScreen extends javax.swing.JInternalFrame {
         getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 140, 40));
 
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
-        jLabel1_Up.setMaximumSize(new java.awt.Dimension(900, 129));
-        jLabel1_Up.setMinimumSize(new java.awt.Dimension(900, 129));
-        jLabel1_Up.setPreferredSize(new java.awt.Dimension(900, 129));
         getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
 
         jLabel2_FondoHelados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Fondo_Welcome.jpg"))); // NOI18N
-        jLabel2_FondoHelados.setMaximumSize(new java.awt.Dimension(900, 377));
-        jLabel2_FondoHelados.setMinimumSize(new java.awt.Dimension(900, 377));
-        jLabel2_FondoHelados.setPreferredSize(new java.awt.Dimension(900, 377));
         getContentPane().add(jLabel2_FondoHelados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 890, 350));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
