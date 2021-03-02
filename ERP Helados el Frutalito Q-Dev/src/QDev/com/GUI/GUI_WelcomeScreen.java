@@ -7,9 +7,9 @@ package QDev.com.GUI;
 
 /**
  *
- * @author Alejandro
+ * @author KEREN
  */
-public class GUI_WelcomeScreen extends javax.swing.JFrame {
+public class GUI_WelcomeScreen extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form GUI_WelcomeScreen
@@ -27,199 +27,125 @@ public class GUI_WelcomeScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLUser = new javax.swing.JLabel();
-        jLWelcome = new javax.swing.JLabel();
-        jP_Green_alpha1 = new javax.swing.JPanel();
-        jTA_PyM_alpha = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jP_Yellow_alpha2 = new javax.swing.JPanel();
-        jL_Inventory_alpha = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jP_Cyan_alpha3 = new javax.swing.JPanel();
-        jT_Version_alpha = new javax.swing.JTextField();
-        jL_Users_alpha = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jL_Background_alpha = new javax.swing.JLabel();
+        jLabel3_LogoFrutalito = new javax.swing.JLabel();
+        jLabel4_Titulo = new javax.swing.JLabel();
+        jLabel5_Ventas = new javax.swing.JLabel();
+        jLabel1_Produccion = new javax.swing.JLabel();
+        jLabel7_MateriaPrima = new javax.swing.JLabel();
+        btn_PedidoMateriaPrima = new javax.swing.JButton();
+        btn_Venta = new javax.swing.JButton();
+        try {
+            btn_Produccion =(javax.swing.JButton)java.beans.Beans.instantiate(getClass().getClassLoader(), "QDev/com/GUI.GUI_WelcomeScreen_jButton3");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+        jLabel1_Up = new javax.swing.JLabel();
+        jLabel2_FondoHelados = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(900, 507));
+        setMinimumSize(new java.awt.Dimension(900, 507));
+        setPreferredSize(new java.awt.Dimension(900, 507));
+        try {
+            setSelected(true);
+        } catch (java.beans.PropertyVetoException e1) {
+            e1.printStackTrace();
+        }
+        setVisible(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLUser.setFont(new java.awt.Font("Times New Roman", 2, 48)); // NOI18N
-        jLUser.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jLUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 60, -1));
+        jLabel3_LogoFrutalito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Logo_Frutalito01.png"))); // NOI18N
+        jLabel3_LogoFrutalito.setMaximumSize(new java.awt.Dimension(98, 99));
+        jLabel3_LogoFrutalito.setMinimumSize(new java.awt.Dimension(98, 99));
+        jLabel3_LogoFrutalito.setPreferredSize(new java.awt.Dimension(98, 99));
+        getContentPane().add(jLabel3_LogoFrutalito, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLWelcome.setFont(new java.awt.Font("Times New Roman", 2, 48)); // NOI18N
-        jLWelcome.setForeground(new java.awt.Color(0, 0, 0));
-        jLWelcome.setText("Bienvenido, ");
-        jLWelcome.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(jLWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+        jLabel4_Titulo.setFont(new java.awt.Font("Kristen ITC", 0, 72)); // NOI18N
+        jLabel4_Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4_Titulo.setText("Bienvenido");
+        jLabel4_Titulo.setMaximumSize(new java.awt.Dimension(392, 87));
+        jLabel4_Titulo.setMinimumSize(new java.awt.Dimension(392, 87));
+        jLabel4_Titulo.setPreferredSize(new java.awt.Dimension(392, 87));
+        getContentPane().add(jLabel4_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
-        jP_Green_alpha1.setBackground(new java.awt.Color(204, 255, 204));
-        jP_Green_alpha1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jP_Green_alpha1.setForeground(new java.awt.Color(51, 51, 255));
-        jP_Green_alpha1.setPreferredSize(new java.awt.Dimension(2, 2));
+        jLabel5_Ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Ventas.png"))); // NOI18N
+        jLabel5_Ventas.setMaximumSize(new java.awt.Dimension(161, 138));
+        jLabel5_Ventas.setMinimumSize(new java.awt.Dimension(161, 138));
+        jLabel5_Ventas.setPreferredSize(new java.awt.Dimension(161, 138));
+        getContentPane().add(jLabel5_Ventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 160, 150));
+        jLabel5_Ventas.getAccessibleContext().setAccessibleName("");
 
-        jTA_PyM_alpha.setEditable(false);
-        jTA_PyM_alpha.setBackground(new java.awt.Color(204, 255, 204));
-        jTA_PyM_alpha.setColumns(20);
-        jTA_PyM_alpha.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jTA_PyM_alpha.setForeground(new java.awt.Color(0, 0, 0));
-        jTA_PyM_alpha.setLineWrap(true);
-        jTA_PyM_alpha.setRows(5);
-        jTA_PyM_alpha.setText("    PRODUCTOS \n              Y\nMATERIA PRIMA");
-        jTA_PyM_alpha.setAutoscrolls(false);
+        jLabel1_Produccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Produccion.png"))); // NOI18N
+        jLabel1_Produccion.setMaximumSize(new java.awt.Dimension(161, 138));
+        jLabel1_Produccion.setMinimumSize(new java.awt.Dimension(161, 138));
+        jLabel1_Produccion.setPreferredSize(new java.awt.Dimension(161, 138));
+        getContentPane().add(jLabel1_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 150, 130));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton1.setText("REGISTRAR PRODUCCIÓN");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel7_MateriaPrima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_MateriaPrima.png"))); // NOI18N
+        jLabel7_MateriaPrima.setMaximumSize(new java.awt.Dimension(161, 138));
+        jLabel7_MateriaPrima.setMinimumSize(new java.awt.Dimension(161, 138));
+        jLabel7_MateriaPrima.setPreferredSize(new java.awt.Dimension(161, 138));
+        getContentPane().add(jLabel7_MateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton2.setText("REGISTRAR MATERIA PRIMA");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_PedidoMateriaPrima.setBackground(new java.awt.Color(153, 255, 153));
+        btn_PedidoMateriaPrima.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        btn_PedidoMateriaPrima.setText("Pedido Metaria Prima");
+        btn_PedidoMateriaPrima.setActionCommand("Venta");
+        btn_PedidoMateriaPrima.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(btn_PedidoMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 180, 40));
 
-        javax.swing.GroupLayout jP_Green_alpha1Layout = new javax.swing.GroupLayout(jP_Green_alpha1);
-        jP_Green_alpha1.setLayout(jP_Green_alpha1Layout);
-        jP_Green_alpha1Layout.setHorizontalGroup(
-            jP_Green_alpha1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jP_Green_alpha1Layout.createSequentialGroup()
-                .addGroup(jP_Green_alpha1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jP_Green_alpha1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jTA_PyM_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jP_Green_alpha1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(jP_Green_alpha1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))))
-                .addContainerGap(19, Short.MAX_VALUE))
+        btn_Venta.setBackground(new java.awt.Color(153, 255, 153));
+        btn_Venta.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        btn_Venta.setText("Venta");
+        btn_Venta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(btn_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 140, 40));
+        getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 140, 40));
+
+        jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
+        jLabel1_Up.setMaximumSize(new java.awt.Dimension(900, 129));
+        jLabel1_Up.setMinimumSize(new java.awt.Dimension(900, 129));
+        jLabel1_Up.setPreferredSize(new java.awt.Dimension(900, 129));
+        getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
+
+        jLabel2_FondoHelados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Fondo_Welcome.jpg"))); // NOI18N
+        jLabel2_FondoHelados.setMaximumSize(new java.awt.Dimension(900, 377));
+        jLabel2_FondoHelados.setMinimumSize(new java.awt.Dimension(900, 377));
+        jLabel2_FondoHelados.setPreferredSize(new java.awt.Dimension(900, 377));
+        getContentPane().add(jLabel2_FondoHelados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 890, 350));
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 890, Short.MAX_VALUE)
         );
-        jP_Green_alpha1Layout.setVerticalGroup(
-            jP_Green_alpha1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jP_Green_alpha1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jTA_PyM_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(85, 85, 85))
-        );
-
-        getContentPane().add(jP_Green_alpha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 265, 390));
-
-        jP_Yellow_alpha2.setBackground(new java.awt.Color(255, 255, 204));
-        jP_Yellow_alpha2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jP_Yellow_alpha2.setForeground(new java.awt.Color(51, 51, 255));
-        jP_Yellow_alpha2.setPreferredSize(new java.awt.Dimension(259, 390));
-
-        jL_Inventory_alpha.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jL_Inventory_alpha.setForeground(new java.awt.Color(0, 0, 0));
-        jL_Inventory_alpha.setText("INVENTARIO");
-
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton4.setText("VER INVENTARIO");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        javax.swing.GroupLayout jP_Yellow_alpha2Layout = new javax.swing.GroupLayout(jP_Yellow_alpha2);
-        jP_Yellow_alpha2.setLayout(jP_Yellow_alpha2Layout);
-        jP_Yellow_alpha2Layout.setHorizontalGroup(
-            jP_Yellow_alpha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jP_Yellow_alpha2Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addGroup(jP_Yellow_alpha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Yellow_alpha2Layout.createSequentialGroup()
-                        .addComponent(jL_Inventory_alpha)
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Yellow_alpha2Layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))))
-        );
-        jP_Yellow_alpha2Layout.setVerticalGroup(
-            jP_Yellow_alpha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jP_Yellow_alpha2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jL_Inventory_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(109, 109, 109))
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jP_Yellow_alpha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 90, 265, 390));
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 480));
 
-        jP_Cyan_alpha3.setBackground(new java.awt.Color(153, 255, 255));
-        jP_Cyan_alpha3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jP_Cyan_alpha3.setForeground(new java.awt.Color(51, 51, 255));
-
-        jT_Version_alpha.setBackground(new java.awt.Color(153, 255, 255));
-        jT_Version_alpha.setForeground(new java.awt.Color(0, 0, 0));
-        jT_Version_alpha.setText("Pre-alpha. Ver 0.1");
-        jT_Version_alpha.setBorder(null);
-
-        jL_Users_alpha.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jL_Users_alpha.setForeground(new java.awt.Color(0, 0, 0));
-        jL_Users_alpha.setText("USUARIOS");
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton3.setText("GESTIONAR USUARIOS");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        javax.swing.GroupLayout jP_Cyan_alpha3Layout = new javax.swing.GroupLayout(jP_Cyan_alpha3);
-        jP_Cyan_alpha3.setLayout(jP_Cyan_alpha3Layout);
-        jP_Cyan_alpha3Layout.setHorizontalGroup(
-            jP_Cyan_alpha3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Cyan_alpha3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jT_Version_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Cyan_alpha3Layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
-                .addGroup(jP_Cyan_alpha3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Cyan_alpha3Layout.createSequentialGroup()
-                        .addComponent(jL_Users_alpha)
-                        .addGap(79, 79, 79))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Cyan_alpha3Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(48, 48, 48))))
-        );
-        jP_Cyan_alpha3Layout.setVerticalGroup(
-            jP_Cyan_alpha3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Cyan_alpha3Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jL_Users_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(95, 95, 95)
-                .addComponent(jT_Version_alpha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        getContentPane().add(jP_Cyan_alpha3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 265, 390));
-
-        jL_Background_alpha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Generic_Frutalito_BG.jpeg"))); // NOI18N
-        getContentPane().add(jL_Background_alpha, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 820, 480));
+        getAccessibleContext().setAccessibleDescription("");
+        getAccessibleContext().setAccessibleParent(this);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLUser;
-    private javax.swing.JLabel jLWelcome;
-    private javax.swing.JLabel jL_Background_alpha;
-    private javax.swing.JLabel jL_Inventory_alpha;
-    private javax.swing.JLabel jL_Users_alpha;
-    private javax.swing.JPanel jP_Cyan_alpha3;
-    private javax.swing.JPanel jP_Green_alpha1;
-    private javax.swing.JPanel jP_Yellow_alpha2;
-    private javax.swing.JTextArea jTA_PyM_alpha;
-    private javax.swing.JTextField jT_Version_alpha;
+    private javax.swing.JButton btn_PedidoMateriaPrima;
+    private javax.swing.JButton btn_Produccion;
+    private javax.swing.JButton btn_Venta;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1_Produccion;
+    private javax.swing.JLabel jLabel1_Up;
+    private javax.swing.JLabel jLabel2_FondoHelados;
+    private javax.swing.JLabel jLabel3_LogoFrutalito;
+    private javax.swing.JLabel jLabel4_Titulo;
+    private javax.swing.JLabel jLabel5_Ventas;
+    private javax.swing.JLabel jLabel7_MateriaPrima;
     // End of variables declaration//GEN-END:variables
 }
