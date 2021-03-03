@@ -30,16 +30,14 @@ public class GUI_Admin extends javax.swing.JFrame {
         jLabel3_LogoFrutalito = new javax.swing.JLabel();
         jLabel4_Titulo = new javax.swing.JLabel();
         btn_AdministrarUsuarios = new javax.swing.JButton();
-        try {
-            btn_Produccion =(javax.swing.JButton)java.beans.Beans.instantiate(getClass().getClassLoader(), "QDev/com/GUI.GUI_WelcomeScreen_jButton3");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (java.io.IOException e) {
-            e.printStackTrace();
-        }
         btn_PedidoMateriaPrima = new javax.swing.JButton();
+        btn_Produccion = new javax.swing.JButton();
+        btn_menu = new javax.swing.JButton();
+        jP_MenuDesplegable = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1_Up = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel2_FondoHelados = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,76 +54,77 @@ public class GUI_Admin extends javax.swing.JFrame {
         getContentPane().add(jLabel4_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
         btn_AdministrarUsuarios.setBackground(new java.awt.Color(153, 255, 153));
-        btn_AdministrarUsuarios.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        btn_AdministrarUsuarios.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        btn_AdministrarUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btn_AdministrarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Ventas.png"))); // NOI18N
         btn_AdministrarUsuarios.setText("Administrar Usuarios");
+        btn_AdministrarUsuarios.setContentAreaFilled(false);
         btn_AdministrarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_AdministrarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_AdministrarUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(btn_AdministrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 200, 170));
-        getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 200, 170));
+        getContentPane().add(btn_AdministrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 200, 170));
 
         btn_PedidoMateriaPrima.setBackground(new java.awt.Color(153, 255, 153));
-        btn_PedidoMateriaPrima.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        btn_PedidoMateriaPrima.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        btn_PedidoMateriaPrima.setForeground(new java.awt.Color(255, 255, 255));
         btn_PedidoMateriaPrima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_MateriaPrima.png"))); // NOI18N
         btn_PedidoMateriaPrima.setText("Pedido Materia Prima");
         btn_PedidoMateriaPrima.setActionCommand("Venta");
+        btn_PedidoMateriaPrima.setContentAreaFilled(false);
         btn_PedidoMateriaPrima.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_PedidoMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_PedidoMateriaPrima.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(btn_PedidoMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 200, 170));
+        getContentPane().add(btn_PedidoMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 200, 170));
+
+        btn_Produccion.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        btn_Produccion.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Produccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Produccion.png"))); // NOI18N
+        btn_Produccion.setText("Producción");
+        btn_Produccion.setContentAreaFilled(false);
+        btn_Produccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Produccion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 200, 170));
+
+        btn_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
+        btn_menu.setBorder(null);
+        btn_menu.setContentAreaFilled(false);
+        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, 50));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_GestionarUsuarios.png"))); // NOI18N
+        jButton1.setText("Gestionar Usuarios");
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton1.setPreferredSize(new java.awt.Dimension(180, 45));
+        jP_MenuDesplegable.add(jButton1);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
+        jButton2.setText("  Ayuda");
+        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton2.setPreferredSize(new java.awt.Dimension(180, 45));
+        jP_MenuDesplegable.add(jButton2);
+
+        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 185, 100));
 
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
-        getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
+        getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/FondoAbajo.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, 760, 500));
+        jLabel2_FondoHelados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Fondo_Welcome.jpg"))); // NOI18N
+        getContentPane().add(jLabel2_FondoHelados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 890, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUI_Admin().setVisible(true);
-            }
-        });
-    }
-
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_AdministrarUsuarios;
     private javax.swing.JButton btn_PedidoMateriaPrima;
     private javax.swing.JButton btn_Produccion;
+    private javax.swing.JButton btn_menu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1_Up;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel2_FondoHelados;
     private javax.swing.JLabel jLabel3_LogoFrutalito;
     private javax.swing.JLabel jLabel4_Titulo;
+    private javax.swing.JPanel jP_MenuDesplegable;
     // End of variables declaration//GEN-END:variables
 }

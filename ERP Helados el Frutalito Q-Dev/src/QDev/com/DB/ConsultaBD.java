@@ -16,13 +16,38 @@ import java.util.logging.Logger;
  * @author cricr
  * @author Leandro Rodriguez Vidal 1958205-2711
  */
-public class ConsultaBD extends Conectar{
-    
-//    Conectar cn = new Conectar();
-//    Statement st; ResultSet rs; 
+public class ConsultaBD extends Conectar{ 
     
     PreparedStatement pst = null;
     Connection cn = conexion();
+    ResultSet rs = null;
+    
+    public boolean loginUser(Person person){
+        String sql = "SELECT nuip, psswrd, active, codeRole FROM person WHERE nuip = ? AND active = ?";
+        try {
+            pst = (PreparedStatement) cn.prepareStatement(sql);
+            pst.setInt(1, (int) person.getNuip());
+            pst.setBoolean(3, person.isActive());
+            
+            rs = pst.executeQuery();
+            
+            if(rs.next()){
+                if(person.getPassword().equals(rs.getString(2))){
+                    person.setRole((Role) rs.getObject(4));
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            
+            return false;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        
+    }
     
     //Registrar Usuario
     public boolean registerUser (Person person) {
@@ -30,15 +55,15 @@ public class ConsultaBD extends Conectar{
                 + "pssword, active, codeRole) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             pst = (PreparedStatement) cn.prepareStatement(sql);
-            pst.setInt(0, (int) person.getNuip());
-            pst.setString(1, person.getNames());
-            pst.setString(2, person.getSurnames());
-            pst.setString(3, person.getPhone());
-            pst.setString(4, person.getSurnames());
-            pst.setString(5, person.getEmail());
-            pst.setString(6, person.getPassword());
-            pst.setBoolean(7, person.isActive());
-            pst.setInt(8, person.getRole().ordinal());
+            pst.setInt(1, (int) person.getNuip());
+            pst.setString(2, person.getNames());
+            pst.setString(3, person.getSurnames());
+            pst.setString(4, person.getPhone());
+            pst.setString(5, person.getSurnames());
+            pst.setString(6, person.getEmail());
+            pst.setString(7, person.getPassword());
+            pst.setBoolean(8, person.isActive());
+            pst.setInt(9, person.getRole().ordinal());
             
             pst.execute();
             
@@ -47,25 +72,7 @@ public class ConsultaBD extends Conectar{
             Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
-    }
-    
-//    //buscar Usuario
-//    public String buscarUsuarioLogin(int nuip, String psswrd, boolean active, Role role) {
-//        try {
-//            //Sentencia SQL
-//            st = (Statement) cn.conect.createStatement();
-//            rs = st.executeQuery("SELECT nuip, psswrd, codeRole FROM person WHERE "
-//                    + "nuip = " + nuip + " AND  psswrd = '" + psswrd + "'");
-//            if (rs.next()) {
-//                if (active == true and ()){
-//                    
-//                }
-//            }
-//            return usuario;
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//                
+    }        
 //    }
     
 }

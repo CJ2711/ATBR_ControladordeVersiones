@@ -84,17 +84,20 @@ public class GUI_Vendor extends javax.swing.JFrame {
         jButton1.setContentAreaFilled(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 50));
 
+        jPanel_Menu.setPreferredSize(new java.awt.Dimension(185, 50));
+
         jB_Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
-        jB_Help.setText("Ayuda");
-        jB_Help.setPreferredSize(new java.awt.Dimension(190, 46));
+        jB_Help.setText("  Ayuda");
+        jB_Help.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_Help.setPreferredSize(new java.awt.Dimension(180, 46));
         jPanel_Menu.add(jB_Help);
 
-        getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 90, 200, -1));
+        getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 185, 55));
 
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
         getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/FondoAbajo.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Fondo_Welcome.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, 760, 440));
 
         pack();
