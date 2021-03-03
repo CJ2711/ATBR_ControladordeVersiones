@@ -29,13 +29,14 @@ public class GUI_Admin extends javax.swing.JFrame {
 
         jLabel3_LogoFrutalito = new javax.swing.JLabel();
         jLabel4_Titulo = new javax.swing.JLabel();
+        btn_menu = new javax.swing.JButton();
+        jP_MenuDesplegable = new javax.swing.JPanel();
+        jB_UserMng = new javax.swing.JButton();
+        jB_Help = new javax.swing.JButton();
+        jB_LogOut = new javax.swing.JButton();
         btn_AdministrarUsuarios = new javax.swing.JButton();
         btn_PedidoMateriaPrima = new javax.swing.JButton();
         btn_Produccion = new javax.swing.JButton();
-        btn_menu = new javax.swing.JButton();
-        jP_MenuDesplegable = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel1_Up = new javax.swing.JLabel();
         jLabel2_FondoHelados = new javax.swing.JLabel();
 
@@ -52,6 +53,31 @@ public class GUI_Admin extends javax.swing.JFrame {
         jLabel4_Titulo.setMinimumSize(new java.awt.Dimension(392, 87));
         jLabel4_Titulo.setPreferredSize(new java.awt.Dimension(392, 87));
         getContentPane().add(jLabel4_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+
+        btn_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
+        btn_menu.setBorder(null);
+        btn_menu.setContentAreaFilled(false);
+        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, 50));
+
+        jB_UserMng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_GestionarUsuarios.png"))); // NOI18N
+        jB_UserMng.setText("Gestionar Usuarios");
+        jB_UserMng.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_UserMng.setPreferredSize(new java.awt.Dimension(180, 45));
+        jP_MenuDesplegable.add(jB_UserMng);
+
+        jB_Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
+        jB_Help.setText("  Ayuda");
+        jB_Help.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_Help.setPreferredSize(new java.awt.Dimension(180, 45));
+        jP_MenuDesplegable.add(jB_Help);
+
+        jB_LogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Logout.png"))); // NOI18N
+        jB_LogOut.setText("Cerrar Sesión");
+        jB_LogOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_LogOut.setPreferredSize(new java.awt.Dimension(180, 45));
+        jP_MenuDesplegable.add(jB_LogOut);
+
+        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 185, 150));
 
         btn_AdministrarUsuarios.setBackground(new java.awt.Color(153, 255, 153));
         btn_AdministrarUsuarios.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
@@ -85,25 +111,6 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_Produccion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 200, 170));
 
-        btn_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
-        btn_menu.setBorder(null);
-        btn_menu.setContentAreaFilled(false);
-        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, 50));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_GestionarUsuarios.png"))); // NOI18N
-        jButton1.setText("Gestionar Usuarios");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setPreferredSize(new java.awt.Dimension(180, 45));
-        jP_MenuDesplegable.add(jButton1);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
-        jButton2.setText("  Ayuda");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton2.setPreferredSize(new java.awt.Dimension(180, 45));
-        jP_MenuDesplegable.add(jButton2);
-
-        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 185, 100));
-
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
         getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
 
@@ -119,8 +126,9 @@ public class GUI_Admin extends javax.swing.JFrame {
     private javax.swing.JButton btn_PedidoMateriaPrima;
     private javax.swing.JButton btn_Produccion;
     private javax.swing.JButton btn_menu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jB_Help;
+    private javax.swing.JButton jB_LogOut;
+    private javax.swing.JButton jB_UserMng;
     private javax.swing.JLabel jLabel1_Up;
     private javax.swing.JLabel jLabel2_FondoHelados;
     private javax.swing.JLabel jLabel3_LogoFrutalito;

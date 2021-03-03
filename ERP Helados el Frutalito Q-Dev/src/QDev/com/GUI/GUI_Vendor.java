@@ -31,9 +31,10 @@ public class GUI_Vendor extends javax.swing.JFrame {
         jLabel4_Titulo = new javax.swing.JLabel();
         btn_AdministrarUsuarios = new javax.swing.JButton();
         btn_PedidoMateriaPrima = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_Menu = new javax.swing.JButton();
         jPanel_Menu = new javax.swing.JPanel();
         jB_Help = new javax.swing.JButton();
+        jB_LogOut = new javax.swing.JButton();
         jLabel1_Up = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -79,20 +80,26 @@ public class GUI_Vendor extends javax.swing.JFrame {
         btn_PedidoMateriaPrima.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(btn_PedidoMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 200, 170));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 50));
+        btn_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
+        btn_Menu.setBorder(null);
+        btn_Menu.setContentAreaFilled(false);
+        getContentPane().add(btn_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 50));
 
         jPanel_Menu.setPreferredSize(new java.awt.Dimension(185, 50));
 
         jB_Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
         jB_Help.setText("  Ayuda");
         jB_Help.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jB_Help.setPreferredSize(new java.awt.Dimension(180, 46));
+        jB_Help.setPreferredSize(new java.awt.Dimension(180, 45));
         jPanel_Menu.add(jB_Help);
 
-        getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 185, 55));
+        jB_LogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Logout.png"))); // NOI18N
+        jB_LogOut.setText("Cerrar Sesión");
+        jB_LogOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_LogOut.setPreferredSize(new java.awt.Dimension(180, 45));
+        jPanel_Menu.add(jB_LogOut);
+
+        getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 185, 110));
 
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
         getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
@@ -141,9 +148,10 @@ public class GUI_Vendor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_AdministrarUsuarios;
+    private javax.swing.JButton btn_Menu;
     private javax.swing.JButton btn_PedidoMateriaPrima;
     private javax.swing.JButton jB_Help;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jB_LogOut;
     private javax.swing.JLabel jLabel1_Up;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3_LogoFrutalito;
