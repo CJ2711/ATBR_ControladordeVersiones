@@ -115,10 +115,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/QDev/com/ImageSRC/FondoArriba.png"/>
+          <Image iconType="3" name="/QDev/com/ImageSRC/Up_Welcome.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -127,15 +127,15 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/QDev/com/ImageSRC/FondoAbajo.png"/>
+          <Image iconType="3" name="/QDev/com/ImageSRC/Fondo_Welcome.jpg"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="90" width="-1" height="410"/>
+          <AbsoluteConstraints x="0" y="130" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
