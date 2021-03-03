@@ -55,12 +55,17 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 660, 250));
 
         btn_Modificar.setBackground(new java.awt.Color(0, 255, 102));
+        btn_Modificar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Modificar.setText("Agregar");
         getContentPane().add(btn_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 200, 40));
 
+        btn_Eliminar.setBackground(new java.awt.Color(204, 51, 0));
+        btn_Eliminar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Eliminar.setText("Eliminar");
         getContentPane().add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 200, 40));
 
+        btn_Modificar1.setBackground(new java.awt.Color(0, 255, 102));
+        btn_Modificar1.setForeground(new java.awt.Color(255, 255, 255));
         btn_Modificar1.setText("Modificar");
         getContentPane().add(btn_Modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 240, 40));
 
