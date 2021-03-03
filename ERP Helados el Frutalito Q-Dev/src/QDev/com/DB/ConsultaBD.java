@@ -18,14 +18,15 @@ import java.util.logging.Logger;
  */
 public class ConsultaBD extends Conectar{ 
     
+//    Conectar cn = new Conectar();
     PreparedStatement pst = null;
-    Connection cn = conexion();
+    Connection cnn = conexion();
     ResultSet rs = null;
     
     public boolean loginUser(Person person){
         String sql = "SELECT nuip, psswrd, active, codeRole FROM person WHERE nuip = ? AND active = ?";
         try {
-            pst = (PreparedStatement) cn.prepareStatement(sql);
+            pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
             pst.setBoolean(3, person.isActive());
             
@@ -54,7 +55,7 @@ public class ConsultaBD extends Conectar{
         String sql = "INSERT INTO person (nuip, names, surnames, phone, email, "
                 + "pssword, active, codeRole) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
-            pst = (PreparedStatement) cn.prepareStatement(sql);
+            pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
             pst.setString(2, person.getNames());
             pst.setString(3, person.getSurnames());

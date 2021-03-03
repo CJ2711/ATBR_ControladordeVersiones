@@ -5,16 +5,18 @@
  */
 package QDev.com;
 
+import QDev.com.DB.Conectar;
 import QDev.com.GUI.GUI_Admin;
 import QDev.com.GUI.GUI_Login;
 import QDev.com.GUI.GUI_UserManagement;
+import java.sql.Connection;
 
 
 /**
  *
  * @author cricr
  */
-public class Main {
+public class Main extends Conectar{
 
     /**
      * @param args the command line arguments
@@ -88,6 +90,7 @@ public class Main {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                Conectar cn = new Conectar();
                 new GUI_Login().setVisible(true);
                 //new GUI_UserManagement().setVisible(true);
             }

@@ -2,7 +2,6 @@
 package QDev.com.GUI;
 
 import QDev.com.Classes.Person;
-import QDev.com.Classes.Role;
 import QDev.com.DB.ConsultaBD;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -78,12 +77,13 @@ public class GUI_Login extends javax.swing.JFrame {
     private void btn_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntrarActionPerformed
         ConsultaBD cBD = new ConsultaBD();
         Person person = new Person();
+        JFrame GUI_Inicio = null;
 
         int userNuip = Integer.parseInt(tf_User.getText());
         String psswrd = new String(psswrdField.getPassword());
 
-        if (!(tf_User.getText().equals("") || psswrdField.equals(""))) {
-            person.setNuip(userNuip);
+        if (!tf_User.getText().equals("") && !psswrdField.equals("")) {
+            person.setNuip(Integer.parseInt(tf_User.getText()));
             person.setPassword(psswrd);
 
             if (cBD.loginUser(person)) {
@@ -95,10 +95,10 @@ public class GUI_Login extends javax.swing.JFrame {
 //                    GUI_Sale.setVisible(True);
                 }
                 if (person.getRole().ordinal() == 2) {
-//                    if (GUI_Admin == null) {
-//                        new GUI_Admin();
-//                    }
-//                    GUI_Admin.setVisible(True);
+                    if (GUI_Inicio == null) {
+                        GUI_Inicio = new GUI_Admin();
+                    }
+                    GUI_Inicio.setVisible(true);
                 }
 
             } else {

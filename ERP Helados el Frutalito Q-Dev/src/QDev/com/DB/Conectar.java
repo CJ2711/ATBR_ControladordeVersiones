@@ -23,7 +23,7 @@ public class Conectar {
             //Cargar el Driver de MySQL
             //Class.forName("org.gtj.mm.mysql.Driver");
             Class.forName("com.mysql.jdbc.Driver");
-            conect = DriverManager.getConnection("jdbc:mysql:3306//localhost/frutalitodb", "root", "");
+            conect = DriverManager.getConnection("jdbc:mysql://localhost/frutalitodb", "root", "");
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error: " + e);
         }
