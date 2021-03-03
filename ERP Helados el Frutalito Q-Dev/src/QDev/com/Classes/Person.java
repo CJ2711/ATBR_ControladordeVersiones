@@ -22,6 +22,12 @@ public class Person {
     private Role role;
 
     /**
+     * Constructor Vacío
+     */
+    public Person() {
+    }
+
+    /**
      * Construtctor
      *
      * @param nuip
