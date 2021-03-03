@@ -90,7 +90,7 @@ public class GUI_Login extends javax.swing.JFrame {
                 this.dispose();
                 if (person.getRole().ordinal() == 1) {
 //                    if (GUI_Sale == null) {
-//                        new GUI_Sale();
+//                        new GUI_Sale(); 
 //                    }
 //                    GUI_Sale.setVisible(True);
                 }
