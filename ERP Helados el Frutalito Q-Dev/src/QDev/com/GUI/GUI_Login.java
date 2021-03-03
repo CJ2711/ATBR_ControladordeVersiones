@@ -5,10 +5,6 @@
  */
 package QDev.com.GUI;
 
-import QDev.com.Classes.Person;
-import QDev.com.DB.ConsultaBD;
-import javax.swing.JFrame;
-
 /**
  *
  * @author cricr
