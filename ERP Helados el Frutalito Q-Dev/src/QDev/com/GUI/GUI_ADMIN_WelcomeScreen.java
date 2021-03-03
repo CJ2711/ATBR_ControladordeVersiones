@@ -74,7 +74,7 @@ public class GUI_ADMIN_WelcomeScreen extends javax.swing.JInternalFrame {
         jLabel1_Produccion.setMaximumSize(new java.awt.Dimension(161, 138));
         jLabel1_Produccion.setMinimumSize(new java.awt.Dimension(161, 138));
         jLabel1_Produccion.setPreferredSize(new java.awt.Dimension(161, 138));
-        getContentPane().add(jLabel1_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 150, 130));
+        getContentPane().add(jLabel1_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 150, 130));
 
         jLabel7_MateriaPrima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_MateriaPrima.png"))); // NOI18N
         jLabel7_MateriaPrima.setMaximumSize(new java.awt.Dimension(161, 138));
