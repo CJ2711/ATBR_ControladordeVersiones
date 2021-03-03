@@ -8,5 +8,5 @@ package QDev.com.Classes;
 public enum Role {
    //Enumeración para los roles 
     
-    SELECCIONE, SALESMAN,BUSINESS_ADMIN, SYSTEM_ADMIN
+    SELECCIONE, SALESMAN,BUSINESS_ADMIN
 }
