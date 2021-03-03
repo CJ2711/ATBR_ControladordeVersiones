@@ -6,9 +6,8 @@
 package QDev.com.GUI;
 
 import QDev.com.Classes.Person;
-import QDev.com.Classes.Role;
-import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import QDev.com.DB.ConsultaBD;
+import javax.swing.JFrame;
 
 /**
  *
@@ -83,30 +82,11 @@ public class GUI_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntrarActionPerformed
-        try {
+
             String user = tf_User.getText();
             String password = new String(psswrdField.getPassword());
-
-            Person persona = ConsultaBD.buscarUsuario(user);
+//            Person persona = ConsultaBD.buscarUsuario(user);
             
-
-            if (!(empleado.getPassword().equals(strPassword))) {
-                JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña icorrecta", "Autenticando...", ERROR_MESSAGE);
-//Lo que hay debajo de este condicional no se ejecutará por el ---return---
-                return;
-            }
-            if (this.ui == null) {
-                ui = new GUI_Compra(almacenPro, empleado);
-                jDesktopPane1.add(ui);
-            }
-            ui.setVisible(true);
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(rootPane, "El ID debe ser un valor numerico");
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
-        }
-
-
     }//GEN-LAST:event_btn_EntrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

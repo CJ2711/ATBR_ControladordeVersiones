@@ -15,7 +15,6 @@ public class Person {
     private String surnames;
     private String phone;
     private String email;
-    private String user;
     private String password;
     private boolean active;
 
@@ -35,7 +34,7 @@ public class Person {
      * @param active
      * @param role
      */
-    public Person(long nuip, String names, String surnames, String phone, String email, String user, String password, boolean active, Role role) throws Exception {
+    public Person(long nuip, String names, String surnames, String phone, String email, String password, boolean active, Role role) throws Exception {
 
         /**
          * Verificación de valores validos para la identificación (nuip) El
@@ -78,11 +77,6 @@ public class Person {
             throw new Exception ("El valor ingresado no es un correo");
         }
         emailVerification(email);//Método validar el correo 
-
-        //Verificación para el usuario
-        if(user == null || user.trim().equals("")){
-            throw new Exception ("Ingrese el usuario");
-        }
         
         //Verificación para password(contraseña)
         if(password == null || password.trim().equals("")){
@@ -100,7 +94,6 @@ public class Person {
         this.surnames = surnames;
         this.phone = phone;
         this.email = email;
-        this.user = user;
         this.password = password;
         this.active = active;
         this.role = role;
@@ -164,10 +157,6 @@ public class Person {
         return email;
     }
 
-    public String getUser() {
-        return user;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -200,10 +189,6 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
     }
 
     public void setPassword(String password) {
