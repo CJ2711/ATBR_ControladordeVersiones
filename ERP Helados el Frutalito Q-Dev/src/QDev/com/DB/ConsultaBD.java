@@ -2,6 +2,7 @@
 package QDev.com.DB;
 
 import QDev.com.Classes.Person;
+import QDev.com.Classes.Role;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 import java.sql.Connection;
@@ -39,10 +40,12 @@ public class ConsultaBD extends Conectar{
                     person.setPhone(rs.getString(4));
                     person.setEmail(rs.getString(5));
                     person.setActive(rs.getBoolean(7));
-//                    person.setRole((Role) rs.getObject(8));
-//                    person.setRole(rs.getInt(8));
-//                    person.setRole(rs.getObject(8, Integer.class));
-                    person.toString();
+                    if("SALESMAN".equals(rs.getString(8))){
+                        person.setRole(Role.SALESMAN);
+                    }
+                    if("BUSINESS_ADMIN".equals(rs.getString(8))){
+                        person.setRole(Role.BUSINESS_ADMIN);
+                    }
                     return true;
                 } else {
                     return false;

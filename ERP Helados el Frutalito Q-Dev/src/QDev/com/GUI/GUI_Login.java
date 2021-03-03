@@ -17,6 +17,7 @@ public class GUI_Login extends javax.swing.JFrame {
      */
     public GUI_Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -86,9 +87,7 @@ public class GUI_Login extends javax.swing.JFrame {
 
             person.setNuip(Integer.parseInt(tf_User.getText()));
             person.setPassword(psswrd);
-            System.out.println(person.getPassword());
-            System.out.println(person.getRole());
-            System.out.println(person.isActive());
+
             if (cBD.loginUser(person) == true) {
                 if (person.isActive() == true) {
                     this.dispose();
