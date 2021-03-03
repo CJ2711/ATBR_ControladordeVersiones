@@ -2,7 +2,6 @@
 package QDev.com.DB;
 
 import QDev.com.Classes.Person;
-import QDev.com.Classes.Role;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 import java.sql.Connection;
@@ -24,17 +23,26 @@ public class ConsultaBD extends Conectar{
     ResultSet rs = null;
     
     public boolean loginUser(Person person){
-        String sql = "SELECT nuip, psswrd, active, codeRole FROM person WHERE nuip = ? AND active = ?";
+        String sql = "SELECT nuip, names, surnames, phone, email, psswrd, active, "
+                + "codeRole FROM person WHERE nuip = ?"; //AND active = ?
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
-            pst.setBoolean(3, person.isActive());
+//            pst.setBoolean(2, person.isActive());
             
             rs = pst.executeQuery();
             
             if(rs.next()){
-                if(person.getPassword().equals(rs.getString(2))){
-                    person.setRole((Role) rs.getObject(4));
+                if(person.getPassword().equals(rs.getString(6))){
+                    person.setNames(rs.getString(2));
+                    person.setSurnames(rs.getString(3));
+                    person.setPhone(rs.getString(4));
+                    person.setEmail(rs.getString(5));
+                    person.setActive(rs.getBoolean(7));
+//                    person.setRole((Role) rs.getObject(8));
+//                    person.setRole(rs.getInt(8));
+//                    person.setRole(rs.getObject(8, Integer.class));
+                    person.toString();
                     return true;
                 } else {
                     return false;

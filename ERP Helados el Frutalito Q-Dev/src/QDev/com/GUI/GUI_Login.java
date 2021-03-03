@@ -1,4 +1,3 @@
-
 package QDev.com.GUI;
 
 import QDev.com.Classes.Person;
@@ -79,32 +78,40 @@ public class GUI_Login extends javax.swing.JFrame {
         Person person = new Person();
         JFrame GUI_Inicio = null;
 
+        //Busqueda del usuario
         int userNuip = Integer.parseInt(tf_User.getText());
         String psswrd = new String(psswrdField.getPassword());
 
         if (!tf_User.getText().equals("") && !psswrdField.equals("")) {
+
             person.setNuip(Integer.parseInt(tf_User.getText()));
             person.setPassword(psswrd);
-
-            if (cBD.loginUser(person)) {
-                this.dispose();
-                if (person.getRole().ordinal() == 1) {
-//                    if (GUI_Sale == null) {
-//                        new GUI_Sale();
-//                    }
-//                    GUI_Sale.setVisible(True);
-                }
-                if (person.getRole().ordinal() == 2) {
-                    if (GUI_Inicio == null) {
-                        GUI_Inicio = new GUI_Admin();
+            System.out.println(person.getPassword());
+            System.out.println(person.getRole());
+            System.out.println(person.isActive());
+            if (cBD.loginUser(person) == true) {
+                if (person.isActive() == true) {
+                    this.dispose();
+                    if (person.getRole().ordinal() == 1) {
+                        if (GUI_Inicio == null) {
+                            GUI_Inicio = new GUI_Vendor();
+                        }
+                        GUI_Inicio.setVisible(true);
                     }
-                    GUI_Inicio.setVisible(true);
+                    if (person.getRole().ordinal() == 2) {
+                        if (GUI_Inicio == null) {
+                            GUI_Inicio = new GUI_Admin();
+                        }
+                        GUI_Inicio.setVisible(true);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario no activo");
                 }
-
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario (Número de identificación)"
                         + " y/o contraseña incorrectos. Verifique los datos ingresados.");
             }
+
         } else {
             JOptionPane.showMessageDialog(null, "Por favor, ingrese el usuario y/o contraseña");
         }

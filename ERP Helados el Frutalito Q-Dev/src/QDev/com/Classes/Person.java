@@ -104,7 +104,7 @@ public class Person {
         this.active = active;
         this.role = role;
     }
-
+    
     /**
      * Método fullNameVerification(void) Propósito: Realizar la verificación de
      * los valores validos tanto para los nombres como para los apellidos
@@ -207,6 +207,11 @@ public class Person {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" + "nuip=" + nuip + ", names=" + names + ", surnames=" + surnames + ", phone=" + phone + ", email=" + email + ", password=" + password + ", active=" + active + ", role=" + role + '}';
     }
 
 }
