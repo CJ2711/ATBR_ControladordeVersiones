@@ -5,6 +5,9 @@
  */
 package QDev.com.GUI;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author cricr
@@ -16,6 +19,19 @@ public class GUI_Admin extends javax.swing.JFrame {
      */
     public GUI_Admin() {
         initComponents();
+
+        //El Menú desplegable inicia como invisble.
+        jP_MenuDesplegable.setVisible(false);
+        jB_Help.setVisible(false);
+        jB_UserMng.setVisible(false);
+        jB_LogOut.setVisible(false);
+        //Al igual que el botón para ocultarlo después.
+        btn_closeMenu.setVisible(false);
+
+        //Asignación de los manejadores de eventos.
+        btn_menu.addActionListener(new OpenMenu());
+        btn_closeMenu.addActionListener(new CloseMenu());
+
     }
 
     /**
@@ -30,6 +46,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         jLabel3_LogoFrutalito = new javax.swing.JLabel();
         jLabel4_Titulo = new javax.swing.JLabel();
         btn_menu = new javax.swing.JButton();
+        btn_closeMenu = new javax.swing.JButton();
         jP_MenuDesplegable = new javax.swing.JPanel();
         jB_UserMng = new javax.swing.JButton();
         jB_Help = new javax.swing.JButton();
@@ -57,7 +74,12 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
         btn_menu.setBorder(null);
         btn_menu.setContentAreaFilled(false);
-        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, 50));
+        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, -1, 50));
+
+        btn_closeMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-CloseMenu.png"))); // NOI18N
+        btn_closeMenu.setBorder(null);
+        btn_closeMenu.setContentAreaFilled(false);
+        getContentPane().add(btn_closeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, -1, 50));
 
         jB_UserMng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_GestionarUsuarios.png"))); // NOI18N
         jB_UserMng.setText("Gestionar Usuarios");
@@ -77,7 +99,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         jB_LogOut.setPreferredSize(new java.awt.Dimension(180, 45));
         jP_MenuDesplegable.add(jB_LogOut);
 
-        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 185, 150));
+        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 75, 185, 155));
 
         btn_AdministrarUsuarios.setBackground(new java.awt.Color(153, 255, 153));
         btn_AdministrarUsuarios.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
@@ -112,19 +134,20 @@ public class GUI_Admin extends javax.swing.JFrame {
         getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 200, 170));
 
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
-        getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
+        getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, -1));
 
         jLabel2_FondoHelados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Fondo_Welcome.jpg"))); // NOI18N
-        getContentPane().add(jLabel2_FondoHelados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 890, 350));
+        getContentPane().add(jLabel2_FondoHelados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 780, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_AdministrarUsuarios;
     private javax.swing.JButton btn_PedidoMateriaPrima;
     private javax.swing.JButton btn_Produccion;
+    private javax.swing.JButton btn_closeMenu;
     private javax.swing.JButton btn_menu;
     private javax.swing.JButton jB_Help;
     private javax.swing.JButton jB_LogOut;
@@ -135,4 +158,35 @@ public class GUI_Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4_Titulo;
     private javax.swing.JPanel jP_MenuDesplegable;
     // End of variables declaration//GEN-END:variables
+
+    public class OpenMenu implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            btn_menu.setVisible(false);
+            btn_closeMenu.setVisible(true);
+            jP_MenuDesplegable.setVisible(true);
+            jB_Help.setVisible(true);
+            jB_UserMng.setVisible(true);
+            jB_LogOut.setVisible(true);
+
+        }
+
+    }
+
+    public class CloseMenu implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            btn_menu.setVisible(true);
+            btn_closeMenu.setVisible(false);
+            jP_MenuDesplegable.setVisible(false);
+            jB_Help.setVisible(false);
+            jB_UserMng.setVisible(false);
+            jB_LogOut.setVisible(false);
+        }
+    }
+
 }
