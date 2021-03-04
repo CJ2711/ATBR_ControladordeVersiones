@@ -19,7 +19,7 @@ public class GUI_Admin extends javax.swing.JFrame {
      */
     public GUI_Admin() {
         initComponents();
-
+        this.setLocationRelativeTo(null);
         //El Menú desplegable inicia como invisble.
         jP_MenuDesplegable.setVisible(false);
         jB_Help.setVisible(false);
@@ -76,32 +76,37 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
         btn_menu.setBorder(null);
         btn_menu.setContentAreaFilled(false);
-        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, -1, 50));
+        btn_menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, -1, 50));
 
         btn_closeMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-CloseMenu.png"))); // NOI18N
         btn_closeMenu.setBorder(null);
         btn_closeMenu.setContentAreaFilled(false);
-        getContentPane().add(btn_closeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, -1, 50));
+        btn_closeMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_closeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, -1, 50));
 
         jB_UserMng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_GestionarUsuarios.png"))); // NOI18N
         jB_UserMng.setText("Gestionar Usuarios");
+        jB_UserMng.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_UserMng.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jB_UserMng.setPreferredSize(new java.awt.Dimension(180, 45));
         jP_MenuDesplegable.add(jB_UserMng);
 
         jB_Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
         jB_Help.setText("  Ayuda");
+        jB_Help.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_Help.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jB_Help.setPreferredSize(new java.awt.Dimension(180, 45));
         jP_MenuDesplegable.add(jB_Help);
 
         jB_LogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Logout.png"))); // NOI18N
         jB_LogOut.setText("Cerrar Sesión");
+        jB_LogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_LogOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jB_LogOut.setPreferredSize(new java.awt.Dimension(180, 45));
         jP_MenuDesplegable.add(jB_LogOut);
 
-        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 75, 185, 155));
+        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 185, 155));
 
         btn_AdministrarUsuarios.setBackground(new java.awt.Color(153, 255, 153));
         btn_AdministrarUsuarios.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
@@ -109,7 +114,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_AdministrarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Ventas.png"))); // NOI18N
         btn_AdministrarUsuarios.setText("Administrar Usuarios");
         btn_AdministrarUsuarios.setContentAreaFilled(false);
-        btn_AdministrarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_AdministrarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_AdministrarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_AdministrarUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(btn_AdministrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 200, 170));
@@ -121,7 +126,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_PedidoMateriaPrima.setText("Pedido Materia Prima");
         btn_PedidoMateriaPrima.setActionCommand("Venta");
         btn_PedidoMateriaPrima.setContentAreaFilled(false);
-        btn_PedidoMateriaPrima.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_PedidoMateriaPrima.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_PedidoMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_PedidoMateriaPrima.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(btn_PedidoMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 200, 170));
@@ -131,6 +136,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_Produccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Produccion.png"))); // NOI18N
         btn_Produccion.setText("Producción");
         btn_Produccion.setContentAreaFilled(false);
+        btn_Produccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Produccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_Produccion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 200, 170));
