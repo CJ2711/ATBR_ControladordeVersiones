@@ -259,6 +259,7 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
         mod.setPhone(txt_Telefono.getText());
         mod.setEmail(txt_Email.getText());
         mod.setPassword(txt_Password.getText());
+        mod.setActive(true);
         mod.setRole((Role) jCB_Rol.getSelectedItem());
 
         if (modSQL.registerUser(mod)) {
