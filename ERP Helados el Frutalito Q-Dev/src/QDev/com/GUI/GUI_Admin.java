@@ -7,6 +7,7 @@ package QDev.com.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 
 /**
  *
@@ -60,6 +61,7 @@ public class GUI_Admin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ERP-El Frutalito");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3_LogoFrutalito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Logo_Frutalito01.png"))); // NOI18N
@@ -90,6 +92,11 @@ public class GUI_Admin extends javax.swing.JFrame {
         jB_UserMng.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_UserMng.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jB_UserMng.setPreferredSize(new java.awt.Dimension(180, 45));
+        jB_UserMng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_UserMngActionPerformed(evt);
+            }
+        });
         jP_MenuDesplegable.add(jB_UserMng);
 
         jB_Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
@@ -117,6 +124,11 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_AdministrarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_AdministrarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_AdministrarUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_AdministrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AdministrarUsuariosActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_AdministrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 200, 170));
 
         btn_PedidoMateriaPrima.setBackground(new java.awt.Color(153, 255, 153));
@@ -149,6 +161,19 @@ public class GUI_Admin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_AdministrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdministrarUsuariosActionPerformed
+        JFrame GUI_AdministrarUsuarios = null;
+        if (GUI_AdministrarUsuarios == null) {
+            GUI_AdministrarUsuarios = new GUI_UserManagement();
+        }
+        GUI_AdministrarUsuarios.setVisible(true);
+
+    }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
+
+    private void jB_UserMngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_UserMngActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_UserMngActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
