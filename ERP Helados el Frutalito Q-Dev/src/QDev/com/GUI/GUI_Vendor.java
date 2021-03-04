@@ -30,7 +30,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         //Asignación de los Manejadores de Eventos.
         btn_Menu.addActionListener(new OpenMenu());
         btn_CloseMenu.addActionListener(new CloseMenu());
-
+        jB_LogOut.addActionListener(new LogOut());
     }
 
     /**
@@ -134,41 +134,6 @@ public class GUI_Vendor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GUI_Vendor().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_AdministrarUsuarios;
@@ -207,6 +172,25 @@ public class GUI_Vendor extends javax.swing.JFrame {
             jPanel_Menu.setVisible(false);
             jB_Help.setVisible(false);
             jB_LogOut.setVisible(false);
+        }
+    }
+
+    public class LogOut implements ActionListener {
+
+        //Inicalización Lazy
+        private GUI_Login loginGUI = null;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            //Cierra la ventana actual, siendo esta la de Vendor.
+            GUI_Vendor.this.dispose();
+            //Y se vuelve a abrir la ventana de Login, esencialmente
+            //"cerrando la sesión".
+            if (loginGUI == null) {
+                loginGUI = new GUI_Login();
+            }
+            loginGUI.setVisible(true);
         }
     }
 

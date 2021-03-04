@@ -31,6 +31,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         //Asignación de los manejadores de eventos.
         btn_menu.addActionListener(new OpenMenu());
         btn_closeMenu.addActionListener(new CloseMenu());
+        jB_LogOut.addActionListener(new LogOut());
 
     }
 
@@ -186,6 +187,25 @@ public class GUI_Admin extends javax.swing.JFrame {
             jB_Help.setVisible(false);
             jB_UserMng.setVisible(false);
             jB_LogOut.setVisible(false);
+        }
+    }
+
+    public class LogOut implements ActionListener {
+
+        //Inicalización Lazy
+        private GUI_Login loginGUI = null;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            //Cierra la ventana actual, siendo esta la de Admin.
+            GUI_Admin.this.dispose();
+            //Y se vuelve a abrir la ventana de Login, esencialmente
+            //"cerrando la sesión".
+            if (loginGUI == null) {
+                loginGUI = new GUI_Login();
+            }
+            loginGUI.setVisible(true);
         }
     }
 
