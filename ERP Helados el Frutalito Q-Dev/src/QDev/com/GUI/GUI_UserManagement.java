@@ -17,6 +17,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
     public GUI_UserManagement() {
         initComponents();
         this.setLocationRelativeTo(null);
+        jP_MenuDesplegable.setVisible(false);
     }
 
     /**
@@ -28,10 +29,16 @@ public class GUI_UserManagement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btn_Eliminar = new javax.swing.JButton();
+        btn_Modificar = new javax.swing.JButton();
+        btn_menu = new javax.swing.JButton();
+        btn_closeMenu = new javax.swing.JButton();
+        jP_MenuDesplegable = new javax.swing.JPanel();
+        jB_UserMng = new javax.swing.JButton();
+        jB_Help = new javax.swing.JButton();
+        jB_LogOut = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btn_Modificar = new javax.swing.JButton();
-        btn_Eliminar = new javax.swing.JButton();
         btn_Modificar1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -39,7 +46,60 @@ public class GUI_UserManagement extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ERP-El Frutalito");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_Eliminar.setBackground(new java.awt.Color(204, 51, 0));
+        btn_Eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Eliminar.setText("Eliminar");
+        btn_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 200, 40));
+
+        btn_Modificar.setBackground(new java.awt.Color(0, 255, 102));
+        btn_Modificar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Modificar.setText("Agregar");
+        btn_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 200, 40));
+
+        btn_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
+        btn_menu.setBorder(null);
+        btn_menu.setContentAreaFilled(false);
+        btn_menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, -1, 50));
+
+        btn_closeMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-CloseMenu.png"))); // NOI18N
+        btn_closeMenu.setBorder(null);
+        btn_closeMenu.setContentAreaFilled(false);
+        btn_closeMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_closeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, -1, 50));
+
+        jB_UserMng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_GestionarUsuarios.png"))); // NOI18N
+        jB_UserMng.setText("Gestionar Usuarios");
+        jB_UserMng.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jB_UserMng.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_UserMng.setPreferredSize(new java.awt.Dimension(180, 45));
+        jB_UserMng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_UserMngActionPerformed(evt);
+            }
+        });
+        jP_MenuDesplegable.add(jB_UserMng);
+
+        jB_Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
+        jB_Help.setText("  Ayuda");
+        jB_Help.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jB_Help.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_Help.setPreferredSize(new java.awt.Dimension(180, 45));
+        jP_MenuDesplegable.add(jB_Help);
+
+        jB_LogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Logout.png"))); // NOI18N
+        jB_LogOut.setText("Cerrar Sesión");
+        jB_LogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jB_LogOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jB_LogOut.setPreferredSize(new java.awt.Dimension(180, 45));
+        jP_MenuDesplegable.add(jB_LogOut);
+
+        getContentPane().add(jP_MenuDesplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 185, 155));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -54,25 +114,13 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 660, 250));
-
-        btn_Modificar.setBackground(new java.awt.Color(0, 255, 102));
-        btn_Modificar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Modificar.setText("Agregar");
-        btn_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btn_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 200, 40));
-
-        btn_Eliminar.setBackground(new java.awt.Color(204, 51, 0));
-        btn_Eliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Eliminar.setText("Eliminar");
-        btn_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 200, 40));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 660, 250));
 
         btn_Modificar1.setBackground(new java.awt.Color(0, 255, 102));
         btn_Modificar1.setForeground(new java.awt.Color(255, 255, 255));
         btn_Modificar1.setText("Modificar");
         btn_Modificar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btn_Modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 240, 40));
+        getContentPane().add(btn_Modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 240, 40));
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,14 +136,24 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jB_UserMngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_UserMngActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_UserMngActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Eliminar;
     private javax.swing.JButton btn_Modificar;
     private javax.swing.JButton btn_Modificar1;
+    private javax.swing.JButton btn_closeMenu;
+    private javax.swing.JButton btn_menu;
+    private javax.swing.JButton jB_Help;
+    private javax.swing.JButton jB_LogOut;
+    private javax.swing.JButton jB_UserMng;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jP_MenuDesplegable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

@@ -4,7 +4,6 @@ package QDev.com.DB;
 import QDev.com.Classes.Person;
 import QDev.com.Classes.Role;
 import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
