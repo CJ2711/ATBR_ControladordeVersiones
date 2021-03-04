@@ -58,6 +58,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         setTitle("ERP-El Frutalito\n");
         setMinimumSize(new java.awt.Dimension(780, 477));
         setPreferredSize(new java.awt.Dimension(780, 477));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3_LogoFrutalito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Logo_Frutalito01.png"))); // NOI18N
