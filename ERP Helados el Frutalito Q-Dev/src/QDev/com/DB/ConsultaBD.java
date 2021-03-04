@@ -75,7 +75,7 @@ public class ConsultaBD extends Conectar{
             pst.setString(6, person.getEmail());
             pst.setString(7, person.getPassword());
             pst.setBoolean(8, person.isActive());
-            pst.setInt(9, person.getRole().ordinal());
+            pst.setString(9, person.getRole().name());
             
             pst.execute();
             
