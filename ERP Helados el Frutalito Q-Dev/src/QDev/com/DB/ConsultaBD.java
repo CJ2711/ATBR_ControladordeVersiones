@@ -25,7 +25,7 @@ public class ConsultaBD extends Conectar{
     
     public boolean loginUser(Person person){
         String sql = "SELECT nuip, names, surnames, phone, email, psswrd, active, "
-                + "codeRole FROM person WHERE nuip = ?"; //AND active = ?
+                + "nameRole FROM person WHERE nuip = ?"; //AND active = ?
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
@@ -64,7 +64,7 @@ public class ConsultaBD extends Conectar{
     //Registrar Usuario
     public boolean registerUser (Person person) {
         String sql = "INSERT INTO person (nuip, names, surnames, phone, email, "
-                + "pssword, active, codeRole) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                + "pssword, active, nameRole) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
@@ -77,14 +77,39 @@ public class ConsultaBD extends Conectar{
             pst.setBoolean(8, person.isActive());
             pst.setString(9, person.getRole().name());
             
-            pst.execute();
+            pst.execute(); 
             
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
-    }        
+    }
+    
+    //Cargar tabla de la interfaz 'GUI_UserManagement'
+//    public void loadUsersTable(){
+//        String [] registries = new String[8];
+//        
+//        String sql = "SELECT * FROM person";
+//        
+//        try {
+//            pst = (PreparedStatement) cnn.createStatement();
+//            rs = pst.executeQuery(sql);
+//            
+//            while(rs.next()){
+//                registries[0] = rs.getString(1);
+//                registries[1] = rs.getString(2);
+//                registries[2] = rs.getString(3);
+//                registries[3] = rs.getString(4);
+//                registries[4] = rs.getString(5);
+//                registries[5] = rs.getString(6);
+//                registries[6] = rs.getString(7);
+//                registries[7] = rs.getString(8);
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 //    }
+
     
 }
