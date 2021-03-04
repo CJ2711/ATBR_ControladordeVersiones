@@ -19,7 +19,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
      */
     public GUI_Vendor() {
         initComponents();
-
+        this.setLocationRelativeTo(null);
         //Menú desplegable inicia como Invisible.
         jPanel_Menu.setVisible(false);
         jB_Help.setVisible(false);
@@ -30,7 +30,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         //Asignación de los Manejadores de Eventos.
         btn_Menu.addActionListener(new OpenMenu());
         btn_CloseMenu.addActionListener(new CloseMenu());
-
+        jB_LogOut.addActionListener(new LogOut());
     }
 
     /**
@@ -79,7 +79,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         btn_AdministrarUsuarios.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_AdministrarUsuarios.setBorderPainted(false);
         btn_AdministrarUsuarios.setContentAreaFilled(false);
-        btn_AdministrarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_AdministrarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_AdministrarUsuarios.setFocusPainted(false);
         btn_AdministrarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_AdministrarUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -94,7 +94,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         btn_PedidoMateriaPrima.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_PedidoMateriaPrima.setBorderPainted(false);
         btn_PedidoMateriaPrima.setContentAreaFilled(false);
-        btn_PedidoMateriaPrima.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_PedidoMateriaPrima.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_PedidoMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_PedidoMateriaPrima.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(btn_PedidoMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 200, 170));
@@ -102,28 +102,32 @@ public class GUI_Vendor extends javax.swing.JFrame {
         btn_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
         btn_Menu.setBorder(null);
         btn_Menu.setContentAreaFilled(false);
-        getContentPane().add(btn_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, -1, 50));
+        btn_Menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, -1, 50));
 
         btn_CloseMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-CloseMenu.png"))); // NOI18N
         btn_CloseMenu.setBorder(null);
         btn_CloseMenu.setContentAreaFilled(false);
-        getContentPane().add(btn_CloseMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, -1, 50));
+        btn_CloseMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_CloseMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, -1, 50));
 
         jPanel_Menu.setPreferredSize(new java.awt.Dimension(185, 50));
 
         jB_Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Help.png"))); // NOI18N
         jB_Help.setText("  Ayuda");
+        jB_Help.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_Help.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jB_Help.setPreferredSize(new java.awt.Dimension(180, 45));
         jPanel_Menu.add(jB_Help);
 
         jB_LogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image-Logout.png"))); // NOI18N
         jB_LogOut.setText("Cerrar Sesión");
+        jB_LogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_LogOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jB_LogOut.setPreferredSize(new java.awt.Dimension(180, 45));
         jPanel_Menu.add(jB_LogOut);
 
-        getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 75, 185, 105));
+        getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 185, 105));
 
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
         getContentPane().add(jLabel1_Up, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, -1));
@@ -134,41 +138,6 @@ public class GUI_Vendor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Vendor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GUI_Vendor().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_AdministrarUsuarios;
@@ -207,6 +176,25 @@ public class GUI_Vendor extends javax.swing.JFrame {
             jPanel_Menu.setVisible(false);
             jB_Help.setVisible(false);
             jB_LogOut.setVisible(false);
+        }
+    }
+
+    public class LogOut implements ActionListener {
+
+        //Inicalización Lazy
+        private GUI_Login loginGUI = null;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            //Cierra la ventana actual, siendo esta la de Vendor.
+            GUI_Vendor.this.dispose();
+            //Y se vuelve a abrir la ventana de Login, esencialmente
+            //"cerrando la sesión".
+            if (loginGUI == null) {
+                loginGUI = new GUI_Login();
+            }
+            loginGUI.setVisible(true);
         }
     }
 

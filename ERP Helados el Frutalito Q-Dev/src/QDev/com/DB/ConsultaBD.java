@@ -25,7 +25,7 @@ public class ConsultaBD extends Conectar{
     
     public boolean loginUser(Person person){
         String sql = "SELECT nuip, names, surnames, phone, email, psswrd, active, "
-                + "nameRole FROM person WHERE nuip = ?"; //AND active = ?
+                + "nameRole FROM person WHERE nuip = ?"; // AND active = ?";
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());

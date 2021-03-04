@@ -34,6 +34,7 @@ public class GUI_Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ERP-El Frutalito");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -53,10 +54,12 @@ public class GUI_Login extends javax.swing.JFrame {
 
         btn_Ayuda.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         btn_Ayuda.setText("AYUDA");
+        btn_Ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 90, -1));
 
         btn_Entrar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btn_Entrar.setText("Entrar");
+        btn_Entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_EntrarActionPerformed(evt);
@@ -66,10 +69,11 @@ public class GUI_Login extends javax.swing.JFrame {
 
         btn_Contacto.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         btn_Contacto.setText("CONTACTO");
+        btn_Contacto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 90, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Fondo_Login.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, -1, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
