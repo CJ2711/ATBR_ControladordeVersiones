@@ -165,6 +165,7 @@ public class GUI_Admin extends javax.swing.JFrame {
     private void btn_AdministrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdministrarUsuariosActionPerformed
         JFrame GUI_AdministrarUsuarios = null;
         if (GUI_AdministrarUsuarios == null) {
+            this.dispose();
             GUI_AdministrarUsuarios = new GUI_UserManagement();
         }
         GUI_AdministrarUsuarios.setVisible(true);
@@ -172,7 +173,12 @@ public class GUI_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
 
     private void jB_UserMngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_UserMngActionPerformed
-        // TODO add your handling code here:
+        JFrame GUI_Inicio = null;
+        if (GUI_Inicio == null) {
+            this.dispose();
+            GUI_Inicio = new GUI_UserManagement();
+        }
+        GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_jB_UserMngActionPerformed
 
 

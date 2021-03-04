@@ -8,10 +8,11 @@ package QDev.com.GUI;
 import QDev.com.Classes.Person;
 import QDev.com.Classes.Role;
 import QDev.com.DB.ConsultaBD;
-import javax.swing.ComboBoxModel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.event.ListDataListener;
 
 /**
  *
@@ -24,7 +25,6 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
      */
     public GUI_UserRegitration() {
         initComponents();
-
         this.setLocationRelativeTo(null);
 
     }
@@ -267,6 +267,14 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Error al registrar.");
         }
+        
+        JFrame GUI_Inicio = null;
+        if (GUI_Inicio == null) {
+            this.dispose();
+            GUI_Inicio = new GUI_UserManagement();
+        }
+        GUI_Inicio.setVisible(true);
+
     }//GEN-LAST:event_btn_RegistrarActionPerformed
 
     private void LimpiezaFormulario() {
