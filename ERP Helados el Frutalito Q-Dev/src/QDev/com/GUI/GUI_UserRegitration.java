@@ -67,6 +67,7 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
 
         jP_Fondo.setBackground(new java.awt.Color(153, 255, 153));
 
+        btn_Registrar.setBackground(new java.awt.Color(0, 255, 102));
         btn_Registrar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btn_Registrar.setText("Registrar");
         btn_Registrar.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +76,7 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
             }
         });
 
+        btn_Cancelar.setBackground(new java.awt.Color(204, 51, 0));
         btn_Cancelar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btn_Cancelar.setText("Cancelar");
         btn_Cancelar.addActionListener(new java.awt.event.ActionListener() {

@@ -127,6 +127,11 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_PedidoMateriaPrima.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_PedidoMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_PedidoMateriaPrima.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_PedidoMateriaPrima.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PedidoMateriaPrimaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_PedidoMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 200, 170));
 
         btn_Produccion.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
@@ -137,6 +142,11 @@ public class GUI_Admin extends javax.swing.JFrame {
         btn_Produccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Produccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_Produccion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_Produccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ProduccionActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 200, 170));
 
         jLabel1_Up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
@@ -156,6 +166,24 @@ public class GUI_Admin extends javax.swing.JFrame {
         }
         GUI_AdministrarUsuarios.setVisible(true);
     }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
+
+    private void btn_ProduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProduccionActionPerformed
+        JFrame GUI_AdministrarProduccion = null;
+        if (GUI_AdministrarProduccion == null) {
+            this.dispose();
+            GUI_AdministrarProduccion = new GUI_Production();
+        }
+        GUI_AdministrarProduccion.setVisible(true);
+    }//GEN-LAST:event_btn_ProduccionActionPerformed
+
+    private void btn_PedidoMateriaPrimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PedidoMateriaPrimaActionPerformed
+        JFrame GUI_PedidoMateriaPrima = null;
+        if (GUI_PedidoMateriaPrima == null) {
+            this.dispose();
+            GUI_PedidoMateriaPrima = new GUI_RawMaterial();
+        }
+        GUI_PedidoMateriaPrima.setVisible(true);
+    }//GEN-LAST:event_btn_PedidoMateriaPrimaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
