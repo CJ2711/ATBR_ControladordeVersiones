@@ -90,7 +90,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ERP-El Frutalito");
+        setTitle("ERP-El Frutalito Manejo de Usuarios");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -132,10 +132,10 @@ public class GUI_UserManagement extends javax.swing.JFrame {
                 btn_closeMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_closeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, -1, 50));
+        getContentPane().add(btn_closeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(821, 40, -1, 50));
 
         jB_Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/IMG_20210303_231601.png"))); // NOI18N
-        jB_Home.setText("Menú Principal");
+        jB_Home.setText(" Menú Principal");
         jB_Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_Home.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jB_Home.setPreferredSize(new java.awt.Dimension(180, 45));
@@ -188,10 +188,10 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         btn_Modificar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_Modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 240, 40));
 
-        jLabel2.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Kristen ITC", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MANEJADOR DE USUARIOS");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Up_Welcome.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
