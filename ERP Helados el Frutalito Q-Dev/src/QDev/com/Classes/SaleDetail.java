@@ -23,10 +23,10 @@ public class SaleDetail {
     public SaleDetail(int quantity, IceCream iceCream) throws Exception {
 
         //Valores Validos 
-        //  Valores validos para quantity
-        if (!(quantity >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
-            throw new Exception("La cantidad debe ser mayor a 0");
-        }
+//        //  Valores validos para quantity
+//        if (!(quantity >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
+//            throw new Exception("La cantidad debe ser mayor a 0");
+//        }
 
         //Valores validos para IceCream 
         if (iceCream == null) {
@@ -42,7 +42,7 @@ public class SaleDetail {
          * helados tienen un costo fijo de 5000 pesos cada uno, así que se
          * multiplica los 5000 por la cantidad que pidan. Ej: 5000 * 3 = 15000
          */
-        totalPrice = 5000 * quantity;
+        totalPrice = 5000 * this.quantity;
 
     }
 
@@ -64,12 +64,24 @@ public class SaleDetail {
         this.quantity = quantity;
     }
 
-    public void setTotalPrice(int totalPrice) {
+//    public void setTotalPrice(int totalPrice) {
+//        this.totalPrice = totalPrice;
+//    }
+//
+//    public void setIceCream(IceCream iceCream) {
+//        this.iceCream = iceCream;
+//    }
+
+    public void setTotalPrice(int totalPrice) throws Exception {
+        //  Valores validos para quantity
+        if (!(quantity >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
+            throw new Exception("La cantidad debe ser mayor a 0");
+        }
         this.totalPrice = totalPrice;
     }
 
     public void setIceCream(IceCream iceCream) {
         this.iceCream = iceCream;
     }
-
+    
 }

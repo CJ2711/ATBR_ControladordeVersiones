@@ -2,6 +2,8 @@ package QDev.com.GUI;
 
 import QDev.com.Classes.Person;
 import QDev.com.DB.ConsultaBD;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -12,12 +14,18 @@ import javax.swing.JOptionPane;
  */
 public class GUI_Login extends javax.swing.JFrame {
 
+    private ConsultaBD cBD;
+    private Person person;
+    
     /**
      * Creates new form GUI_Login
      */
-    public GUI_Login() {
+    public GUI_Login(ConsultaBD cBD, Person person) {
+        this.cBD = cBD;
+        this.person = person;
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -79,40 +87,43 @@ public class GUI_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntrarActionPerformed
-        ConsultaBD cBD = new ConsultaBD();
-        Person person = new Person();
         JFrame GUI_Inicio = null;
 
         //Busqueda del usuario
-        int userNuip = Integer.parseInt(tf_User.getText());
         String psswrd = new String(psswrdField.getPassword());
 
         if (!tf_User.getText().equals("") && !psswrdField.equals("")) {
 
-            person.setNuip(Integer.parseInt(tf_User.getText()));
-            person.setPassword(psswrd);
-
-            if (cBD.loginUser(person) == true) {
-                if (person.isActive() == true) {
-                    this.dispose();
-                    if (person.getRole().ordinal() == 1) {
-                        if (GUI_Inicio == null) {
-                            GUI_Inicio = new GUI_Vendor();
+            try {
+                person.setNuip(Integer.parseInt(tf_User.getText()));
+                person.setPassword(psswrd);
+                
+                if (cBD.loginUser(person) == true) {
+                    if (person.getActiveInt()== 1) {
+                        this.dispose();
+                        if (person.getRole().ordinal() == 1) {
+                            if (GUI_Inicio == null) {
+                                GUI_Inicio = new GUI_Vendor(person);
+                            }
+                            GUI_Inicio.setVisible(true);
                         }
-                        GUI_Inicio.setVisible(true);
-                    }
-                    if (person.getRole().ordinal() == 2) {
-                        if (GUI_Inicio == null) {
-                            GUI_Inicio = new GUI_Admin();
+                        if (person.getRole().ordinal() == 2) {
+                            if (GUI_Inicio == null) {
+                                GUI_Inicio = new GUI_Admin();
+                            }
+                            GUI_Inicio.setVisible(true);
                         }
-                        GUI_Inicio.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Usuario no activo");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Usuario no activo");
+                    JOptionPane.showMessageDialog(null, "Usuario (Número de identificación)"
+                            + " y/o contraseña incorrectos. Verifique los datos ingresados.");
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuario (Número de identificación)"
-                        + " y/o contraseña incorrectos. Verifique los datos ingresados.");
+//                person = null;
+//                person = new Person();
+            } catch (Exception ex) {
+                Logger.getLogger(GUI_Login.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } else {

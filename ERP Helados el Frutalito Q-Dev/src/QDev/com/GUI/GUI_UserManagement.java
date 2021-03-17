@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package QDev.com.GUI;
 
+import QDev.com.Classes.Person;
 import QDev.com.DB.Conectar;
 import QDev.com.DB.ConsultaBD;
 import java.sql.Connection;
@@ -22,12 +19,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GUI_UserManagement extends javax.swing.JFrame {
 
+    private ConsultaBD cBD;
+    private Person person;
     DefaultTableModel model;
 
-    public GUI_UserManagement() {
+    public GUI_UserManagement() { //Duda si los debo poner aquí también (cBD, person)
         initComponents();
 
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
 
         jP_MenuDesplegable.setVisible(false);
         jB_Help.setVisible(false);
@@ -38,10 +38,10 @@ public class GUI_UserManagement extends javax.swing.JFrame {
     }
 
     void loadUsersTable() {
-        String[] titles = {"NUIP", "NAMES", "SURNAMES", "PHONE", "EMAIL", "PASSWORD", "ACTIVE"};
+        String[] titles = {"NUIP", "NAMES", "SURNAMES", "PHONE", "EMAIL", "PASSWORD", "ACTIVE", "ROL"};
         String[] registries = new String[8];
 
-        String sql = "SELECT * FROM person";
+        String sql = "SELECT * FROM person ORDER BY nuip, nameRole";
 
         model = new DefaultTableModel(null, titles);
 
@@ -224,7 +224,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
-            GUI_Inicio = new GUI_Login();
+            GUI_Inicio = new GUI_Login(cBD, person);
         }
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_jB_LogOutActionPerformed
@@ -243,7 +243,6 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         if (GUI_Inicio == null) {
             this.dispose();
             GUI_Inicio = new GUI_UserRegitration();
-            jtlb_users.updateUI();
         }
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed

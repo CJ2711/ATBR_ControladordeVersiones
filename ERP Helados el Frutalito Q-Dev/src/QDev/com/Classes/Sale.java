@@ -1,5 +1,7 @@
 package QDev.com.Classes;
 
+import java.util.Date;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 
@@ -10,13 +12,15 @@ import java.util.LinkedList;
 public class Sale {
 
     //Atributos Propios 
-    private LocalDateTime saleId;
+    private Date saleId;
+    private int totalPrice;
+    
     //Relación 1... 1
     private Person person;
-
+    
     //Relación 1... *
     private LinkedList<SaleDetail> saleDetails;
-
+    
     /**
      * Constructor
      *
@@ -24,7 +28,7 @@ public class Sale {
      * @param person
      * @param saleDetails
      */
-    public Sale(LocalDateTime saleId, Person person, LinkedList<SaleDetail> saleDetails) throws Exception {
+    public Sale(Date saleId, Person person) throws Exception {
 
         //Valores Validos 
         //Valores validos para saleID
@@ -37,13 +41,19 @@ public class Sale {
             throw new Exception("Persona no puede ser nulo");
         }
 
-        this.saleId = saleId;
+        this.saleId = (Date) Date.from(Instant.now());
         this.person = person;
-        this.saleDetails = saleDetails;
+        this.saleDetails = new LinkedList<>();
+        this.totalPrice = 0;
     }
 
+    public Sale(Person person) throws Exception {
+//        this(Date.from(Instant.now()), person);
+        this.saleDetails = new LinkedList<>();
+    }
+    
     //Metodos Get
-    public LocalDateTime getSaleId() {
+    public Date getSaleId() {
         return saleId;
     }
 
@@ -51,17 +61,25 @@ public class Sale {
         return person;
     }
 
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
     public LinkedList<SaleDetail> getSaleDetails() {
         return saleDetails;
     }
 
     //Matodos Set
-    public void setSaleId(LocalDateTime saleId) {
+    public void setSaleId(Date saleId) {
         this.saleId = saleId;
     }
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public void setSaleDetails(LinkedList<SaleDetail> saleDetails) {
@@ -74,7 +92,7 @@ public class Sale {
      * @param saleDetail
      */
     public void addSaleDetail(SaleDetail saleDetail) {
-        
+        this.totalPrice += saleDetail.getTotalPrice();
         this.saleDetails.add(saleDetail);
     }
 

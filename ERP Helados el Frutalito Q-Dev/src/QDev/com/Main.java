@@ -5,7 +5,9 @@
  */
 package QDev.com;
 
+import QDev.com.Classes.Person;
 import QDev.com.DB.Conectar;
+import QDev.com.DB.ConsultaBD;
 import QDev.com.GUI.GUI_Admin;
 import QDev.com.GUI.GUI_Login;
 import QDev.com.GUI.GUI_UserManagement;
@@ -21,6 +23,8 @@ public class Main extends Conectar {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        ConsultaBD cBD = new ConsultaBD();
+        Person person = new Person();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -109,7 +113,7 @@ public class Main extends Conectar {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Conectar cn = new Conectar();
-                new GUI_Login().setVisible(true);
+                new GUI_Login(cBD, person).setVisible(true);
                 //new GUI_UserManagement().setVisible(true);
             }
         });
