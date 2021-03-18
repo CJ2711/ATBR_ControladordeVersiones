@@ -1,14 +1,21 @@
 package QDev.com.DB;
 
+import QDev.com.Classes.IceCream;
 import QDev.com.Classes.Person;
 import QDev.com.Classes.Role;
+import QDev.com.Classes.Sale;
+import QDev.com.Classes.SaleDetail;
 import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.print.attribute.standard.DateTimeAtCreation;
 
 /**
  *
@@ -23,12 +30,11 @@ public class ConsultaBD extends Conectar {
     ResultSet rs = null;
 
     public boolean loginUser(Person person) {
-        String sql = "SELECT nuip, names, surnames, phone, email, psswrd, active, "
-                + "nameRole FROM person WHERE nuip = ?"; // AND active = ?";
+        String sql = "SELECT * FROM person WHERE nuip = ?"; // AND active = ?";
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
-//            pst.setBoolean(2, person.isActive());
+//            pst.setInt(2, person.getActiveInt());
 
             rs = pst.executeQuery();
 
@@ -38,7 +44,7 @@ public class ConsultaBD extends Conectar {
                     person.setSurnames(rs.getString(3));
                     person.setPhone(rs.getString(4));
                     person.setEmail(rs.getString(5));
-                    person.setActive(rs.getBoolean(7));
+                    person.setActiveInt(rs.getInt(7));
                     if ("SALESMAN".equals(rs.getString(8))) {
                         person.setRole(Role.SALESMAN);
                     }
@@ -54,6 +60,9 @@ public class ConsultaBD extends Conectar {
             return false;
 
         } catch (SQLException ex) {
+            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (Exception ex) {
             Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
@@ -72,8 +81,8 @@ public class ConsultaBD extends Conectar {
             pst.setString(4, person.getPhone());
             pst.setString(5, person.getEmail());
             pst.setString(6, person.getPassword());
-            pst.setBoolean(7, person.isActive());
-            pst.setString(8, person.getRole().name());
+            pst.setInt(7, person.getActiveInt());
+            pst.setInt(8, person.getRole().ordinal());
 
             pst.execute();
 
@@ -84,28 +93,81 @@ public class ConsultaBD extends Conectar {
         }
     }
 
-    //Cargar tabla de la interfaz 'GUI_UserManagement'
-//    public void loadUsersTable(){
-//        String [] registries = new String[8];
-//        
-//        String sql = "SELECT * FROM person";
-//        
+    public boolean searchIC(IceCream iceCream) {
+        String sql = "SELECT * FROM icecream WHERE idIC = ?";
+        try {
+            pst = (PreparedStatement) cnn.prepareStatement(sql);
+            pst.setInt(1, iceCream.getIdIceCream());
+
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+                iceCream.setNameIceCream(rs.getString(2));
+                return true;
+            }
+
+            return false;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (Exception ex) {
+            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean registerSaleAndDetail(Sale sale, List<SaleDetail> saleDetails) {
+
+//        if (loginUser(person)) {
+//            sale.setPerson(person);
+//        }
+
+        Date date = new Date();
+        DateFormat dF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String sqlS = "INSERT INTO sale (dateHourS, totalPrice, nuipPerson) VALUES (?, ?, ?)";
+        String sqlSD = "INSERT INTO saledetail (quantity, totalPrice, dateHourSale, idICream) VALUES (?, ?, ?, ?)";
+
+        try {
+            pst = (PreparedStatement) cnn.prepareStatement(sqlS);
+            pst.setDate(1, (java.sql.Date) sale.getSaleId());
+            pst.setInt(2, (int) sale.getPerson().getNuip());
+            pst.setInt(3, sale.getTotalPrice());
+            pst.execute();
+
+            pst = (PreparedStatement) cnn.prepareStatement(sqlSD);
+            for (SaleDetail saleDetail : saleDetails) {
+                pst.setInt(1, (int) saleDetail.getQuantity());
+                pst.setInt(2, saleDetail.getTotalPrice());
+                pst.setString(3, dF.format(date));
+                pst.setInt(4, saleDetail.getIceCream().getIdIceCream());
+                pst.execute();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+//    public boolean sumSD(SaleDetail saleDetail) {
+//        String sql = "SELECT sum(totalPrice) FROM saledetail"; //Falta Where
 //        try {
-//            pst = (PreparedStatement) cnn.createStatement();
-//            rs = pst.executeQuery(sql);
+//            pst = (PreparedStatement) cnn.prepareStatement(sql);
 //            
-//            while(rs.next()){
-//                registries[0] = rs.getString(1);
-//                registries[1] = rs.getString(2);
-//                registries[2] = rs.getString(3);
-//                registries[3] = rs.getString(4);
-//                registries[4] = rs.getString(5);
-//                registries[5] = rs.getString(6);
-//                registries[6] = rs.getString(7);
-//                registries[7] = rs.getString(8);
+//            rs = pst.executeQuery();
+//            
+//            if (rs.next()){
+//                return true;
 //            }
+//            
+//            return false;
+//                
 //        } catch (SQLException ex) {
 //            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+//            return false;
 //        }
 //    }
 }

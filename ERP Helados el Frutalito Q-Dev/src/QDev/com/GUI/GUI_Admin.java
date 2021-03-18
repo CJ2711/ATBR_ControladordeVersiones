@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package QDev.com.GUI;
 
+import QDev.com.Classes.Person;
+import QDev.com.DB.ConsultaBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -15,12 +13,15 @@ import javax.swing.JFrame;
  */
 public class GUI_Admin extends javax.swing.JFrame {
 
+    private ConsultaBD cBD;
+    private Person person;
     /**
      * Creates new form GUI_Admin
      */
-    public GUI_Admin() {
+    public GUI_Admin() { //Duda si los debo poner aquí también (cBD, person)
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         //El Menú desplegable inicia como invisble.
         jP_MenuDesplegable.setVisible(false);
         jB_Help.setVisible(false);
@@ -157,7 +158,6 @@ public class GUI_Admin extends javax.swing.JFrame {
         GUI_AdministrarUsuarios.setVisible(true);
     }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_AdministrarUsuarios;
     private javax.swing.JButton btn_PedidoMateriaPrima;
@@ -214,7 +214,7 @@ public class GUI_Admin extends javax.swing.JFrame {
             //Y se vuelve a abrir la ventana de Login, esencialmente
             //"cerrando la sesión".
             if (loginGUI == null) {
-                loginGUI = new GUI_Login();
+                loginGUI = new GUI_Login(cBD, person);
             }
             loginGUI.setVisible(true);
         }

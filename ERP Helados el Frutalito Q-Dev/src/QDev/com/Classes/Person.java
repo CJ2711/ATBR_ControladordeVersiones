@@ -16,7 +16,8 @@ public class Person {
     private String phone;
     private String email;
     private String password;
-    private boolean active;
+//    private boolean active;
+    private int activeInt;
 
     //Relación 1.....1
     private Role role;
@@ -28,82 +29,106 @@ public class Person {
     }
 
     /**
-     * Construtctor
-     *
+     * 
      * @param nuip
      * @param names
      * @param surnames
      * @param phone
      * @param email
-     * @param user
      * @param password
-     * @param active
+     * @param activeInt
      * @param role
+     * @throws Exception 
      */
-    public Person(long nuip, String names, String surnames, String phone, String email, String password, boolean active, Role role) throws Exception {
-
-        /**
-         * Verificación de valores validos para la identificación (nuip) El
-         * Número Único de Idetificación Personal (nuip) Es es de 7, 8 y 10
-         * dígitos
-         */
-        String nuipString = Long.toString(nuip);//Se hace la conversión de Long a String.
-        if (!(nuipString.length() == 7 || nuipString.length() == 8 || nuipString.length() == 10)) {
-            throw new NumberFormatException("El número de identificación ingresado no es valido.\n"
-                    + "El número de identificaación ingresado:" + nuip);
-        }
-
-        /**
-         * La verificación de los Nombres y Apellidos se encuentra en el método
-         * fullNameVerification. Los Nombres no ha de quedar en blanco(nulo o
-         * vacío), y no debe contener números.
-         */
-        fullNameVerification(names);
-        fullNameVerification(surnames);
-
-        //Verificación valores validos de Phone 
-        if (phone == null || phone.trim().equals("")) {//No puede ser nulo o vacío
-            throw new Exception("Ingrese un número de contacto");
-        }
-
-        if (!(Pattern.matches("\\d{7}", phone) //Verificación para Teléfonos fijos.
-                || Pattern.matches("\\d{10}", phone) //Verificación para Teléfonos Celualres.
-                )) {
-            throw new Exception("Número de contaco no válido.\n"
-                    + "Recuerde que son 7 cifras si es un teléfono fijo, "
-                    + "o 10 si es un teléfono movil.\n"
-                    + "Usted ingresó: " + phone);
-        }
-        
-        //Verificación de valores validos para email
-        if(email == null || email.trim().equals("")){
-            throw new Exception("Ingrese el correo");
-        }
-        if(emailVerification(email)== false){
-            throw new Exception ("El valor ingresado no es un correo");
-        }
-        emailVerification(email);//Método validar el correo 
-        
-        //Verificación para password(contraseña)
-        if(password == null || password.trim().equals("")){
-            throw new Exception ("Ingrese la contraseña");
-        }
-        
-
-        //Verificación de valores validos para el rol
-        if (role == null || role == Role.SELECCIONE) {
-            throw new Exception("Debe seleccionar el rol");
-        }
-
-        this.nuip = nuip;
-        this.names = names;
-        this.surnames = surnames;
-        this.phone = phone;
-        this.email = email;
-        this.password = password;
-        this.active = active;
-        this.role = role;
+    public Person(long nuip, String names, String surnames, String phone, String email, String password, int activeInt, Role role) throws Exception {
+        this.setNuip(nuip);
+        this.setNames(names);
+        this.setSurnames(surnames);
+        this.setPhone(phone);
+        this.setEmail(email);
+        this.setPassword(password);
+        this.setActiveInt(activeInt);
+        this.setRole(role);
     }
+
+//    /**
+//     * Construtctor
+//     *
+//     * @param nuip
+//     * @param names
+//     * @param surnames
+//     * @param phone
+//     * @param email
+//     * @param user
+//     * @param password
+//     * @param active
+//     * @param role
+//     */
+//    public Person(long nuip, String names, String surnames, String phone, String email, String password, int activeInt, Role role) throws Exception {
+//
+//        /**
+//         * Verificación de valores validos para la identificación (nuip) El
+//         * Número Único de Idetificación Personal (nuip) Es es de 7, 8 y 10
+//         * dígitos
+//         */
+//        String nuipString = Long.toString(nuip);//Se hace la conversión de Long a String.
+//        if (!(nuipString.length() == 7 || nuipString.length() == 8 || nuipString.length() == 10)) {
+//            throw new NumberFormatException("El número de identificación ingresado no es valido.\n"
+//                    + "El número de identificación ingresado:" + nuip);
+//        }
+//
+//        /**
+//         * La verificación de los Nombres y Apellidos se encuentra en el método
+//         * fullNameVerification. Los Nombres no ha de quedar en blanco(nulo o
+//         * vacío), y no debe contener números.
+//         */
+//        fullNameVerification(names);
+//        fullNameVerification(surnames);
+//
+//        //Verificación valores validos de Phone 
+//        if (phone == null || phone.trim().equals("")) {//No puede ser nulo o vacío
+//            throw new Exception("Ingrese un número de contacto");
+//        }
+//
+//        if (!(Pattern.matches("\\d{7}", phone) //Verificación para Teléfonos fijos.
+//                || Pattern.matches("\\d{10}", phone) //Verificación para Teléfonos Celualres.
+//                )) {
+//            throw new Exception("Número de contaco no válido.\n"
+//                    + "Recuerde que son 7 cifras si es un teléfono fijo, "
+//                    + "o 10 si es un teléfono movil.\n"
+//                    + "Usted ingresó: " + phone);
+//        }
+//        
+//        //Verificación de valores validos para email
+//        if(email == null || email.trim().equals("")){
+//            throw new Exception("Ingrese el correo");
+//        }
+//        if(emailVerification(email)== false){
+//            throw new Exception ("El valor ingresado no es un correo");
+//        }
+//        emailVerification(email);//Método validar el correo 
+//        
+//        //Verificación para password(contraseña)
+//        if(password == null || password.trim().equals("")){
+//            throw new Exception ("Ingrese la contraseña");
+//        }
+//        
+//
+//        //Verificación de valores validos para el rol
+//        if (role == null || role == Role.SELECCIONE) {
+//            throw new Exception("Debe seleccionar el rol");
+//        }
+//
+//        this.nuip = nuip;
+//        this.names = names;
+//        this.surnames = surnames;
+//        this.phone = phone;
+//        this.email = email;
+//        this.password = password;
+////        this.active = active;
+//        this.setActiveInt(activeInt);
+//        this.role = role;
+//    }
     
     /**
      * Método fullNameVerification(void) Propósito: Realizar la verificación de
@@ -135,12 +160,12 @@ public class Person {
      * @param email
      * @return 
      */
-    public boolean emailVerification(String email) {
-        Pattern patron = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-        Matcher matcher = patron.matcher(email);
-        return matcher.find();
-    }
+//    public boolean emailVerification(String email) {
+//        Pattern patron = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+//                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+//        Matcher matcher = patron.matcher(email);
+//        return matcher.find();
+//    }
 
     //Metodos Get
     public long getNuip() {
@@ -167,42 +192,103 @@ public class Person {
         return password;
     }
 
-    public boolean isActive() {
-        return active;
-    }
+//    public boolean isActive() {
+//        return active;
+//    }
 
+    public int getActiveInt() {
+        return activeInt;
+    }
 
     public Role getRole() {
         return role;
     }
 
     //Metodos Set
+//    public void setNuip(long nuip) {
+//        this.nuip = nuip;
+//    }
+
     public void setNuip(long nuip) {
+        String nuipString = Long.toString(nuip);//Se hace la conversión de Long a String.
+        if (!(nuipString.length() == 7 || nuipString.length() == 8 || nuipString.length() == 10)) {
+            throw new NumberFormatException("El número de identificación ingresado no es valido.\n"
+                    + "El número de identificación ingresado:" + nuip);
+        }//9876543210
         this.nuip = nuip;
     }
 
-    public void setNames(String names) {
+//    public void setNames(String names) {
+//        this.names = names;
+//    }
+    
+    public void setNames(String names) throws Exception {
+        fullNameVerification(names);
         this.names = names;
     }
+    
+//    public void setSurnames(String surnames) {
+//        this.surnames = surnames;
+//    }
 
-    public void setSurnames(String surnames) {
+    public void setSurnames(String surnames) throws Exception {
+        fullNameVerification(surnames);
         this.surnames = surnames;
     }
 
-    public void setPhone(String phone) {
+//    public void setPhone(String phone) {
+//        this.phone = phone;
+//    }
+    
+    public void setPhone(String phone) throws Exception {
+        if (phone == null || phone.trim().equals("")) {//No puede ser nulo o vacío
+            throw new Exception("Ingrese un número de contacto");
+        }
+
+        if (!(Pattern.matches("\\d{7}", phone) //Verificación para Teléfonos fijos.
+                || Pattern.matches("\\d{10}", phone) //Verificación para Teléfonos Celualres.
+                )) {
+            throw new Exception("Número de contaco no válido.\n"
+                    + "Recuerde que son 7 cifras si es un teléfono fijo, "
+                    + "o 10 si es un teléfono movil.\n"
+                    + "Usted ingresó: " + phone);
+        }
         this.phone = phone;
     }
 
-    public void setEmail(String email) {
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+    
+    public void setEmail(String email) throws Exception {
+        //Verificación de valores validos para email
+//        emailVerification(email);//Método validar el correo
+//        if(emailVerification(email)== false){
+//            throw new Exception ("El valor ingresado no es un correo");
+//        }
         this.email = email;
     }
 
-    public void setPassword(String password) {
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
+    public void setPassword(String password) throws Exception {
+        //Verificación para password(contraseña)
+        if(password == null || password.trim().equals("")){
+            throw new Exception ("Ingrese la contraseña");
+        }
         this.password = password;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+//    public void setActive(boolean active) {
+//        this.active = active;
+//    }
+
+    public void setActiveInt(int activeInt) throws Exception {
+        if(!(activeInt == 0 || activeInt == 1)){
+            throw new Exception("Debe ser 0 o 1 el numero a ingresar");
+        }
+        this.activeInt = activeInt;
     }
 
     public void setRole(Role role) {
@@ -211,7 +297,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" + "nuip=" + nuip + ", names=" + names + ", surnames=" + surnames + ", phone=" + phone + ", email=" + email + ", password=" + password + ", active=" + active + ", role=" + role + '}';
+        return "Person{" + "nuip=" + nuip + ", names=" + names + ", surnames=" + surnames + ", phone=" + phone + ", email=" + email + ", password=" + password + ", active=" + activeInt + ", role=" + role + '}';
     }
 
 }
