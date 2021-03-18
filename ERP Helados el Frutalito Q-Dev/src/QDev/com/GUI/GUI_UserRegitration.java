@@ -36,6 +36,7 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
 
         jP_Fondo = new javax.swing.JPanel();
         btn_Registrar = new javax.swing.JButton();
+        btn_Cancelar = new javax.swing.JButton();
         jL_Icono = new javax.swing.JLabel();
         jP_Formulario2 = new javax.swing.JPanel();
         jL_Email = new javax.swing.JLabel();
@@ -56,15 +57,25 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
         txt_Telefono = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("ERP-El Frutalito Registro");
+        setTitle("ERP-El Frutalito Registro de Usuarios\n");
 
         jP_Fondo.setBackground(new java.awt.Color(153, 255, 153));
 
+        btn_Registrar.setBackground(new java.awt.Color(0, 255, 102));
         btn_Registrar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btn_Registrar.setText("Registrar");
         btn_Registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_RegistrarActionPerformed(evt);
+            }
+        });
+
+        btn_Cancelar.setBackground(new java.awt.Color(204, 51, 0));
+        btn_Cancelar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btn_Cancelar.setText("Cancelar");
+        btn_Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CancelarActionPerformed(evt);
             }
         });
 
@@ -199,7 +210,10 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
             .addGroup(jP_FondoLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addGroup(jP_FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_Registrar)
+                    .addGroup(jP_FondoLayout.createSequentialGroup()
+                        .addComponent(btn_Registrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Cancelar))
                     .addGroup(jP_FondoLayout.createSequentialGroup()
                         .addComponent(jP_Formulario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -221,9 +235,11 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
                 .addGroup(jP_FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jP_Formulario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jP_Formulario2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_Registrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jP_FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Registrar)
+                    .addComponent(btn_Cancelar))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -277,6 +293,10 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_RegistrarActionPerformed
 
+    private void btn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_CancelarActionPerformed
+
     private void LimpiezaFormulario() {
         txt_Nuip.setText("");
         txt_Nombre.setText("");
@@ -290,6 +310,7 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Cancelar;
     private javax.swing.JButton btn_Registrar;
     private javax.swing.JComboBox<Role> jCB_Rol;
     private javax.swing.JLabel jL_Email;
