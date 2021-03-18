@@ -8,11 +8,14 @@ import QDev.com.Classes.SaleDetail;
 import com.mysql.jdbc.PreparedStatement;
 import java.util.List;
 import java.sql.Connection;
+import java.util.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.Instant;
+//import java.util.Date;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.print.attribute.standard.DateTimeAtCreation;
@@ -28,22 +31,23 @@ public class ConsultaBD extends Conectar {
     PreparedStatement pst = null;
     Connection cnn = conexion();
     ResultSet rs = null;
-    
-//    Person person = new Person();
+    Person person;
+
+    public ConsultaBD() {
+        person = new Person();
+    }
 
     public boolean loginUser(Person person) {
         String sql = "SELECT * FROM person WHERE nuip = ?"; // AND active = ?";
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
-//            pst.setInt(2, person.getActiveInt());
 
             rs = pst.executeQuery();
 
             if (rs.next()) {
                 if (person.getPassword().equals(rs.getString(6))) {
                     person.setNames(rs.getString(2));
-//                    this.person.setN
                     person.setSurnames(rs.getString(3));
                     person.setPhone(rs.getString(4));
                     person.setEmail(rs.getString(5));
@@ -54,6 +58,8 @@ public class ConsultaBD extends Conectar {
                     if ("BUSINESS_ADMIN".equals(rs.getString(8))) {
                         person.setRole(Role.BUSINESS_ADMIN);
                     }
+                    this.person = person;
+                    System.out.println("Person: " + person);
                     return true;
                 } else {
                     return false;
@@ -120,24 +126,30 @@ public class ConsultaBD extends Conectar {
         }
     }
 
-    public boolean registerSaleAndDetail(Sale sale, List<SaleDetail> saleDetails) {
+    public boolean registerSaleAndDetail(Sale sale, LinkedList<SaleDetail> saleDetails) {
 
-//        if (loginUser(person)) {
-//            sale.setPerson(person);
-//        }
+        if (loginUser(person)) {
+            sale.setPerson(person);
+        }
 
         Date date = new Date();
         DateFormat dF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
+        System.out.println("Date: " + date);
+        System.out.println("DF: " + dF.format(date));
+        System.out.println("Sale Date: " + sale.getSaleId());
 
         String sqlS = "INSERT INTO sale (dateHourS, totalPrice, nuipPerson) VALUES (?, ?, ?)";
         String sqlSD = "INSERT INTO saledetail (quantity, totalPrice, dateHourSale, idICream) VALUES (?, ?, ?, ?)";
 
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sqlS);
-            pst.setDate(1, (java.sql.Date) sale.getSaleId());
-            pst.setInt(2, (int) sale.getPerson().getNuip());
-            pst.setInt(3, sale.getTotalPrice());
+            pst.setDate(1, (java.sql.Date) date.from(Instant.now()));
+            pst.setInt(2, sale.getTotalPrice());
+            pst.setInt(3, (int) person.getNuip());
             pst.execute();
+            
+            pst = null;
 
             pst = (PreparedStatement) cnn.prepareStatement(sqlSD);
             for (SaleDetail saleDetail : saleDetails) {

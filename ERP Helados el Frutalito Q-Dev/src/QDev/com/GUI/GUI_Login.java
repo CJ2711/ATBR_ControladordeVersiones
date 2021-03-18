@@ -88,6 +88,7 @@ public class GUI_Login extends javax.swing.JFrame {
 
     private void btn_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntrarActionPerformed
         JFrame GUI_Inicio = null;
+        JFrame GUI_AdmiVent = null;
 
         //Busqueda del usuario
         String psswrd = new String(psswrdField.getPassword());
@@ -104,6 +105,7 @@ public class GUI_Login extends javax.swing.JFrame {
                         if (person.getRole().ordinal() == 1) {
                             if (GUI_Inicio == null) {
                                 GUI_Inicio = new GUI_Vendor(person);
+                                GUI_AdmiVent = new GUI_AdministrarVentas(cBD, person);
 //                                person = new Person();
                             }
                             GUI_Inicio.setVisible(true);

@@ -1,6 +1,8 @@
 package QDev.com.Classes;
 
-import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
@@ -106,4 +108,11 @@ public class Sale {
         this.saleDetails.remove(saleDetail);
     }
 
+    @Override
+    public String toString() {
+        return "Sale" + "nuip=" + person.getNuip();
+    }
+
+    
+    
 }

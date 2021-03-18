@@ -23,8 +23,8 @@ public class GUI_Vendor extends javax.swing.JFrame {
      * Creates new form GUI_Admin
      */
     public GUI_Vendor(Person person) { //Duda si los debo poner aquí también (cBD, person)
-        this.person = person;
         initComponents();
+        this.person = person;
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         //Menú desplegable inicia como Invisible.
@@ -88,7 +88,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         btn_AdministrarVentas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btn_AdministrarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AdministrarUsuariosActionPerformed(evt);
+                btn_AdministrarVentasActionPerformed(evt);
             }
         });
         getContentPane().add(btn_AdministrarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 200, 170));
@@ -151,14 +151,14 @@ public class GUI_Vendor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_AdministrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdministrarUsuariosActionPerformed
+    private void btn_AdministrarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdministrarVentasActionPerformed
         JFrame GUI_AdministrarVentas = null;
         if (GUI_AdministrarVentas == null) {
             this.dispose();
             GUI_AdministrarVentas = new GUI_AdministrarVentas(cBD, person);
         }
         GUI_AdministrarVentas.setVisible(true);
-    }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
+    }//GEN-LAST:event_btn_AdministrarVentasActionPerformed
 
     private void btn_ProduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProduccionActionPerformed
         JFrame GUI_VerProduccion = null;
