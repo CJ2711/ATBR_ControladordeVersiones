@@ -1,4 +1,3 @@
-
 package QDev.com.GUI;
 
 import QDev.com.Classes.IceCream;
@@ -19,7 +18,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
     private IceCream iC;
     private Person person;
     private SaleDetail sD;
-    
+
     /**
      * Creates new form GUI_Admin
      */
@@ -40,7 +39,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         btn_CloseMenu.addActionListener(new CloseMenu());
         jB_LogOut.addActionListener(new LogOut());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -28,6 +28,8 @@ public class ConsultaBD extends Conectar {
     PreparedStatement pst = null;
     Connection cnn = conexion();
     ResultSet rs = null;
+    
+//    Person person = new Person();
 
     public boolean loginUser(Person person) {
         String sql = "SELECT * FROM person WHERE nuip = ?"; // AND active = ?";
@@ -41,6 +43,7 @@ public class ConsultaBD extends Conectar {
             if (rs.next()) {
                 if (person.getPassword().equals(rs.getString(6))) {
                     person.setNames(rs.getString(2));
+//                    this.person.setN
                     person.setSurnames(rs.getString(3));
                     person.setPhone(rs.getString(4));
                     person.setEmail(rs.getString(5));
