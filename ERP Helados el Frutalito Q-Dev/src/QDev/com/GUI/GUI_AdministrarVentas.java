@@ -108,6 +108,7 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
         btn_GenerarVenta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ERP-El Frutalito Administrar Ventas\n");
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 153));
 

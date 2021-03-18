@@ -48,7 +48,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         jLabel3_LogoFrutalito = new javax.swing.JLabel();
         jLabel4_Titulo = new javax.swing.JLabel();
         btn_AdministrarVentas = new javax.swing.JButton();
-        btn_VerProduccion = new javax.swing.JButton();
+        btn_Produccion = new javax.swing.JButton();
         btn_Menu = new javax.swing.JButton();
         btn_CloseMenu = new javax.swing.JButton();
         jPanel_Menu = new javax.swing.JPanel();
@@ -89,24 +89,29 @@ public class GUI_Vendor extends javax.swing.JFrame {
         btn_AdministrarVentas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btn_AdministrarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AdministrarVentasActionPerformed(evt);
+                btn_AdministrarUsuariosActionPerformed(evt);
             }
         });
         getContentPane().add(btn_AdministrarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 200, 170));
 
-        btn_VerProduccion.setBackground(new java.awt.Color(153, 255, 153));
-        btn_VerProduccion.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
-        btn_VerProduccion.setForeground(new java.awt.Color(255, 255, 255));
-        btn_VerProduccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Produccion.png"))); // NOI18N
-        btn_VerProduccion.setText("Ver Producción");
-        btn_VerProduccion.setActionCommand("Venta");
-        btn_VerProduccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_VerProduccion.setBorderPainted(false);
-        btn_VerProduccion.setContentAreaFilled(false);
-        btn_VerProduccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_VerProduccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_VerProduccion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(btn_VerProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 200, 170));
+        btn_Produccion.setBackground(new java.awt.Color(153, 255, 153));
+        btn_Produccion.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        btn_Produccion.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Produccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Produccion.png"))); // NOI18N
+        btn_Produccion.setText("Ver Producción");
+        btn_Produccion.setActionCommand("Venta");
+        btn_Produccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_Produccion.setBorderPainted(false);
+        btn_Produccion.setContentAreaFilled(false);
+        btn_Produccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Produccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Produccion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_Produccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ProduccionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 200, 170));
 
         btn_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
         btn_Menu.setBorder(null);
@@ -147,20 +152,30 @@ public class GUI_Vendor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_AdministrarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdministrarVentasActionPerformed
+    private void btn_AdministrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdministrarUsuariosActionPerformed
         JFrame GUI_AdministrarVentas = null;
         if (GUI_AdministrarVentas == null) {
             this.dispose();
             GUI_AdministrarVentas = new GUI_AdministrarVentas(cBD, person);
         }
         GUI_AdministrarVentas.setVisible(true);
-    }//GEN-LAST:event_btn_AdministrarVentasActionPerformed
+    }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
+
+    private void btn_ProduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProduccionActionPerformed
+        JFrame GUI_VerProduccion = null;
+        if (GUI_VerProduccion == null) {
+            this.dispose();
+            GUI_VerProduccion = new GUI_Production();
+        }
+        GUI_VerProduccion.setVisible(true);
+    }//GEN-LAST:event_btn_ProduccionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_AdministrarVentas;
     private javax.swing.JButton btn_CloseMenu;
     private javax.swing.JButton btn_Menu;
-    private javax.swing.JButton btn_VerProduccion;
+    private javax.swing.JButton btn_Produccion;
     private javax.swing.JButton jB_Help;
     private javax.swing.JButton jB_LogOut;
     private javax.swing.JLabel jLabel1_Up;
