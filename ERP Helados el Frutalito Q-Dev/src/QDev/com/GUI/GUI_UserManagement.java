@@ -1,4 +1,3 @@
-
 package QDev.com.GUI;
 
 import QDev.com.Classes.Person;
@@ -23,9 +22,9 @@ public class GUI_UserManagement extends javax.swing.JFrame {
     private Person person;
     DefaultTableModel model;
 
-    public GUI_UserManagement() { //Duda si los debo poner aquí también (cBD, person)
+    public GUI_UserManagement(Person person) { //Duda si los debo poner aquí también (cBD, person)
         initComponents();
-
+        this.person = person;
         this.setLocationRelativeTo(null);
         this.setResizable(false);
 
@@ -215,7 +214,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
-            GUI_Inicio = new GUI_Admin();
+            GUI_Inicio = new GUI_Admin(person);
         }
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_jB_HomeActionPerformed
@@ -242,7 +241,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
-            GUI_Inicio = new GUI_UserRegitration();
+            GUI_Inicio = new GUI_UserRegitration(person);
         }
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed

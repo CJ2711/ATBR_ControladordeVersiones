@@ -16,13 +16,13 @@ public class GUI_Login extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
     private Person person;
-    
+
     /**
      * Creates new form GUI_Login
      */
     public GUI_Login(ConsultaBD cBD, Person person) {
-        this.cBD = cBD;
-        this.person = person;
+        this.cBD = new ConsultaBD();
+        this.person = new Person();
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -98,21 +98,21 @@ public class GUI_Login extends javax.swing.JFrame {
             try {
                 person.setNuip(Integer.parseInt(tf_User.getText()));
                 person.setPassword(psswrd);
-                
+
                 if (cBD.loginUser(person) == true) {
-                    if (person.getActiveInt()== 1) {
+                    if (person.getActiveInt() == 1) {
                         this.dispose();
                         if (person.getRole().ordinal() == 1) {
                             if (GUI_Inicio == null) {
                                 GUI_Inicio = new GUI_Vendor(person);
-                                GUI_AdmiVent = new GUI_AdministrarVentas(cBD, person);
+//                                GUI_AdmiVent = new GUI_AdministrarVentas(cBD, person);
 //                                person = new Person();
                             }
                             GUI_Inicio.setVisible(true);
                         }
                         if (person.getRole().ordinal() == 2) {
                             if (GUI_Inicio == null) {
-                                GUI_Inicio = new GUI_Admin();
+                                GUI_Inicio = new GUI_Admin(person);
 //                                person = new Person();
                             }
                             GUI_Inicio.setVisible(true);

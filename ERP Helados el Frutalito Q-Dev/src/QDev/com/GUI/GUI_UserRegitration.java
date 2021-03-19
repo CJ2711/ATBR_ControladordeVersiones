@@ -1,4 +1,3 @@
-
 package QDev.com.GUI;
 
 import QDev.com.Classes.Person;
@@ -18,14 +17,16 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
     private Person person;
-    
+    private Person person1;
+
     /**
      * Creates new form GUI_UserRegi
      */
-    public GUI_UserRegitration() {
+    public GUI_UserRegitration(Person person) {
         initComponents();
+        this.person = person;
         this.cBD = new ConsultaBD();
-        this.person = new Person();
+        this.person1 = new Person();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -261,16 +262,16 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
         try {
             long nuip = Long.parseLong(txt_Nuip.getText());
 
-            person.setNuip(nuip);
-            person.setNames(txt_Nombre.getText());
-            person.setSurnames(txt_Apellido.getText());
-            person.setPhone(txt_Telefono.getText());
-            person.setEmail(txt_Email.getText());
-            person.setPassword(txt_Password.getText());
-            person.setActiveInt(1);
-            person.setRole((Role) jCB_Rol.getSelectedItem());
+            person1.setNuip(nuip);
+            person1.setNames(txt_Nombre.getText());
+            person1.setSurnames(txt_Apellido.getText());
+            person1.setPhone(txt_Telefono.getText());
+            person1.setEmail(txt_Email.getText());
+            person1.setPassword(txt_Password.getText());
+            person1.setActiveInt(1);
+            person1.setRole((Role) jCB_Rol.getSelectedItem());
 
-            if (cBD.registerUser(person)) {
+            if (cBD.registerUser(person1)) {
                 JOptionPane.showMessageDialog(rootPane, "El Usuario ha sido registrado con éxito");
                 LimpiezaFormulario();
             } else {
@@ -280,7 +281,7 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
             JFrame GUI_Inicio = null;
             if (GUI_Inicio == null) {
                 this.dispose();
-                GUI_Inicio = new GUI_UserManagement();
+                GUI_Inicio = new GUI_UserManagement(person);
             }
             GUI_Inicio.setVisible(true);
         } catch (NumberFormatException ex) {

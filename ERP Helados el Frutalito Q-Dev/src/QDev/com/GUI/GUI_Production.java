@@ -16,8 +16,9 @@ public class GUI_Production extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Production
      */
-    public GUI_Production() {
+    public GUI_Production(Person person) {
         initComponents();
+        this.person = person;
         this.setLocationRelativeTo(null);
         //El Menú desplegable inicia como invisble.
         jPanel_Menu.setVisible(false);
@@ -26,6 +27,10 @@ public class GUI_Production extends javax.swing.JFrame {
         btn_LogOut.setVisible(false);
         //Al igual que el botón para ocultarlo después.
         btn_closeMenu.setVisible(false);
+
+        if (person.getRole().equals(person.getRole().SALESMAN)) {
+            btn_Registrar.setVisible(false);
+        }
     }
 
     /**
@@ -152,7 +157,7 @@ public class GUI_Production extends javax.swing.JFrame {
         JFrame GUI_Registro = null;
         if (GUI_Registro == null) {
             this.dispose();
-            GUI_Registro = new GUI_ProductionRegistration();
+            GUI_Registro = new GUI_ProductionRegistration(person);
             jTable1.updateUI();
         }
         GUI_Registro.setVisible(true);
@@ -160,11 +165,19 @@ public class GUI_Production extends javax.swing.JFrame {
 
     private void btn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_homeActionPerformed
         JFrame GUI_Inicio = null;
-        if (GUI_Inicio == null) {
-            this.dispose();
-            GUI_Inicio = new GUI_Admin();
+        if (person.getRole().equals(person.getRole().SALESMAN)) {
+            if (GUI_Inicio == null) {
+                this.dispose();
+                GUI_Inicio = new GUI_Vendor(person);
+            }
+            GUI_Inicio.setVisible(true);
+        } else {
+            if (GUI_Inicio == null) {
+                this.dispose();
+                GUI_Inicio = new GUI_Admin(person);
+            }
+            GUI_Inicio.setVisible(true);
         }
-        GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_homeActionPerformed
 
     private void btn_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuActionPerformed

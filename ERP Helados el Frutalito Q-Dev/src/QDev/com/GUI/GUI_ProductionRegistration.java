@@ -5,6 +5,7 @@
  */
 package QDev.com.GUI;
 
+import QDev.com.Classes.Person;
 import javax.swing.JFrame;
 
 /**
@@ -13,11 +14,14 @@ import javax.swing.JFrame;
  */
 public class GUI_ProductionRegistration extends javax.swing.JFrame {
 
+    Person person;
+
     /**
      * Creates new form GUI_ProductionRegistration
      */
-    public GUI_ProductionRegistration() {
+    public GUI_ProductionRegistration(Person person) {
         initComponents();
+        this.person = person;
         this.setLocationRelativeTo(null);
     }
 
@@ -189,7 +193,7 @@ public class GUI_ProductionRegistration extends javax.swing.JFrame {
         JFrame GUI_Prod = null;
         if (GUI_Prod == null) {
             this.dispose();
-            GUI_Prod = new GUI_Production();
+            GUI_Prod = new GUI_Production(person);
         }
         GUI_Prod.setVisible(true);
     }//GEN-LAST:event_btn_CancelarActionPerformed

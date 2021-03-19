@@ -5,6 +5,7 @@
  */
 package QDev.com.GUI;
 
+import QDev.com.Classes.Person;
 import javax.swing.JFrame;
 
 /**
@@ -13,11 +14,14 @@ import javax.swing.JFrame;
  */
 public class GUI_RawMaterial extends javax.swing.JFrame {
 
+    Person person;
+
     /**
      * Creates new form GUI_RawMaterial
      */
-    public GUI_RawMaterial() {
+    public GUI_RawMaterial(Person person) {
         initComponents();
+        this.person = person;
         this.setLocationRelativeTo(null);
     }
 
@@ -210,7 +214,7 @@ public class GUI_RawMaterial extends javax.swing.JFrame {
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
-            GUI_Inicio = new GUI_Admin();
+            GUI_Inicio = new GUI_Admin(person);
         }
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_CancelActionPerformed
