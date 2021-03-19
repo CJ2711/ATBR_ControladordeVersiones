@@ -16,8 +16,9 @@ public class GUI_Production extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Production
      */
-    public GUI_Production() {
+    public GUI_Production(ConsultaBD cBD) {
         initComponents();
+        this.cBD = cBD;
         this.setLocationRelativeTo(null);
         //El Menú desplegable inicia como invisble.
         jPanel_Menu.setVisible(false);
@@ -152,7 +153,7 @@ public class GUI_Production extends javax.swing.JFrame {
         JFrame GUI_Registro = null;
         if (GUI_Registro == null) {
             this.dispose();
-            GUI_Registro = new GUI_ProductionRegistration();
+            GUI_Registro = new GUI_ProductionRegistration(cBD);
             jTable1.updateUI();
         }
         GUI_Registro.setVisible(true);
@@ -162,7 +163,7 @@ public class GUI_Production extends javax.swing.JFrame {
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
-            GUI_Inicio = new GUI_Admin();
+            GUI_Inicio = new GUI_Admin(cBD);
         }
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_homeActionPerformed

@@ -33,15 +33,15 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
      * Creates new form GUI_AdministrarVentas
      */
     public GUI_AdministrarVentas(ConsultaBD cBD, Person p) {
-        this.cBD = new ConsultaBD();
+        this.cBD = cBD;
         this.iC = new IceCream();
         this.p = p;
-        
+
         try {
             this.s = new Sale(p);
         } catch (Exception ex) {
         }
-        
+
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -79,7 +79,7 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
             }
         });
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -368,7 +368,7 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
             jText_CodigoHelado.setText("");
             jText_NombreHelado.setText("");
             jSpinner_Cantidad.setValue(Integer.valueOf(0));
-            
+
             System.out.println("Person GUI: " + p);
             iC = new IceCream();
         } catch (Exception ex) {
@@ -377,15 +377,19 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_AgregarActionPerformed
 
     private void btn_GenerarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GenerarVentaActionPerformed
-        if(cBD.registerSaleAndDetail(s, s.getSaleDetails())){
+        System.out.println("Venta: " + s.toString());
+        System.out.println("Lista: " + s.getSaleDetails().toString());
+        if (cBD.registerSaleAndDetail(s, s.getSaleDetails())) {
             try {
                 JOptionPane.showMessageDialog(GUI_AdministrarVentas.this, "La venta fue registrada con éxito.");
+                jTable_Ventas.updateUI();
                 s = new Sale(p);
             } catch (Exception ex) {
                 Logger.getLogger(GUI_AdministrarVentas.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } else {
+            JOptionPane.showMessageDialog(GUI_AdministrarVentas.this, "Aiuda false");
         }
-        JOptionPane.showMessageDialog(GUI_AdministrarVentas.this, "Aiuda");
     }//GEN-LAST:event_btn_GenerarVentaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

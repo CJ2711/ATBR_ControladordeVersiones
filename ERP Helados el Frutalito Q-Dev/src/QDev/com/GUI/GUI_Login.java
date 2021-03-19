@@ -1,6 +1,7 @@
 package QDev.com.GUI;
 
 import QDev.com.Classes.Person;
+import QDev.com.Classes.Role;
 import QDev.com.DB.ConsultaBD;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -102,17 +103,17 @@ public class GUI_Login extends javax.swing.JFrame {
                 if (cBD.loginUser(person) == true) {
                     if (person.getActiveInt()== 1) {
                         this.dispose();
-                        if (person.getRole().ordinal() == 1) {
+                        if (person.getRole() == Role.SALESMAN) { 
                             if (GUI_Inicio == null) {
-                                GUI_Inicio = new GUI_Vendor(person);
-                                GUI_AdmiVent = new GUI_AdministrarVentas(cBD, person);
+                                GUI_Inicio = new GUI_Vendor(cBD, person);
+//                                GUI_AdmiVent = new GUI_AdministrarVentas(cBD, person);
 //                                person = new Person();
                             }
                             GUI_Inicio.setVisible(true);
                         }
-                        if (person.getRole().ordinal() == 2) {
+                        if (person.getRole() == Role.BUSINESS_ADMIN) {
                             if (GUI_Inicio == null) {
-                                GUI_Inicio = new GUI_Admin();
+                                GUI_Inicio = new GUI_Admin(cBD);
 //                                person = new Person();
                             }
                             GUI_Inicio.setVisible(true);

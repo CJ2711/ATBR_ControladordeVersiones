@@ -18,8 +18,9 @@ public class GUI_Admin extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Admin
      */
-    public GUI_Admin() { //Duda si los debo poner aquí también (cBD, person)
+    public GUI_Admin(ConsultaBD cBD) { //Duda si los debo poner aquí también (cBD, person)
         initComponents();
+        this.cBD = cBD;
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         //El Menú desplegable inicia como invisble.
@@ -163,7 +164,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         JFrame GUI_AdministrarUsuarios = null;
         if (GUI_AdministrarUsuarios == null) {
             this.dispose();
-            GUI_AdministrarUsuarios = new GUI_UserManagement();
+            GUI_AdministrarUsuarios = new GUI_UserManagement(cBD);
         }
         GUI_AdministrarUsuarios.setVisible(true);
     }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
@@ -172,7 +173,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         JFrame GUI_AdministrarProduccion = null;
         if (GUI_AdministrarProduccion == null) {
             this.dispose();
-            GUI_AdministrarProduccion = new GUI_Production();
+            GUI_AdministrarProduccion = new GUI_Production(cBD);
         }
         GUI_AdministrarProduccion.setVisible(true);
     }//GEN-LAST:event_btn_ProduccionActionPerformed
@@ -181,7 +182,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         JFrame GUI_PedidoMateriaPrima = null;
         if (GUI_PedidoMateriaPrima == null) {
             this.dispose();
-            GUI_PedidoMateriaPrima = new GUI_RawMaterial();
+            GUI_PedidoMateriaPrima = new GUI_RawMaterial(cBD);
         }
         GUI_PedidoMateriaPrima.setVisible(true);
     }//GEN-LAST:event_btn_PedidoMateriaPrimaActionPerformed

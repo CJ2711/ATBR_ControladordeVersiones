@@ -22,9 +22,9 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
     /**
      * Creates new form GUI_UserRegi
      */
-    public GUI_UserRegitration() {
+    public GUI_UserRegitration(ConsultaBD cBD) {
         initComponents();
-        this.cBD = new ConsultaBD();
+        this.cBD = cBD;
         this.person = new Person();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -280,7 +280,7 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
             JFrame GUI_Inicio = null;
             if (GUI_Inicio == null) {
                 this.dispose();
-                GUI_Inicio = new GUI_UserManagement();
+                GUI_Inicio = new GUI_UserManagement(cBD);
             }
             GUI_Inicio.setVisible(true);
         } catch (NumberFormatException ex) {

@@ -22,8 +22,9 @@ public class GUI_Vendor extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Admin
      */
-    public GUI_Vendor(Person person) { //Duda si los debo poner aquí también (cBD, person)
+    public GUI_Vendor(ConsultaBD cBD, Person person) { //Duda si los debo poner aquí también (cBD, person)
         initComponents();
+        this.cBD = cBD;
         this.person = person;
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -164,7 +165,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         JFrame GUI_VerProduccion = null;
         if (GUI_VerProduccion == null) {
             this.dispose();
-            GUI_VerProduccion = new GUI_Production();
+            GUI_VerProduccion = new GUI_Production(cBD);
         }
         GUI_VerProduccion.setVisible(true);
     }//GEN-LAST:event_btn_ProduccionActionPerformed

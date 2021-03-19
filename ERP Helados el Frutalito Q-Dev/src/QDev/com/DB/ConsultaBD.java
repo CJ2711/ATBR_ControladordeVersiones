@@ -37,6 +37,10 @@ public class ConsultaBD extends Conectar {
         person = new Person();
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
     public boolean loginUser(Person person) {
         String sql = "SELECT * FROM person WHERE nuip = ?"; // AND active = ?";
         try {
@@ -58,7 +62,7 @@ public class ConsultaBD extends Conectar {
                     if ("BUSINESS_ADMIN".equals(rs.getString(8))) {
                         person.setRole(Role.BUSINESS_ADMIN);
                     }
-                    this.person = person;
+//                    this.person = person;
                     System.out.println("Person: " + person);
                     return true;
                 } else {
@@ -128,13 +132,11 @@ public class ConsultaBD extends Conectar {
 
     public boolean registerSaleAndDetail(Sale sale, LinkedList<SaleDetail> saleDetails) {
 
-        if (loginUser(person)) {
-            sale.setPerson(person);
-        }
+        sale.setPerson(person);
 
         Date date = new Date();
         DateFormat dF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
+
         System.out.println("Date: " + date);
         System.out.println("DF: " + dF.format(date));
         System.out.println("Sale Date: " + sale.getSaleId());
@@ -144,11 +146,11 @@ public class ConsultaBD extends Conectar {
 
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sqlS);
-            pst.setDate(1, (java.sql.Date) date.from(Instant.now()));
+            pst.setString(1, dF.format(date));
             pst.setInt(2, sale.getTotalPrice());
-            pst.setInt(3, (int) person.getNuip());
+            pst.setInt(3, (int) sale.getPerson().getNuip());
             pst.execute();
-            
+
             pst = null;
 
             pst = (PreparedStatement) cnn.prepareStatement(sqlSD);

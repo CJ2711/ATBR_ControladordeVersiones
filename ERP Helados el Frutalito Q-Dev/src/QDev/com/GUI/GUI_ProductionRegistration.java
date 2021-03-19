@@ -5,6 +5,7 @@
  */
 package QDev.com.GUI;
 
+import QDev.com.DB.ConsultaBD;
 import javax.swing.JFrame;
 
 /**
@@ -13,11 +14,13 @@ import javax.swing.JFrame;
  */
 public class GUI_ProductionRegistration extends javax.swing.JFrame {
 
+    private ConsultaBD cBD;
     /**
      * Creates new form GUI_ProductionRegistration
      */
-    public GUI_ProductionRegistration() {
+    public GUI_ProductionRegistration(ConsultaBD cBD) {
         initComponents();
+        this.cBD = cBD;
         this.setLocationRelativeTo(null);
     }
 
@@ -189,7 +192,7 @@ public class GUI_ProductionRegistration extends javax.swing.JFrame {
         JFrame GUI_Prod = null;
         if (GUI_Prod == null) {
             this.dispose();
-            GUI_Prod = new GUI_Production();
+            GUI_Prod = new GUI_Production(cBD);
         }
         GUI_Prod.setVisible(true);
     }//GEN-LAST:event_btn_CancelarActionPerformed

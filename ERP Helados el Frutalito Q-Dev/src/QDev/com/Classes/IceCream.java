@@ -75,4 +75,9 @@ public class IceCream {
         this.nameIceCream = nameIceCream;
     }
 
+    @Override
+    public String toString() {
+        return "IceCream{" + "idIceCream=" + idIceCream + ", nameIceCream=" + nameIceCream + '}';
+    }
+
 }

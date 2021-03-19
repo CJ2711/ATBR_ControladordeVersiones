@@ -14,7 +14,7 @@ import java.util.LinkedList;
 public class Sale {
 
     //Atributos Propios 
-    private Date saleId;
+    private String saleId;
     private int totalPrice;
     
     //Relación 1... 1
@@ -30,7 +30,7 @@ public class Sale {
      * @param person
      * @param saleDetails
      */
-    public Sale(Date saleId, Person person) throws Exception {
+    public Sale(String saleId, Person person) throws Exception {
 
         //Valores Validos 
         //Valores validos para saleID
@@ -43,7 +43,7 @@ public class Sale {
             throw new Exception("Persona no puede ser nulo");
         }
 
-        this.saleId = (Date) Date.from(Instant.now());
+        this.saleId = Date.from(Instant.now()).toString();
         this.person = person;
         this.saleDetails = new LinkedList<>();
         this.totalPrice = 0;
@@ -55,7 +55,7 @@ public class Sale {
     }
     
     //Metodos Get
-    public Date getSaleId() {
+    public String getSaleId() {
         return saleId;
     }
 
@@ -72,7 +72,7 @@ public class Sale {
     }
 
     //Matodos Set
-    public void setSaleId(Date saleId) {
+    public void setSaleId(String saleId) {
         this.saleId = saleId;
     }
 
@@ -110,9 +110,7 @@ public class Sale {
 
     @Override
     public String toString() {
-        return "Sale" + "nuip=" + person.getNuip();
+        return "Sale{" + "saleId=" + saleId + ", totalPrice=" + totalPrice + ", person=" + person + ", saleDetails=" + saleDetails + '}';
     }
-
-    
     
 }

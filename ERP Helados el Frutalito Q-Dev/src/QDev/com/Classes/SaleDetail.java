@@ -83,5 +83,10 @@ public class SaleDetail {
     public void setIceCream(IceCream iceCream) {
         this.iceCream = iceCream;
     }
+
+    @Override
+    public String toString() {
+        return "SaleDetail{" + "quantity=" + quantity + ", totalPrice=" + totalPrice + ", iceCream=" + iceCream + '}';
+    }
     
 }
