@@ -15,17 +15,18 @@ import javax.swing.JFrame;
 public class GUI_Vendor extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
-    private IceCream iC;
+//    private IceCream iC;
     private Person person;
     private SaleDetail sD;
 
     /**
      * Creates new form GUI_Admin
      */
-    public GUI_Vendor(ConsultaBD cBD, Person person) { //Duda si los debo poner aquí también (cBD, person)
+    public GUI_Vendor(ConsultaBD cBD, Person person) { 
         initComponents();
         this.cBD = cBD;
         this.person = person;
+        System.out.println("Person Vendor: " + person);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         //Menú desplegable inicia como Invisible.

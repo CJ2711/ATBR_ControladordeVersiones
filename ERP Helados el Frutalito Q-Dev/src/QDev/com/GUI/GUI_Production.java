@@ -16,9 +16,10 @@ public class GUI_Production extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Production
      */
-    public GUI_Production(ConsultaBD cBD) {
+    public GUI_Production(ConsultaBD cBD/*, Person person*/) {
         initComponents();
         this.cBD = cBD;
+        this.person = person;
         this.setLocationRelativeTo(null);
         //El Menú desplegable inicia como invisble.
         jPanel_Menu.setVisible(false);
@@ -27,6 +28,10 @@ public class GUI_Production extends javax.swing.JFrame {
         btn_LogOut.setVisible(false);
         //Al igual que el botón para ocultarlo después.
         btn_closeMenu.setVisible(false);
+
+        if (person.getRole().equals(person.getRole().SALESMAN)) {
+            btn_Registrar.setVisible(false);
+        }
     }
 
     /**
@@ -153,7 +158,7 @@ public class GUI_Production extends javax.swing.JFrame {
         JFrame GUI_Registro = null;
         if (GUI_Registro == null) {
             this.dispose();
-            GUI_Registro = new GUI_ProductionRegistration(cBD);
+            GUI_Registro = new GUI_ProductionRegistration(cBD/*, person*/);
             jTable1.updateUI();
         }
         GUI_Registro.setVisible(true);
@@ -163,9 +168,21 @@ public class GUI_Production extends javax.swing.JFrame {
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
-            GUI_Inicio = new GUI_Admin(cBD);
+            GUI_Inicio = new GUI_Admin(cBD, person);
+            if (person.getRole().equals(person.getRole().SALESMAN)) {
+                if (GUI_Inicio == null) {
+                    this.dispose();
+                    GUI_Inicio = new GUI_Vendor(cBD, person);
+                }
+                GUI_Inicio.setVisible(true);
+            } else {
+                if (GUI_Inicio == null) {
+                    this.dispose();
+                    GUI_Inicio = new GUI_Admin(cBD, person);
+                }
+                GUI_Inicio.setVisible(true);
+            }
         }
-        GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_homeActionPerformed
 
     private void btn_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuActionPerformed
@@ -189,7 +206,6 @@ public class GUI_Production extends javax.swing.JFrame {
     private void btn_LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LogOutActionPerformed
         //¿Esto no afecta la funcionalidad del programa?
         //En sentido de que, ¿no afecta la info que se use de la clase Persona?
-
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
@@ -198,40 +214,6 @@ public class GUI_Production extends javax.swing.JFrame {
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_LogOutActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Production.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Production.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Production.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GUI_Production.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GUI_Production().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Help;

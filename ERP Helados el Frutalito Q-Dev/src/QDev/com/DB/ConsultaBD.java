@@ -62,7 +62,7 @@ public class ConsultaBD extends Conectar {
                     if ("BUSINESS_ADMIN".equals(rs.getString(8))) {
                         person.setRole(Role.BUSINESS_ADMIN);
                     }
-//                    this.person = person;
+                    this.person = person;
                     System.out.println("Person: " + person);
                     return true;
                 } else {

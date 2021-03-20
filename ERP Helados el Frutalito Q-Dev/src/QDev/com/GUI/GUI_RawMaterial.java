@@ -6,6 +6,7 @@
 package QDev.com.GUI;
 
 import QDev.com.DB.ConsultaBD;
+import QDev.com.Classes.Person;
 import javax.swing.JFrame;
 
 /**
@@ -15,13 +16,15 @@ import javax.swing.JFrame;
 public class GUI_RawMaterial extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
+    Person person;
     
     /**
      * Creates new form GUI_RawMaterial
      */
-    public GUI_RawMaterial(ConsultaBD cBD) {
+    public GUI_RawMaterial(ConsultaBD cBD/*, Person person*/) {
         this.cBD = cBD;
         initComponents();
+        this.person = person;
         this.setLocationRelativeTo(null);
     }
 
@@ -214,45 +217,11 @@ public class GUI_RawMaterial extends javax.swing.JFrame {
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
-            GUI_Inicio = new GUI_Admin(cBD);
+            GUI_Inicio = new GUI_Admin(cBD, person);
         }
         GUI_Inicio.setVisible(true);
     }//GEN-LAST:event_btn_CancelActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GUI_RawMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GUI_RawMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GUI_RawMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GUI_RawMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GUI_RawMaterial().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Add;
