@@ -12,10 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author cricr
- */
 public class GUI_UserManagement extends javax.swing.JFrame {
 
     private ConsultaBD cBD;

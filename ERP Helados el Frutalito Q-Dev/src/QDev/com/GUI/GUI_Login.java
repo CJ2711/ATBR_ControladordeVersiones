@@ -8,11 +8,6 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author cricr
- * @author Leandro Rodriguez Vidal 1958205-2711
- */
 public class GUI_Login extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
@@ -101,32 +96,26 @@ public class GUI_Login extends javax.swing.JFrame {
                 person.setPassword(psswrd);
 
                 if (cBD.loginUser(person) == true) {
-                    if (person.getActiveInt() == 1) {
-                        this.dispose();
-                        if (person.getRole() == Role.SALESMAN) { 
-                            if (GUI_Inicio == null) {
-                                GUI_Inicio = new GUI_Vendor(cBD, person);
+                    this.dispose();
+                    if (person.getRole() == Role.VENDEDOR) {
+                        if (GUI_Inicio == null) {
+                            GUI_Inicio = new GUI_Vendor(cBD, person);
 //                                GUI_AdmiVent = new GUI_AdministrarVentas(cBD, person);
 //                                person = new Person();
-                            }
-                            GUI_Inicio.setVisible(true);
                         }
-                        if (person.getRole() == Role.BUSINESS_ADMIN) {
-                            if (GUI_Inicio == null) {
-                                GUI_Inicio = new GUI_Admin(cBD, person);
+                        GUI_Inicio.setVisible(true);
+                    }
+                    if (person.getRole() == Role.ADMINISTRADOR) {
+                        if (GUI_Inicio == null) {
+                            GUI_Inicio = new GUI_Admin(cBD, person);
 //                                person = new Person();
-                            }
-                            GUI_Inicio.setVisible(true);
                         }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Usuario no activo");
+                        GUI_Inicio.setVisible(true);
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario (Número de identificación)"
                             + " y/o contraseña incorrectos. Verifique los datos ingresados.");
                 }
-//                person = null;
-//                person = new Person();
             } catch (Exception ex) {
                 Logger.getLogger(GUI_Login.class.getName()).log(Level.SEVERE, null, ex);
             }

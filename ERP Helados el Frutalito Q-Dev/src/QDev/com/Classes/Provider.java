@@ -1,54 +1,49 @@
 
 package QDev.com.Classes;
 
-/**
- *
- * @author Leandro Rodriguez Vidal 1958205-2711
- */
-
 //Clase Provider
 public class Provider {
     
     //Atributos propios
-    private String idProvider;
-    private String nameProvider;
+    private String idProv;
+    private String nameProv;
 
     /**
      * Constructor Provider
-     * @param idProvider
-     * @param nameProvider 
+     * @param idProv
+     * @param nameProv 
      */
-    public Provider(String idProvider, String nameProvider) throws Exception {
-        this.setIdProvider(idProvider);
-        this.setNameProvider(nameProvider);
+    public Provider(String idProv, String nameProv) throws Exception {
+        this.setIdProv(idProv);
+        this.setNameProv(nameProv);
     }
 
     //Métodos Get
-    public String getIdProvider() {
-        return idProvider;
+    public String getIdProv() {
+        return idProv;
     }
     
-    public String getNameProvider() {
-        return nameProvider;
+    public String getNameProv() {
+        return nameProv;
     }
 
     //Métodos Set
-    public void setIdProvider(String idProvider) throws Exception {
-        idProvider = idProvider.trim();
+    public void setIdProv(String idProv) throws Exception {
+        idProv = idProv.trim();
         //Verificar si el nombre del proveedor no es nulo o no está vacío
-        if (!(idProvider != null || "".equals(idProvider))){
+        if (!(idProv != null || "".equals(idProv))){
             throw new Exception("Debe de ingresar el número de identificación personal o tributaria del proveedor.");
         }
-        this.idProvider = idProvider;
+        this.idProv = idProv;
     }
 
-    public void setNameProvider(String nameProvider) throws Exception {
-        nameProvider = nameProvider.trim();
+    public void setNameProv(String nameProv) throws Exception {
+        nameProv = nameProv.trim();
         //Verificar si el nombre del proveedor no es nulo o no está vacío
-        if(!(nameProvider != null || "".equals(nameProvider))){
+        if(!(nameProv != null || "".equals(nameProv))){
             throw new Exception("Debe ingresar el nombre del proveedor.");
         }
-        this.nameProvider = nameProvider;
+        this.nameProv = nameProv;
     }
     
     

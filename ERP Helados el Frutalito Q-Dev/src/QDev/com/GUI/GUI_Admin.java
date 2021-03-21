@@ -6,10 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
-/**
- *
- * @author cricr
- */
 public class GUI_Admin extends javax.swing.JFrame {
 
     private ConsultaBD cBD;

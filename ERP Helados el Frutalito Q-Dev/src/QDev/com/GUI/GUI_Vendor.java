@@ -1,23 +1,15 @@
 package QDev.com.GUI;
 
-import QDev.com.Classes.IceCream;
 import QDev.com.Classes.Person;
-import QDev.com.Classes.SaleDetail;
 import QDev.com.DB.ConsultaBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
-/**
- *
- * @author cricr
- */
 public class GUI_Vendor extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
-//    private IceCream iC;
     private Person person;
-    private SaleDetail sD;
 
     /**
      * Creates new form GUI_Admin

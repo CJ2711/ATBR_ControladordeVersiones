@@ -4,10 +4,6 @@ import QDev.com.Classes.Person;
 import QDev.com.DB.ConsultaBD;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Alejandro
- */
 public class GUI_Production extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
@@ -29,7 +25,7 @@ public class GUI_Production extends javax.swing.JFrame {
         //Al igual que el botón para ocultarlo después.
         btn_closeMenu.setVisible(false);
 
-        if (person.getRole().equals(person.getRole().SALESMAN)) {
+        if (person.getRole().equals(person.getRole().VENDEDOR)) {
             btn_Registrar.setVisible(false);
         }
     }
@@ -169,7 +165,7 @@ public class GUI_Production extends javax.swing.JFrame {
         if (GUI_Inicio == null) {
             this.dispose();
             GUI_Inicio = new GUI_Admin(cBD, person);
-            if (person.getRole().equals(person.getRole().SALESMAN)) {
+            if (person.getRole().equals(person.getRole().VENDEDOR)) {
                 if (GUI_Inicio == null) {
                     this.dispose();
                     GUI_Inicio = new GUI_Vendor(cBD, person);

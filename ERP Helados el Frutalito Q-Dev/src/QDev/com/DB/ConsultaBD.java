@@ -6,28 +6,19 @@ import QDev.com.Classes.Role;
 import QDev.com.Classes.Sale;
 import QDev.com.Classes.SaleDetail;
 import com.mysql.jdbc.PreparedStatement;
-import java.util.List;
 import java.sql.Connection;
 import java.util.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-//import java.util.Date;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.print.attribute.standard.DateTimeAtCreation;
 
-/**
- *
- * @author cricr
- * @author Leandro Rodriguez Vidal 1958205-2711
- */
+//Clase ConsultaBD
 public class ConsultaBD extends Conectar {
-
-//    Conectar cn = new Conectar();
+    
     PreparedStatement pst = null;
     Connection cnn = conexion();
     ResultSet rs = null;
@@ -55,12 +46,11 @@ public class ConsultaBD extends Conectar {
                     person.setSurnames(rs.getString(3));
                     person.setPhone(rs.getString(4));
                     person.setEmail(rs.getString(5));
-                    person.setActiveInt(rs.getInt(7));
-                    if ("SALESMAN".equals(rs.getString(8))) {
-                        person.setRole(Role.SALESMAN);
+                    if ("ADMINISTRADOR".equals(rs.getString(8))) {
+                        person.setRole(Role.ADMINISTRADOR);
                     }
-                    if ("BUSINESS_ADMIN".equals(rs.getString(8))) {
-                        person.setRole(Role.BUSINESS_ADMIN);
+                    if ("VENDEDOR".equals(rs.getString(8))) {
+                        person.setRole(Role.VENDEDOR);
                     }
                     this.person = person;
                     System.out.println("Person: " + person);
@@ -85,7 +75,7 @@ public class ConsultaBD extends Conectar {
     //Registrar Usuario
     public boolean registerUser(Person person) {
         String sql = "INSERT INTO person (nuip, names, surnames, phone, email, "
-                + "psswrd, active, nameRole) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                + "psswrd, nameRole) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
             pst.setInt(1, (int) person.getNuip());
@@ -94,8 +84,7 @@ public class ConsultaBD extends Conectar {
             pst.setString(4, person.getPhone());
             pst.setString(5, person.getEmail());
             pst.setString(6, person.getPassword());
-            pst.setInt(7, person.getActiveInt());
-            pst.setInt(8, person.getRole().ordinal());
+            pst.setInt(7, person.getRole().ordinal());
 
             pst.execute();
 
@@ -110,12 +99,12 @@ public class ConsultaBD extends Conectar {
         String sql = "SELECT * FROM icecream WHERE idIC = ?";
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sql);
-            pst.setInt(1, iceCream.getIdIceCream());
+            pst.setInt(1, iceCream.getIdIC());
 
             rs = pst.executeQuery();
 
             if (rs.next()) {
-                iceCream.setNameIceCream(rs.getString(2));
+                iceCream.setNameIC(rs.getString(2));
                 return true;
             }
 
@@ -139,26 +128,26 @@ public class ConsultaBD extends Conectar {
 
         System.out.println("Date: " + date);
         System.out.println("DF: " + dF.format(date));
-        System.out.println("Sale Date: " + sale.getSaleId());
+        System.out.println("Sale Date: " + sale.getDateHourS());
 
-        String sqlS = "INSERT INTO sale (dateHourS, totalPrice, nuipPerson) VALUES (?, ?, ?)";
-        String sqlSD = "INSERT INTO saledetail (quantity, totalPrice, dateHourSale, idICream) VALUES (?, ?, ?, ?)";
+        String sqlS = "INSERT INTO sale (dateHourS, nuipPerson, totalPrice) VALUES (?, ?, ?)";
+        String sqlSD = "INSERT INTO saledetail (dateHourSale, idICream, quantity, totalPrice) VALUES (?, ?, ?, ?)";
 
         try {
             pst = (PreparedStatement) cnn.prepareStatement(sqlS);
             pst.setString(1, dF.format(date));
-            pst.setInt(2, sale.getTotalPrice());
-            pst.setInt(3, (int) sale.getPerson().getNuip());
+            pst.setInt(2, (int) sale.getPerson().getNuip());
+            pst.setInt(3, sale.getTotalPriceS());
             pst.execute();
 
             pst = null;
 
             pst = (PreparedStatement) cnn.prepareStatement(sqlSD);
             for (SaleDetail saleDetail : saleDetails) {
-                pst.setInt(1, (int) saleDetail.getQuantity());
-                pst.setInt(2, saleDetail.getTotalPrice());
-                pst.setString(3, dF.format(date));
-                pst.setInt(4, saleDetail.getIceCream().getIdIceCream());
+                pst.setString(1, dF.format(date));
+                pst.setInt(2, saleDetail.getIceCream().getIdIC());
+                pst.setInt(3, saleDetail.getQuantitySD());
+                pst.setInt(4, saleDetail.getTotalPriceSD());
                 pst.execute();
             }
 
@@ -168,23 +157,5 @@ public class ConsultaBD extends Conectar {
             return false;
         }
     }
-
-//    public boolean sumSD(SaleDetail saleDetail) {
-//        String sql = "SELECT sum(totalPrice) FROM saledetail"; //Falta Where
-//        try {
-//            pst = (PreparedStatement) cnn.prepareStatement(sql);
-//            
-//            rs = pst.executeQuery();
-//            
-//            if (rs.next()){
-//                return true;
-//            }
-//            
-//            return false;
-//                
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
-//            return false;
-//        }
-//    }
+    
 }

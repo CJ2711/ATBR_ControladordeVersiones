@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package QDev.com.GUI;
 
 import QDev.com.DB.ConsultaBD;
 import QDev.com.Classes.Person;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Alejandro
- */
 public class GUI_ProductionRegistration extends javax.swing.JFrame {
-
 
     private ConsultaBD cBD;
     Person person;
+    
     /**
      * Creates new form GUI_ProductionRegistration
      */

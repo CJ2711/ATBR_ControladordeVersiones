@@ -1,19 +1,12 @@
 
 package QDev.com.Classes;
 
-import java.util.Date;
-
-
-
-/**
- *
- * @author Keren Rodas Ortiz 1957601-2711
- */
+//Clase Production
 public class Production {
     
     //Atributos propios 
-    private Date date;
-    private int quantityProduction;
+    private String dateHourProd;
+    private int quantityProd;
    
     
     //Relación 1...1
@@ -22,22 +15,22 @@ public class Production {
 
     /**
      * Constructor
-     * @param date
-     * @param quantityProduction
+     * @param dateHourProd
+     * @param quantityProd
      * @param person
      * @param iceCream 
      */
-    public Production(Date date, int quantityProduction, Person person, IceCream iceCream) throws Exception {
+    public Production(String dateHourProd, int quantityProd, Person person, IceCream iceCream) throws Exception {
         
         //Valores Validos
         
-        //Valores validos para date
-        if(date == null){
+        //Valores validos para dateHourProd
+        if(dateHourProd == null){
             throw new Exception("Debe existir una fecha de produccion");
         }
         
         //Valores validos para cantidad 
-        if(!(quantityProduction >= 1)){//Si la canridad no es mayor o igual a 1 entonces ....
+        if(!(quantityProd >= 1)){//Si la canridad no es mayor o igual a 1 entonces ....
             throw new Exception("La cantidad debe ser mayor o igual a 1");
         }
         
@@ -51,19 +44,19 @@ public class Production {
             throw new Exception("Deben existir Helados en la produccion");
         }
         
-        this.date = date;
-        this.quantityProduction = quantityProduction;
+        this.dateHourProd = dateHourProd;
+        this.quantityProd = quantityProd;
         this.person = person;
         this.iceCream = iceCream;
     }
 
     //Metodos Get
-    public Date getDate() {
-        return date;
+    public String getDateHourProd() {
+        return dateHourProd;
     }
 
-    public int getQuantityProduction() {
-        return quantityProduction;
+    public int getQuantityProd() {
+        return quantityProd;
     }
 
     public Person getPerson() {
@@ -76,12 +69,12 @@ public class Production {
     
     
     //Metodos Set
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateHourProd(String dateHourProd) {
+        this.dateHourProd = dateHourProd;
     }
 
-    public void setQuantityProduction(int quantityProduction) {
-        this.quantityProduction = quantityProduction;
+    public void setQuantityProd(int quantityProd) {
+        this.quantityProd = quantityProd;
     }
 
     public void setPerson(Person person) {

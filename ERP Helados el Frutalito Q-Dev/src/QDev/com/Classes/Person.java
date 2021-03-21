@@ -3,10 +3,7 @@ package QDev.com.Classes;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- *
- * @author Keren Rodas Ortiz 1957601-2711
- */
+//Clase Person
 public class Person {
 
     //Atributos propios 
@@ -16,8 +13,6 @@ public class Person {
     private String phone;
     private String email;
     private String password;
-//    private boolean active;
-    private int activeInt;
 
     //Relación 1.....1
     private Role role;
@@ -36,18 +31,16 @@ public class Person {
      * @param phone
      * @param email
      * @param password
-     * @param activeInt
      * @param role
      * @throws Exception 
      */
-    public Person(long nuip, String names, String surnames, String phone, String email, String password, int activeInt, Role role) throws Exception {
+    public Person(long nuip, String names, String surnames, String phone, String email, String password, Role role) throws Exception {
         this.setNuip(nuip);
         this.setNames(names);
         this.setSurnames(surnames);
         this.setPhone(phone);
         this.setEmail(email);
         this.setPassword(password);
-        this.setActiveInt(activeInt);
         this.setRole(role);
     }
 
@@ -192,14 +185,6 @@ public class Person {
         return password;
     }
 
-//    public boolean isActive() {
-//        return active;
-//    }
-
-    public int getActiveInt() {
-        return activeInt;
-    }
-
     public Role getRole() {
         return role;
     }
@@ -280,24 +265,13 @@ public class Person {
         this.password = password;
     }
 
-//    public void setActive(boolean active) {
-//        this.active = active;
-//    }
-
-    public void setActiveInt(int activeInt) throws Exception {
-        if(!(activeInt == 0 || activeInt == 1)){
-            throw new Exception("Debe ser 0 o 1 el numero a ingresar");
-        }
-        this.activeInt = activeInt;
-    }
-
     public void setRole(Role role) {
         this.role = role;
     }
 
     @Override
     public String toString() {
-        return "Person{" + "nuip=" + nuip + ", names=" + names + ", surnames=" + surnames + ", phone=" + phone + ", email=" + email + ", password=" + password + ", active=" + activeInt + ", role=" + role + '}';
+        return "Person{" + "nuip=" + nuip + ", names=" + names + ", surnames=" + surnames + ", phone=" + phone + ", email=" + email + ", password=" + password + ", role=" + role + '}';
     }
 
 }

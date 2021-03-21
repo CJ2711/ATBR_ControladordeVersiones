@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package QDev.com;
 
 import QDev.com.Classes.Person;
@@ -13,10 +9,7 @@ import QDev.com.GUI.GUI_Login;
 import QDev.com.GUI.GUI_UserManagement;
 import QDev.com.GUI.GUI_UserRegitration;
 
-/**
- *
- * @author cricr
- */
+//Clase Main
 public class Main extends Conectar {
 
     /**

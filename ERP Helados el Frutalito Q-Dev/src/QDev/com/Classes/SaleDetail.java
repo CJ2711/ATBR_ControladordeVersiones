@@ -1,15 +1,12 @@
 package QDev.com.Classes;
 
-/**
- *
- * @author Keren Rodas Ortiz 1957601-2711
- */
+//Clase SaleDetail
 public class SaleDetail {
 
     //Atributos propios 
-    private int quantity;
+    private int quantitySD;
     //Atributos calculados
-    private int totalPrice;
+    private int totalPriceSD;
 
     //Relación 1.....1
     private IceCream iceCream;
@@ -17,14 +14,14 @@ public class SaleDetail {
     /**
      * Constructor
      *
-     * @param quantity
+     * @param quantitySD
      * @param iceCream
      */
-    public SaleDetail(int quantity, IceCream iceCream) throws Exception {
+    public SaleDetail(int quantitySD, IceCream iceCream) throws Exception {
 
         //Valores Validos 
-//        //  Valores validos para quantity
-//        if (!(quantity >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
+//        //  Valores validos para quantitySD
+//        if (!(quantitySD >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
 //            throw new Exception("La cantidad debe ser mayor a 0");
 //        }
 
@@ -33,7 +30,7 @@ public class SaleDetail {
             throw new Exception("Debe existir al menos un Helado");
         }
 
-        this.quantity = quantity;
+        this.quantitySD = quantitySD;
         this.iceCream = iceCream;
 
         /**
@@ -42,17 +39,17 @@ public class SaleDetail {
          * helados tienen un costo fijo de 5000 pesos cada uno, así que se
          * multiplica los 5000 por la cantidad que pidan. Ej: 5000 * 3 = 15000
          */
-        totalPrice = 5000 * this.quantity;
+        totalPriceSD = 5000 * this.quantitySD;
 
     }
 
     //Metodos Get
-    public int getQuantity() {
-        return quantity;
+    public int getQuantitySD() {
+        return quantitySD;
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
+    public int getTotalPriceSD() {
+        return totalPriceSD;
     }
 
     public IceCream getIceCream() {
@@ -60,24 +57,24 @@ public class SaleDetail {
     }
 
     //Metodos Set
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantitySD(int quantitySD) {
+        this.quantitySD = quantitySD;
     }
 
-//    public void setTotalPrice(int totalPrice) {
-//        this.totalPrice = totalPrice;
+//    public void setTotalPrice(int totalPriceSD) {
+//        this.totalPriceSD = totalPriceSD;
 //    }
 //
 //    public void setIceCream(IceCream iceCream) {
 //        this.iceCream = iceCream;
 //    }
 
-    public void setTotalPrice(int totalPrice) throws Exception {
-        //  Valores validos para quantity
-        if (!(quantity >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
+    public void setTotalPriceSD(int totalPriceSD) throws Exception {
+        //  Valores validos para quantitySD
+        if (!(quantitySD >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
             throw new Exception("La cantidad debe ser mayor a 0");
         }
-        this.totalPrice = totalPrice;
+        this.totalPriceSD = totalPriceSD;
     }
 
     public void setIceCream(IceCream iceCream) {
@@ -86,7 +83,7 @@ public class SaleDetail {
 
     @Override
     public String toString() {
-        return "SaleDetail{" + "quantity=" + quantity + ", totalPrice=" + totalPrice + ", iceCream=" + iceCream + '}';
+        return "SaleDetail{" + "quantity=" + quantitySD + ", totalPrice=" + totalPriceSD + ", iceCream=" + iceCream + '}';
     }
     
 }

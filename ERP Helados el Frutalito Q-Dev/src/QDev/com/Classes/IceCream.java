@@ -1,14 +1,11 @@
 package QDev.com.Classes;
 
-/**
- *
- * @author Keren Rodas Ortiz 1957601-2711
- */
+//Clase IceCream
 public class IceCream {
 
     //Atributos propios 
-    private int idIceCream;
-    private String nameIceCream;
+    private int idIC;
+    private String nameIC;
 
     /**
      * Constructor vacío
@@ -25,59 +22,59 @@ public class IceCream {
     public IceCream(int idIceCream, String nameIceCream) throws Exception {
 
         //Valores Validos 
-        //Valores validos para idIceCream 
-//        if (!(idIceCream >= 100 && idIceCream <= 999)) {
+        //Valores validos para idIC 
+//        if (!(idIC >= 100 && idIC <= 999)) {
 //            throw new Exception("El codigo debe tener 3 digitos");
 //        }
 
-//        //Valores validos para nameIceCream
-//        if (nameIceCream == null || nameIceCream.trim().equals("")) {
+//        //Valores validos para nameIC
+//        if (nameIC == null || nameIC.trim().equals("")) {
 //            throw new Exception("Debe ingresar el nombre del helado");
 //        }
 
-        this.idIceCream = idIceCream;
-//        this.nameIceCream = nameIceCream;
-//          this.setIdIceCream(idIceCream);
-          this.setNameIceCream(nameIceCream);
+        this.idIC = idIceCream;
+//        this.nameIC = nameIC;
+//          this.setIdIceCream(idIC);
+          this.setNameIC(nameIceCream);
     }
 
     //Metodos Get
-    public int getIdIceCream() {
-        return idIceCream;
+    public int getIdIC() {
+        return idIC;
     }
 
-    public String getNameIceCream() {
-        return nameIceCream;
+    public String getNameIC() {
+        return nameIC;
     }
 
 //    //Metodos Set
-//    public void setIdIceCream(int idIceCream) {
-//        this.idIceCream = idIceCream;
+//    public void setIdIceCream(int idIC) {
+//        this.idIC = idIC;
 //    }
 //
-//    public void setNameIceCream(String nameIceCream) {
-//        this.nameIceCream = nameIceCream;
+//    public void setNameIceCream(String nameIC) {
+//        this.nameIC = nameIC;
 //    }
     //Metodos Set
-    public void setIdIceCream(int idIceCream) throws Exception {
-        //Valores validos para idIceCream 
-//        if (!(idIceCream >= 100 && idIceCream <= 999)) {
+    public void setIdIC(int idIC) throws Exception {
+        //Valores validos para idIC 
+//        if (!(idIC >= 100 && idIC <= 999)) {
 //            throw new Exception("El codigo debe tener 3 digitos");
 //        }
-        this.idIceCream = idIceCream;
+        this.idIC = idIC;
     }
 
-    public void setNameIceCream(String nameIceCream) throws Exception {
-        //Valores validos para nameIceCream
-        if (nameIceCream == null || nameIceCream.trim().equals("")) {
+    public void setNameIC(String nameIC) throws Exception {
+        //Valores validos para nameIC
+        if (nameIC == null || nameIC.trim().equals("")) {
             throw new Exception("Debe ingresar el nombre del helado");
         }
-        this.nameIceCream = nameIceCream;
+        this.nameIC = nameIC;
     }
 
     @Override
     public String toString() {
-        return "IceCream{" + "idIceCream=" + idIceCream + ", nameIceCream=" + nameIceCream + '}';
+        return "IceCream{" + "idIceCream=" + idIC + ", nameIceCream=" + nameIC + '}';
     }
 
 }

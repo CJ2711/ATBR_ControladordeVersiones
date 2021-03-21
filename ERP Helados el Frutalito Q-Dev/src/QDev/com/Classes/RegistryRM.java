@@ -1,19 +1,15 @@
 
 package QDev.com.Classes;
 
-import java.time.LocalDateTime;
 import java.util.LinkedList;
 
-/**
- *
- * @author Leandro Rodríguez Vidal 1958205-2711
- */
+//Clase RegistryRM
 public class RegistryRM {
     
     //Atributos propios
-    private LocalDateTime dateHour;
+    private String dateHourRRM;
     //Atributos calculados
-    private int finalPrice;
+    private int finalPriceRRM;
     
     //Relación 1..1
     private Provider provider;
@@ -23,16 +19,15 @@ public class RegistryRM {
 
     /**
      * Constructor
-     * @param dateHour
+     * @param dateHourRRM
      * @param provider
-     * @param registryRMDetails 
      */
-    public RegistryRM(LocalDateTime dateHour, Provider provider, LinkedList<RegistryRMDetail> registryRMDetails) throws Exception {
+    public RegistryRM(String dateHourRRM, Provider provider) throws Exception {
         
         //Verificación de valores validos
         
         //Verificar que existqa la fecha de ingreso de la materia prima
-        if(!(dateHour != null)){
+        if(!(dateHourRRM != null)){
             throw new Exception("Debe existir una fecha de ingreso de la materia prima");
         }
         
@@ -41,19 +36,19 @@ public class RegistryRM {
             throw new Exception("Debe existir un proveedor.");
         }
         
-        this.dateHour = dateHour;
-        this.finalPrice = 0;
+        this.dateHourRRM = dateHourRRM;
+        this.finalPriceRRM = 0;
         this.provider = provider;
         this.registryRMDetails = new LinkedList<>();
     }
 
     //Métodos Get
-    public LocalDateTime getDateHour() {
-        return dateHour;
+    public String getDateHourRRM() {
+        return dateHourRRM;
     }
 
-    public int getFinalPrice() {
-        return finalPrice;
+    public int getFinalPriceRRM() {
+        return finalPriceRRM;
     }
 
     public Provider getProvider() {
@@ -65,8 +60,8 @@ public class RegistryRM {
     }
     
     //Métodos Set
-    public void setDateHour(LocalDateTime dateHour) {
-        this.dateHour = dateHour;
+    public void setDateHourRRM(String dateHourRRM) {
+        this.dateHourRRM = dateHourRRM;
     }
 
     public void setProvider(Provider provider) {
@@ -78,11 +73,11 @@ public class RegistryRM {
     }
     
     /**
-     * Método: addRegistryRMDetail
+     * Método: addRRMD
      * Propósito: Agregar la información de la materia prima que se va a adquirir
      */
-    public void addRegistryRMDetail(RegistryRMDetail registryRMDetail){
-        this.finalPrice += registryRMDetail.getTotalPrice();
+    public void addRRMD(RegistryRMDetail registryRMDetail){
+        this.finalPriceRRM += registryRMDetail.getTotalPriceRRMD();
         this.registryRMDetails.add(registryRMDetail); 
     }
     
@@ -90,8 +85,8 @@ public class RegistryRM {
      * Método: removeRegistryRMDetail
      * Propósito: Eliminar la información de la materia prima que se va a adquirir
      */
-    public void removeRegistryRMDetail(RegistryRMDetail registryRMDetail){
-        this.finalPrice -= registryRMDetail.getTotalPrice();
+    public void removeRRMD(RegistryRMDetail registryRMDetail){
+        this.finalPriceRRM -= registryRMDetail.getTotalPriceRRMD();
         this.registryRMDetails.remove(registryRMDetail);
     }
     

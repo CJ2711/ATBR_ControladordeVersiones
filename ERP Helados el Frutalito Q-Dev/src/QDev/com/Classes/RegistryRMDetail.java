@@ -1,59 +1,56 @@
 
 package QDev.com.Classes;
 
-/**
- *
- * @author Leandro Rodríguez Vidal 1958205-2711
- */
+//Clase RegistryRMDetail
 public class RegistryRMDetail {
     
     //Atributos propios
-    private String name;
-    private int uPrice;
-    private int quantity;
+    private String nameRRMD;
+    private int uPriceRRMD;
+    private int quantityRRMD;
     //Atributo calculado
-    private int totalPrice;
+    private int totalPriceRRMD;
     
     //Relación 1..1
     private MesuarementUnit mesuarementUnit;
 
     /**
      * Constructor RegistryRMDetail
-     * @param name
-     * @param uPrice
-     * @param quantity
-     * @param totalPrice
+     * @param nameRRMD
+     * @param uPriceRRMD
+     * @param quantityRRMD
+     * @param totalPriceRRMD
      * @param mesuarementUnit 
      */
-    public RegistryRMDetail(String name, int uPrice, int quantity, int totalPrice, MesuarementUnit mesuarementUnit) throws Exception {
+    public RegistryRMDetail(String nameRRMD, int uPriceRRMD, int quantityRRMD, int totalPriceRRMD, MesuarementUnit mesuarementUnit) throws Exception {
         
         //Verificación de valores validos
         if(!(mesuarementUnit != null)){
             throw new Exception("Se debe especificar la unidad de medida.");
         }
         
-        this.setName(name);
-        this.uPrice = uPrice;
-        this.setQuantity(quantity);
-        totalPrice = uPrice * quantity;
+        this.setNameRRMD(nameRRMD);
+        this.uPriceRRMD = uPriceRRMD;
+        this.setQuantityRRMD(quantityRRMD);
+        totalPriceRRMD = this.uPriceRRMD * this.quantityRRMD;
         this.mesuarementUnit = mesuarementUnit;
     }
     
     //Métodos Get
-    public String getName() {
-        return name;
+    public String getNameRRMD() {
+        return nameRRMD;
     }
 
-    public int getuPrice() {
-        return uPrice;
+    public int getuPriceRRMD() {
+        return uPriceRRMD;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuantityRRMD() {
+        return quantityRRMD;
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
+    public int getTotalPriceRRMD() {
+        return totalPriceRRMD;
     }
 
     public MesuarementUnit getMesuarementUnit() {    
@@ -61,34 +58,34 @@ public class RegistryRMDetail {
     }
 
     //Métodos Set
-    public void setName(String name) throws Exception {
-        name = name.trim();
+    public void setNameRRMD(String nameRRMD) throws Exception {
+        nameRRMD = nameRRMD.trim();
         //Verificar que el nombre del detalle de la materia prima no sea nulo o vacío
-        if(!(name != null || "".equals(name))){
+        if(!(nameRRMD != null || "".equals(nameRRMD))){
             throw new Exception("Debe ingresar el nombre del detalle de la materia prima.");
         }
-        this.name = name;
+        this.nameRRMD = nameRRMD;
     }
 
-    public void setuPrice(int uPrice) throws Exception {
+    public void setuPriceRRMD(int uPriceRRMD) throws Exception {
         //Verificar que el precio unitario sea mayor a 0
-        if(!(uPrice >= 1)){
+        if(!(uPriceRRMD >= 1)){
             throw new Exception("El precio unitario debe ser mayor a 0.");
         }
-        this.uPrice = uPrice;
+        this.uPriceRRMD = uPriceRRMD;
     }
     
-    public void setQuantity(int quantity) throws Exception {
+    public void setQuantityRRMD(int quantityRRMD) throws Exception {
         //Verificar que la cantidad de la materia en el detalle del registro sea mayor a 0
-        if(!(quantity >= 1)){
+        if(!(quantityRRMD >= 1)){
             throw new Exception("La cantidad de la materia prima en el detalle del registro"
                     + "debe ser mayor a 0");
         }
-        this.quantity = quantity;
+        this.quantityRRMD = quantityRRMD;
     }
 
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setTotalPriceRRMD(int totalPriceRRMD) {
+        this.totalPriceRRMD = totalPriceRRMD;
     }
     
     public void setMesuarementUnit(MesuarementUnit mesuarementUnit) {

@@ -270,7 +270,6 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
             person1.setPhone(txt_Telefono.getText());
             person1.setEmail(txt_Email.getText());
             person1.setPassword(txt_Password.getText());
-            person1.setActiveInt(1);
             person1.setRole((Role) jCB_Rol.getSelectedItem());
 
             if (cBD.registerUser(person1)) {

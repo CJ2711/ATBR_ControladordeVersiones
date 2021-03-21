@@ -1,21 +1,13 @@
 package QDev.com.Classes;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.sql.Date;
-import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.LinkedList;
 
-/**
- *
- * @author Keren Rodas Ortiz 1957601-2711
- */
+//Clase Sale
 public class Sale {
 
     //Atributos Propios 
-    private String saleId;
-    private int totalPrice;
+    private String dateHourS;
+    private int totalPriceS;
     
     //Relación 1... 1
     private Person person;
@@ -26,15 +18,15 @@ public class Sale {
     /**
      * Constructor
      *
-     * @param saleId
+     * @param dateHourS
      * @param person
      * @param saleDetails
      */
-    public Sale(String saleId, Person person) throws Exception {
+    public Sale(String dateHourS, Person person) throws Exception {
 
         //Valores Validos 
         //Valores validos para saleID
-        if (saleId == null) {//Si saleId es nulo... entonces..
+        if (dateHourS == null) {//Si dateHourS es nulo... entonces..
             throw new Exception("Debe existir una fecha de venta");
         }
 
@@ -43,10 +35,10 @@ public class Sale {
             throw new Exception("Persona no puede ser nulo");
         }
 
-        this.saleId = Date.from(Instant.now()).toString();
+        this.dateHourS = dateHourS;
         this.person = person;
         this.saleDetails = new LinkedList<>();
-        this.totalPrice = 0;
+        this.totalPriceS = 0;
     }
 
     public Sale(Person person) throws Exception {
@@ -55,16 +47,16 @@ public class Sale {
     }
     
     //Metodos Get
-    public String getSaleId() {
-        return saleId;
+    public String getDateHourS() {
+        return dateHourS;
     }
 
     public Person getPerson() {
         return person;
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
+    public int getTotalPriceS() {
+        return totalPriceS;
     }
 
     public LinkedList<SaleDetail> getSaleDetails() {
@@ -72,16 +64,16 @@ public class Sale {
     }
 
     //Matodos Set
-    public void setSaleId(String saleId) {
-        this.saleId = saleId;
+    public void setDateHourS(String dateHourS) {
+        this.dateHourS = dateHourS;
     }
 
     public void setPerson(Person person) {
         this.person = person;
     }
 
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setTotalPriceS(int totalPriceS) {
+        this.totalPriceS = totalPriceS;
     }
 
     public void setSaleDetails(LinkedList<SaleDetail> saleDetails) {
@@ -93,8 +85,8 @@ public class Sale {
      *
      * @param saleDetail
      */
-    public void addSaleDetail(SaleDetail saleDetail) {
-        this.totalPrice += saleDetail.getTotalPrice();
+    public void addSD(SaleDetail saleDetail) {
+        this.totalPriceS += saleDetail.getTotalPriceSD();
         this.saleDetails.add(saleDetail);
     }
 
@@ -103,14 +95,14 @@ public class Sale {
      *
      * @param saleDetail
      */
-    public void removeSaleDetail(SaleDetail saleDetail) {
+    public void removeSD(SaleDetail saleDetail) {
         
         this.saleDetails.remove(saleDetail);
     }
 
     @Override
     public String toString() {
-        return "Sale{" + "saleId=" + saleId + ", totalPrice=" + totalPrice + ", person=" + person + ", saleDetails=" + saleDetails + '}';
+        return "Sale{" + "saleId=" + dateHourS + ", totalPrice=" + totalPriceS + ", person=" + person + ", saleDetails=" + saleDetails + '}';
     }
     
 }
