@@ -128,6 +128,8 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel6.setText("Nombre");
 
+        jSpinner_Cantidad.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
         jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setText("Cantidad");
 
@@ -297,6 +299,7 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
 
             if (cBD.searchIC(iC) == true) {
                 jText_NombreHelado.setText(iC.getNameIC());
+                jSpinner_Cantidad.setValue(1);
             }
         } catch (Exception ex) {
             Logger.getLogger(GUI_AdministrarVentas.class.getName()).log(Level.SEVERE, null, ex);

@@ -20,10 +20,10 @@ public class SaleDetail {
     public SaleDetail(int quantitySD, IceCream iceCream) throws Exception {
 
         //Valores Validos 
-//        //  Valores validos para quantitySD
-//        if (!(quantitySD >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
-//            throw new Exception("La cantidad debe ser mayor a 0");
-//        }
+        //  Valores validos para quantitySD
+        if (!(quantitySD >= 1)) {//Si la cantidad no es mayor o igual a 1 entonces...
+            throw new Exception("La cantidad debe ser mayor a 0");
+        }
 
         //Valores validos para IceCream 
         if (iceCream == null) {
