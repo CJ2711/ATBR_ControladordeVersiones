@@ -285,7 +285,7 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 137, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
@@ -316,12 +316,13 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
 
             jText_CodigoHelado.setText("");
             jText_NombreHelado.setText("");
-            jSpinner_Cantidad.setValue(Integer.valueOf(0));
+            jSpinner_Cantidad.setValue(Integer.valueOf(1));
 
             System.out.println("Person GUI: " + p);
             iC = new IceCream();
         } catch (Exception ex) {
             Logger.getLogger(GUI_AdministrarVentas.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(GUI_AdministrarVentas.this, ex.getMessage());
         }
     }//GEN-LAST:event_btn_AgregarActionPerformed
 
@@ -335,9 +336,10 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
                 s = new Sale(p);
             } catch (Exception ex) {
                 Logger.getLogger(GUI_AdministrarVentas.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(GUI_AdministrarVentas.this, ex.getMessage());
             }
         } else {
-            JOptionPane.showMessageDialog(GUI_AdministrarVentas.this, "Aiuda false");
+            JOptionPane.showMessageDialog(GUI_AdministrarVentas.this, "Error al registrar la compra");
         }
     }//GEN-LAST:event_btn_GenerarVentaActionPerformed
 

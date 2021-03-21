@@ -9,15 +9,10 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author KEREN
- */
 public class GUI_UserRegitration extends javax.swing.JFrame {
 
     private ConsultaBD cBD;
     private Person person;
-    private Person person1;
 
     /**
      * Creates new form GUI_UserRegi
@@ -28,7 +23,6 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
         this.person = new Person();
         this.person = person;
         this.cBD = new ConsultaBD();
-        this.person1 = new Person();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -264,27 +258,29 @@ public class GUI_UserRegitration extends javax.swing.JFrame {
         try {
             long nuip = Long.parseLong(txt_Nuip.getText());
 
-            person1.setNuip(nuip);
-            person1.setNames(txt_Nombre.getText());
-            person1.setSurnames(txt_Apellido.getText());
-            person1.setPhone(txt_Telefono.getText());
-            person1.setEmail(txt_Email.getText());
-            person1.setPassword(txt_Password.getText());
-            person1.setRole((Role) jCB_Rol.getSelectedItem());
+            Person person = new Person();
+            
+            person.setNuip(nuip);
+            person.setNames(txt_Nombre.getText());
+            person.setSurnames(txt_Apellido.getText());
+            person.setPhone(txt_Telefono.getText());
+            person.setEmail(txt_Email.getText());
+            person.setPassword(txt_Password.getText());
+            person.setRole((Role) jCB_Rol.getSelectedItem());
 
-            if (cBD.registerUser(person1)) {
+            if (cBD.registerUser(person)) {
                 JOptionPane.showMessageDialog(rootPane, "El Usuario ha sido registrado con éxito");
                 LimpiezaFormulario();
+                JFrame GUI_Inicio = null;
+                if (GUI_Inicio == null) {
+                    this.dispose();
+                    GUI_Inicio = new GUI_UserManagement(cBD);
+                }
+                GUI_Inicio.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Error al registrar.");
             }
 
-            JFrame GUI_Inicio = null;
-            if (GUI_Inicio == null) {
-                this.dispose();
-                GUI_Inicio = new GUI_UserManagement(cBD);
-            }
-            GUI_Inicio.setVisible(true);
         } catch (NumberFormatException ex) {
             Logger.getLogger(GUI_UserRegitration.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(GUI_UserRegitration.this, "Error al registrar.");

@@ -46,10 +46,10 @@ public class ConsultaBD extends Conectar {
                     person.setSurnames(rs.getString(3));
                     person.setPhone(rs.getString(4));
                     person.setEmail(rs.getString(5));
-                    if ("ADMINISTRADOR".equals(rs.getString(8))) {
+                    if ("ADMINISTRADOR".equals(rs.getString(7))) {
                         person.setRole(Role.ADMINISTRADOR);
                     }
-                    if ("VENDEDOR".equals(rs.getString(8))) {
+                    if ("VENDEDOR".equals(rs.getString(7))) {
                         person.setRole(Role.VENDEDOR);
                     }
                     this.person = person;
