@@ -42,7 +42,6 @@ public class Sale {
     }
 
     public Sale(Person person) throws Exception {
-//        this(Date.from(Instant.now()), person);
         this.saleDetails = new LinkedList<>();
     }
     

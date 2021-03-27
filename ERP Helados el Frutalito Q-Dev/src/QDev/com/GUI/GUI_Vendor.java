@@ -158,7 +158,7 @@ public class GUI_Vendor extends javax.swing.JFrame {
         JFrame GUI_VerProduccion = null;
         if (GUI_VerProduccion == null) {
             this.dispose();
-            GUI_VerProduccion = new GUI_Production(cBD);
+            GUI_VerProduccion = new GUI_Production(cBD, person);
         }
         GUI_VerProduccion.setVisible(true);
     }//GEN-LAST:event_btn_ProduccionActionPerformed

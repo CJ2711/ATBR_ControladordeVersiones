@@ -161,7 +161,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         JFrame GUI_AdministrarUsuarios = null;
         if (GUI_AdministrarUsuarios == null) {
             this.dispose();
-            GUI_AdministrarUsuarios = new GUI_UserManagement(cBD/*, person*/);
+            GUI_AdministrarUsuarios = new GUI_UserManagement(cBD);
         }
         GUI_AdministrarUsuarios.setVisible(true);
     }//GEN-LAST:event_btn_AdministrarUsuariosActionPerformed
@@ -170,7 +170,7 @@ public class GUI_Admin extends javax.swing.JFrame {
         JFrame GUI_AdministrarProduccion = null;
         if (GUI_AdministrarProduccion == null) {
             this.dispose();
-            GUI_AdministrarProduccion = new GUI_Production(cBD/*, person*/);
+            GUI_AdministrarProduccion = new GUI_Production(cBD, person);
         }
         GUI_AdministrarProduccion.setVisible(true);
     }//GEN-LAST:event_btn_ProduccionActionPerformed

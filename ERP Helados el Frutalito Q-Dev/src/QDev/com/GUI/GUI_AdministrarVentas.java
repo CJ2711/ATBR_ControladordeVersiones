@@ -20,8 +20,8 @@ public class GUI_AdministrarVentas extends javax.swing.JFrame {
     private Person p;
     private Sale s;
     IceCream iC;
-    Date date = new Date();
-    DateFormat dF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//    Date date = new Date();
+//    DateFormat dF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     DefaultTableModel model;
 

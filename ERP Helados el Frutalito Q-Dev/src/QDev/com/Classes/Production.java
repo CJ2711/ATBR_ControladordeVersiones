@@ -7,12 +7,11 @@ public class Production {
     //Atributos propios 
     private String dateHourProd;
     private int quantityProd;
-   
     
     //Relación 1...1
     private Person person;
     private IceCream iceCream;
-
+    
     /**
      * Constructor
      * @param dateHourProd
@@ -48,6 +47,14 @@ public class Production {
         this.quantityProd = quantityProd;
         this.person = person;
         this.iceCream = iceCream;
+    }
+    
+    /**
+     * Constructor 
+     * @param person 
+     */
+    public Production(Person person) {
+        
     }
 
     //Metodos Get

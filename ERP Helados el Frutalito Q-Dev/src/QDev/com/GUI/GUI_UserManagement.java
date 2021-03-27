@@ -18,7 +18,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
     private Person person;
     DefaultTableModel model;
 
-    public GUI_UserManagement(ConsultaBD cBD/*, Person person*/) {
+    public GUI_UserManagement(ConsultaBD cBD) {
         initComponents();
         this.cBD = cBD;
         this.person = person;
@@ -34,8 +34,8 @@ public class GUI_UserManagement extends javax.swing.JFrame {
     }
 
     void loadUsersTable() {
-        String[] titles = {"NUIP", "NAMES", "SURNAMES", "PHONE", "EMAIL", "PASSWORD", "ACTIVE", "ROL"};
-        String[] registries = new String[8];
+        String[] titles = {"NUIP", "NAMES", "SURNAMES", "PHONE", "EMAIL", "PASSWORD", "ROL"};
+        String[] registries = new String[7];
 
         String sql = "SELECT * FROM person ORDER BY nuip, nameRole";
 
@@ -56,7 +56,6 @@ public class GUI_UserManagement extends javax.swing.JFrame {
                 registries[4] = rs.getString(5);
                 registries[5] = rs.getString(6);
                 registries[6] = rs.getString(7);
-                registries[7] = rs.getString(8);
                 model.addRow(registries);
             }
 
@@ -71,7 +70,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
     private void initComponents() {
 
         btn_Eliminar = new javax.swing.JButton();
-        btn_Modificar = new javax.swing.JButton();
+        btn_Agregar = new javax.swing.JButton();
         btn_menu = new javax.swing.JButton();
         btn_closeMenu = new javax.swing.JButton();
         jP_MenuDesplegable = new javax.swing.JPanel();
@@ -80,7 +79,7 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         jB_LogOut = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtlb_users = new javax.swing.JTable();
-        btn_Modificar1 = new javax.swing.JButton();
+        btn_Modificar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -96,16 +95,16 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         btn_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 200, 40));
 
-        btn_Modificar.setBackground(new java.awt.Color(0, 255, 102));
-        btn_Modificar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Modificar.setText("Agregar");
-        btn_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_Modificar.addActionListener(new java.awt.event.ActionListener() {
+        btn_Agregar.setBackground(new java.awt.Color(0, 255, 102));
+        btn_Agregar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Agregar.setText("Agregar");
+        btn_Agregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ModificarActionPerformed(evt);
+                btn_AgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 200, 40));
+        getContentPane().add(btn_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 200, 40));
 
         btn_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QDev/com/ImageSRC/Image_Menu.png"))); // NOI18N
         btn_menu.setBorder(null);
@@ -178,11 +177,11 @@ public class GUI_UserManagement extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 660, 250));
 
-        btn_Modificar1.setBackground(new java.awt.Color(0, 255, 102));
-        btn_Modificar1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Modificar1.setText("Modificar");
-        btn_Modificar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btn_Modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 240, 40));
+        btn_Modificar.setBackground(new java.awt.Color(0, 255, 102));
+        btn_Modificar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Modificar.setText("Modificar");
+        btn_Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 240, 40));
 
         jLabel2.setFont(new java.awt.Font("Kristen ITC", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -234,20 +233,20 @@ public class GUI_UserManagement extends javax.swing.JFrame {
         jB_LogOut.setVisible(false);
     }//GEN-LAST:event_btn_closeMenuActionPerformed
 
-    private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
+    private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
         JFrame GUI_Inicio = null;
         if (GUI_Inicio == null) {
             this.dispose();
             GUI_Inicio = new GUI_UserRegitration(cBD);
         }
         GUI_Inicio.setVisible(true);
-    }//GEN-LAST:event_btn_ModificarActionPerformed
+    }//GEN-LAST:event_btn_AgregarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Agregar;
     private javax.swing.JButton btn_Eliminar;
     private javax.swing.JButton btn_Modificar;
-    private javax.swing.JButton btn_Modificar1;
     private javax.swing.JButton btn_closeMenu;
     private javax.swing.JButton btn_menu;
     private javax.swing.JButton jB_Help;

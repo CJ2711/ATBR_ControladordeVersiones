@@ -2,6 +2,7 @@ package QDev.com.DB;
 
 import QDev.com.Classes.IceCream;
 import QDev.com.Classes.Person;
+import QDev.com.Classes.Production;
 import QDev.com.Classes.Role;
 import QDev.com.Classes.Sale;
 import QDev.com.Classes.SaleDetail;
@@ -94,7 +95,23 @@ public class ConsultaBD extends Conectar {
             return false;
         }
     }
-
+    
+    public boolean registryIC(IceCream iceCream) {
+        String sql = "INSERT INTO icecream (idIC, name) VALUES (?, ?)";
+        try {
+            pst = (PreparedStatement) cnn.prepareStatement(sql);
+            pst.setInt(1, iceCream.getIdIC());
+            pst.setString(2, iceCream.getNameIC());
+            
+            pst.execute();
+            
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+    
     public boolean searchIC(IceCream iceCream) {
         String sql = "SELECT * FROM icecream WHERE idIC = ?";
         try {
@@ -118,17 +135,13 @@ public class ConsultaBD extends Conectar {
             return false;
         }
     }
-
+    
     public boolean registerSaleAndDetail(Sale sale, LinkedList<SaleDetail> saleDetails) {
 
         sale.setPerson(person);
 
         Date date = new Date();
         DateFormat dF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        System.out.println("Date: " + date);
-        System.out.println("DF: " + dF.format(date));
-        System.out.println("Sale Date: " + sale.getDateHourS());
 
         String sqlS = "INSERT INTO sale (dateHourS, nuipPerson, totalPrice) VALUES (?, ?, ?)";
         String sqlSD = "INSERT INTO saledetail (dateHourSale, idICream, quantity, totalPrice) VALUES (?, ?, ?, ?)";
@@ -151,6 +164,31 @@ public class ConsultaBD extends Conectar {
                 pst.execute();
             }
 
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+    
+    public boolean registerProduction(Production production){
+        production.setPerson(person);
+        
+        Date date = new Date();
+        DateFormat dF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
+        String sql = "INSERT INTO production (dateHourProd, nuipPerson, idIC, quantity) VALUES (?, ?, ?, ?)";
+        
+        try {
+            pst = (PreparedStatement) cnn.prepareStatement(sql);
+            
+            pst.setString(1, dF.format(date));
+            pst.setInt(2, (int) production.getPerson().getNuip());
+            pst.setInt(3, production.getIceCream().getIdIC());
+            pst.setInt(4, production.getQuantityProd());
+            
+            pst.execute();
+            
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(ConsultaBD.class.getName()).log(Level.SEVERE, null, ex);
