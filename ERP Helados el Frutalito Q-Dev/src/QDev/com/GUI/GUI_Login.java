@@ -3,6 +3,8 @@ package QDev.com.GUI;
 import QDev.com.Classes.Person;
 import QDev.com.Classes.Role;
 import QDev.com.DB.ConsultaBD;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -22,6 +24,10 @@ public class GUI_Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+
+//        EntrarActionListener entrar = new EntrarActionListener();
+//        btn_Entrar.addActionListener(entrar);
+//        psswrdField.addActionListener(entrar);
     }
 
     @SuppressWarnings("unchecked")
@@ -84,7 +90,6 @@ public class GUI_Login extends javax.swing.JFrame {
 
     private void btn_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntrarActionPerformed
         JFrame GUI_Inicio = null;
-        JFrame GUI_AdmiVent = null;
 
         //Busqueda del usuario
         String psswrd = new String(psswrdField.getPassword());
@@ -100,15 +105,12 @@ public class GUI_Login extends javax.swing.JFrame {
                     if (person.getRole() == Role.VENDEDOR) {
                         if (GUI_Inicio == null) {
                             GUI_Inicio = new GUI_Vendor(cBD, person);
-//                                GUI_AdmiVent = new GUI_AdministrarVentas(cBD, person);
-//                                person = new Person();
                         }
                         GUI_Inicio.setVisible(true);
                     }
                     if (person.getRole() == Role.ADMINISTRADOR) {
                         if (GUI_Inicio == null) {
                             GUI_Inicio = new GUI_Admin(cBD, person);
-//                                person = new Person();
                         }
                         GUI_Inicio.setVisible(true);
                     }
@@ -135,4 +137,49 @@ public class GUI_Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField psswrdField;
     private javax.swing.JTextField tf_User;
     // End of variables declaration//GEN-END:variables
+
+//    public class EntrarActionListener implements ActionListener {
+//
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            JFrame GUI_Inicio = null;
+//
+//            //Busqueda del usuario
+//            String psswrd = new String(psswrdField.getPassword());
+//
+//            if (!tf_User.getText().equals("") && !psswrdField.equals("")) {
+//
+//                try {
+//                    person.setNuip(Integer.parseInt(tf_User.getText()));
+//                    person.setPassword(psswrd);
+//
+//                    if (cBD.loginUser(person) == true) {
+//                        this.dispose();
+//                        if (person.getRole() == Role.VENDEDOR) {
+//                            if (GUI_Inicio == null) {
+//                                GUI_Inicio = new GUI_Vendor(cBD, person);
+//                            }
+//                            GUI_Inicio.setVisible(true);
+//                        }
+//                        if (person.getRole() == Role.ADMINISTRADOR) {
+//                            if (GUI_Inicio == null) {
+//                                GUI_Inicio = new GUI_Admin(cBD, person);
+//                            }
+//                            GUI_Inicio.setVisible(true);
+//                        }
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "Usuario (Número de identificación)"
+//                                + " y/o contraseña incorrectos. Verifique los datos ingresados.");
+//                    }
+//                } catch (Exception ex) {
+//                    Logger.getLogger(GUI_Login.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Por favor, ingrese el usuario y/o contraseña");
+//            }
+//        }
+//
+//    }
+
 }
